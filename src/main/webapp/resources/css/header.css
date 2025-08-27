@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/* 전체 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 공통 header */
+header {
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* 상단 파란바 */
+header .top {
+    background-color: #4a95f5; /* 파란색 */
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header .top p {
+    margin: 0;
+    font-size: 12px;
+    max-width: 1100px;
+    width: 100%;
+    text-align: right;
+    padding: 0 20px;
+}
+
+header .top a {
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+header .top a:hover {
+    text-decoration: underline;
+}
+
+/* 로고 + 네비게이션 영역 */
+header .nav-container {
+    background-color: #fff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+header .nav-container article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* 로고 영역 */
+header .nav-container img {
+    height: 50px;
+}
+
+/* 네비 메뉴 - 수평 배치 */
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* 메뉴 간격 */
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li > a,
+header nav ul li {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+header nav ul li:hover,
+header nav ul li > a:hover {
+    color: #4a95f5;
+}
+
+/* 서브메뉴 - 세로 박스 형태 */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #4a95f5;
+    min-width: 120px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+
+.submenu li {
+    padding: 8px 15px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li a {
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+}
+
+.submenu li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.submenu li:hover a {
+    color: #fff !important;
+}
+
+/* 메인 메뉴에 마우스 오버 시 서브메뉴 표시 */
+nav li:hover .submenu {
+    display: block;
+}
