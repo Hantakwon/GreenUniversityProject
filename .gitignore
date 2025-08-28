@@ -10,9 +10,6 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
-.classpath
-.project
 .loadpath
 .recommenders
 

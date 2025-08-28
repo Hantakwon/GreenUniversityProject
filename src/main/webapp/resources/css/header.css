@@ -1,140 +1,135 @@
 @charset "UTF-8";
 
-/* 전체 초기화 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-/* 공통 header */
+/* header */
 header {
-    width: 100%;
-    font-family: Arial, sans-serif;
+	width: 100%;
+	height: auto;
 }
 
-/* 상단 파란바 */
-header .top {
-    background-color: #4a95f5; /* 파란색 */
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+header>div {
+	width: 100%;
 }
 
-header .top p {
-    margin: 0;
-    font-size: 12px;
-    max-width: 1100px;
-    width: 100%;
-    text-align: right;
-    padding: 0 20px;
+header>div>* {
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
 }
 
-header .top a {
-    color: #fff;
-    font-size: 12px;
-    text-decoration: none;
-    margin: 0 5px;
+/* top */
+header>div:nth-child(1) {
+	height: 36px;
+	background-color: #4a95f5;
+	box-sizing: border-box;
 }
 
-header .top a:hover {
-    text-decoration: underline;
+.top>p {
+	float: right;
+	margin-top: 5px;
 }
 
-/* 로고 + 네비게이션 영역 */
-header .nav-container {
-    background-color: #fff;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
+.top>p>a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #ffffff;
 }
 
-header .nav-container article {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    max-width: 1100px;
-    width: 100%;
-    padding: 0 20px;
+/* nav */
+header>div:nth-child(2) {
+	height: 70px;
 }
 
-/* 로고 영역 */
-header .nav-container img {
-    height: 50px;
+/* nav와 img를 가로 배치를 위한 컨테이너 */
+.nav-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
 }
 
-/* 네비 메뉴 - 수평 배치 */
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 40px; /* 메뉴 간격 */
+.nav-container img {
+	height: 40px;
 }
 
-header nav ul li {
-    position: relative;
+ul, li {
+	list-style: none;
+	text-decoration: none;
 }
 
-header nav ul li > a,
-header nav ul li {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    padding: 10px 0;
+nav>ul {
+	width: 100%;
+	height: 54px;
+	display: flex;
 }
 
-header nav ul li:hover,
-header nav ul li > a:hover {
-    color: #4a95f5;
+nav>ul>li {
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 40px;
+	color: black; /* 기본 텍스트 색상 */
+	cursor: pointer;
+}
+
+/* 메인 메뉴 hover 효과 - 파란색으로 변경 */
+nav>ul>li:hover {
+	color: #4a95f5;
+}
+
+nav>ul>li>a, nav>ul>li {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /* 서브메뉴 - 세로 박스 형태 */
 .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #4a95f5;
-    min-width: 120px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    padding: 5px 0;
-    margin-top: 5px;
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: #4a95f5;
+	min-width: 160px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+	z-index: 1000;
+	margin-top: 5px;
 }
 
 .submenu li {
-    padding: 8px 15px;
-    display: block;
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 8px 15px;
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .submenu li:last-child {
-    border-bottom: none;
+	border-bottom: none;
 }
 
 .submenu li a {
-    color: #fff !important;
-    font-size: 13px;
-    font-weight: normal;
-    display: block;
-    width: 100%;
+	text-decoration: none;
+	color: #fff !important;
+	display: block;
+	width: 100%;
 }
 
 .submenu li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
 }
 
 .submenu li:hover a {
-    color: #fff !important;
+	color: #fff !important;
 }
 
 /* 메인 메뉴에 마우스 오버 시 서브메뉴 표시 */
 nav li:hover .submenu {
-    display: block;
+	display: block;
 }
