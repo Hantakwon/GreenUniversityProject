@@ -76,7 +76,7 @@ nav>ul>li {
 	align-items: center;
 	justify-content: center;
 	padding-left: 40px;
-	color: black; /* 기본 텍스트 색상 */
+	color: black;
 	cursor: pointer;
 }
 

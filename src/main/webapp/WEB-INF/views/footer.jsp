@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>footer</title>
+	<!--
+        날짜 : 2025/08/27
+        이름 : 한탁원
+        내용 : footer 작성
+    -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/footer.css">
 </head>

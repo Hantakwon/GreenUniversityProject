@@ -4,7 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>헤더</title>
+<title>header</title>
+    <!--
+        날짜 : 2025/08/27
+        이름 : 한탁원
+        내용 : header 작성
+    -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/header.css">
 </head>
