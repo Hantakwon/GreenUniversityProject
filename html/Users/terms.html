@@ -4,153 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms</title>
-    <style>
-        main .info {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
+    <link rel="stylesheet" href="./css/terms.css">
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const agreeCheckbox = document.getElementById('agree');
+            const nextPageBtn = document.getElementById('next');
+            const cancelBtn = document.getElementById('cancel');
 
-        main .info img {
-            width: 16px;
-            height : auto;
-            margin-right: 5px;
-            /* 이미지와 텍스트 간격 */
-        }
+            // 다음버튼
+            nextPageBtn.addEventListener('click', function(e){
+                e.preventDefault(); // 기본 form 제출 동작 막기
+                
+                if(agreeCheckbox.checked){
+                    window.location.href = './signup.html';
+                }else{
+                    alert('약관에 동의해야 회원가입이 가능합니다.')
+                }
+            });
 
-        main {
-            width: 100%;
-            height: auto;
-        }
+            // 취소버튼
+            cancelBtn.addEventListener('click', function(e){
+                e.preventDefault();
 
-        main>div>* {
-            width: 1100px;
-            height: 100%;
-            margin: 0 auto;
-        }
-
-        main>div:nth-child(1) {
-            width: 100%;
-            height: 36px;
-            background-color: #edf2f6;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-        }
-
-        main>div:nth-child(1)>div {
-            width: 1100px;
-            margin: 0 auto;
-            font-size: 12px;
-            color: #666;
-        }
-
-        main>div:nth-child(2) {
-            width: 100%;
-            height: 500px;
-            margin-top: 50px;
-            box-sizing: border-box;
-        }
-
-        main .content-wrapper {
-            display: flex;
-            gap: 60px;
-        }
-
-        main .terms{
-            width: 1050px;
-        }
-
-        main .terms > .termsInfo span{
-            color: #5198f9;
-            margin: 0 100px;
-        }
-
-        main .termsInfo h4{
-            font-size: 22px;
-            font-weight: 550;
-            margin: 5px 0;
-        }
-
-        main .termsInfo p{
-            font-size: 16px;
-            margin: 5px 0;
-        }
-
-        main .termsAll .termsTable{
-            width: 1050px;
-            height: 500px;
-            border-collapse: collapse;
-            border-top: 4px solid #0d1f4c;
-            margin-bottom: -15px;
-        }
-
-        main .termsTable th{
-            width: 200px;
-            background-color: #f4f8fc;
-            text-align: center;
-            font-weight: bold;
-            border: 1px solid #dddddd;
-            padding: 15px;
-            vertical-align: middle;
-            border-left: none;
-        }
-
-        main .termsTable td{
-            border: 1px solid #dddddd;
-            padding: 15px;
-            vertical-align: top;
-            background-color: #fff;
-            border-right: none;
-            max-height: 200px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        main .termsTable  td span{
-            display: flex;
-            border: 1px solid #dddddd;
-            width: 800px;
-            height: 250px;
-            background-color: #ffffff;
-            align-items: center;
-        }
-
-        main .termsAll .agree{
-            font-size: 20px;
-        }
-
-        main .termsAll .select{
-            float: right;
-            margin-top: 50px;
-        }
-
-        main .termsAll input[type="checkbox"]{
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            vertical-align: middle;
-        }
-
-        #cancel{
-            width: 70px;
-            height: 65px;
-            color: white;
-            background-color: #8b8b8b;
-            font-size: 25px;
-            font-weight: 100;
-        }
-
-        #next{
-            width: 70px;
-            height: 65px;
-            color: white;
-            background-color: #5198f9;
-            font-size: 25px;
-            font-weight: 100;
-        }
-    </style>
+                window.history.back();
+            });
+        });
+    </script>
 </head>
 <body>
     <main>
@@ -165,7 +44,7 @@
         <div>
             <div class="content-wrapper">
                 <div class="terms">
-                    <div class="termsInfo">
+                    <div class="topInfo">
                         <span>
                             <h4>약관안내</h4>
                             <p>※ 대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다.</p>
@@ -173,7 +52,7 @@
                         </span>
                     </div>
                     <div class="termsAll">
-                        <form action="">
+                        <form>
                             <table class="termsTable">
                                 <tr>
                                     <th>이용약관</th>
@@ -184,10 +63,10 @@
                                     <td><span>약관내용</span></td>
                                 </tr>
                             </table><br>
-                            <span class="agree">
-                                <input type="checkbox" required id="agree">
-                                위의 홈페이지 이용에 따른 회원가입 약관 및 개인정보 수집·이용에 모두 동의합니다.
-                            </span>
+                            <div class="agree">
+                                <input type="checkbox"  id="agree">
+                                <label for="agree">위의 홈페이지 이용에 따른 회원가입 약관 및 개인정보 수집·이용에 모두 동의합니다.</label>
+                            </div>
                             <div class="select">
                                 <button id="cancel">취소</button>
                                 <button id="next">다음</button>
