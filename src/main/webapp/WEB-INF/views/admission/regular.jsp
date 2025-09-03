@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="header2.jsp" />
-	<jsp:include page="footer2.jsp" />
+<!-- 
+	날짜 :
+	이름 :
+	내용 : 정시모집
+-->
 </body>
 </html>

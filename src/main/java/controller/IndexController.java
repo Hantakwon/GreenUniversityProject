@@ -9,10 +9,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/")
-public class MainController extends HttpServlet {
+public class IndexController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
  
-    public MainController() {
+    public IndexController() {
         super();
         // TODO Auto-generated constructor stub
     }
