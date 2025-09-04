@@ -11,7 +11,7 @@
         내용 : footer 수정
     -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/common/footer2.css">
+	href="<%=request.getContextPath()%>/resources/css/common/footer.css">
 </head>
 <body>
 	<footer>
