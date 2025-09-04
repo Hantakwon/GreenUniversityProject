@@ -119,7 +119,7 @@ main .info img {
 </style>
 </head>
 <body>
-	<jsp:include page="header2.jsp" />
+	<jsp:include page="header3.jsp" />
 	
 	<!-- 
 	<main>

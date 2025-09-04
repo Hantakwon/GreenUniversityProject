@@ -1,135 +1,182 @@
 @charset "UTF-8";
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
 }
 
-/* header */
-header {
-	width: 100%;
-	height: auto;
+div, ul, li, a { list-style-type: none; }
+
+a:link, a:visited, a:hover { text-decoration: none; }
+
+/* Header Top (상단바) */
+.top-header-wrap {
+  background-color: #3f97f6;
 }
 
-header>div {
-	width: 100%;
+.top-header-box {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.top-header-box:after { content:''; display:block; clear:both; }
+
+.top-header-box > div {
+  display: inline-block;
+  background-color: #16c9cc;
+}
+.top-header-box > div > a {
+  display: inline-block;
+  padding: 7px 17px;
+  font-size: 12px;
+  color: #fff;
 }
 
-header>div>* {
-	width: 1100px;
-	height: 100%;
-	margin: 0 auto;
+.top-header-box > ul {
+  float: right;
+  padding: 4px 0;
+}
+.top-header-box > ul > li {
+  position: relative;
+  float: left;
+  margin: 0 15px 0 0;
+  padding: 0 18px 0 0;
+}
+.top-header-box > ul > li:after {
+  content:'';
+  position:absolute;
+  top:9px; right:0;
+  width:1px; height:11px;
+  background-color:rgba(255,255,255,0.3);
+}
+.top-header-box > ul > li:last-of-type {
+  margin:0; padding:0;
+}
+.top-header-box > ul > li:last-of-type:after { display:none; }
+.top-header-box > ul > li > a {
+  font-size:12px;
+  color:#fff;
 }
 
-/* top */
-header>div:nth-child(1) {
-	height: 36px;
-	background-color: #4a95f5;
-	box-sizing: border-box;
+/* Header Bottom */
+.bottom-header-box {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.bottom-header-box:after { content:""; display:block; clear:both; }
+
+.bottom-header-box h1 {
+  display: inline-block;
+  padding: 10px 0 0 0;
+}
+.bottom-header-box h1 > a { display: block; }
+.bottom-header-box h1 > a span {
+  display: inline-block;
+  position: relative;
+  padding: 18px 0 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #222;
+  letter-spacing: -0.5px;
+  vertical-align: middle;
+}
+.bottom-header-box h1 > a span:before {
+  content:'';
+  position:absolute;
+  top:20px; left:0;
+  width:1px; height:15px;
+  background-color:#ddd;
+}
+.bottom-header-box h1 > a span span { vertical-align: top; }
+
+/* GNB (Global Navigation Bar) */
+.gnb { float: right; }
+
+.gnb-ul {
+  position: relative;
+  padding: 28px 0 0 0;
+}
+.gnb-ul:after { content:""; display:block; clear:both; }
+
+.gnb-ul > li {
+  position: relative;
+  float: left;
+  padding: 0 26px 0;
+}
+.gnb-ul > li:last-of-type { padding:0 0 0 26px; }
+
+.gnb-ul > li > a {
+  display:inline-block;
+  padding:0 0 28px 0;
+  font-weight:500;
+  font-size:16px;
+  line-height:21px;
+  color:#222;               /* 기본 검정 */
+  transition: color .15s ease;
+}
+.gnb-ul > li > a:hover {
+  color:#3f97f6;            /* hover 파랑 */
+}
+.gnb-ul > li > a.active {
+  font-weight:700;
+  color:#3f97f6;            /* 활성화 파랑 */
 }
 
-.top>p {
-	float: right;
-	margin-top: 5px;
+/* Sub Menu (드롭다운) */
+.sub-mn {
+  display:none;
+  position:absolute;
+  top:100%; left:0;
+  z-index:999;
+  min-width:170px;
+  background-color:#3f97f6;
+  box-sizing:border-box;
+}
+.gnb-ul > li:last-of-type .sub-mn { right:0; left:auto; }
+
+.sub-mn > li {
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.sub-mn > li:last-of-type { border-bottom:none; }
+
+.sub-mn > li > a {
+  display:block;
+  position:relative;
+  padding:8px 20px;
+  font-weight:200;
+  font-size:16px;
+  color:#fff;
+}
+.sub-mn > li > a:hover {
+  background-color:#1662b3;
+  color:#fff;
 }
 
-.top>p>a {
-	text-decoration: none;
-	font-size: 13px;
-	color: #ffffff;
+/* 서브메뉴 열림 상태 */
+.sub-mn.is-open { display:block; }
+
+@media (min-width:100px){
+  .gnb-ul > li:hover > .sub-mn,
+  .gnb-ul > li:focus-within > .sub-mn { display:block; }
+
+  .gnb-ul > li:hover > a,
+  .gnb-ul > li:focus-within > a {
+    font-weight:700;
+    color:#3f97f6;
+  }
 }
 
-/* nav */
-header>div:nth-child(2) {
-	height: 70px;
-}
+/* Hidden / Buttons */
+.btn-right-menu,
+.slideMenu,
+.btn-menu,
+.header-right-menu { display:none; }
 
-/* nav와 img를 가로 배치를 위한 컨테이너 */
-.nav-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 1100px;
-	height: 100%;
-	margin: 0 auto;
-}
-
-.nav-container img {
-	height: 40px;
-}
-
-ul, li {
-	list-style: none;
-	text-decoration: none;
-}
-
-nav>ul {
-	width: 100%;
-	height: 54px;
-	display: flex;
-}
-
-nav>ul>li {
-	position: relative;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-left: 40px;
-	color: black;
-	cursor: pointer;
-}
-
-/* 메인 메뉴 hover 효과 - 파란색으로 변경 */
-nav>ul>li:hover {
-	color: #4a95f5;
-}
-
-nav>ul>li>a, nav>ul>li {
-	text-decoration: none;
-	cursor: pointer;
-}
-
-/* 서브메뉴 - 세로 박스 형태 */
-.submenu {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background: #4a95f5;
-	min-width: 160px;
-	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-	z-index: 1000;
-	margin-top: 5px;
-}
-
-.submenu li {
-	padding: 8px 15px;
-	display: block;
-	width: 100%;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.submenu li:last-child {
-	border-bottom: none;
-}
-
-.submenu li a {
-	text-decoration: none;
-	color: #fff !important;
-	display: block;
-	width: 100%;
-}
-
-.submenu li:hover {
-	background-color: rgba(255, 255, 255, 0.1);
-}
-
-.submenu li:hover a {
-	color: #fff !important;
-}
-
-/* 메인 메뉴에 마우스 오버 시 서브메뉴 표시 */
-nav li:hover .submenu {
-	display: block;
+.btn-menu {
+  float:right;
+  margin:22px 0 0 0;
+  width:25px; height:20px;
+  background:url(/_res/images/btn-m-menu.png) no-repeat 0 0/100%;
 }
