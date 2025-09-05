@@ -37,10 +37,10 @@
 						<li><a href="/introduce/greeting.do">대학소개</a>
 							<ul class="sub-mn">
 								<li><a href="/introduce/greeting.do">총장 인사말</a></li>
-								<li><a href="#">교육이념</a></li>
-								<li><a href="#">연혁</a></li>
-								<li><a href="#">조직도</a></li>
-								<li><a href="#">오시는길</a></li>
+								<li><a href="/introduce/ideology.do">교육이념</a></li>
+								<li><a href="/introduce/history.do">연혁</a></li>
+								<li><a href="/introduce/organization.do">조직도</a></li>
+								<li><a href="/introduce/direction.do">오시는길</a></li>
 							</ul></li>
 						<li><a href="/admission/notice.do">입학안내</a>
 							<ul class="sub-mn">

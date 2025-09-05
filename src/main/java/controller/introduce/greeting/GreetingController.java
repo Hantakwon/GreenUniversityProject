@@ -9,9 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /*
- * 날짜 : -
- * 이름 : -
- * 내용 : -
+ * 날짜 : 2025/09/05
+ * 이름 : 한탁원
+ * 내용 : 총장 인사말 이동
  */
 @WebServlet("/introduce/greeting.do")
 public class GreetingController extends HttpServlet {
