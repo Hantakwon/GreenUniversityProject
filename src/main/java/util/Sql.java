@@ -27,4 +27,16 @@ public class Sql {
 	
 	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
 	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
+	
+	// 유효성 검사 및 회원 가입
+	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM Users ";
+	public static final String WHERE_USER_ID = "WHERE USER_ID=?";
+	public static final String WHERE_HP   = "WHERE USER_HP=?";
+	public static final String WHERE_EMAIL = "WHERE USER_EMAIL=?";
+	
+	public static final String INSERT_USER = "INSERT INTO USERS (USER_ID, USER_PASS, USER_NAME, USER_HP, USER_EMAIL, POSTAL_CODE, BASIC_ADDR, DETAIL_ADDR) "
+			+ "VALUES (?,STANDARD_HASH(?, 'SHA256'),?,?,?,?,?,?)";
+	
+	// 로그인
+	public static final String SELECT_USER_BY_PASS = "SELECT * FROM USERS WHERE USER_ID=? AND USER_PASS=STANDARD_HASH(?, 'SHA256')";
 }

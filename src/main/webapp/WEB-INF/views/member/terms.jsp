@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/member/terms.css">
 </head>
 <body>
+	<jsp:include page="../header.jsp" />
 	<main>
 		<div>
 			<div class="info">
@@ -59,7 +60,7 @@
 			</div>
 		</div>
 	</main>
-
+	<jsp:include page="../footer.jsp" />
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const agreeCheckbox = document.getElementById('agree');
@@ -71,7 +72,7 @@
 				e.preventDefault(); // 기본 form 제출 동작 막기
 
 				if (agreeCheckbox.checked) {
-					window.location.href = './signup.html';
+					window.location.href = '/member/signup.do';
 				} else {
 					alert('약관에 동의해야 회원가입이 가능합니다.')
 				}

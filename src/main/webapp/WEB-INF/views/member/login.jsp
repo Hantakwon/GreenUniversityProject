@@ -34,12 +34,12 @@
                         </p>
                     </div>
                     <div class="loginMid">
-                        <form class="loginBox" action="#">
-                            <ul class="type">
+                        <form class="loginBox" action="/member/login.do">
+                            <!--  <ul class="type">
                                 <li><input type="radio" id="typeStd" name="userType" class="checkbox" required><label for="typeStd">학부생</label></li>
                                 <li><input type="radio" id="typeProf" name="userType" class="checkbox" required><label for="typeProf">교직원</label></li>
                                 <li><input type="radio" id="typeNull" name="userType" class="checkbox" required><label for="typeNull">일반인</label></li>
-                            </ul>
+                            </ul> -->
                             <a href="#" class="findIdPass">아이디/비밀번호 찾기</a><br>
                             <table>
                                 <tr>
@@ -54,7 +54,7 @@
                                     </td>
                                 </tr>
                             </table>
-                            <a href="./terms.html">회원가입</a>
+                            <a href="/member/terms.do">회원가입</a>
                         </form>
                     </div>
                     <div>
@@ -70,7 +70,6 @@
             </div>
         </div>
     </main>
-    
 	<jsp:include page="../footer.jsp" />
 </body>
 </html>
