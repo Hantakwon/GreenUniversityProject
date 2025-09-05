@@ -1,4 +1,4 @@
-package controller.introduce.greeting;
+package controller.admission.transfer;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,21 +11,22 @@ import java.io.IOException;
 /*
  * 날짜 : 2025/09/05
  * 이름 : 한탁원
- * 내용 : 총장 인사말 이동
+ * 내용 : 편입학 이동
  */
-@WebServlet("/introduce/greeting.do")
-public class GreetingController extends HttpServlet {
+@WebServlet("/admission/transfer.do")
+public class TransferController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+
 	/* service, logger 추가 */
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
-		/* 필요 시 DB Logic 추가 */
+		/* DB Logic 추가 */
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/introduce/greeting.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/admission/transfer.jsp");
 		dispatcher.forward(request, response);
 	}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

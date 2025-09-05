@@ -1,39 +1,39 @@
-package service.academic;
+package service.admission;
 
 import java.util.List;
 
 import dao.PagenationDTO;
-import dao.academic.Academic_noticeDAO;
-import dto.academic.Academic_noticeDTO;
+import dao.admission.Admission_noticeDAO;
+import dto.admission.Admission_noticeDTO;
 
 /*
- * 날짜 : 2025-09-04
+ * 날짜 : 2025-09-05
  * 이름 : 한탁원
- * 내용 : 학사안내 - 공지사항 서비스
+ * 내용 : 입학안내 - 공지사항 서비스
  */
-public enum Academic_noticeService {
+public enum Admission_noticeService {
 
 	INSTANCE;
 
-	private Academic_noticeDAO dao = Academic_noticeDAO.getInstance();
+	private Admission_noticeDAO dao = Admission_noticeDAO.getInstance();
 
-	public void register(Academic_noticeDTO dto) {
+	public void register(Admission_noticeDTO dto) {
 		dao.insert(dto);
 	}
 
-	public Academic_noticeDTO findByPass(int id) {
+	public Admission_noticeDTO findByPass(int id) {
 		return dao.select(id);
 	}
 
-	public List<Academic_noticeDTO> findAll(int start) {
+	public List<Admission_noticeDTO> findAll(int start) {
 		return dao.selectAll(start);
 	}
 	
-	public List<Academic_noticeDTO> findAllSearch(int start, String searchType, String keyword) {
+	public List<Admission_noticeDTO> findAllSearch(int start, String searchType, String keyword) {
 		return dao.selectSearch(start, searchType, keyword);
 	}
 
-	public void modify(Academic_noticeDTO dto) {
+	public void modify(Admission_noticeDTO dto) {
 		dao.update(dto);
 	}
 

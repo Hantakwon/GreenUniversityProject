@@ -1,4 +1,4 @@
-package controller.introduce.greeting;
+package controller.introduce.organization;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -11,10 +11,10 @@ import java.io.IOException;
 /*
  * 날짜 : 2025/09/05
  * 이름 : 한탁원
- * 내용 : 총장 인사말 이동
+ * 내용 : 조직도 이동
  */
-@WebServlet("/introduce/greeting.do")
-public class GreetingController extends HttpServlet {
+@WebServlet("/introduce/organization.do")
+public class OrganizationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	/* service, logger 추가 */
@@ -23,7 +23,7 @@ public class GreetingController extends HttpServlet {
 		
 		/* 필요 시 DB Logic 추가 */
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/introduce/greeting.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/introduce/organization.jsp");
 		dispatcher.forward(request, response);
 	}
 

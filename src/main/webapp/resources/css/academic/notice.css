@@ -1,527 +1,110 @@
 @charset "UTF-8";
 
-main {
-	width: 100%;
-	height: auto;
-}
-
-main>div>* {
-	width: 1100px;
-	height: 100%;
-	margin: 0 auto;
-}
-
-main>div:nth-child(1) {
-	width: 100%;
-	height: 36px;
-	background-color: #D5D5D5;
-	box-sizing: border-box;
-	display: flex;
-	align-items: center;
-	padding-left: 20px;
-}
-
-main>div:nth-child(1)>div {
-	width: 1100px;
-	margin: 0 auto;
-	font-size: 12px;
-	color: #666;
-}
-
-main>div:nth-child(2) {
-	width: 100%;
-	height: 500px;
-	margin-top: 50px;
-	box-sizing: border-box;
-}
-
-.main-content {
-	flex: 1;
-}
-
-main .top {
-	height: 60px;
-	border-bottom: 2px solid #333;
-	display: flex;
-	align-items: center;
-}
-
-main .bottom {
-	width: 100%;
-}
-
-main .bottom>p {
-	margin-top: 20px;
-}
-
-main .content-wrapper {
-	display: flex;
-	gap: 60px;
-}
-
-main .sidebar {
-	width: 200px;
-}
-
-main .sidebar ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	background-color: #fff;
-}
-
-main .sidebar li {
-	border-bottom: 1px solid #eee;
-}
-
-main .sidebar li a {
-	display: block;
-	padding: 15px 20px;
-	text-decoration: none;
-	color: black;
-	font-size: 14px;
-}
-
-main .sidebar li a:hover {
-	background-color: #f8f9fa;
-	color: #4A90E2;
-}
-
-main .sidebar li.active {
-	background-color: #4A90E2;
-}
-
-main .sidebar li.active a {
-	color: #fff;
-	font-weight: 500;
-}
-
-main .info {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
-
-main .info img {
-	width: 16px;
-	height: auto;
-	margin-right: 5px;
-	/* 이미지와 텍스트 간격 */
-}
-
-/* 검색창 컨테이너 */
-main .search-container {
-	display: flex;
-	justify-content: flex-end;
-	padding-top: 15px;
-}
-
-main .search-div {
-	display: flex;
-	gap: 5px;
-	flex-wrap: wrap;
-	align-items: center;
-	max-width: 1200px;
-	width: auto;
-	box-sizing: border-box;
-	flex-basis: auto;
-	max-width: 700px;
-}
-
-main .search-div form {
-	display: flex;
-	gap: 5px;
-	flex-wrap: wrap;
-	align-items: center;
-}
-
-/* select, input, button 기본 스타일 */
-.search-div select, .search-div input[type="text"] {
-	flex: 1;
-	min-width: 150px;
-	padding: 8px 12px;
-	font-size: 14px;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-}
-
-main .search-div input[type="text"] {
-	margin-right: 0;
-	/* 버튼과 간격조정 위해 margin 제거 */
-	/* 버튼쪽 테두리 겹침 방지 */
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-main .search-div button {
-	padding: 9px 20px;
-	background-color: #3f97f6;
-	border: none;
-	border-radius: 2px;
-	color: white;
-	font-weight: 600;
-	cursor: pointer;
-	white-space: nowrap;
-}
-
-/* notice-list-wrapper */
-main .notice-list-wrapper {
-	max-width: 1200px;
-	margin: 10px auto 15px auto;
-	border-top: 2px solid black;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-main .notice-list table {
-	width: 100%;
-	border-collapse: collapse;
-	text-align: center;
-}
-
-main .notice-list thead th {
-	background-color: #f0f0f0;
-	padding: 12px 8px;
-	border-bottom: 1px solid #ccc;
-	font-weight: 600;
-}
-
-/* 테이블 바디 셀 */
-main .notice-list tbody td {
-	padding: 12px 8px;
-	border-bottom: 1px solid #eee;
-	vertical-align: middle;
-	word-break: break-word;
-	/* 제목 등 긴 텍스트 줄바꿈 */
-}
-
-/* 페이징 컨테이너 최상위  */
-main .page-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 15px;
-	margin-top: 30px;
-	gap: 5px;
-}
-
-/* 페이징 요소들을 감싸는 실제 컨테이너 (버튼, 이미지 정렬) */
-main .page-wrapper .page {
-	display: flex;
-	gap: 5px;
-	align-items: center;
-}
-
-main .page-wrapper .page-btn.active {
-	background-color: #4a90e2;
-	color: white;
-	border-color: #4a90e2;
-	font-weight: bold;
-	cursor: default;
-}
-
-main .page-wrapper .page-btn:hover:not(.active) {
-	background-color: #f2f2f2;
-}
-
-/* 페이징 버튼 (1, 2, 3...) */
-main .page-wrapper .page-btn {
-	width: 32px;
-	height: 32px;
-	border: 1px solid #dedede;
-	background-color: white;
-	color: #333;
-	font-size: 14px;
-	font-weight: normal;
-	cursor: pointer;
-	border-radius: 3px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-}
-
-/* 페이징 화살표 이미지 (<<, <, >, >>) */
-main .page-wrapper .pagination-arrow {
-	width: 32px;
-	height: 32px;
-	border: 1px solid #dedede;
-	box-sizing: border-box;
-	cursor: pointer;
-	border-radius: 3px;
-	object-fit: contain;
-	padding: 10px;
-}
-
-/* 비활성화된 화살표 이미지 (예: 첫 페이지에서 '이전' 버튼) */
-main .page-wrapper .pagination-arrow.disabled {
-	opacity: 0.5;
-	/* 투명도 낮춰 비활성 표시 */
-	cursor: not-allowed;
-	/* 클릭 불가 마우스 모양 */
-	background-color: #f8f8f8;
-	/* 배경색 살짝 어둡게 */
-}
-
-main {
-	width: 100%;
-	height: auto;
-}
-
-main>div>* {
-	width: 1100px;
-	height: 100%;
-	margin: 0 auto;
-}
-
-main>div:nth-child(1) {
-	width: 100%;
-	height: 36px;
-	background-color: #D5D5D5;
-	box-sizing: border-box;
-	display: flex;
-	align-items: center;
-	padding-left: 20px;
-}
-
-main>div:nth-child(1)>div {
-	width: 1100px;
-	margin: 0 auto;
-	font-size: 12px;
-	color: #666;
-}
-
-main>div:nth-child(2) {
-	width: 100%;
-	height: 500px;
-	margin-top: 50px;
-	box-sizing: border-box;
-}
-
-.main-content {
-	flex: 1;
-}
-
-main .top {
-	height: 60px;
-	border-bottom: 2px solid #333;
-	display: flex;
-	align-items: center;
-}
-
-main .bottom {
-	width: 100%;
-}
-
-main .bottom>p {
-	margin-top: 20px;
-}
-
-main .content-wrapper {
-	display: flex;
-	gap: 60px;
-}
-
-main .sidebar {
-	width: 200px;
-}
-
-main .sidebar ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	background-color: #fff;
-}
-
-main .sidebar li {
-	border-bottom: 1px solid #eee;
-}
-
-main .sidebar li a {
-	display: block;
-	padding: 15px 20px;
-	text-decoration: none;
-	color: black;
-	font-size: 14px;
-}
-
-main .sidebar li a:hover {
-	background-color: #f8f9fa;
-	color: #4A90E2;
-}
-
-main .sidebar li.active {
-	background-color: #4A90E2;
-}
-
-main .sidebar li.active a {
-	color: #fff;
-	font-weight: 500;
-}
-
-main .info {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
-
-main .info img {
-	width: 16px;
-	height: auto;
-	margin-right: 5px;
-	/* 이미지와 텍스트 간격 */
-}
-
-/* 검색창 컨테이너 */
-main .search-container {
-	display: flex;
-	justify-content: flex-end;
-	padding-top: 15px;
-}
-
-main .search-div {
-	display: flex;
-	gap: 5px;
-	flex-wrap: wrap;
-	align-items: center;
-	max-width: 1200px;
-	width: auto;
-	box-sizing: border-box;
-	flex-basis: auto;
-	max-width: 700px;
-}
-
-main .search-div form {
-	display: flex;
-	gap: 5px;
-	flex-wrap: wrap;
-	align-items: center;
-}
-
-/* select, input, button 기본 스타일 */
-.search-div select, .search-div input[type="text"] {
-	flex: 1;
-	min-width: 150px;
-	padding: 8px 12px;
-	font-size: 14px;
-	border: 1px solid #ccc;
-	box-sizing: border-box;
-}
-
-main .search-div input[type="text"] {
-	margin-right: 0;
-	/* 버튼과 간격조정 위해 margin 제거 */
-	/* 버튼쪽 테두리 겹침 방지 */
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-main .search-div button {
-	padding: 9px 20px;
-	background-color: #3f97f6;
-	border: none;
-	border-radius: 2px;
-	color: white;
-	font-weight: 600;
-	cursor: pointer;
-	white-space: nowrap;
-}
-
-/* notice-list-wrapper */
-main .notice-list-wrapper {
-	max-width: 1200px;
-	margin: 10px auto 15px auto;
-	border-top: 2px solid black;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-main .notice-list table {
-	width: 100%;
-	border-collapse: collapse;
-	text-align: center;
-}
-
-main .notice-list thead th {
-	background-color: #f0f0f0;
-	padding: 12px 8px;
-	border-bottom: 1px solid #ccc;
-	font-weight: 600;
-}
-
-/* 테이블 바디 셀 */
-main .notice-list tbody td {
-	padding: 12px 8px;
-	border-bottom: 1px solid #eee;
-	vertical-align: middle;
-	word-break: break-word;
-	/* 제목 등 긴 텍스트 줄바꿈 */
-}
-
-/* 페이징 컨테이너 최상위  */
-main .page-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 15px;
-	margin-top: 30px;
-	gap: 5px;
-}
-
-/* 페이징 요소들을 감싸는 실제 컨테이너 (버튼, 이미지 정렬) */
-main .page-wrapper .page {
-	display: flex;
-	gap: 5px;
-	align-items: center;
-}
-
-main .page-wrapper .page-btn.active {
-	background-color: #4a90e2;
-	color: white;
-	border-color: #4a90e2;
-	font-weight: bold;
-	cursor: default;
-}
-
-main .page-wrapper .page-btn:hover:not(.active) {
-	background-color: #f2f2f2;
-}
-
-/* 페이징 버튼 (1, 2, 3...) */
-main .page-wrapper .page-btn {
-	width: 32px;
-	height: 32px;
-	border: 1px solid #dedede;
-	background-color: white;
-	color: #333;
-	font-size: 14px;
-	font-weight: normal;
-	cursor: pointer;
-	border-radius: 3px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-}
-
-/* 페이징 화살표 이미지 (<<, <, >, >>) */
-main .page-wrapper .pagination-arrow {
-	width: 32px;
-	height: 32px;
-	border: 1px solid #dedede;
-	box-sizing: border-box;
-	cursor: pointer;
-	border-radius: 3px;
-	object-fit: contain;
-	padding: 10px;
-}
-
-/* 비활성화된 화살표 이미지 (예: 첫 페이지에서 '이전' 버튼) */
-main .page-wrapper .pagination-arrow.disabled {
-	opacity: 0.5;
-	/* 투명도 낮춰 비활성 표시 */
-	cursor: not-allowed;
-	/* 클릭 불가 마우스 모양 */
-	background-color: #f8f8f8;
-	/* 배경색 살짝 어둡게 */
-}
+/* =========================
+   공통 유틸
+   ========================= */
+/* 스크린리더용 숨김 텍스트 */
+.hide{display:block;position:absolute;width:0;height:0;text-indent:-9999px;overflow:hidden;}
+
+/* 라벨의 안내 텍스트(“검색어”)는 시각적으로 숨김 */
+.bn-search01.type01 .b-sel-label span{
+  display:block;position:absolute;width:0;height:0;font-size:0;line-height:0;text-indent:-9999px;
+}
+
+/* =========================
+   검색 영역
+   ========================= */
+/* 검색바 한 줄 정렬 + 높이/간격 통일 */
+.bn-search01.type01 .b-search-wrap{
+  display:flex;justify-content:flex-end;align-items:center;gap:8px;
+  margin:12px 0 16px;
+}
+
+/* 분류 선택(드롭다운) */
+.bn-search01.type01 .b-sel-box{position:relative;min-width:120px;}
+.bn-search01.type01 .b-sel-title{
+  display:block;height:40px;line-height:40px;padding:0 12px;
+  border:1px solid #dedede;border-radius:2px;background:#fff;
+  font-size:14px;color:#666;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+/* 목록(열렸을 때 .close가 붙음) */
+.bn-search01.type01 .b-sel-box ul{
+  display:none;position:absolute;top:40px;left:0;right:0;z-index:10;
+  border:1px solid #dedede;border-top:none;background:#fff;
+}
+.bn-search01.type01 .b-sel-box.close ul{display:block;}
+.bn-search01.type01 .b-sel-box ul li a{display:block;padding:10px 12px;font-size:14px;color:#666;}
+
+/* 검색 입력 */
+.bn-search01.type01 input[type="text"]{
+  height:40px;min-width:300px;padding:0 12px;
+  border:1px solid #dedede;border-radius:2px;font-size:14px;color:#666;box-sizing:border-box;
+  -webkit-appearance:none;-moz-appearance:none;appearance:none;
+}
+
+/* 검색 버튼 */
+.bn-search01.type01 .b-sel-btn{
+  height:40px;padding:0 16px;border:0;border-radius:2px;
+  background:#3f97f6;color:#fff;font-weight:700;font-size:14px;cursor:pointer;
+}
+
+/* =========================
+   목록 테이블
+   ========================= */
+.board-table{
+  width:100%;table-layout:fixed;border-collapse:collapse;border-spacing:0;
+  border-top:2px solid #000;
+}
+/* 열 폭 (colgroup 매칭) */
+.board-table .b-col01{width:120px;}
+.board-table .b-col02{width:auto;}
+.board-table .b-col03{width:200px;}
+.board-table .b-col04{width:160px;}
+.board-table .b-col05{width:120px;}
+
+/* 헤더 */
+.board-table thead th{
+  padding:18px 10px;border-bottom:1px solid #a3a3a3;background:#fafafa;
+  font-weight:700;font-size:16px;line-height:24px;text-align:center;vertical-align:middle;
+}
+
+/* 바디 */
+.board-table tbody td{
+  padding:14px 10px;border-bottom:1px solid #e6e6e6;background:#fff;color:#333;
+  line-height:22px;text-align:center;vertical-align:middle;
+}
+.board-table tbody td.b-td-left{text-align:left !important;}
+
+/* 제목: 한 줄 말줄임, 메타 정보 숨김(데스크톱 기준 깔끔한 행 높이) */
+.bn-list-common01.type01 .b-title-box a{
+  display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+.bn-list-common01.type01 .b-m-con{display:none;}
+
+/* NEW 뱃지 */
+.bn-list-common01.type01 .b-title-box a.new::before{
+  content:"N";display:inline-block;margin-right:8px;padding:2px 6px;
+  font-size:12px;font-weight:700;background:#3f97f6;color:#fff;border-radius:2px;vertical-align:middle;
+}
+
+/* =========================
+   페이징 (HTML의 <img> 아이콘 사용)
+   ========================= */
+.b-paging01.type01 .b-paging-wrap ul{padding:22px 0 0;text-align:center;}
+.b-paging01.type01 .b-paging-wrap ul li{display:inline-block;vertical-align:middle;margin:0 2px;}
+/* 공통 버튼 */
+.b-paging01.type01 .b-paging-wrap ul li a{
+  display:flex;align-items:center;justify-content:center;
+  min-width:32px;height:32px;padding:0;
+  border:1px solid #dedede;box-sizing:border-box;
+  font-size:15px;color:#888;line-height:32px;text-align:center;
+}
+/* 숫자 버튼만 살짝 좌우 여백 */
+.b-paging01.type01 .b-paging-wrap ul li:not(.pager) a{padding:0 8px;}
+/* 아이콘 버튼은 <img> 중앙정렬, 배경은 사용하지 않음 */
+.b-paging01.type01 .b-paging-wrap ul li.pager a{background:none !important;}
+.b-paging01.type01 .b-paging-wrap ul li.pager a img{width:14px;height:14px;display:block;pointer-events:none;}
+/* 현재 페이지 */
+.b-paging01.type01 .b-paging-wrap ul li a.active{border-color:#3f97f6;background:#3f97f6;color:#fff;}
+/* 비활성(선택): li에 .disabled 추가 시 */
+.b-paging01.type01 .b-paging-wrap ul li.pager.disabled a{opacity:.35;pointer-events:none;}

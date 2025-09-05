@@ -5,6 +5,7 @@ function includePart(id, file){
     if(el) el.innerHTML = html;
   });
 }
+
 function initMenuActive(){
   const path = location.pathname.split('/').pop();
   document.querySelectorAll('#sidebarWrap a').forEach(a=>{
@@ -33,9 +34,9 @@ function checkLogin(){
 
 window.addEventListener('DOMContentLoaded', ()=>{
   Promise.all([
-    includePart('include-header','common/header.html'),
-    includePart('include-sidebar','common/sidebar.html'),
-    includePart('include-footer','common/footer.html')
+    includePart('include-header','/WEB-INF/views/manage/common/header.html'),
+    includePart('include-sidebar','/WEB-INF/views/manage/common/sidebar.html'),
+    includePart('include-footer','/WEB-INF/views/manage/common/footer.html')
   ]).then(()=>{
     initMenuActive();
     colorizeStatuses();

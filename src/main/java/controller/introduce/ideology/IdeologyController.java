@@ -1,4 +1,4 @@
-package controller.admission.notice;
+package controller.introduce.ideology;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -8,21 +8,24 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-@WebServlet("/admission/notice/list.do")
-public class ListController extends HttpServlet {
+/*
+ * 날짜 : 2025/09/05
+ * 이름 : 한탁원
+ * 내용 : 교육 이념 이동
+ */
+@WebServlet("/introduce/ideology.do")
+public class IdeologyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+    
 	/* service, logger 추가 */
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/* DB Logic 추가 */
+		/* 필요 시 DB Logic 추가 */
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/admission/notice.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/introduce/ideology.jsp");
 		dispatcher.forward(request, response);
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
