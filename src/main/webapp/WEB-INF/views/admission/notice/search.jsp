@@ -25,7 +25,7 @@
 			<div class="jwxe_navigator jw-relative">
 				<ul>
 					<li><a href="/"><img
-							src="../resources/images/ico-home.png" alt="home" /></a></li>
+							src="<%=request.getContextPath()%>/resources/images/ico-home.png" alt="home" /></a></li>
 					<li><a href="#">입학안내</a></li>
 					<li>공지사항</li>
 				</ul>
@@ -98,7 +98,7 @@
 
 										<!-- 키워드 입력: name을 keyword 로 -->
 										<label for="keyword" class="b-sel-label"><span>검색어</span></label>
-										<input type="text" id="keyword" name="keyword"
+										<input type="text" id="keyword" name="keyword" value=""
 											placeholder="검색어를 입력해 주세요">
 
 										<button type="submit" class="b-sel-btn">검색</button>
@@ -154,14 +154,13 @@
 									<div class="b-paging-wrap">
 										<ul>
 											<li class="first pager"><a
-												href="/admission/notice.do?page=1"> <img
-													src="../resources/images/btn-first-page.png" alt="" /> <span
+												href="/admission/notice/search.do?page=1&searchType=${searchType}&keyword=${keyword}"> 
+												<img src="<%=request.getContextPath()%>/resources/images/btn-first-page.png" alt="" /> <span
 													class="hide">FIRST</span>
 											</a></li>
-
 											<li class="prev pager">
-											<a href="/admission/notice.do?page=${pagenationDTO.currentPage le 1 ? 1 : pagenationDTO.currentPage - 1}">
-													<img src="../resources/images/btn-prev-page.png" alt="" />
+											<a href="/admission/notice/search.do?page=${pagenationDTO.currentPage le 1 ? 1 : pagenationDTO.currentPage - 1}&searchType=${searchType}&keyword=${keyword}">
+													<img src="<%=request.getContextPath()%>/resources/images/btn-prev-page.png" alt="" />
 													<span class="hide">PREV</span>
 											</a></li>
 
@@ -169,19 +168,19 @@
 											<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
 												end="${pagenationDTO.pageGroupEnd}">
 												<li><a
-													href="${pageContext.request.contextPath}/admission/notice.do?page=${num}"
+													href="/admission/notice/search.do?page=${num}&searchType=${searchType}&keyword=${keyword}"
 													class="${pagenationDTO.currentPage eq num ? ' active' : ''}">
 														${num} </a></li>
 											</c:forEach>
 
 											<li class="next pager">
-											<a href="/admission/notice.do?page=${pagenationDTO.currentPage ge pagenationDTO.lastPageNum ? pagenationDTO.lastPageNum : pagenationDTO.currentPage + 1}">
-													<img src="../resources/images/btn-next-page.png" alt="" />
+											<a href="/admission/notice/search.do?page=${pagenationDTO.currentPage ge pagenationDTO.lastPageNum ? pagenationDTO.lastPageNum : pagenationDTO.currentPage + 1}&searchType=${searchType}&keyword=${keyword}">
+													<img src="<%=request.getContextPath()%>/resources/images/btn-next-page.png" alt="" />
 													<span class="hide">NEXT</span>
 											</a></li>
 											<li class="last pager"><a
-												href="/admission/search.do?page=${pagenationDTO.lastPageNum}">
-													<img src="../resources/images/btn-last-page.png" alt="" />
+												href="/admission/notice/search.do?page=${pagenationDTO.lastPageNum}&searchType=${searchType}&keyword=${keyword}">
+													<img src="<%=request.getContextPath()%>/resources/images/btn-last-page.png" alt="" />
 													<span class="hide">LAST</span>
 											</a></li>
 										</ul>

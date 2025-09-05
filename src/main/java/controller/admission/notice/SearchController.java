@@ -7,14 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dao.PagenationDTO;
-import dto.academic.Academic_noticeDTO;
+import dto.admission.Admission_noticeDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.academic.Academic_noticeService;
+import service.admission.Admission_noticeService;
 
 /*
  * 날짜 : 2025/09/04
@@ -25,7 +25,7 @@ import service.academic.Academic_noticeService;
 public class SearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	private Academic_noticeService service = Academic_noticeService.INSTANCE;
+	private Admission_noticeService service = Admission_noticeService.INSTANCE;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -36,14 +36,13 @@ public class SearchController extends HttpServlet {
 		String searchType = request.getParameter("searchType");
 		String keyword = request.getParameter("keyword");
 		
-		logger.debug(searchType + keyword);
-		
 		PagenationDTO pagenationDTO = service.getPagenationDTO(page, searchType, keyword);
-		logger.debug(pagenationDTO.toString());
 		
 		int start = pagenationDTO.getStart();
 		
-		List<Academic_noticeDTO> dtoList = service.findAllSearch(start, searchType, keyword);
+		List<Admission_noticeDTO> dtoList = service.findAllSearch(start, searchType, keyword);
+		
+		logger.debug(service.findAllSearch(start, searchType, keyword).toString());
 		
 		request.setAttribute("dtoList", dtoList);
 		request.setAttribute("searchType", searchType);
@@ -58,7 +57,7 @@ public class SearchController extends HttpServlet {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		Academic_noticeDTO dto = new Academic_noticeDTO();
+		Admission_noticeDTO dto = new Admission_noticeDTO();
 		dto.setTitle(title);
 		dto.setContent(content);
 		

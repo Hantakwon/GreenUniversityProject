@@ -120,6 +120,10 @@ public class Admission_noticeDAO extends DBHelper {
 
 		int total = 0;
 
+	    if (searchType == null || searchType.isBlank()) {
+	        return selectCountTotal();
+	    }
+	    
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ADMISSION_NOTICE_COUNT_SEARCH);
 
 		if (searchType.equals("title")) {
@@ -150,6 +154,10 @@ public class Admission_noticeDAO extends DBHelper {
 
 	public List<Admission_noticeDTO> selectSearch(int start, String searchType, String keyword) {
 
+		if (searchType == null || searchType.isBlank()) {
+		        return selectAll(start);
+		}
+		 
 		List<Admission_noticeDTO> dtoList = new ArrayList<Admission_noticeDTO>();
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ADMISSION_NOTICE_SEARCH);
 

@@ -5,14 +5,14 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.academic.Academic_noticeDTO;
+import dto.admission.Admission_noticeDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.academic.Academic_noticeService;
+import service.admission.Admission_noticeService;
 
 /*
  * 날짜 : 2025/09/04
@@ -23,7 +23,7 @@ import service.academic.Academic_noticeService;
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	private Academic_noticeService service = Academic_noticeService.INSTANCE;
+	private Admission_noticeService service = Admission_noticeService.INSTANCE;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -39,7 +39,7 @@ public class RegisterController extends HttpServlet {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		Academic_noticeDTO dto = new Academic_noticeDTO();
+		Admission_noticeDTO dto = new Admission_noticeDTO();
 		dto.setTitle(title);
 		dto.setContent(content);
 		

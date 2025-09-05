@@ -317,3 +317,21 @@
 	width: 80px;
 } /* 조회 (축소)   */
 /* 제목(.b-col02)은 auto라 나머지 줄인 만큼 자동으로 더 넓어집니다. */
+
+/* ===== 게시글 메타(작성자/날짜/조회) 다시 표시 ===== */
+.bn-list-common01.type01 .b-m-con{
+  display:block !important;      /* 이전 display:none 덮어쓰기 */
+  margin-top:6px;
+  font-size:13px;
+  color:black;
+  line-height:18px;
+}
+
+/* 항목 사이에 · 구분점 자동 삽입 (작성자 · 날짜 · 조회수) */
+.bn-list-common01.type01 .b-m-con span + span::before{
+  content:" | ";
+  color:black;
+}
+
+/* (선택) etc 박스가 비어있으면 줄바꿈 방지를 위해 감춤 유지 */
+.bn-list-common01.type01 .b-etc-box:empty{ display:none; }
