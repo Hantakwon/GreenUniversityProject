@@ -1,10 +1,168 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <style>
+
+                .score-search {
+                margin-left: auto; /* 왼쪽 마진을 'auto'로 설정하여 남은 공간을 모두 차지하고 요소를 오른쪽으로 밀어냄 */
+                
+            }
+/* 성적조회 페이지 상단 검색/총학점 영역 스타일 */
+            .score-summary {
+                display: flex;
+                align-items: center;
+                gap: 10px; /* 요소들 사이의 간격 */
+                font-size: 14px;
+                color: #333;
+            }
+
+            .score-summary select {
+                padding: 8px 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+                height: 36px;
+            }
+
+            .score-summary img {
+                width: 24px; /* 아이콘 크기 조정 */
+                height: 24px;
+                vertical-align: middle; /* 텍스트와 이미지 수직 정렬 */
+                margin-right: 5px;
+            }
+
+            .score-summary p {
+                font-weight: bold;
+            }
+
+            .score-summary span {
+                color: #4A90E2; /* 숫자 부분 색상 강조 */
+                font-weight: bold;
+            }
+            .score-summary span-2 {
+                color: #ae2725; /* 숫자 부분 색상 강조 */
+                font-weight: bold;
+            }            
+
+            /* 맨 밑 안내 문구 스타일 */
+            .note-message {
+                font-size: 12px;
+                color: #666;
+                margin-top: 15px;
+                text-align: left; /* 왼쪽 정렬 */
+                padding-left: 5px; /* 약간의 여백 */
+            }
+
+            /* 기존 .notice-table th 스타일 수정 (헤더 배경색 및 폰트 두께 유지) */
+            .notice-table th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+                color: #333;
+                border-top: 2px solid #333;
+                /* border-left, border-right 제거 (아래 td 스타일에서 처리) */
+                border-left: none; /* 좌측 경계선 제거 */
+                border-right: none; /* 우측 경계선 제거 */
+            }
+
+            /* .notice-table td 스타일 수정 (데이터 셀의 좌우 경계선 제거) */
+            .notice-table td {
+                padding: 12px 0;
+                border-bottom: 1px solid #ddd;
+                border-left: none; /* 좌측 경계선 제거 */
+                border-right: none; /* 우측 경계선 제거 */
+            }
+
+            /* 기존 .main .top 스타일 수정 (justify-content: space-between; 유지) */
+            main .top {
+                height: 60px;
+                border-bottom: 2px solid #333;
+                display: flex;
+                align-items: center;
+                justify-content: space-between; /* 제목과 검색/총학점 영역을 양쪽 끝으로 */
+            }
+
+            /* .search-box는 성적조회 페이지에서 사용되지 않으므로, 이 페이지에서는 주석 처리하거나 제거 가능 */
+            /*
+            .search-box {
+                display: none;
+            }
+            */
+                    
+        
+        
+        
+        
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            border-left: 5px solid #215075;
+            color: #215075;
+        }
+
+        .line {
+            border-top: 1px solid #ddd;
+            margin: 40px 0;
+        }
+
+        .info-table,
+        .credit-table,
+        .semester-credit-table,
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .info-table th, .info-table td,
+        .credit-table th, .credit-table td,
+        .semester-credit-table th, .semester-credit-table td,
+        .course-table th, .course-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .info-table th,
+        .credit-table th,
+        .semester-credit-table th,
+        .course-table th {
+            background-color: #f2f2f2;
+            font-weight: normal;
+        }
+
+        .info-table {
+            table-layout: fixed;
+        }
+
+        .info-table .photo-cell {
+            width: 120px;
+            height: 120px;
+            padding: 20px;
+        }
+
+        .info-table .photo {
+            width: 80px;
+            height: 80px;
+            background-color: #eee;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-image: url('./images/icon-avatar.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .info-table .status {
+            color: #4A90E2;
+            font-weight: bold;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: left;
+        }
 
         /* 메인 컨텐츠 상단 섹션 - 제목과 검색창을 양쪽 끝으로 배치 */
         main .top {
@@ -18,20 +176,18 @@
         /* 검색 상자 스타일 */
         .search-box {
             display: flex; /* 추가 */
-            align-items: center; /* 추가 */
+            align-items: auto; /* 추가 */
             gap: 5px; /* 추가: 요소 간 간격 */
-            
         }
 
         /* 검색 드롭다운 스타일 */
         .search-box select {
-            padding: 8px 12px;
+            padding: 8px 30px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
             color: #555;
             height: 36px;
-            margin-left: auto;
         }
 
         /* 검색 입력창 스타일 */
@@ -56,10 +212,29 @@
             font-size: 14px;
             height: 36px;
         }
-        .new-icon {
-            /* 이미지와 텍스트의 수직 정렬을 위해 vertical-align 속성을 사용합니다. */
-            vertical-align: middle;
+        /* 구분(카테고리) 뱃지 스타일 */
+        .notice-table .category1,
+        .notice-table .category2 {
+            
+            display: inline-block;
+            padding: 6px 8px; /* 위아래, 좌우 패딩 */
+            border-radius: 1px; /* 둥근 모서리 */
+            font-size: 13px;
+            font-weight: 250;
+            color: white; /* 글자색 */
         }
+
+        /* 각 카테고리별 배경색 */
+        .notice-table .category1 {
+            background-color: #132f73;; /* 기본 파란색 (예시) */
+            
+        }
+
+        /* 개별 카테고리 스타일 (이미지에 맞춰 색상 변경) */
+        .notice-table .category2 { /* 공지 */
+            background-color: #991539;
+        }
+
         /* 공지사항 테이블 스타일 */
         .notice-table {
             width: 100%;
@@ -82,15 +257,7 @@
             border-top: 2px solid #333;
         }
         
-        /* 제목 셀의 텍스트를 왼쪽으로 정렬하고 패딩 추가 */
-        .notice-table td:nth-child(2) {
-            text-align: left; /* 왼쪽 정렬 */
-            padding-left: 25px; /* 왼쪽 패딩 추가 */
-        }
 
-       .notice-table td:nth-child(5) {
-            padding-inline: 25px; /* 왼쪽 패딩 추가 */
-        }
         /* 페이지네이션 스타일 */
         .pagination {
             text-align: center;
@@ -257,9 +424,9 @@
         /* 헤더 끝 */
         /*메인시작*/
         main {
-	width: 100%;
-	height: auto;
-    }
+        width: 100%;
+        height: auto;
+        }
 
         main>div>* {
             width: 1100px;
@@ -293,6 +460,7 @@
 
         .main-content {
             flex: 1;
+
         }
 
         main .top {
@@ -308,7 +476,6 @@
 
         main .bottom>p {
             margin-top: 20px;
-            
         }
 
         main .content-wrapper {
@@ -471,219 +638,3 @@
             transform: translateY(-50%);
             pointer-events: none;
         }
-    </style>
-</head>
-<body>
-
-        <header>
-        <div>
-            <div class="top">
-                <p>
-                    <a href="#">HOME&nbsp&nbsp&nbsp|</a>
-                    <a href="#">&nbsp&nbsp&nbsp사이트맵&nbsp&nbsp &nbsp|</a>
-                    <a href="#">&nbsp&nbsp&nbsp로그인&nbsp&nbsp&nbsp|</a>
-                    <a href="#">&nbsp&nbsp&nbsp학생지원</a>
-                </p>
-            </div>
-        </div>
-        <!-- 로고 + 네비게이션 -->
-        <div>
-            <div class="nav-container">
-                <a href="#"><img src="./images/header_logo.png" alt="학교 로고">
-                    <nav>
-                        <ul>
-                            <li>대학소개
-                                <ul class="submenu">
-                                    <li><a href="#">총장 인사말</a></li>
-                                    <li><a href="#">교육이념</a></li>
-                                    <li><a href="#">연혁</a></li>
-                                    <li><a href="#">조직도</a></li>
-                                    <li><a href="#">오시는길</a></li>
-                                </ul>
-                            </li>
-                            <li>입학안내
-                                <ul class="submenu">
-                                    <li><a href="#">공지사항</a></li>
-                                    <li><a href="#">수시모집</a></li>
-                                    <li><a href="#">정시모집</a></li>
-                                    <li><a href="#">편입학</a></li>
-                                    <li><a href="#">입학상담</a></li>
-                                </ul>
-                            </li>
-                            <li>대학·대학원
-                                <ul class="submenu">
-                                    <li><a href="#">인문사회대학</a></li>
-                                    <li><a href="#">자연과학대학</a></li>
-                                    <li><a href="#">공과대학</a></li>
-                                    <li><a href="#">사범대학</a></li>
-                                    <li><a href="#">대학원</a></li>
-                                </ul>
-                            </li>
-                            <li>학사안내
-                                <ul class="submenu">
-                                    <li><a href="#">공지사항</a></li>
-                                    <li><a href="#">학사일정</a></li>
-                                    <li><a href="#">수강신청</a></li>
-                                    <li><a href="#">성적</a></li>
-                                    <li><a href="#">수료 및 졸업</a></li>
-                                    <li><a href="#">자주묻는질문</a></li>
-                                </ul>
-                            </li>
-                            <li>대학생활
-                                <ul class="submenu">
-                                    <li><a href="#">학생회소개</a></li>
-                                    <li><a href="#">동아리/스터디</a></li>
-                                    <li><a href="#">식단안내</a></li>
-                                    <li><a href="#">갤러리</a></li>
-                                </ul>
-                            </li>
-                            <li>커뮤니티
-                                <ul class="submenu">
-                                    <li><a href="#">공지사항</a></li>
-                                    <li><a href="#">뉴스 및 일정</a></li>
-                                    <li><a href="#">취업정보</a></li>
-                                    <li><a href="#">자유게시판</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-            </div>
-        </div>
-    </header>
-    	<main>
-		<div>
-			<div class="info">
-				<span id="test">
-					<img src="./images/ico-home.png" alt="홈 버튼">
-					 > 대학소개 > 총장 인사말 
-				</span>
-			</div>
-		</div>
-		<div>
-			<div class="content-wrapper">
-				<div class="sidebar">
-					<div class="top">
-						<h1>커뮤니티</h1>
-					</div>
-
-						<ul>
-							<li><a href="#">공지사항</a></li>
-							<li><a href="#">뉴스 및 칼럼</a></li>
-							<li><a href="#">취업정보</a></li>
-							<li class="active"><a href="#">자유게시판</a></li>
-							<li><a href="#">질문과 답변</a></li>
-                            <li><a href="#">자료실</a></li>
-						</ul>
-
-				</div>
-				<div class="main-content">
-					<div class="top">
-						<h2>자유게시판</h2>
-					</div>
-                    
-					<div class="bottom">
-                        <p>
-                            <div class="search-box">
-                                <select name="search-filter" id="search-filter">
-                                    <option value="all">전체 </option>
-                                    <option value="title">제목</option>
-                                    <option value="writer">작성자</option>
-                                </select>
-                                <input type="text" placeholder="검색어를 입력해 주세요">
-                                <button>검색</button>
-                            </div>
-                            <div class="bottom">
-
-                            <table class="notice-table">
-
-                                <thead>
-                                    <tr>
-                                        <th>번호</th>
-                                        <th>제목</th>
-                                        <th>작성자</th>
-                                        <th>작성일</th>
-                                        <th>조회</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>3</td>
-                                        <td> 2025학년도 1학기 그린장학회 장학생 신청 안내</td>
-                                        <td>학사지원실</td>
-                                        <td>24.04.09</td>
-                                        <td>160</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td> 제42회 학위수여식 안내</td>
-                                        <td>학사지원실</td>
-                                        <td>24.04.09</td>
-                                        <td>160</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td> 의료, 인공지능 융합인재 양성사업단 사업설명회</td>
-                                        <td>학사지원실</td>
-                                        <td>24.04.09</td>
-                                        <td>160</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="pagination">
-                                <a href="#">&lt;</a>
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">&gt;</a>
-                            </div>
-                        </div>
-                        </p>
-                        
-
-				</div>
-			</div>
-
-        
-	</main>
-    
-        <footer>
-        <!-- 상단 메뉴 -->
-        <div class="terms-wrap">
-            <div class="inner">
-                <ul>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">통합정보시스템</a></li>
-                    <li><a href="#">학사일정</a></li>
-                    <li><a href="#">주요민원 연락처</a></li>
-                    <li><a href="#">교내공지사항</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 학교 정보 + 주요사이트 -->
-        <div class="info-wrap">
-            <div class="inner">
-                <div class="info-left">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
-                    <div class="text">
-                        그린대학교<br>
-                        [12345] 부산광역시 부산진구 부전대로 123 그린대학교<br>
-                        대표전화 : 051-123-1000 | 입학안내 : 051-123-1302 | 팩스 : 051-123-3333<br>
-                        <span>copyright ©Green University All rights reserved.</span>
-                    </div>
-                </div>
-                <div class="site">
-                    <select>
-                        <option>주요사이트 선택</option>
-                        <option>도서관</option>
-                        <option>학생포털</option>
-                        <option>취업정보센터</option>
-                        <option>국제교류센터</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
