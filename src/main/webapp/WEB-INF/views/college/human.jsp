@@ -41,7 +41,7 @@
 					<div class="bottom">
 						<ul>
 							<li class="active"><a href="./인문사회대학.html">인문사회대학</a></li>
-							<li><a href="./자연과학대학.html">자연과학대학</a></li>
+							<li><a href="/college/science.do">자연과학대학</a></li>
 							<li><a href="./공과대학.html">공과대학</a></li>
 							<li><a href="./사범대학.html">사범대학</a></li>
 							<li><a href="./대학원.html">대학원</a></li>
