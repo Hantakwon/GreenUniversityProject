@@ -1,30 +1,78 @@
+# Created by https://www.toptal.com/developers/gitignore/api/eclipse
+# Edit at https://www.toptal.com/developers/gitignore?templates=eclipse
+
 ### Eclipse ###
 .metadata
-.classpath
-.project
-.settings/
-.recommenders
-.loadpath
-
-# Build outputs (어디에 있어도 전부 무시)
-**/bin/
-**/build/
-**/build.classes/
-**/out/
-**/target/
-*.class
-
-# 임시/백업/로그
+bin/
+tmp/
 *.tmp
 *.bak
 *.swp
-*~
-*.nib
-*.log
-### Eclipse ###
-.classpath
-.project
-**/.settings/
+*~.nib
+local.properties
+.loadpath
 .recommenders
-.loadpath
-.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+# 빌드 디렉토리 무시
+build/
+
+# 컴파일된 클래스 파일 무시
+*.class
+
+# MySQL Workbench 모델링 파일 무시
+Diagram_ver1.mwb
+
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
+#.project
+
+### Eclipse Patch ###
+# Spring Boot Tooling
+.sts4-cache/
+
+# End of https://www.toptal.com/developers/gitignore/api/eclipse
