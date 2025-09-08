@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import dao.CollegeDAO;
-import dto.CollegeDTO;
+import src.main.java.dao.CollegeDAO;
+import src.main.java.dto.CollegeDTO;
 
 public enum CollegeService {
 

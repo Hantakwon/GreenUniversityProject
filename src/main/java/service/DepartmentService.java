@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import dao.DepartmentDAO;
-import dto.DepartmentDTO;
+import src.main.java.dao.DepartmentDAO;
+import src.main.java.dto.DepartmentDTO;
 
 public enum DepartmentService {
 

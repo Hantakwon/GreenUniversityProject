@@ -2,17 +2,17 @@ package controller.academic.notice;
 
 import java.io.IOException;
 
-import org.slf4j.Logger;
+import org.eclipse.jdt.internal.compiler.batch.Main.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.academic.Academic_noticeDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.academic.Academic_noticeService;
+import src.main.java.dto.academic.Academic_noticeDTO;
+import src.main.java.service.academic.Academic_noticeService;
 
 /*
  * 날짜 : 2025/09/04

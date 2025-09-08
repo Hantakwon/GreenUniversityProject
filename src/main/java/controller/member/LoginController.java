@@ -2,10 +2,9 @@ package controller.member;
 
 import java.io.IOException;
 
-import org.slf4j.Logger;
+import org.eclipse.jdt.internal.compiler.batch.Main.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.UserDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,7 +12,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import service.UserService;
+import src.main.webapp.WEB-INF.src.main.java.jboard.dto.UserDTO;
+import src.main.webapp.WEB-INF.src.main.java.jboard.service.UserService;
 
 /*
  * 날짜 : -
