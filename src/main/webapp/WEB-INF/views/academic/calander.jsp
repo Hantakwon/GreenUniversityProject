@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <!-- 
-	날짜 :
+	날짜 : 2025/09/08
 	이름 : 박효빈
 	내용 : 학사일정
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/academic/calander.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 <body>
 	<jsp:include page="../header.jsp" />
 	<main>
