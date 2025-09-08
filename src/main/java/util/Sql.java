@@ -3,6 +3,26 @@ package util;
 public class Sql {
 	
 	/* 
+	 * 날짜 : 2025/09/08
+	 * 이름 : 한탁원
+	 * 내용 : 대학대학원 SQL 작성
+	 */
+	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM DEPARTMENT";
+	public static final String WHERE_COLLEGE = " WHERE COLLEGE = ?";
+	public static final String SELECT_DEPARTMENT_ALL_HEAD_WHERE_COLLEGE ="SELECT d.name_kor AS dept_name, " +
+																	    "       p.name_kor AS prof_name, " +
+																	    "       d.tel      AS dept_tel " +
+																	    "FROM TB_Department d " +
+																	    "JOIN Department_Professor dp " +
+																	    "  ON dp.dept_id = d.dept_id " +
+																	    " AND dp.col_id  = d.col_id " +
+																	    "JOIN TB_Professor p " +
+																	    "  ON p.pro_id   = dp.pro_id " +
+																	    "WHERE dp.role = ? AND d.col_id = ?";
+
+			
+	
+	/* 
 	 * 날짜 : 2025/09/04
 	 * 이름 : 한탁원
 	 * 내용 : Admission (입학안내) SQL 작성
