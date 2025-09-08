@@ -34,8 +34,6 @@ public class FaqController extends HttpServlet {
 	
 		request.setAttribute("faqList", faqList);
 		
-		
-
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/academic/faq.jsp");
 		dispatcher.forward(request, response);
 	}

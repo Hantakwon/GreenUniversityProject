@@ -50,4 +50,9 @@ public class Sql {
 	
 	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
 	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
+	
+	public final static String SELECT_FAQ_ALL = "SELECT id, category, question, answer, TO_CHAR(created_at, 'YYYY-MM-DD') AS created_at "
+													+ "FROM FAQ_BOARD ORDER BY id";
 }
+
+ 
