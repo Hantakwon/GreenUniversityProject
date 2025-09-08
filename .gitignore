@@ -12,6 +12,11 @@ tmp/
 local.properties
 .loadpath
 .recommenders
+/build/
+/bin/
+/target/
+*.class
+.classpath
 
 # External tool builders
 .externalToolBuilders/

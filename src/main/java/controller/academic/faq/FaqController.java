@@ -5,6 +5,7 @@ import java.util.List;
 
 import dao.academic.FaqDAO;
 import dto.academic.FaqDTO;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -34,14 +35,13 @@ public class FaqController extends HttpServlet {
 	
 		request.setAttribute("faqList", faqList);
 		
-		
-
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/academic/faq.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 

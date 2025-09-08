@@ -131,5 +131,8 @@
 		</div>
 	</main>
 
+	<jsp:include page="../header.jsp" />
+	
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

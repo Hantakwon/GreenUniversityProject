@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,14 +12,17 @@
     이름 : 정순권
     내용 : -
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/college/main.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/college/human.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/college/main.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/college/human.css">
 </head>
 <body>
+	<jsp:include page="../header.jsp" />
 	<main>
 		<div>
 			<div class="info">
-				<span id="test"> <img src="../images/ico-home.png" alt="홈 버튼">
+				<span id="test"> <img src="<%=request.getContextPath()%>/resources/images/ico-home.png" alt="홈 버튼">
 					> 대학·대학원 > 인문사회대학
 				</span>
 			</div>
@@ -44,7 +49,7 @@
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="../images/college-introduce-1.jpg" alt="인문대">
+							<img src="<%=request.getContextPath()%>/resources/images/college-introduce-1.jpg" alt="인문대">
 						</div>
 						<div class="info-div">
 							<h4>Humanities And Social Sciences</h4>
@@ -57,113 +62,34 @@
 					</div>
 					<div class="mid">
 						<p>
-							<img src="../images/bullet-h4.png"> 학부 및 학과
+							<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png"> 학부 및 학과
 						</p>
 					</div>
 					<div class="department">
 						<table class="dept-table">
+
 							<tr>
 								<th>학과/전공</th>
 								<th>학과장</th>
 								<th>학과 사무실 번호</th>
 								<th>비고</th>
 							</tr>
-							<tr>
-								<td>국어국문학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김국어</td>
-								<td>051-123-1001</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>영어영문학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김영어</td>
-								<td>051-123-1002</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>일어일문학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김일어</td>
-								<td>051-123-1003</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>중어중문학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김중어</td>
-								<td>051-123-1004</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>역사학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김역사</td>
-								<td>051-123-1005</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>경제학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김경제</td>
-								<td>051-123-1006</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>경영학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김경영</td>
-								<td>051-123-1007</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>법학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김법학</td>
-								<td>051-123-1008</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>철학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김철학</td>
-								<td>051-123-1009</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>정치외교학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김정치</td>
-								<td>051-123-1010</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>행정학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김행정</td>
-								<td>051-123-1011</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>사회복지학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김사회</td>
-								<td>051-123-1012</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>유아교육학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김유아</td>
-								<td>051-123-1013</td>
-								<td></td>
-							</tr>
+
+							<c:forEach var="dto" items="${dtoList}" varStatus="status">
+								<tr>
+									<td>${dto.nameKor} <a href="#"><img
+											src="<%=request.getContextPath()%>/resources/images/ico_link.png" alt="바로가기"></a></td>
+									<td>학과장</td>
+									<td>${dto.tel}</td>
+									<td></td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

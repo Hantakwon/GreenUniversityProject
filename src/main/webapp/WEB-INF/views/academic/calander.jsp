@@ -13,6 +13,8 @@
 -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
+<body>
+	<jsp:include page="../header.jsp" />
 	<main>
 		<div>
 			<div class="info">
@@ -53,6 +55,7 @@
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../footer.jsp" />
 
 	<!-- FullCalendar JavaScript 라이브러리 추가 (body 태그 닫히기 직전에 넣는 것이 성능상 좋습니다) -->
 	<!-- FullCalendar Core 라이브러리 -->

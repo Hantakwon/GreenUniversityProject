@@ -1,148 +1,180 @@
-main .info {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
+/* Merged and corrected terms.css */
 
-        main .info img {
-            width: 16px;
-            height : auto;
-            margin-right: 5px;
-            /* 이미지와 텍스트 간격 */
-        }
+/* 모든 요소의 여백 및 패딩을 초기화하고, box-sizing: border-box 적용 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+}
 
-        main {
-            width: 100%;
-            height: auto;
-        }
+/* Flexbox를 사용하여 전체 페이지 레이아웃 관리 */
+html, body {
+    height: 100%;
+}
 
-        main>div>* {
-            width: 1100px;
-            height: 100%;
-            margin: 0 auto;
-        }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 뷰포트 전체 높이를 최소 높이로 설정 */
+}
 
-        main>div:nth-child(1) {
-            width: 100%;
-            height: 36px;
-            background-color: #edf2f6;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-        }
+/* 메인 콘텐츠가 남은 공간을 모두 차지하도록 함 */
+main {
+    flex: 1;
+    width: 100%;
+}
 
-        main>div:nth-child(1)>div {
-            width: 1100px;
-            margin: 0 auto;
-            font-size: 12px;
-            color: #666;
-        }
+/* 헤더 및 푸터와 너비를 맞추는 공통 wrapper */
+.content-wrapper,
+.info > div,
+.terms,
+.termsAll,
+.termsTable {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-        main>div:nth-child(2) {
-            width: 100%;
-            height: 500px;
-            margin-top: 50px;
-            box-sizing: border-box;
-        }
+/* 상단 정보 바 스타일 */
+.info {
+    width: 100%;
+    height: 36px;
+    background-color: #edf2f6;
+    display: flex;
+    align-items: center;
+}
 
-        main .content-wrapper {
-            display: flex;
-            gap: 60px;
-        }
+.info > div {
+    display: flex;
+    justify-content: flex-end; /* 우측 정렬 */
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+}
 
-        /* -- terms style */
-        main .terms{
-            width: 1050px;
-        }
+.info img {
+    width: 16px;
+    height: auto;
+    margin-right: 5px;
+}
 
-        main .terms > .topInfo span{
-            color: #5198f9;
-            margin: 0 100px;
-        }
+/* 메인 콘텐츠 상단 패딩 */
+.content-wrapper {
+  padding-top: 50px;
+}
 
-        main .topInfo h4{
-            font-size: 22px;
-            font-weight: 550;
-            margin: 5px 0;
-        }
+/* 약관 섹션 스타일 */
+.terms {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 0; 
+}
 
-        main .topInfo p{
-            font-size: 16px;
-            margin: 5px 0;
-        }
+.topInfo {
+    text-align: left;
+    margin-bottom: 30px;
+    margin-left: 15px;
+}
 
-        main .termsAll .termsTable{
-            width: 1050px;
-            height: 500px;
-            border-collapse: collapse;
-            border-top: 4px solid #0d1f4c;
-            margin-bottom: -15px;
-        }
+.topInfo h4 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 10px 0 5px;
+    color: #3f97f6;
+}
 
-        main .termsTable th{
-            width: 200px;
-            background-color: #f4f8fc;
-            text-align: center;
-            font-weight: bold;
-            border: 1px solid #dddddd;
-            padding: 15px;
-            vertical-align: middle;
-            border-left: none;
-        }
+.topInfo p {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #3f97f6;
+}
 
-        main .termsTable td{
-            border: 1px solid #dddddd;
-            padding: 15px;
-            vertical-align: top;
-            background-color: #fff;
-            border-right: none;
-            max-height: 200px;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
+/* 테이블 스타일 */
+.termsTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 4px solid #0d1f4c;
+}
 
-        main .termsTable  td span{
-            display: flex;
-            border: 1px solid #dddddd;
-            width: 800px;
-            height: 250px;
-            background-color: #ffffff;
-            align-items: center;
-        }
+.termsTable th {
+    width: 20%;
+    background-color: #f4f8fc;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    vertical-align: middle;
+    border-left: none;
+    white-space: nowrap;
+}
 
-        main .termsAll .agree{
-            font-size: 16px;
-        }
+.termsTable td {
+    width: auto;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    vertical-align: top;
+    background-color: #fff;
+    border-right: none;
+}
 
-        main .termsAll .select{
-            float: right;
-            margin-top: 50px;
-        }
+.termsTable td span {
+    display: block;
+    width: 100%;
+    min-height: 250px;
+    max-height: 250px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    padding: 15px;
+    overflow-y: auto;
+}
 
-        main .termsAll input[type="checkbox"]{
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            vertical-align: middle;
-        }
+/* 동의 체크박스 */
+.agree {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333333;
+}
 
-        #cancel{
-            width: 50px;
-            height: 45px;
-            color: white;
-            background-color: #8b8b8b;
-            font-size: 15px;
-            font-weight: 100;
-            border: 0;
-        }
+.agree input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
 
-        #next{
-            width: 50px;
-            height: 45px;
-            color: white;
-            background-color: #5198f9;
-            font-size: 15px;
-            font-weight: 100;
-            border: 0;
-        }
+/* 버튼 영역 */
+.select {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.select button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#cancel {
+    width: 70px; /* 수정된 부분 */
+    height: 60px; /* 수정된 부분 */
+    font-size: 15px;
+	font-weight: 100;
+	background-color: #8b8b8b;
+    color: white;
+}
+
+#next {
+    width: 70px; /* 수정된 부분 */
+    height: 60px; /* 수정된 부분 */
+    font-size: 15px;
+	font-weight: 100;
+	background-color: #5198f9;
+    color: white;
+}
