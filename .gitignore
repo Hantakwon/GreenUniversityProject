@@ -6,9 +6,11 @@
 .recommenders
 .loadpath
 
-# 빌드 산출물
+# Build outputs (어디에 있어도 전부 무시)
 **/bin/
 **/build/
+**/build.classes/
+**/out/
 **/target/
 *.class
 
