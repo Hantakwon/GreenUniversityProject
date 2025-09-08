@@ -42,7 +42,7 @@
 				<div class="footer-content-box">
 					<span class="footer-logo-wrap"><img
 						alt="그린대학교 GREEN UNIVERSITY"
-						src="/resources/images/footer_logo.png"></span>
+						src="<%=request.getContextPath()%>/resources/images/footer_logo.png"></span>
 					<ul class="footer-info">
 						<li>
 							<ul class="footer-contact">
