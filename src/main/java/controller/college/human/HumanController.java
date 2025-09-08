@@ -1,20 +1,12 @@
 package controller.college.human;
 
-import java.io.IOException;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import dto.DepartmentDTO;
-import dto.academic.Academic_noticeDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.DepartmentService;
+import java.io.IOException;
 
 /*
  * 날짜 : 2025/09/05
@@ -26,24 +18,17 @@ public class HumanController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/* service, logger 추가 */
-	private DepartmentService service = DepartmentService.INSTANCE;
-
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		
 		/* DB Logic 추가 */
-		List<DepartmentDTO> dtoList = service.findAllByCollege(1);
-
-		request.setAttribute("dtoList", dtoList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/college/human.jsp");
 		dispatcher.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
