@@ -14,7 +14,7 @@ import util.Sql;
 /*
  * 날짜 : 2025-09-08
  * 이름 : 박효빈
- * 내용 : 임시 FaqDAO 작성 
+ * 내용 : MySQL FaqDAO 작성
  */
 public class FaqDAO extends DBHelper {
 	private final static FaqDAO INSTANCE = new FaqDAO();

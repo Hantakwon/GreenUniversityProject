@@ -1,5 +1,9 @@
 package dto.academic;
-
+/*
+ * 날짜 : 2025-09-08
+ * 이름 : 박효빈
+ * 내용 : 학사안내 - 자주묻는질문 DTO
+ */
 public class FaqDTO {
 	
 	private int id;
