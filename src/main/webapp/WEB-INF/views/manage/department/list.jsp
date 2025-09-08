@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/manage/style.css">
 <script src="<%=request.getContextPath()%>/resources/js/manage/script.js"></script>
 <body>
-  <div id="include-header"></div>
-  <div id="include-sidebar"></div>
-
+  <jsp:include page="../common/header.jsp" />
+  <jsp:include page="../common/sidebar.jsp" />
+  
   <div class="mainWrap">
     <div class="page">
       <div class="page-head">
@@ -67,6 +67,6 @@
     </div>
   </div>
 
-  <div id="include-footer"></div>
+  <jsp:include page="../common/footer.jsp" />
 </body>
 </html>

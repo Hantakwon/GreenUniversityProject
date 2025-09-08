@@ -19,8 +19,6 @@ public class Sql {
 																	    "JOIN TB_Professor p " +
 																	    "  ON p.pro_id   = dp.pro_id " +
 																	    "WHERE dp.role = ? AND d.col_id = ?";
-
-			
 	
 	/* 
 	 * 날짜 : 2025/09/04
@@ -70,6 +68,8 @@ public class Sql {
 	
 	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
 	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
+	
+	
 	
 	// 유효성 검사 및 회원 가입
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM Users ";
