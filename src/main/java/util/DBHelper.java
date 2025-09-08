@@ -20,8 +20,7 @@ public class DBHelper {
 
 	public Connection getConnection() throws NamingException, SQLException {
 		Context ctx = (Context) new InitialContext().lookup("java:comp/env");
-		//DataSource ds = (DataSource) ctx.lookup("jdbc/GREEN");
-		DataSource ds = (DataSource) ctx.lookup("jdbc/college"); // 0908 박효빈 FAQ 작업 진행으로 임시 DB사용 중 입니다.
+		DataSource ds = (DataSource) ctx.lookup("jdbc/GREEN");
 
 		return ds.getConnection();
 	}
