@@ -1,3 +1,9 @@
+/*
+	날짜 : -
+    이름 : 정순권
+    내용 : -
+*/
+
 // 카카오 우편번호
 	function postcode() {
         new daum.Postcode({

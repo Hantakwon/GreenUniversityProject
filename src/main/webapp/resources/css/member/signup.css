@@ -1,3 +1,11 @@
+/*
+	<!--
+	날짜 : -
+    이름 : 정순권
+    내용 : -
+-->
+*/
+
 /* Merged and corrected signup.css */
 
 /* 모든 요소의 여백 및 패딩을 초기화하고, box-sizing: border-box 적용 */
@@ -196,12 +204,19 @@ main {
 	font-weight: 100;
 }
 
-#cancel {
+.btnCancel {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: #8b8b8b;
-    color: white;
+    color: white; /* 글자색 흰색 */
     font-size: 15px;
     font-weight: 100;
+    text-align: center;
+    text-decoration: none; /* 밑줄 제거 */
+    border-radius: 4px;
+    cursor: pointer;
 }
+
 
 /* 모바일 반응형 */
 @media (max-width: 768px) {

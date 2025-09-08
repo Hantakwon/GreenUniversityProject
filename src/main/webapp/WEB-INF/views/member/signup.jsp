@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<!--
+	날짜 : -
+    이름 : 정순권
+    내용 : -
+-->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/member/signup.css">
 <script
@@ -88,7 +93,7 @@
 						<div class="form-footer">
 							<span class="notice"><i>*</i>&nbsp&nbsp필수입력</span>
 							<div class="selectBox">
-								<button id="cancel" type="button">취소</button>
+								<a href="/member/login.do" class="btnCancel">취소</a>
 								<button id="signUp" type="submit">회원가입</button>
 							</div>
 						</div>
