@@ -71,6 +71,12 @@ public class Sql {
 	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
 	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
 	
+	
+	/* 
+	 * 날짜 : 2025/09/08
+	 * 이름 : 정순권
+	 * 내용 : Signup sql 작성
+	 */
 	// 유효성 검사 및 회원 가입
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM Users ";
 	public static final String WHERE_USER_ID = "WHERE USER_ID=?";

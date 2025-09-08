@@ -106,7 +106,7 @@ public class UserDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		
-		return null;
+		return userDTO;
 	}
 	
 	public List<UserDTO> selectAll() {
