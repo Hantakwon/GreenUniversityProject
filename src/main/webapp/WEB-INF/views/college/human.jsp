@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +11,12 @@
     이름 : 정순권
     내용 : -
 -->
+<!--
+	날짜 : 2025/09/08
+    이름 : 한탁원
+    내용 : DB 작업
+-->
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/college/main.css">
 <link rel="stylesheet"
@@ -36,7 +41,7 @@
 					<div class="bottom">
 						<ul>
 							<li class="active"><a href="./인문사회대학.html">인문사회대학</a></li>
-							<li><a href="./자연과학대학.html">자연과학대학</a></li>
+							<li><a href="/college/science.do">자연과학대학</a></li>
 							<li><a href="./공과대학.html">공과대학</a></li>
 							<li><a href="./사범대학.html">사범대학</a></li>
 							<li><a href="./대학원.html">대학원</a></li>
@@ -67,23 +72,23 @@
 					</div>
 					<div class="department">
 						<table class="dept-table">
-
 							<tr>
 								<th>학과/전공</th>
 								<th>학과장</th>
 								<th>학과 사무실 번호</th>
 								<th>비고</th>
 							</tr>
-
-							<c:forEach var="dto" items="${dtoList}" varStatus="status">
+							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.nameKor} <a href="#"><img
+									<td>${dto.deptName}<a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png" alt="바로가기"></a></td>
-									<td>학과장</td>
-									<td>${dto.tel}</td>
+									<td>${dto.proName}</td>
+									<td>${dto.deptTel }</td>
 									<td></td>
 								</tr>
 							</c:forEach>
+
+
 						</table>
 					</div>
 				</div>
