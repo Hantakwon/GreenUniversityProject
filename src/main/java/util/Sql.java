@@ -1,6 +1,13 @@
 package util;
 
 public class Sql {
+	/* 
+	 * 날짜 : 2025/09/04
+	 * 이름 : 한탁원
+	 * 내용 : Department (학과) SQL 작성
+	 */
+	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM TB_Department";
+	public static final String SEARCH_WHERE_COLLEGE = " WHERE COL_ID=? ";
 	
 	/* 
 	 * 날짜 : 2025/09/04
@@ -51,6 +58,11 @@ public class Sql {
 	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
 	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
 	
+	/* 
+	 * 날짜 : 2025/09/04
+	 * 이름 : 정순권
+	 * 내용 : -
+	 */
 	// 유효성 검사 및 회원 가입
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM Users ";
 	public static final String WHERE_USER_ID = "WHERE USER_ID=?";

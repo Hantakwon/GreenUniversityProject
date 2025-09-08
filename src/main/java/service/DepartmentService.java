@@ -22,6 +22,10 @@ public enum DepartmentService {
 	public List<DepartmentDTO> findAll() {
 		return dao.selectAll();
 	}
+	
+	public List<DepartmentDTO> findAllByCollege(int col_id) {
+		return dao.selectAllByCollege(col_id);
+	}
 
 	public void modify(DepartmentDTO dto) {
 		dao.update(dto);

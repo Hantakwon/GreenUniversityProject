@@ -1,4 +1,6 @@
 @charset "UTF-8"; /* footer */
+footer { clear: both; }
+
 .top-footer-wrap {
 	background-color: #1f2838;
 }

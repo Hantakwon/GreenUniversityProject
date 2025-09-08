@@ -12,6 +12,8 @@
 	내용 : 수료 및 졸업
 -->
 <body>
-
+	<jsp:include page="../header.jsp" />
+	
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>
