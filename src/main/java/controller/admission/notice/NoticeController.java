@@ -3,18 +3,18 @@ package controller.admission.notice;
 import java.io.IOException;
 import java.util.List;
 
-import org.slf4j.Logger;
+import org.eclipse.jdt.internal.compiler.batch.Main.Logger;
 import org.slf4j.LoggerFactory;
 
-import dao.PagenationDTO;
-import dto.admission.Admission_noticeDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import service.admission.Admission_noticeService;
+import src.main.java.dao.PagenationDTO;
+import src.main.java.dto.admission.Admission_noticeDTO;
+import src.main.java.service.admission.Admission_noticeService;
 
 /*
  * 날짜 : 2025/09/05

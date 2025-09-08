@@ -2,9 +2,9 @@ package service.academic;
 
 import java.util.List;
 
-import dao.PagenationDTO;
-import dao.academic.Academic_noticeDAO;
-import dto.academic.Academic_noticeDTO;
+import src.main.java.dao.PagenationDTO;
+import src.main.java.dao.academic.Academic_noticeDAO;
+import src.main.java.dto.academic.Academic_noticeDTO;
 
 /*
  * 날짜 : 2025-09-04

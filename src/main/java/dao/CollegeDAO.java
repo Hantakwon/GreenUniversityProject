@@ -2,11 +2,10 @@ package dao;
 
 import java.util.List;
 
-import org.slf4j.Logger;
+import org.eclipse.jdt.internal.compiler.batch.Main.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.CollegeDTO;
-import util.DBHelper;
+import src.main.java.dto.CollegeDTO;
 
 /*
  * 날짜 : 2025-09-08
