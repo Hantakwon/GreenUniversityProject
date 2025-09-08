@@ -1,436 +1,148 @@
 @charset "UTF-8";
-/* 최종 통합 및 정리된 CSS */
+
 main {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 main>div>* {
-    width: 1200px;
-    height: auto;
-    margin: 0 auto;
+	width: 1100px;
+	height: 100%;
+	margin: 0 auto;
 }
 
 main>div:nth-child(1) {
-    width: 100%;
-    height: 36px;
-    background-color: #D5D5D5;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
+	width: 100%;
+	height: 36px;
+	background-color: #D5D5D5;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
 }
 
 main>div:nth-child(1)>div {
-    width: 1200px;
-    margin: 0 auto;
-    font-size: 12px;
-    color: #666;
+	width: 1100px;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #666;
 }
 
 main>div:nth-child(2) {
-    width: 100%;
-    height: auto;
-    margin-top: 50px;
-    box-sizing: border-box;
+	width: 100%;
+	height: 500px;
+	margin-top: 50px;
+	box-sizing: border-box;
 }
 
 .main-content {
-    flex: 1;
+	flex: 1;
 }
 
 main .top {
-
-    height: 60px;
-    border-bottom: 2px solid #333;
-    display: flex;
-    align-items: center;
+	height: 60px;
+	border-bottom: 2px solid #333;
+	display: flex;
+	align-items: center;
 }
 
 main .bottom {
-    width: 100%;
+	width: 100%;
 }
 
 main .bottom>p {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 main .content-wrapper {
-    display: flex;
-    gap: 60px;
+	display: flex;
+	gap: 60px;
 }
 
 main .sidebar {
-    width: 210px;
+	width: 200px;
 }
 
 main .sidebar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
 }
 
 main .sidebar li {
-    border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 
 main .sidebar li a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
+	display: block;
+	padding: 15px 20px;
+	text-decoration: none;
+	color: black;
+	font-size: 14px;
 }
 
 main .sidebar li a:hover {
-    background-color: #f8f9fa;
-    color: #4A90E2;
+	background-color: #f8f9fa;
+	color: #4A90E2;
 }
 
 main .sidebar li.active {
-    background-color: #4A90E2;
+	background-color: #4A90E2;
 }
 
 main .sidebar li.active a {
-    color: #fff;
-    font-weight: 500;
+	color: #fff;
+	font-weight: 500;
 }
 
 main .info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 main .info img {
-    width: 16px;
-    height: auto;
-    margin-right: 5px;
+	width: 16px;
+	height: auto;
+	margin-right: 5px;
+	/* 이미지와 텍스트 간격 */
 }
 
 main .bold-ment img {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 main .bold-ment .span-bold {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 3px;
-    font-weight: 500;
-    font-size: 18px;
-    color: #145074;
-}
-
-main .ment1,
-main .ment2,
-main .ment4 {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    font-weight: 350;
-    line-height: 24px;
-    letter-spacing: -0.5px;
-    vertical-align: middle;
-    font-family: Noto Sans KR;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 3px;
+	/* 이미지와 텍스트 간 적당한 간격 */
+	font-weight: 500;
+	font-size: 18px;
+	color: #145074;
 }
 
 main .ment1 {
-    color: #666666;
+	display: flex;
+	font-size: 16px;
+	font-weight: 350;
+	color: #666666;
+	font-family: Noto Sans KR;
+	font-style: DemiLight;
+	line-height: 24px;
+	letter-spacing: -0.5px;
+	vertical-align: middle;
 }
 
 main .ment2 {
-    color: #333333;
-}
-
-main .ment4 {
-    margin-top: 20px;
-}
-
-main .ment3-table,
-main .grade-table {
-    border-top: 2px solid #071f4b;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-main .grade-table tr td,
-main .ment3-table tr td {
-    border: 1px solid #eee;
-    padding: 10px 8px;
-    text-align: center;
-    color: #333333;
-}
-
-main .grade-table th,
-main .ment3-table th {
-    background-color: #f4f8fc;
-    padding: 12px 8px;
-    border: 1px solid #dedede;
-    text-align: center;
-}
-
-main .ment3-table-text {
-    padding-top: 15px;
-}
-
-main .link-box {
-    text-align: left;
-    margin: 50px 0;
-}
-
-main .link-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-main .link-box li {
-    display: inline-block;
-}
-
-main .link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 20px;
-    border: 1px solid #6d6d6d;
-    text-decoration: none;
-    color: #000000;
-    font-weight: 350;
-}
-
-main .link-icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-    order: 1;
-}
-
-main .bold-span-highlight {
-    color: #0067B3;
-    font-weight: 700;
-}
-
-main .search-container {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 15px;
-}
-
-main .search-div {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 700px;
-    width: auto;
-    box-sizing: border-box;
-    flex-basis: auto;
-}
-
-main .search-div form {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.search-div select,
-.search-div input[type="text"] {
-    flex: 1;
-    min-width: 150px;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-main .search-div input[type="text"] {
-    margin-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-main .search-div button {
-    padding: 9px 20px;
-    background-color: #3f97f6;
-    border: none;
-    border-radius: 2px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-main .notice-list-wrapper {
-    max-width: 1200px;
-    margin: 10px auto 15px auto;
-    border-top: 2px solid black;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-main .notice-list table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-main .notice-list thead th {
-    background-color: #f0f0f0;
-    padding: 12px 8px;
-    border-bottom: 1px solid #ccc;
-    font-weight: 600;
-}
-
-main .notice-list tbody td {
-    padding: 12px 8px;
-    border-bottom: 1px solid #eee;
-    vertical-align: middle;
-    word-break: break-word;
-}
-
-main .page-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 15px;
-    margin-top: 30px;
-    gap: 5px;
-}
-
-main .page-wrapper .page {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-main .page-wrapper .page-btn.active {
-    background-color: #4a90e2;
-    color: white;
-    border-color: #4a90e2;
-    font-weight: bold;
-    cursor: default;
-}
-
-main .page-wrapper .page-btn:hover:not(.active) {
-    background-color: #f2f2f2;
-}
-
-main .page-wrapper .page-btn {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #dedede;
-    background-color: white;
-    color: #333;
-    font-size: 14px;
-    font-weight: normal;
-    cursor: pointer;
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-main .page-wrapper .pagination-arrow {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #dedede;
-    box-sizing: border-box;
-    cursor: pointer;
-    border-radius: 3px;
-    object-fit: contain;
-    padding: 10px;
-}
-
-main .page-wrapper .pagination-arrow.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    background-color: #f8f8f8;
-}
-
-main .sidebar .top h1 {
-    font-size: 32px;
-    font-weight: 700;
-    padding: 15px 20px;
-    margin: 0;
-	color: #222222;
-}
-
-main .main-content .top h2 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-main .bold-ment {
-    margin-bottom: 40px;
-}
-
-main .faq-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 2px solid #000000;
-}
-
-main .faq-list li {
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-}
-
-main .question {
-    background: none;
-    border: none;
-    color: #004A99;
-    font-weight: 500;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    text-align: left;
-    padding: 0;
-}
-
-main .question:focus {
-    outline: 2px solid #4A90E2;
-    outline-offset: 2px;
-}
-
-main .q-icon {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: #3282d3;
-    color: #fff;
-    font-weight: 350;
-    font-size: 16px;
-    line-height: 30px;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-main .a-icon {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: #999999;
-    color: #fff;
-    font-weight: 350;
-    font-size: 16px;
-    line-height: 30px;
-    text-align: center;
-    flex-shrink: 0;
-}
-
-main .answer {
-    margin-top: 8px;
-    padding: 15px 15px 15px 2px;
-    background-color: #d8d8d8;
-    color: #555;
-    line-height: 1.5;
+	display: flex;
+	font-size: 16px;
+	font-weight: 350;
+	color: #333333;
+	font-family: Noto Sans KR;
+	font-style: DemiLight;
+	line-height: 24px;
+	letter-spacing: -0.5px;
+	vertical-align: middle;
 }

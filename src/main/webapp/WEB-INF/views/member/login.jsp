@@ -5,20 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인</title>
-<!--
-	날짜 : -
-    이름 : 정순권
-    내용 : -
--->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/member/login.css">
-<script>
-	const message = '${requestScope.message}';
-
-	if (message != '') {
-		alert(message);
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
@@ -36,8 +24,7 @@
 				<div class="loginBox">
 					<h3>LOGIN</h3>
 					<p>로그인을 하시면 더 다양한 서비스를 받으실 수 있습니다.</p>
-					<form id="loginForm" action="/member/login.do" method="post">
-					 	<input type="hidden" name="userType" id="userTypeHidden">
+					<form action="/member/login.do" method="post">
 						<div class="user-options">
 							<div class="user-type-selection">
 								<ul class="type">
@@ -69,8 +56,7 @@
 				</div>
 				<div class="loginInfo">
 					<h4>
-						<img
-							src="<%=request.getContextPath()%>/resources/images/bullet-h4.png"
+						<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png"
 							alt="아이콘">아이디, 비밀번호 안내
 					</h4>
 					<p>- 대학 구성원(학부생, 교직원)은 회원가입없이 교번, 학번을 사용하여 로그인이 가능합니다.</p>
@@ -83,6 +69,6 @@
 	</main>
 	<jsp:include page="../footer.jsp" />
 	<script
-		src="<%=request.getContextPath()%>/resources/js/member/login.js"></script>
+	src="<%=request.getContextPath()%>/resources/js/member/login.js"></script>
 </body>
 </html>

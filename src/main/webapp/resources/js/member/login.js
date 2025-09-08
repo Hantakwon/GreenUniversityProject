@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 폼 제출 이벤트 리스너를 추가합니다.
     loginForm.addEventListener('submit', (e) => {
+
         let selectedUserType = null;
         for (const radio of userTypeRadios) {
             if (radio.checked) {
@@ -26,7 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); // 기본 동작(폼 제출)을 막습니다.
             return;
         }
-
-        // 폼 제출을 계속 진행합니다.
     });
 });

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const hpResult = document.getElementsByClassName('hpResult')[0];
 	const emailResult = document.getElementsByClassName('emailResult')[0];
 
-	const form = document.getElementById('registerForm');
+	const form = document.getElementsByTagName('form')[0];
 	// console.log(form);
 
 	// 아이디 검사
@@ -170,15 +170,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// 최종 폼 전송 처리
 	form.addEventListener('submit', function(e) {
-		// 모든 유효성 검사 변수가 true인지 최종적으로 확인합니다.
-		if (!isUser_idOk || !isPassOk || !isNameOk || !isEmailOk || !isHpOk) {
-			// 하나라도 유효성 검사를 통과하지 못하면 폼 제출을 막습니다.
-			e.preventDefault();
-			alert('모든 회원가입 정보를 올바르게 입력해주세요.');
+		e.preventDefault(); // 기본 폼전송 해제
+
+		if (!isUser_idOk) {
+			alert('아이디를 확인하세요.');
 			return;
 		}
+
+		if (!isPassOk) {
+			alert('비밀번호를 확인하세요.');
+			return;
+		}
+
+		if (!isNameOk) {
+			alert('이름을 확인하세요.');
+			return;
+		}
+
+
+		if (!isEmailOk) {
+			alert('이메일을 확인하세요.');
+			return;
+		}
+
+		if (!isHpOk) {
+			alert('휴대폰을 확인하세요.');
+			return;
+		}
+
+		// 최종 폼 전송 실행
+		form.submit();
 	});
 
-
+	// 취소
+	document.getElementById('cancel').addEventListener('click', () => location.href = '/GreenUniversityProject/member/login.do');
 
 }); // DOM 마지막
