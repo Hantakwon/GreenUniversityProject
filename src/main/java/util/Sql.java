@@ -19,8 +19,6 @@ public class Sql {
 																	    "JOIN TB_Professor p " +
 																	    "  ON p.pro_id   = dp.pro_id " +
 																	    "WHERE dp.role = ? AND d.col_id = ?";
-
-			
 	
 	/* 
 	 * 날짜 : 2025/09/04
@@ -77,6 +75,7 @@ public class Sql {
 	 * 이름 : 정순권
 	 * 내용 : Signup sql 작성
 	 */
+
 	// 유효성 검사 및 회원 가입
 	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM Users ";
 	public static final String WHERE_USER_ID = "WHERE USER_ID=?";
