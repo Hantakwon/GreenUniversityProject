@@ -55,7 +55,27 @@
 				</div>
 			</div>
 			<div class="content" id="jwxe_main_content">
-				<div class="content-box">컨텐츠 내용 꾸미기</div>
+				<div class="content-box">
+				<h4>2026</h4>
+				</br>
+					<h2>민족의 천년을 책임지는 대학, 그린대학교 80주년</h2>
+					</br>
+					<p> 1946년 5월 15일 그날, 윤그린 초대 총장은
+						'우리 민족의 천년을 책임질 대학'이라는 사명으로 그린대학교의 역사를 열었습니다.
+						내년 2026년 뜻깊은 설립 80주년을 맞게 되었습니다.
+						우리 대학이 다시 한번 80년 역사와 전통을 뛰어넘어 새로운 100년의 힘찬 도약과 발전을 이룰 수 있도록
+						많은 관심과 성원을 보내주시길 바랍니다. 감사합니다.
+						</br>2025. 9.
+						</br>
+						</br>
+						<img src="<%=request.getContextPath()%>/resources/images/introduce_dean.jpg" alt="총장 이미지" style="max-width: 100%; height: auto;" />
+						Photo by Jason Smith
+					</p>
+					</br>
+					</br>
+					<b>그린대학교 총장 김그린</b>
+					
+				</div>
 			</div>
 		</div>
 	</div>
