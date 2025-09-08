@@ -68,8 +68,20 @@ public class Sql {
 	
 	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
 	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
-	
-	
+
+
+	/* 
+	 * 날짜 : 2025/09/08
+	 * 이름 : 박효빈
+	 * 내용 : Academic (학사안내) FAQ SQL 작성
+	 */
+	// 학사안내 - FAQ(자주묻는질문) 전체 가져오기
+	public final static String SELECT_FAQ_ALL = 
+		    "SELECT id, category, question, answer, DATE_FORMAT(created_at, '%Y-%m-%d') AS created_at " +
+		    "FROM tb_academic_faq ORDER BY id";
+	// 학사 안내 - 학사일정 전체 불러오기 CalanderDTO
+	public final static String SELECT_CALANDER_ALL = "SELECT * FROM tb_academic_calendar";
+
 	/* 
 	 * 날짜 : 2025/09/08
 	 * 이름 : 정순권
@@ -88,3 +100,5 @@ public class Sql {
 	// 로그인
 	public static final String SELECT_USER_BY_PASS = "SELECT * FROM USERS WHERE USER_ID=? AND USER_PASS=STANDARD_HASH(?, 'SHA256')";
 }
+
+ 

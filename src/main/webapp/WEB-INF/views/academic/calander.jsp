@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>그린대학교 학사일정</title>
 </head>
 <!-- 
-	날짜 :
+	날짜 : 2025/09/08
 	이름 : 박효빈
-	내용 : 학사일정
+	내용 : 학사일정 JSP 작성 // 작업실패 ㅠ-ㅠ 
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/academic/calander.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 <body>
 	<main>
 		<div>
@@ -26,7 +27,7 @@
 			<div class="content-wrapper">
 				<div class="sidebar">
 					<div class="top">
-						<h1>대학소개</h1>
+						<h1>학사안내</h1>
 					</div>
 					<div class="bottom">
 						<ul>
@@ -65,29 +66,37 @@
 	<script
 		src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.17/locales/ko.global.min.js'></script>
 
-	<script>
-		// 문서의 DOM 콘텐츠가 모두 로드된 후에 FullCalendar를 초기화합니다.
-		document.addEventListener('DOMContentLoaded', function() {
-			var calendarEl = document.getElementById('calendar'); // 캘린더를 띄울 div 요소 선택
 
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				// 캘린더 설정 객체
-				initialView : 'dayGridMonth', // 초기 뷰를 월별 달력으로 설정
-				locale : 'ko', // 한국어 설정
-				headerToolbar : { // 상단 툴바 설정 (버튼과 타이틀 위치)
-					left : 'prev,next today',
-					center : 'title',
-					right : 'dayGridMonth,dayGridWeek,dayGridDay' // 월, 주, 일별 뷰 버튼
-				},
-			// 여기에 이벤트 데이터 등을 추가할 수 있습니다.
-			// events: [
-			//     { title: '학사일정 1', date: '2024-09-01' },
-			//     { title: '학사일정 2', date: '2024-09-15', color: '#ff9f89' }
-			// ]
-			});
 
-			calendar.render(); // 캘린더를 화면에 렌더링
-		});
-	</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'ko',
+            headerToolbar: {
+                left: 'prev',
+                center: 'title',
+                right: 'next'
+            },
+            titleFormat: { year: 'numeric', month: '2-digit' }, // 2025.09 형식
+            dayHeaderFormat: { weekday: 'short' }, // 요일 영어 약어 (Sun, Mon, ...)
+            events: [
+                { title: '개강', date: '2025-09-02', color: '#007bff' },
+                { title: '중간고사', date: '2025-10-15', color: '#ff9f89' },
+                { title: '기말고사', date: '2025-12-10', color: '#89c4ff' }
+            ],
+            nowIndicator: true,
+            displayEventTime: false
+        });
+
+        calendar.render();
+    });
+</script>
+
+
+
 </body>
 </html>
