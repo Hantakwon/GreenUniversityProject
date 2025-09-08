@@ -58,15 +58,6 @@ local.properties
 .scala_dependencies
 .worksheet
 
-# 빌드 디렉토리 무시
-build/
-
-# 컴파일된 클래스 파일 무시
-*.class
-
-# MySQL Workbench 모델링 파일 무시
-Diagram_ver1.mwb
-
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
 #.project

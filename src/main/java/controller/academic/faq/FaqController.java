@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /*
  * 날짜 : 2025/09/08
  * 이름 : 박효빈
- * 내용 : 자주묻는질문 (/academic/faq.do) 컨트롤러 작성
+ * 내용 : 자주묻는질문 (/academic/faq.do)
  */
 
 @WebServlet("/academic/faq.do")
