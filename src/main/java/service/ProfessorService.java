@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import src.main.java.dao.ProfessorDAO;
-import src.main.java.dto.ProfessorDTO;
+import dao.ProfessorDAO;
+import dto.ProfessorDTO;
 
 public enum ProfessorService {
 

@@ -1,10 +1,10 @@
 	package service.admission;
 	
 	import java.util.List;
-
-import src.main.java.dao.PagenationDTO;
-import src.main.java.dao.admission.Admission_noticeDAO;
-import src.main.java.dto.admission.Admission_noticeDTO;
+	
+	import dao.PagenationDTO;
+	import dao.admission.Admission_noticeDAO;
+	import dto.admission.Admission_noticeDTO;
 	
 	/*
 	 * 날짜 : 2025-09-05

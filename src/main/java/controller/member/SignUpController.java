@@ -1,15 +1,16 @@
 package controller.member;
 
-import java.io.IOException;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import src.main.webapp.WEB-INF.src.main.java.jboard.dto.UserDTO;
-import src.main.webapp.WEB-INF.src.main.java.jboard.service.UserService;
+import service.UserService;
+
+import java.io.IOException;
+
+import dto.UserDTO;
 
 /*
  * 날짜 : -

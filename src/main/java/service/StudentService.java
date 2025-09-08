@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import src.main.java.dao.StudentDAO;
-import src.main.java.dto.StudentDTO;
+import dao.StudentDAO;
+import dto.StudentDTO;
 
 public enum StudentService {
 

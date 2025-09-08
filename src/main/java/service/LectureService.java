@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import src.main.java.dao.LectureDAO;
-import src.main.java.dto.LectureDTO;
+import dao.LectureDAO;
+import dto.LectureDTO;
 
 public enum LectureService {
 
