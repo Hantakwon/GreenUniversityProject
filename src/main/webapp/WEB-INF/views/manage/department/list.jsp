@@ -14,8 +14,10 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/manage/style.css">
 <script src="<%=request.getContextPath()%>/resources/js/manage/script.js"></script>
 <body>
+
   	<jsp:include page="../common/manage_header.jsp" />
 	<jsp:include page="../common/manage_sidebar.jsp" />
+
 
   <div class="mainWrap">
     <div class="page">
@@ -68,5 +70,6 @@
   </div>
 
 	<jsp:include page="../common/manage_footer.jsp" />
+
 </body>
 </html>

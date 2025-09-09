@@ -14,6 +14,7 @@
 </head>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/direction.css">
+
 <!--
 	날짜 : 2025/09/05
     이름 : 한탁원
@@ -81,7 +82,7 @@
 				<div class="content-box">
 			    <!-- ✅ 지도 표시 영역 -->
 			    <div id="map" style="width:100%; height:400px; margin-top:20px;"></div>
-			
+	
 				<!-- 지도 스크립트 -->
 				    <script>
 				        window.onload = function() {
@@ -125,6 +126,7 @@
    		</div>
 	   		</br>
 	   		</br>
+
    	</div>
 
 	<jsp:include page="../footer.jsp" />

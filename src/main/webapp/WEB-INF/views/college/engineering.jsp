@@ -20,8 +20,8 @@
 	<main>
 		<div>
 			<div class="info">
-				<span id="test"> <img src="../images/ico-home.png" alt="홈 버튼">
-					> 대학·대학원 > 공과대학
+				<span id="test"> <img src="/resources/images/ico-home.png"
+					alt="홈 버튼"> > 대학·대학원 > 공과대학
 				</span>
 			</div>
 		</div>
@@ -33,11 +33,11 @@
 					</div>
 					<div class="bottom">
 						<ul>
-							<li><a href="./인문사회대학.html">인문사회대학</a></li>
-							<li><a href="./자연과학대학.html">자연과학대학</a></li>
-							<li class="active"><a href="./공과대학.html">공과대학</a></li>
-							<li><a href="./사범대학.html">사범대학</a></li>
-							<li><a href="./대학원.html">대학원</a></li>
+							<li><a href="/college/human.do">인문사회대학</a></li>
+							<li><a href="/college/science.do">자연과학대학</a></li>
+							<li class="active"><a href="/college/engineering.do">공과대학</a></li>
+							<li><a href="/college/education.do">사범대학</a></li>
+							<li><a href="/college/graduate.do">대학원</a></li>
 						</ul>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="../images/college-introduce-3.jpg" alt="공대">
+							<img src="/resources/images/college-introduce-3.jpg" alt="공대">
 						</div>
 						<div class="info-div">
 							<h4>Engineering</h4>
@@ -59,7 +59,7 @@
 					</div>
 					<div class="mid">
 						<p>
-							<img src="../images/bullet-h4.png"> 학부 및 학과
+							<img src="/resources/images/bullet-h4.png"> 학부 및 학과
 						</p>
 					</div>
 					<div class="department">
@@ -70,55 +70,16 @@
 								<th>학과 사무실 번호</th>
 								<th>비고</th>
 							</tr>
-							<tr>
-								<td>기계공학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김기계</td>
-								<td>051-123-3001</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>전자공학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김전자</td>
-								<td>051-123-3002</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>전기공학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김전기</td>
-								<td>051-123-3003</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>컴퓨터공학과 <a href="#"><img
-										src="../images/ico_link.png" alt="바로가기"></a></td>
-								<td>김컴공</td>
-								<td>051-123-3004</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>건축공학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김건축</td>
-								<td>051-123-3005</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>재료공학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김재료</td>
-								<td>051-123-3006</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>화학공학과 <a href="#"><img src="../images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김화학</td>
-								<td>051-123-3007</td>
-								<td></td>
-							</tr>
+							<c:forEach var="dto" items="${dtoList}">
+								<tr>
+									<td>${dto.deptName}<a href="#"><img
+											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
+											alt="바로가기"></a></td>
+									<td>${dto.proName}</td>
+									<td>${dto.deptTel}</td>
+									<td></td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 				</div>

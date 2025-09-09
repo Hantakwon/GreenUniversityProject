@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}); // 아이디 검사 끝
 
 	// 비밀번호 검사
-	form.user_pass1.addEventListener('focusout', function(e) {
+	form.user_pass2.addEventListener('focusout', function(e) {
 
 		const pw1 = form.user_pass1.value;
 		const pw2 = form.user_pass2.value;
@@ -203,6 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 
 	// 취소
-	document.getElementById('cancel').addEventListener('click', () => location.href = '/GreenUniversityProject/member/login.do');
+	document.getElementById('cancel').addEventListener('click', () => location.href = '/member/login.do');
 
 }); // DOM 마지막

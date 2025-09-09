@@ -13,6 +13,8 @@
     내용 : 연혁
 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/introduce.css">
+
 
 <body class="introduce-page">
 	<jsp:include page="../header.jsp" />

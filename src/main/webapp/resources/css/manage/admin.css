@@ -1,0 +1,842 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap')
+	;
+
+/* =============== Reset & Base =============== */
+* {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 14px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #111;
+}
+
+#admin-wrapper {
+	width: 100%;
+	height: auto;
+}
+
+/* 접근성 텍스트 & 말줄임 (공통) */
+.hide {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+.ellipsis {
+	max-width: 240px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* =============== Header =============== */
+header {
+	width: 100%;
+	height: 120px;
+}
+
+header>nav {
+	width: 100%;
+	height: 30px;
+	background: #00518c;
+}
+
+header>nav>div {
+	width: 1400px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+header>nav>div>p {
+	float: right;
+	color: #fff;
+}
+
+header>nav>div>p a {
+	color: #fff;
+}
+
+.top-header-box {
+	margin: 0 auto;
+	max-width: 1400px;
+}
+
+.top-header-box:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.top-header-box>div {
+	display: inline-block;
+	background: #16c9cc;
+}
+
+.top-header-box>div>a {
+	display: inline-block;
+	padding: 7px 17px;
+	font-size: 12px;
+	color: #fff;
+}
+
+.top-header-box>ul {
+	float: right;
+	padding: 4px 0;
+	margin-right: 16px;
+}
+
+.top-header-box>ul>li {
+	position: relative;
+	float: left;
+	margin: 0 15px 0 0;
+	padding: 0 18px 0 0;
+}
+
+.top-header-box>ul>li:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	right: 0;
+	width: 1px;
+	height: 11px;
+	background: rgba(255, 255, 255, .3);
+}
+
+.top-header-box>ul>li:last-of-type {
+	margin: 0;
+	padding: 0;
+}
+
+.top-header-box>ul>li:last-of-type:after {
+	display: none;
+}
+
+.top-header-box>ul>li>a {
+	font-size: 12px;
+	color: #fff;
+}
+
+header>div {
+	width: 100%;
+	height: calc(100% - 30px);
+	background: #1f2838;
+}
+
+header>div>.gnb {
+	width: 1400px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+header>div>.gnb>.logo {
+	display: inline-block;
+	margin-top: 16px;
+}
+
+header>div>p {
+	float: right;
+	color: #fff;
+	margin-top: 46px;
+}
+
+header>div>p>span {
+	margin-right: 16px;
+}
+
+header>div>p>a {
+	color: #fff;
+}
+
+/* =============== Layout (Main / Aside / Section) =============== */
+main {
+	position: relative;
+	width: 1400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+main>aside {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 270px;
+	height: 100%;
+	background: #f4f6f9 url('../images/admin_bg_aside.jpg') repeat-y;
+	border-left: 1px solid #cfd6e0;
+	box-sizing: border-box;
+}
+
+main>aside .icon {
+	width: 20px;
+	margin-left: 16px;
+	vertical-align: sub;
+}
+
+#gnb {
+	width: 100%;
+	padding: 16px 0;
+}
+
+#gnb>li {
+	width: 100%;
+	min-height: 66px;
+	border-bottom: 1px solid #e7ebf0;
+	box-sizing: border-box;
+}
+
+#gnb>li>a {
+	display: block;
+	height: 42px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #2d3748;
+	line-height: 42px;
+	text-indent: 10px;
+}
+
+#gnb ol {
+	width: 100%;
+}
+
+#gnb ol>li {
+	height: 30px;
+}
+
+#gnb ol>li>a {
+	display: block;
+	height: 100%;
+	text-indent: 52px;
+	color: #4a5568;
+}
+
+#gnb ol>li>a::before {
+	content: '·';
+	margin-right: 6px;
+}
+
+main>section {
+	float: right;
+	width: 1130px;
+	min-height: 840px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+/* Section Header (Breadcrumb/Title) */
+main>section>nav {
+	position: relative;
+	width: 100%;
+	height: 46px;
+	margin-bottom: 16px;
+	border-bottom: 1px solid #c0c0c0;
+	box-sizing: border-box;
+}
+
+main>section>nav>h3 {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+main>section>nav>p {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+}
+
+main>section>nav>p>strong {
+	color: #145074;
+}
+
+main>section>nav>p>strong::before {
+	content: url('../../_res/images/bg-link-arr-over.png');
+	padding: 0 6px;
+}
+
+/* 검색창: nav.page-toolbar 안 우측 고정 */
+main>section>nav.page-toolbar {
+	height: 56px;
+	margin-bottom: 14px;
+}
+
+.page-toolbar .search {
+	position: absolute;
+	right: 0;
+	bottom: 6px;
+}
+
+.search form {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.search__select {
+	width: 110px;
+	height: 34px;
+	border: 1px solid #c7c7c7;
+	padding: 0 8px;
+}
+
+.search__input {
+	width: 220px;
+	height: 34px;
+	border: 1px solid #c7c7c7;
+}
+
+.search__btn {
+	height: 34px;
+	padding: 0 14px;
+	background: #1a528e;
+	border: 1px solid #1a528e;
+	color: #fff;
+	cursor: pointer;
+}
+
+.search__btn:hover {
+	opacity: .95;
+}
+
+/* =============== Tables =============== */
+main h4 {
+	font-size: 15px;
+	font-weight: 700;
+}
+
+main table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+main table tr>td {
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 10px;
+	text-align: left;
+}
+
+.bn-list-common01.type01 table {
+	border-top: 2px solid #8798a3;
+}
+
+.bn-list-common01.type01 table thead th {
+	padding: 10px 8px !important;
+	border-bottom: 1px solid #a3a3a3;
+	background: #fafafa;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 24px;
+}
+
+.bn-list-common01.type01 table tbody td {
+	position: relative;
+	padding: 14px 10px !important;
+	border-bottom: 1px solid #e3e3e3;
+	font-size: 13px;
+	text-align: center;
+	word-break: break-all;
+}
+
+.bn-list-common01.type01 table tbody tr:hover {
+	background: #fcfcfc;
+}
+
+/* 상태 색상 */
+.status {
+	font-weight: 500;
+}
+
+.status--ok {
+	color: #1e7e34;
+}
+
+.status--hold {
+	color: #d9822b;
+}
+
+.status--out {
+	color: #d12f2f;
+}
+
+/* 카드 느낌 박스 */
+.main-mini-box {
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .03);
+}
+
+/* =============== Paging & Button Row =============== */
+.paging-row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.paging-row .b-paging01 {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.b-paging01 .b-paging-wrap ul {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.b-paging01 .b-paging-wrap ul li a {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0;
+	text-align: center;
+	font-size: 12px;
+	border: 1px solid #c4c4c4;
+	border-radius: 0;
+	background: #fff;
+	color: #111;
+}
+
+.b-paging01 .b-paging-wrap ul li a.active {
+	border-color: #1a528e;
+	background: #1a528e;
+	color: #fff;
+}
+
+.b-paging01 .pager a {
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0;
+}
+
+.b-paging01 .pager img {
+	width: 12px;
+	height: 12px;
+	vertical-align: middle;
+}
+
+/* 등록 버튼 */
+.register-btn {
+	width: 100px;
+	height: 34px;
+	background: #1a528e;
+	border: 1px solid #08305a;
+	color: #fff;
+	border-radius: 0;
+	cursor: pointer;
+}
+
+/* =============== Footer =============== */
+footer {
+	width: 100%;
+	height: 60px;
+	background: #19202d;
+}
+
+footer>div {
+	width: 1400px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+footer>div>p {
+	font-size: 12px;
+	padding-top: 22px;
+	color: #fff;
+	box-sizing: border-box;
+}
+
+/* =============== Forms (공통) =============== */
+label {
+	display: inline-block;
+	width: 100px;
+	font-size: 12px;
+	font-weight: 700;
+	vertical-align: top;
+}
+
+label.day {
+	width: 40px;
+	font-weight: 400;
+	font-size: 13px;
+}
+
+input {
+	width: 200px;
+	padding: 6px;
+	border: 1px solid #959595;
+	font-size: 13px;
+	background: #fefefe;
+	color: #333;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+input[type=checkbox] {
+	width: auto;
+	margin-right: 6px;
+}
+
+select {
+	width: 150px;
+	padding: 6px;
+	border: 1px solid #959595;
+	font-size: 13px;
+	background: #fefefe;
+	color: #333;
+	box-sizing: border-box;
+}
+
+textarea {
+	padding: 5px;
+	border: 1px solid #959595;
+	font-size: 13px;
+	background: #eaeaea;
+	color: #333;
+	box-sizing: border-box;
+	resize: none;
+}
+
+button {
+	border: 1px solid #959595;
+	font-size: 12px;
+	background: #a8b2c5;
+	padding: 9px 15px;
+	color: #fff;
+	vertical-align: top;
+}
+
+/* =============== Optional Legacy Blocks (기존 화면 유지용) =============== */
+/* 필요 시 사용되는 안내/알림 박스 */
+p.ico {
+	width: 100%;
+	height: 58px;
+	margin-top: 20px;
+	border: 1px solid;
+	padding-left: 50px;
+	line-height: 58px;
+	box-sizing: border-box;
+}
+
+p.info {
+	border-color: #8497BF;
+	background: #A8B2C5 url('../images/admin_ico_info.png') no-repeat 15px
+		16px;
+}
+
+p.success {
+	border-color: #C6D881;
+	background: #E6EFC2 url('../images/admin_ico_success.png') no-repeat
+		15px 16px;
+}
+
+p.alert {
+	border-color: #FDD845;
+	background: #FFF6BF url('../images/admin_ico_alert.png') no-repeat 15px
+		16px;
+}
+
+p.error {
+	border-color: #FBC7C9;
+	background: #FBE3E4 url('../images/admin_ico_error.png') no-repeat 15px
+		16px;
+}
+
+/* admin-index 테이블(다른 화면에서 사용) */
+#admin-index>article {
+	overflow: hidden;
+}
+
+#admin-index>article>table {
+	width: 100%;
+	margin: 6px 0 16px;
+	border-collapse: collapse;
+	border-top: 2px solid #8798a3;
+}
+
+#admin-index>article>table tr>td {
+	border: 1px solid #e5e5e5;
+	padding: 6px 6px 6px 12px;
+	color: #111;
+	font-size: 13px;
+	text-align: left;
+}
+
+#admin-index>article>table tr>td.tit {
+	width: 20%;
+	text-align: center;
+	background: #fafafa;
+}
+
+#admin-index>article>table tr>td.tit15 {
+	width: 15%;
+	text-align: center;
+	background: #fafafa;
+}
+
+#admin-index>article>table tr>td>span {
+	font-size: 13px;
+	color: #bc2e13;
+}
+
+#admin-index>article>table tr>td>p {
+	padding: 6px;
+	overflow: hidden;
+}
+
+#admin-index>article>table tr>td>p>span {
+	font-size: 14px;
+}
+
+#admin-index>article>table tr>td>p>span:nth-child(1) {
+	float: left;
+}
+
+#admin-index>article>table tr>td>p>span:nth-child(2) {
+	float: right;
+}
+
+/* product-list & config-banner (원본 유지) */
+#admin-product-register input[type=submit] {
+	float: right;
+	width: 100px;
+}
+
+#admin-product-list>section>table, #admin-config-banner section>table {
+	border-top: 2px solid #8798a3;
+}
+
+#admin-product-list>section>table tr>th, #admin-config-banner section>table tr>th
+	{
+	padding: 10px 0;
+	background: #f6f6f6;
+}
+
+#admin-product-list>section>table tr>td, #admin-config-banner section>table tr>td
+	{
+	background: #fff;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#admin-config-banner .btnPositive {
+	float: right;
+	width: 100px;
+	padding: 6px;
+	margin-top: 10px;
+	border: 1px solid #8798a3;
+	font-size: 13px;
+	background: #fefefe;
+	color: #333;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+#admin-config-banner .btnNegative {
+	float: left;
+	width: 100px;
+	padding: 6px;
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	background: #eaeaea;
+	color: #333;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+/* ----- 등록 폼 테이블 공통 ----- */
+.board-table {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 2px solid #8798a3;
+}
+
+.board-table td {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 10px;
+	text-align: left;
+	font-size: 13px;
+}
+
+.board-table td.tit15 {
+	width: 15%;
+	text-align: center;
+	background: #fafafa;
+	white-space: nowrap;
+}
+
+.board-table .photo-cell {
+	text-align: center;
+	vertical-align: top;
+}
+
+.board-table .addr-cell input {
+	display: block;
+	width: 400px;
+	max-width: 100%;
+	margin-bottom: 6px;
+}
+
+.board-table .addr-cell input:first-child {
+	width: 150px;
+}
+
+/* 입력 요소 기본 폭 재정의(폼 깨짐 방지) */
+#admin-index input[type="text"], #admin-index input[type="email"],
+	#admin-index input[type="date"], #admin-index select {
+	height: 34px;
+	padding: 6px 8px;
+	border: 1px solid #c7c7c7;
+	box-sizing: border-box;
+}
+
+/* 라디오 라벨 간격 */
+#admin-index label.day {
+	display: inline-block;
+	width: auto;
+	margin-right: 12px;
+}
+
+/* 제출 버튼 일관 스타일 */
+#admin-index .register-btn {
+	width: 100px;
+	height: 34px;
+	background: #1a528e;
+	color: #fff;
+	border: 1px solid #08305a;
+	border-radius: 0;
+	cursor: pointer;
+}
+
+/* 섹션 상자 유지 */
+.main-mini-box {
+	background: #fff;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .03);
+}
+
+/* -------- 등록화면: 첫번째 스샷 톤으로 컴팩트 정렬 -------- */
+.form-table.compact td {
+	padding: 8px 10px;
+	height: 42px;
+}
+
+.form-table .tit15 {
+	background: #f5f5f5;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.form-table .photo-cell {
+	text-align: center;
+	vertical-align: top;
+	background: #fff;
+}
+
+.form-table .desc {
+	color: #c44;
+} /* 빨간 안내문구(자동생성) */
+.form-table input[type="text"], .form-table input[type="email"],
+	.form-table input[type="date"], .form-table select {
+	height: 32px;
+	padding: 6px 8px;
+	border: 1px solid #c7c7c7;
+	box-sizing: border-box;
+}
+
+/* 폭 프리셋 (스샷 기준) */
+.w-150 {
+	width: 150px;
+}
+
+.w-160 {
+	width: 160px;
+}
+
+.w-180 {
+	width: 180px;
+}
+
+.w-200 {
+	width: 200px;
+}
+
+.w-240 {
+	width: 240px;
+}
+
+.w-260 {
+	width: 260px;
+}
+
+.w-300 {
+	width: 300px;
+}
+
+.w-520 {
+	width: 520px;
+}
+
+.addr-cell input {
+	display: block;
+	margin-bottom: 6px;
+}
+
+/* 라디오 정렬 */
+.radio {
+	display: inline-block;
+	margin-right: 14px;
+}
+
+.radio input {
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+/* 버튼(우하단) */
+.btn-primary {
+	min-width: 100px;
+	height: 34px;
+	border: 1px solid #08305a;
+	background: #1a528e;
+	color: #fff;
+	cursor: pointer;
+}
+
+.fr {
+	float: right;
+}
+
+/* 섹션 제목 여백 */
+.tit-h4 {
+	position: relative;
+	margin: 10px 0 8px;
+}

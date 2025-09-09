@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 사이드바 */
+main>aside{
+  position:absolute; left:0; top:0; bottom:0;
+  width:270px; height:100%;
+  background:#f4f6f9 url('../../images/admin_bg_aside.jpg') repeat-y; /* 회색톤 + 배경 */
+  border-left:1px solid #cfd6e0; box-sizing:border-box;
+}
+main>aside .icon{ width:20px; margin-left:16px; vertical-align:sub; }
+
+/* GNB 리스트 */
+#gnb{ width:100%; height:auto; padding:16px 0; }
+#gnb>li{ width:100%; min-height:66px; border-bottom:1px solid #e7ebf0; box-sizing:border-box; }
+#gnb>li>a{ display:block; width:100%; height:42px; font-size:16px; font-weight:bold; color:#2d3748; line-height:42px; text-indent:10px; }
+#gnb ol{ width:100%; }
+#gnb ol>li{ height:30px; }
+#gnb ol>li>a{ display:block; width:100%; height:100%; text-indent:52px; color:#4a5568; }
+#gnb ol>li>a::before{ content:'·'; margin-right:6px; }

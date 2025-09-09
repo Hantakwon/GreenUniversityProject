@@ -7,6 +7,15 @@
 <title>로그인</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/member/login.css">
+
+<script>
+    const message = '<%=request.getAttribute("message")%>
+	';
+	if (message && message.trim() !== 'null') {
+		alert(message);
+	}
+</script>
+
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
@@ -24,18 +33,18 @@
 				<div class="loginBox">
 					<h3>LOGIN</h3>
 					<p>로그인을 하시면 더 다양한 서비스를 받으실 수 있습니다.</p>
-					<form action="/member/login.do" method="post">
+
+					<form id="loginForm" action="/member/login.do" method="post">
+
 						<div class="user-options">
 							<div class="user-type-selection">
 								<ul class="type">
 									<li><input type="radio" id="typeStd" name="userType"
-										value="student" class="checkbox" required> <label
-										for="typeStd">학부생</label></li>
+										value="student" class="checkbox"> <label for="typeStd">학부생</label></li>
 									<li><input type="radio" id="typeProf" name="userType"
-										value="staff" class="checkbox" required> <label
-										for="typeProf">교직원</label></li>
+										value="staff" class="checkbox"> <label for="typeProf">교직원</label></li>
 									<li><input type="radio" id="typeNull" name="userType"
-										value="general" class="checkbox" required> <label
+										value="general" class="checkbox"> <label
 										for="typeNull">일반인</label></li>
 								</ul>
 							</div>
@@ -44,9 +53,9 @@
 							</div>
 						</div>
 						<div class="form-inputs">
-							<input type="text" name="user_id" placeholder="아이디" required>
+							<input type="text" name="user_id" placeholder="아이디" >
 							<input type="password" name="user_pass" placeholder="비밀번호"
-								required>
+								>
 						</div>
 						<button type="submit" class="loginBtn">로그인</button>
 						<div class="login-links">
@@ -56,7 +65,8 @@
 				</div>
 				<div class="loginInfo">
 					<h4>
-						<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png"
+						<img
+							src="<%=request.getContextPath()%>/resources/images/bullet-h4.png"
 							alt="아이콘">아이디, 비밀번호 안내
 					</h4>
 					<p>- 대학 구성원(학부생, 교직원)은 회원가입없이 교번, 학번을 사용하여 로그인이 가능합니다.</p>
@@ -69,6 +79,6 @@
 	</main>
 	<jsp:include page="../footer.jsp" />
 	<script
-	src="<%=request.getContextPath()%>/resources/js/member/login.js"></script>
+		src="<%=request.getContextPath()%>/resources/js/member/login.js"></script>
 </body>
 </html>

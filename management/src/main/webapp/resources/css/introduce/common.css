@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+/* =========================
+   기본 리셋 / 베이스 스타일
+   ========================= */
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+img, input, select, textarea {
+	vertical-align: middle;
+}
+
+fieldset, img {
+	border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bolder;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+/* =========================
+   헬퍼 클래스
+   ========================= */
+.jw-relative {
+	position: relative;
+}
+
+/* jwxe 요소는 문서 흐름을 유지(absolute 금지) */
+.jwxe_navigator, .jwxe_mnu_template {
+	position: static;
+	display: block;
+}
+
+/* =========================
+   타이포그래피
+   ========================= */
+body {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #333;
+}
+
+/* =========================
+   레이아웃
+   ========================= */
+.sub-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 0 100px;
+}
+
+.sub-container::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.lnb-wrap {
+	float: left;
+	width: 210px;
+} /* 좌측 LNB 고정폭 */
+.content-wrap { /* 본문 영역 */
+	float: left;
+	width: calc(100% - 210px);
+	padding: 52px 0 0 60px;
+	min-height: 500px;
+	box-sizing: border-box;
+}
+
+/* =========================
+   경로(빵부스러기) 영역
+   ========================= */
+.path-wrap {
+	background: #ecf2f6;
+}
+
+.path-box {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.path-box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.path-box ul {
+	float: right;
+	padding: 10px 0;
+}
+
+/* 항목 기본 스타일 */
+.path-box ul li {
+	position: relative;
+	display: inline-block;
+	margin: 0 8px 0 0; /* 항목 간 기본 간격 */
+	padding: 0; /* 기본은 여백 없음 */
+	font-size: 14px;
+	line-height: 22px;
+	color: #666;
+	vertical-align: middle;
+	background: none; /* 기존 배경 화살표 이미지 제거 */
+}
+
+/* 두 번째 항목부터 '>' 구분자 출력 */
+.path-box ul li:not(:first-child) {
+	padding-left: 14px;
+} /* '>' 왼쪽 여백 */
+.path-box ul li:not(:first-child)::before {
+	content: ">";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 14px;
+	line-height: 1;
+	color: #b8c2cc;
+	opacity: .9;
+}
+
+/* 마지막 항목은 강조색 및 우측 여백 제거 */
+.path-box ul li:last-of-type {
+	margin-right: 0;
+	color: #071f4b;
+}
+
+/* =========================
+   LNB (좌측 메뉴)
+   ========================= */
+.lnb {
+	padding: 62px 0 0;
+}
+
+.lnb .lnb-title-box h2 {
+	padding: 0 0 20px;
+	font-weight: 700;
+	font-size: 32px;
+	color: #222;
+	line-height: 34px;
+}
+
+.lnb .lnb-menu {
+	border-top: 2px solid #222;
+}
+
+.lnb .lnb-menu>li {
+	border-bottom: 1px solid #dcdcdc;
+	box-sizing: border-box;
+}
+
+.lnb .lnb-menu>li>a {
+	display: block;
+	padding: 19px 40px 19px 20px;
+	font-size: 16px;
+	line-height: 21px;
+}
+
+.lnb .lnb-menu>li>a.active {
+	background: #3f97f6;
+	color: #fff;
+}
+
+/* =========================
+   페이지 타이틀
+   ========================= */
+.page-title {
+	display: block;
+	padding: 0 0 30px;
+}
+
+.page-title h3 {
+	margin-top: 10px;
+	padding: 0 0 10px;
+	border-bottom: 2px solid #222;
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 44px;
+	box-sizing: border-box;
+}
