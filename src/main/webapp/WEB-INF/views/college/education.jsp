@@ -20,8 +20,8 @@
 	<main>
 		<div>
 			<div class="info">
-				<span id="test"> <img src="/resources/images/ico-home.png" alt="홈 버튼">
-					> 대학·대학원 > 사범대학
+				<span id="test"> <img src="/resources/images/ico-home.png"
+					alt="홈 버튼"> > 대학·대학원 > 사범대학
 				</span>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 						<ul>
 							<li><a href="/college/human.do">인문사회대학</a></li>
 							<li><a href="/college/science.do">자연과학대학</a></li>
-							<li><a href="/college/engineer.do">공과대학</a></li>
+							<li><a href="/college/engineering.do">공과대학</a></li>
 							<li class="active"><a href="/college/education.do">사범대학</a></li>
 							<li><a href="/college/graduate.do">대학원</a></li>
 						</ul>
@@ -70,13 +70,16 @@
 								<th>학과 사무실 번호</th>
 								<th>비고</th>
 							</tr>
-							<tr>
-								<td>국어교육과 <a href="#"><img src="/resources/images/ico_link.png"
-										alt="바로가기"></a></td>
-								<td>김국어</td>
-								<td>051-123-4001</td>
-								<td></td>
-							</tr>
+							<c:forEach var="dto" items="${dtoList}">
+								<tr>
+									<td>${dto.deptName}<a href="#"><img
+											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
+											alt="바로가기"></a></td>
+									<td>${dto.proName}</td>
+									<td>${dto.deptTel}</td>
+									<td></td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 				</div>

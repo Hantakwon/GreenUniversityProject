@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title>인문사회대학</title>
 <!--
-	날짜 : -
+	날짜 : 2025/09/08
     이름 : 정순권
-    내용 : -
+    내용 : html구조 조정
 -->
 <!--
 	날짜 : 2025/09/08
@@ -27,8 +27,9 @@
 	<main>
 		<div>
 			<div class="info">
-				<span id="test"> <img src="<%=request.getContextPath()%>/resources/images/ico-home.png" alt="홈 버튼">
-					> 대학·대학원 > 인문사회대학
+				<span id="test"> <img
+					src="<%=request.getContextPath()%>/resources/images/ico-home.png"
+					alt="홈 버튼"> > 대학·대학원 > 인문사회대학
 				</span>
 			</div>
 		</div>
@@ -40,11 +41,11 @@
 					</div>
 					<div class="bottom">
 						<ul>
-							<li class="active"><a href="./인문사회대학.html">인문사회대학</a></li>
+							<li class="active"><a href="/college/human.do">인문사회대학</a></li>
 							<li><a href="/college/science.do">자연과학대학</a></li>
-							<li><a href="./공과대학.html">공과대학</a></li>
-							<li><a href="./사범대학.html">사범대학</a></li>
-							<li><a href="./대학원.html">대학원</a></li>
+							<li><a href="/college/engineering.do">공과대학</a></li>
+							<li><a href="/college/education.do">사범대학</a></li>
+							<li><a href="/college/graduate.do">대학원</a></li>
 						</ul>
 					</div>
 				</div>
@@ -54,7 +55,9 @@
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="<%=request.getContextPath()%>/resources/images/college-introduce-1.jpg" alt="인문대">
+							<img
+								src="<%=request.getContextPath()%>/resources/images/college-introduce-1.jpg"
+								alt="인문대">
 						</div>
 						<div class="info-div">
 							<h4>Humanities And Social Sciences</h4>
@@ -67,7 +70,9 @@
 					</div>
 					<div class="mid">
 						<p>
-							<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png"> 학부 및 학과
+							<img
+								src="<%=request.getContextPath()%>/resources/images/bullet-h4.png">
+							학부 및 학과
 						</p>
 					</div>
 					<div class="department">
@@ -81,14 +86,13 @@
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
 									<td>${dto.deptName}<a href="#"><img
-											src="<%=request.getContextPath()%>/resources/images/ico_link.png" alt="바로가기"></a></td>
+											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
+											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>
-									<td>${dto.deptTel }</td>
+									<td>${dto.deptTel}</td>
 									<td></td>
 								</tr>
 							</c:forEach>
-
-
 						</table>
 					</div>
 				</div>

@@ -13,7 +13,7 @@ public class Sql {
 																	    "       p.name_kor AS prof_name, " +
 																	    "       d.tel      AS dept_tel " +
 																	    "FROM TB_Department d " +
-																	    "JOIN Department_Professor dp " +
+																	    "JOIN TB_Department_Professor dp " +
 																	    "  ON dp.dept_id = d.dept_id " +
 																	    " AND dp.col_id  = d.col_id " +
 																	    "JOIN TB_Professor p " +
@@ -97,8 +97,18 @@ public class Sql {
 	public static final String INSERT_USER = "INSERT INTO USERS (USER_ID, USER_PASS, USER_NAME, USER_HP, USER_EMAIL, POSTAL_CODE, BASIC_ADDR, DETAIL_ADDR) "
 			+ "VALUES (?,STANDARD_HASH(?, 'SHA256'),?,?,?,?,?,?)";
 	
+	
+	/* 
+	 * 날짜 : 2025/09/08
+	 * 이름 : 정순권
+	 * 내용 : 학생 교수 로그인 sql 작성
+	 */
 	// 로그인
+	// user db명 수정 필요
 	public static final String SELECT_USER_BY_PASS = "SELECT * FROM USERS WHERE USER_ID=? AND USER_PASS=STANDARD_HASH(?, 'SHA256')";
+	
+	public static final String SELECT_STUDENT_BY_RNN = "SELCET * FROM TB_STUDENT WHERE STD_ID=? AND RRN=?";
+	public static final String SELECT_PROFESSOR_BY_RNN = "SELCET * FROM TB_PROFESSOR WHERE PRO_ID=? AND RRN=?";
 }
 
  
