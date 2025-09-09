@@ -123,11 +123,11 @@ public class Academic_noticeDAO extends DBHelper {
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ACADEMIC_NOTICE_COUNT_SEARCH);
 
 		if (searchType.equals("title")) {
-			sql.append(Sql.SEARCH_WHERE_TITLE);
+			sql.append(Sql.SEARCH_ACADEMIC_NOTICE_WHERE_TITLE);
 		} else if (searchType.equals("content")) {
-			sql.append(Sql.SEARCH_WHERE_CONTENT);
+			sql.append(Sql.SEARCH_ACADEMIC_NOTICE_WHERE_CONTENT);
 		} else if (searchType.equals("writer")) {
-			sql.append(Sql.SEARCH_WHERE_WRITER);
+			sql.append(Sql.SEARCH_ACADEMIC_NOTICE_WHERE_WRITER);
 		}
 
 		try {
@@ -154,11 +154,11 @@ public class Academic_noticeDAO extends DBHelper {
 		StringBuilder sql = new StringBuilder(Sql.SELECT_ACADEMIC_NOTICE_SEARCH);
 
 		if (searchType.equals("title")) {
-			sql.append(Sql.SEARCH_WHERE_TITLE);
+			sql.append(Sql.SEARCH_ACADEMIC_NOTICE_WHERE_TITLE);
 		} else if (searchType.equals("content")) {
-			sql.append(Sql.SEARCH_WHERE_CONTENT);
+			sql.append(Sql.SEARCH_ACADEMIC_NOTICE_WHERE_CONTENT);
 		} else if (searchType.equals("writer")) {
-			sql.append(Sql.SEARCH_WHERE_WRITER);
+			sql.append(Sql.SEARCH_ACADEMIC_NOTICE_WHERE_WRITER);
 		}
 		sql.append(Sql.SEARCH_ORDER_ID);
 		sql.append(Sql.SEARCH_OFFSET_ROW);

@@ -3,7 +3,7 @@
 <html lang="en">
 <%@ include file="./_top.jsp" %>
             <section id="admin-index" class="main-mini-box">
-            	<form action="/manage/operate/rigster.do" method="post">
+            	<form action="/manage/operate/register.do" method="post">
                 <nav>
                     <h3>강의 등록</h3>
                     <p>
@@ -35,7 +35,7 @@
                                         <option value="대학원">대학원</option>
                                     </select>
                                     <select name="department">
-                                        <option value="국어국문확과">국어국문학과</option>
+                                        <option value="국어국문학과">국어국문학과</option>
                                         <option value="영어영문학과">영어영문학과</option>
                                         <option value="일어일문학과">일어일문학과</option>
                                         <option value="중어중문학과">중어중문학과</option>
@@ -51,6 +51,10 @@
                                         <option value="2">2 학년</option>
                                         <option value="3">3 학년</option>
                                         <option value="4">4 학년</option>
+                                    </select>
+									<select name="semester">
+                                        <option value="1">1 학기</option>
+                                        <option value="2">2 학기</option>
                                     </select>
                                 </td>
                                 <td class="tit">학점</td>
@@ -103,8 +107,8 @@
                             <tr class="">
                                 <td class="tit">수업 기간</td>
                                 <td colspan="3">
-                                    <input type="date" name="start_date"value="10:00" style="width: 150px;"/>&nbsp;~
-                                    <input type="date" name="end_date"value="12:00" style="width: 150px;"/>
+                                    <input type="date" name="start_date" style="width: 150px;"/>&nbsp;~
+                                    <input type="date" name="end_date" style="width: 150px;"/>
                                 </td>
                             </tr>
                             <tr class="">

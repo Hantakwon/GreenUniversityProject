@@ -10,13 +10,10 @@
     이름 : 정순권
     내용 : -
 -->
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/college/main.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/college/engineering.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/college/main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/college/engineering.css">
 </head>
 <body>
-	<jsp:include page="../header.jsp" />
 	<main>
 		<div>
 			<div class="info">
@@ -125,6 +122,5 @@
 			</div>
 		</div>
 	</main>
-	<jsp:include page="../footer.jsp" />
 </body>
 </html>

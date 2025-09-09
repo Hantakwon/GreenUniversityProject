@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="./_top.jsp" %>
@@ -31,11 +32,11 @@
                                 <col width="5%">
                                 <col width="10%">
                                 <col width="15%">
-                                <col width="">
-                                <col width="">
+                                <col width="8%">
+                                <col width="5%">
                                 <col width="15%">
-                                <col width="">
-                                <col width="10%">
+                                <col width="12%">
+                                <col width="9%">
                             </colgroup>
                             <thead>
                             <tr>                          
@@ -52,126 +53,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
+                            <c:forEach var="lec" items="${dtoList}">
+                                <tr>                          
+                                    <td>${lec.lecNo}</td>
+                                    <td>${lec.department}</td>
+                                    <td>${lec.grade}</td>
+                                    <td>${lec.category}</td>
+                                    <td>${lec.lenName}</td>
+                                    <td>${lec.professor}</td>
+                                    <td>${lec.credit}</td>
+                                    <td>${lec.class_time}</td>
+                                    <td>${lec.classroom}</td>
+                                    <td>${lec.max_enrollment}</td>
                                 </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
+                            </c:forEach>    
                             </tbody>
                         </table>
                     </div>
