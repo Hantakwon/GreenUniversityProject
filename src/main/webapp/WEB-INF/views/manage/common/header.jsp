@@ -18,7 +18,7 @@
   <div class="brand">
       <div class="logo-text">
         <a href="index.html" class="logo-text">
-          <img src="images/admin_logo.png" alt="그린대학교 학사관리시스템 로고" />
+          <img src="<%=request.getContextPath()%>/resources/images/admin_logo.png" alt="그린대학교 학사관리시스템 로고" />
         </a>
       </div>
   </div>

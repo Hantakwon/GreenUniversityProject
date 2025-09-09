@@ -1,18 +1,13 @@
-package dto;
-
-import java.sql.Date;
+package dto.professor;
 
 /*
  * 날짜 : 2025-09-08
  * 이름 : 한탁원
  * 내용 : DTO 작성 예정
  */
-public class StudentDTO {
-
-	private int std_id;
-	private int col_id;
-	private int dept_id;
+public class ProfessorDTO {
 	private int pro_id;
+	private String pro_no;
 	private String rrn;
 	private String name_kor;
 	private String name_eng;
@@ -23,36 +18,8 @@ public class StudentDTO {
 	private String zip_code;
 	private String address_basic;
 	private String address_detail;
-	private Date entrance_date;
-	private Date graduate_date;
 	private String statement;
-	private String grade;
-	private String semester;
-	private String category;
-
-	public int getStd_id() {
-		return std_id;
-	}
-
-	public void setStd_id(int std_id) {
-		this.std_id = std_id;
-	}
-
-	public int getCol_id() {
-		return col_id;
-	}
-
-	public void setCol_id(int col_id) {
-		this.col_id = col_id;
-	}
-
-	public int getDept_id() {
-		return dept_id;
-	}
-
-	public void setDept_id(int dept_id) {
-		this.dept_id = dept_id;
-	}
+	private String position;
 
 	public int getPro_id() {
 		return pro_id;
@@ -60,6 +27,14 @@ public class StudentDTO {
 
 	public void setPro_id(int pro_id) {
 		this.pro_id = pro_id;
+	}
+
+	public String getPro_no() {
+		return pro_no;
+	}
+
+	public void setPro_no(String pro_no) {
+		this.pro_no = pro_no;
 	}
 
 	public String getRrn() {
@@ -142,22 +117,6 @@ public class StudentDTO {
 		this.address_detail = address_detail;
 	}
 
-	public Date getEntrance_date() {
-		return entrance_date;
-	}
-
-	public void setEntrance_date(Date entrance_date) {
-		this.entrance_date = entrance_date;
-	}
-
-	public Date getGraduate_date() {
-		return graduate_date;
-	}
-
-	public void setGraduate_date(Date graduate_date) {
-		this.graduate_date = graduate_date;
-	}
-
 	public String getStatement() {
 		return statement;
 	}
@@ -166,38 +125,20 @@ public class StudentDTO {
 		this.statement = statement;
 	}
 
-	public String getGrade() {
-		return grade;
+	public String getPosition() {
+		return position;
 	}
 
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
-
-	public String getSemester() {
-		return semester;
-	}
-
-	public void setSemester(String semester) {
-		this.semester = semester;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
 	@Override
 	public String toString() {
-		return "StudentDTO [std_id=" + std_id + ", col_id=" + col_id + ", dept_id=" + dept_id + ", pro_id=" + pro_id
-				+ ", rrn=" + rrn + ", name_kor=" + name_kor + ", name_eng=" + name_eng + ", gender=" + gender
-				+ ", nationality=" + nationality + ", tel=" + tel + ", email=" + email + ", zip_code=" + zip_code
-				+ ", address_basic=" + address_basic + ", address_detail=" + address_detail + ", entrance_date="
-				+ entrance_date + ", graduate_date=" + graduate_date + ", statement=" + statement + ", grade=" + grade
-				+ ", semester=" + semester + ", category=" + category + "]";
+		return "ProfessorDTO [pro_id=" + pro_id + ", pro_no=" + pro_no + ", rrn=" + rrn + ", name_kor=" + name_kor
+				+ ", name_eng=" + name_eng + ", gender=" + gender + ", nationality=" + nationality + ", tel=" + tel
+				+ ", email=" + email + ", zip_code=" + zip_code + ", address_basic=" + address_basic
+				+ ", address_detail=" + address_detail + ", statement=" + statement + ", position=" + position + "]";
 	}
 
 }

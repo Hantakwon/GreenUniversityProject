@@ -37,8 +37,8 @@ public class Sql {
 	public static final String SELECT_ADMISSION_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_ADMISSION_NOTICE";
 	
 	// 검색
-	public final static String SELECT_ADMISSION_NOTICE_SEARCH = "SELECT * FROM TB_ADMISSION_NOTICE ";
-	public final static String SELECT_ADMISSION_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_ADMISSION_NOTICE ";	
+	public static final String SELECT_ADMISSION_NOTICE_SEARCH = "SELECT * FROM TB_ADMISSION_NOTICE ";
+	public static final String SELECT_ADMISSION_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_ADMISSION_NOTICE ";	
 
 	
 	/* 
@@ -58,16 +58,16 @@ public class Sql {
 	public static final String SELECT_ACADEMIC_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_ACADEMIC_NOTICE";
 	
 	// 검색
-	public final static String SELECT_ACADEMIC_NOTICE_SEARCH = "SELECT * FROM TB_ACADEMIC_NOTICE ";
-	public final static String SELECT_ACADEMIC_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_ACADEMIC_NOTICE ";
+	public static final String SELECT_ACADEMIC_NOTICE_SEARCH = "SELECT * FROM TB_ACADEMIC_NOTICE ";
+	public static final String SELECT_ACADEMIC_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_ACADEMIC_NOTICE ";
 	
 	// 검색 도구
-	public final static String SEARCH_WHERE_TITLE = "WHERE TITLE LIKE ? ";
-	public final static String SEARCH_WHERE_CONTENT = "WHERE CONTENT LIKE ? ";
-	public final static String SEARCH_WHERE_WRITER = "WHERE WRITER LIKE ? ";
+	public static final String SEARCH_WHERE_TITLE = "WHERE TITLE LIKE ? ";
+	public static final String SEARCH_WHERE_CONTENT = "WHERE CONTENT LIKE ? ";
+	public static final String SEARCH_WHERE_WRITER = "WHERE WRITER LIKE ? ";
 	
-	public final static String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
-	public final static String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
+	public static final String SEARCH_ORDER_ID = "ORDER BY ID DESC ";
+	public static final String SEARCH_OFFSET_ROW = "LIMIT 5 OFFSET ?";
 
 
 	/* 
@@ -110,8 +110,42 @@ public class Sql {
 	// user db명 수정 필요
 	public static final String SELECT_USER_BY_PASS = "SELECT * FROM USERS WHERE USER_ID=? AND USER_PASS=STANDARD_HASH(?, 'SHA256')";
 	
+
 	public static final String SELECT_STUDENT_BY_RNN = "SELCET * FROM TB_STUDENT WHERE STD_ID=? AND RRN=?";
 	public static final String SELECT_PROFESSOR_BY_RNN = "SELCET * FROM TB_PROFESSOR WHERE PRO_ID=? AND RRN=?";
+
+	/*
+	 * 날짜 : 2025/09/09
+	 * 이름 : 한탁원
+	 * 내용 : 교수 DB
+	 */
+	// 개수 구하기
+	public static final String SELECT_PROFESSOR_COUNT = "SELECT COUNT(*) FROM TB_Professor";
+	// 검색
+	public static final String SELECT_PROFESSOR_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Professor ";
+	public static final String SELECT_PROFESSOR_INFO_ALL =
+												    "SELECT " +
+												    "    p.pro_no, " +
+												    "    p.name_kor AS professor_name, " +
+												    "    p.rrn, " +
+												    "    p.tel, " +
+												    "    p.email, " +
+												    "    d.name_kor AS department_name, " +
+												    "    p.position, " +
+												    "    p.statement, " +
+												    "    a.appointment_date " +
+												    "FROM TB_Professor p " +
+												    "JOIN TB_Department_Professor dp ON p.pro_id = dp.pro_id " +
+												    "JOIN TB_Department d ON dp.dept_id = d.dept_id AND dp.col_id = d.col_id " +
+												    "LEFT JOIN TB_Professor_Academic a ON p.pro_id = a.pro_id " +   
+												    "ORDER BY p.pro_id DESC " +                                     
+												    "LIMIT 5 OFFSET ?";                                          
+
+	
+	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
+	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
+	
+	
 }
 
  
