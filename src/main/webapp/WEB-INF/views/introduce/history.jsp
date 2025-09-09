@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>그린대학교</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/introduce.css">
 </head>
 <!--
 	날짜 : 2025/09/05
@@ -13,7 +14,9 @@
 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/introduce.css">
-<body>
+
+
+<body class="introduce-page">
 	<jsp:include page="../header.jsp" />
 	<div class="path-wrap">
 		<div class="path-box">
