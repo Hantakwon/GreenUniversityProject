@@ -17,6 +17,8 @@ import util.Sql;
  * 이름 : 한탁원
  * 내용 : DAO 작성 예정
  */
+
+
 public class ProfessorDAO extends DBHelper {
 	
 	private final static ProfessorDAO INSTANCE = new ProfessorDAO();
@@ -32,8 +34,42 @@ public class ProfessorDAO extends DBHelper {
 		
 	}
 	
-	public ProfessorDTO select(int ano) {
-		return null;
+	
+	/*
+	 * 날짜 : 2025-09-09
+	 * 이름 : 정순권
+	 * 내용 : select 작성(로그인용)
+	 */
+	public ProfessorDTO select(ProfessorDTO dto) {
+		ProfessorDTO profDTO = null;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.SELECT_PROFESSOR_BY_RRN);
+			psmt.setInt(1, dto.getPro_id());
+			psmt.setString(2, dto.getRrn());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				profDTO = new ProfessorDTO();
+				profDTO.setPro_id(rs.getString(1));
+				profDTO.setPro_no(rs.getString(2));
+				profDTO.setRrn(rs.getString(3));
+				profDTO.setName_kor(rs.getString(4));
+				profDTO.setName_eng(rs.getString(5));
+				profDTO.setGender(rs.getString(6));
+				profDTO.setNationality(rs.getString(7));
+				profDTO.setTel(rs.getString(8));
+				profDTO.setEmail(rs.getString(9));
+				profDTO.setZip_code(rs.getString(10));
+				profDTO.setAddress_basic(rs.getString(11));
+				profDTO.setAddress_detail(rs.getString(12));
+				profDTO.setStatement(rs.getString(13));
+				profDTO.setPosition(rs.getString(14));
+			}
+			closeAll();
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return profDTO;
 	}
 	
 	public List<ProfessorDTO> selectAll() {

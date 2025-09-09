@@ -28,6 +28,12 @@ public class ProfessorDTO {
 	public void setPro_id(int pro_id) {
 		this.pro_id = pro_id;
 	}
+	
+	public void setPro_id(String pro_id) {
+		if (pro_id != null) {
+			this.pro_id = Integer.parseInt(pro_id);
+		}
+	}
 
 	public String getPro_no() {
 		return pro_no;

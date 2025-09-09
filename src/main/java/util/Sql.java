@@ -113,8 +113,8 @@ public class Sql {
 	public static final String SELECT_USER_BY_PASS = "SELECT * FROM USERS WHERE USER_ID=? AND USER_PASS=STANDARD_HASH(?, 'SHA256')";
 	
 
-	public static final String SELECT_STUDENT_BY_RNN = "SELCET * FROM TB_STUDENT WHERE STD_ID=? AND RRN=?";
-	public static final String SELECT_PROFESSOR_BY_RNN = "SELCET * FROM TB_PROFESSOR WHERE PRO_ID=? AND RRN=?";
+	public static final String SELECT_STUDENT_BY_RRN = "SELECT * FROM TB_STUDENT WHERE STD_ID=? AND REPLACE(`RRN`, '-', '')=?";
+	public static final String SELECT_PROFESSOR_BY_RRN = "SELECT * FROM TB_PROFESSOR WHERE PRO_ID=? AND REPLACE(`RRN`, '-', '')=?";
 
 	/*
 	 * 날짜 : 2025/09/09

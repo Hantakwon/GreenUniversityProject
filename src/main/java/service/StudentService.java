@@ -15,8 +15,8 @@ public enum StudentService {
 		dao.insert(dto);
 	}
 
-	public StudentDTO findByPass(int id) {
-		return dao.select(id);
+	public StudentDTO findByPass(StudentDTO dto) {
+		return dao.select(dto);
 	}
 
 	public List<StudentDTO> findAll() {
