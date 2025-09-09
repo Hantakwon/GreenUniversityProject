@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <div id="sidebarWrap">
   <aside class="side">
     <h4 class="icon-admin-setting">환경설정</h4>
@@ -18,16 +20,16 @@
 
     <h4 class="icon-admin-persons">인사관리</h4>
     <ul>
-      <li><a href="studentList.html">학생 목록</a></li>
-      <li><a href="studentRegister.html">학생 등록</a></li>
-      <li><a href="professorList.html">교수 목록</a></li>
-      <li><a href="professorRegister.html">교수 등록</a></li>
+      <li><a href="/manage/student/list.do">학생 목록</a></li>
+      <li><a href="/manage/student/register.do">학생 등록</a></li>
+      <li><a href="/manage/professor/list.do">교수 목록</a></li>
+      <li><a href="/manage/professor/register.do">교수 등록</a></li>
     </ul>
 
     <h4 class="icon-admin-college">대학 및 학과</h4>
     <ul>
-      <li><a href="departmentList.html">학과 목록</a></li>
-      <li><a href="departmentRegister.html">대학 및 학과 등록</a></li>
+      <li><a href="/manage/department/list.do">학과 목록</a></li>
+      <li><a href="/manage/department/register.do">대학 및 학과 등록</a></li>
     </ul>
 
     <h4 class="icon-admin-board">게시판관리</h4>

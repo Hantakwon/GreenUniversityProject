@@ -16,15 +16,15 @@
 <script
 	src="<%=request.getContextPath()%>/resources/js/manage/script.js"></script>
 <body>
-	<div id="include-header"></div>
-	<div id="include-sidebar"></div>
+	<jsp:include page="../common/manage_header.jsp" />
+	<jsp:include page="../common/manage_sidebar.jsp" />
 
 	<div class="mainWrap">
 		<div class="page">
 			<div class="page-head">
 				<div class="title">학생 목록</div>
 				<div class="breadcrumb">
-					인사관리 &gt; <a href="studentList.html">학생 목록</a>
+					인사관리 &gt; <a href="studentList.do">학생 목록</a>
 				</div>
 			</div>
 
@@ -109,11 +109,11 @@
 					<button class="pg">&raquo;</button>
 				</div>
 				<button class="btn btn-block"
-					onclick="location.href='studentRegister.html'">등록</button>
+					onclick="location.href='studentRegister.do'">등록</button>
 			</div>
 		</div>
 	</div>
 
-	<div id="include-footer"></div>
+	<jsp:include page="../common/manage_footer.jsp" />
 </body>
 </html>
