@@ -47,7 +47,7 @@ public class ListController extends HttpServlet {
 		request.setAttribute("dtoList", dtoList);
 		request.setAttribute("pagenationDTO", pagenationDTO);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/professor/list2.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/professor/list.jsp");
 		dispatcher.forward(request, response);
 	}
 
