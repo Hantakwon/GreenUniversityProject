@@ -6,5 +6,5 @@ package dto;
  * 내용 : DTO 작성 예정
  */
 public class StudentDTO {
-
+	
 }

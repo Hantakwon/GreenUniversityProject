@@ -53,9 +53,9 @@
 							</div>
 						</div>
 						<div class="form-inputs">
-							<input type="text" name="user_id" placeholder="아이디" required>
+							<input type="text" name="user_id" placeholder="아이디" >
 							<input type="password" name="user_pass" placeholder="비밀번호"
-								required>
+								>
 						</div>
 						<button type="submit" class="loginBtn">로그인</button>
 						<div class="login-links">

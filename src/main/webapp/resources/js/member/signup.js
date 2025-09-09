@@ -203,6 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 
 	// 취소
-	document.getElementById('cancel').addEventListener('click', () => location.href = '/GreenUniversityProject/member/login.do');
+	document.getElementById('cancel').addEventListener('click', () => location.href = '/member/login.do');
 
 }); // DOM 마지막

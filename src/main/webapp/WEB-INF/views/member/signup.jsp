@@ -41,24 +41,24 @@
 						<table class="registerTable">
 							<tr>
 								<th>아이디<i>*</i></th>
-								<td><input type="text" name="user_id" required
+								<td><input type="text" name="user_id" 
 									placeholder="아이디 입력"> <span class="user_idResult">영문·숫자
 										조합 4~10자 이내</span></td>
 							</tr>
 							<tr>
 								<th>비밀번호<i>*</i></th>
-								<td><input type="password" name="user_pass1" required
+								<td><input type="password" name="user_pass1" 
 									placeholder="비밀번호 입력"> <span class="passResult">비밀번호는
 										8-16자리 이내, 영문 · 숫자 · 특수문자 조합</span></td>
 							</tr>
 							<tr>
 								<th>비밀번호 확인<i>*</i></th>
-								<td><input type="password" name="user_pass2" required
+								<td><input type="password" name="user_pass2" 
 									placeholder="비밀번호 확인 입력"></td>
 							</tr>
 							<tr>
 								<th>이름<i>*</i></th>
-								<td><input type="text" name="user_name" required
+								<td><input type="text" name="user_name" 
 									placeholder="이름 입력"> <span class="nameResult"></span></td>
 							</tr>
 							<tr>
