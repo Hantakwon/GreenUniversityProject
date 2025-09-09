@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>그린대학교</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/introduce.css">
 </head>
 <!--
 	날짜 : 2025/09/05
@@ -12,7 +13,8 @@
     내용 : 연혁
 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
-<body>
+
+<body class="introduce-page">
 	<jsp:include page="../header.jsp" />
 	<div class="path-wrap">
 		<div class="path-box">
@@ -55,7 +57,50 @@
 				</div>
 			</div>
 			<div class="content" id="jwxe_main_content">
-				<div class="content-box">컨텐츠 내용 꾸미기</div>
+				<div class="content-box">
+					<div class="year">2025년</div>
+				    <div class="month">3월</div>
+				    <div class="event">- 학부대학 신설</div>
+				
+				    <div class="divider"></div>
+				
+				    <div class="year">2024년</div>
+				    <div class="month">3월</div>
+				    <div class="event">- 데이터사이언스전문대학원 신설</div>
+				    <div class="month">5월</div>
+				    <div class="event">- 제22대 총장 최그린 박사 취임</div>
+				    <div class="month">9월</div>
+				    <div class="event">- 융합의생명과학대학원 신설</div>
+				
+				    <div class="divider"></div>
+				
+				    <div class="year">2023년</div>
+				    <div class="month">3월</div>
+				    <div class="event">- 학사조직개편 (생활환경대학 → 생활과학대학으로 개편, 스포츠과학부 → 스포츠과학과로 변경)</div>
+				    <div class="month">11월</div>
+				    <div class="event">- 글로컬대학 선정 (2027년 그린교대와 통합)</div>
+				
+				    <div class="divider"></div>
+				
+				    <div class="year">2022년</div>
+				    <div class="month">4월</div>
+				    <div class="event">- 그린2캠퍼스 나노생명과학도서관 리모델링 개관</div>
+				    <div class="month">4월</div>
+				    <div class="event">- 그린캠퍼스 새벽벌도서관 1층 리모델링 개관</div>
+				    <div class="month">12월</div>
+				    <div class="event">- 그린캠퍼스 새벽벌도서관 24시간 열람 공간 '새벽 별당' 개관</div>
+				
+				    <div class="divider"></div>
+				
+				    <div class="year">2020년</div>
+				    <div class="month">3월</div>
+				    <div class="event">- 정보의생명공학대학 신설</div>
+				    <div class="month">5월</div>
+				    <div class="event">- 제21대 총장 차그린 박사 취임</div>
+								
+				
+				
+				</div>
 			</div>
 		</div>
 	</div>

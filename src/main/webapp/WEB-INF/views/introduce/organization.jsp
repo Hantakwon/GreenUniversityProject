@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>그린대학교</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/organization.css">
 </head>
 <!--
 	날짜 : 2025/09/05
@@ -55,7 +56,57 @@
 				</div>
 			</div>
 			<div class="content" id="jwxe_main_content">
-				<div class="content-box">컨텐츠 내용 꾸미기</div>
+				<div class="content-box">
+					 <!-- 조직도 시작 -->
+                    <div class="organization">
+                        <!-- 총장 -->
+                        <div class="president">
+                            <a href="http://localhost:8080/introduce/greeting.do">총장</a>
+                        	</br>
+                        </div>
+
+                        <!-- 하위 블록 -->
+                        <div class="org-blocks">
+
+                            <!-- 본부 -->
+                            <div class="org-card">
+                                <div class="org-header">본부</div>
+                                <ul class="org-list">
+                                    <li>교무처</li>
+                                    <li>학생처</li>
+                                    <li>기획처</li>
+                                    <li>연구처</li>
+                                    <li>국제처</li>
+                                    <li>입학처</li>
+                                    <li>사무국</li>
+                                    <li>교육혁신본부</li>
+                                    <li>캠퍼스기획본부</li>
+                                </ul>
+                            </div>
+
+                            <!-- 대학 주소조정 필요함 -->
+                            <div class="org-card">
+                                <div class="org-header">대학</div>
+                                <ul class="org-list">
+                                    <li><a href="./인문사회대학.html">인문사회대학</a></li>
+                                    <li><a href="./자연과학대학.html">자연과학대학</a></li>
+                                    <li><a href="./공과대학.html">공과대학</a></li>
+                                    <li><a href="./사범대학.html">사범대학</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 대학원 -->
+                            <div class="org-card">
+                                <div class="org-header">대학원</div>
+                                <ul class="org-list">
+                                    <li><a href="./대학원.html">대학원</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 조직도 끝 -->
+
+				</div>
 			</div>
 		</div>
 	</div>

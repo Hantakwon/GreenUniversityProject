@@ -55,7 +55,25 @@
 				</div>
 			</div>
 			<div class="content" id="jwxe_main_content">
-				<div class="content-box">컨텐츠 내용 꾸미기</div>
+				<div class="content-box">
+					<img src="<%=request.getContextPath()%>/resources/images/introduce_ideology.PNG" alt="교육이념 이미지" style="max-width: 100%; height: auto;" />
+					</br>
+					</br>
+					<h2>인재상</h2>
+					</br>
+					<h4>창조적 지성과 바른 인성을 겸비한 그린인</h4>
+					</br>
+					</br>
+					<h2>교육목적</h2>
+					</br>
+					<h4>진리, 자유, 봉사의 정신으로 창조적 지성과 바른 인성을 겸비한 인재를 양성한다.</h4>
+					</br>
+					</br>
+					<h2>교육목표</h2>
+					</br>
+					<img src="<%=request.getContextPath()%>/resources/images/introduce_goal.PNG" alt="교육이념 이미지" style="max-width: 100%; height: auto;">
+					
+				</div>
 			</div>
 		</div>
 	</div>
