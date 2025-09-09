@@ -6,11 +6,6 @@ import dao.PagenationDTO;
 import dao.academic.Academic_noticeDAO;
 import dto.academic.Academic_noticeDTO;
 
-/*
- * 날짜 : 2025-09-04
- * 이름 : 한탁원
- * 내용 : 학사안내 - 공지사항 서비스
- */
 public enum Academic_noticeService {
 
 	INSTANCE;

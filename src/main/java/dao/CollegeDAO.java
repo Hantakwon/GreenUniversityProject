@@ -1,15 +1,12 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.CollegeDTO;
-import dto.admission.Admission_noticeDTO;
 import util.DBHelper;
-import util.Sql;
 
 /*
  * 날짜 : 2025-09-08

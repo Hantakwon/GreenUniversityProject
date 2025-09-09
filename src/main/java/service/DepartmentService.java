@@ -4,7 +4,6 @@ import java.util.List;
 
 import dao.DepartmentDAO;
 import dto.DepartmentDTO;
-import dto.DepartmentHeadDTO;
 
 public enum DepartmentService {
 
@@ -22,10 +21,6 @@ public enum DepartmentService {
 
 	public List<DepartmentDTO> findAll() {
 		return dao.selectAll();
-	}
-	
-	public List<DepartmentHeadDTO> findAllHeadByCollege(int col_id) {
-		return dao.selectAllHeadByCollege(col_id);
 	}
 
 	public void modify(DepartmentDTO dto) {
