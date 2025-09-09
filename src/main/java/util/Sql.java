@@ -81,6 +81,9 @@ public class Sql {
 		    "FROM tb_academic_faq ORDER BY id";
 	// 학사 안내 - 학사일정 전체 불러오기 CalanderDTO
 	public final static String SELECT_CALANDER_ALL = "SELECT * FROM tb_academic_calendar";
+	// 대학생활 - 갤러리 게시판 전체 불러오기
+	public final static String SELECT_GALLERY_ALL = "SELECT * FROM tb_collegelife_gallery";
+	
 
 	/* 
 	 * 날짜 : 2025/09/08

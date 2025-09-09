@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
+
 </head>
 <!-- 
-	날짜 :
+	날짜 : 2025-09-09
 	이름 : 박효빈
-	내용 : 갤러리
+	내용 : 갤러리 jsp 페이지 작업 진행중
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/academic/academic.css">
 
 <body>
     <main>
@@ -47,7 +49,7 @@
         <div class="gallery-container">
             <div class="gallery-item">
                 <div class="img-box">
-                    <img src="./images/gallary_sample1.jpg" alt="갤러리 이미지" />
+                <img src="<%=request.getContextPath()%>/resources/images/gallary_sample1.jpg" alt="bullet-h4 이미지">
                 </div>
                 <div class="text-box">
                     <p class="title">제40회 1995학년도 학위수여식</p>
@@ -60,7 +62,7 @@
             </div>
             <div class="gallery-item">
                 <div class="img-box">
-                    <img src="./images/gallary_sample2.jpg" alt="갤러리 이미지" />
+                <img src="<%=request.getContextPath()%>/resources/images/gallary_sample2.jpg" alt="bullet-h4 이미지">
                 </div>
                 <div class="text-box">
                     <p class="title">제41회 1995학년도 학위수여식</p>
@@ -73,7 +75,7 @@
             </div>
             <div class="gallery-item">
                 <div class="img-box">
-                    <img src="./images/gallary_sample3.jpg" alt="갤러리 이미지" />
+                <img src="<%=request.getContextPath()%>/resources/images/gallary_sample3.jpg" alt="bullet-h4 이미지">
                 </div>
                 <div class="text-box">
                     <p class="title">제40회 1995학년도 학위수여식</p>
@@ -86,7 +88,7 @@
             </div>
             <div class="gallery-item">
                 <div class="img-box">
-                    <img src="./images/gallary_sample4.png" alt="갤러리 이미지" />
+                <img src="<%=request.getContextPath()%>/resources/images/gallary_sample4.png" alt="bullet-h4 이미지">
                 </div>
                 <div class="text-box">
                     <p class="title">제40회 1995학년도 학위수여식</p>
@@ -99,7 +101,7 @@
             </div>
             <div class="gallery-item">
                 <div class="img-box">
-                    <img src="./images/gallary_sample5.jpg" alt="갤러리 이미지" />
+                <img src="<%=request.getContextPath()%>/resources/images/gallary_sample5.jpg" alt="bullet-h4 이미지">
                 </div>
                 <div class="text-box">
                     <p class="title">제41회 1995학년도 학위수여식</p>
