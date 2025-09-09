@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import dao.collegelife.GalleryDAO;
 import dto.collegelife.GalleryDTO;
+import dto.collegelife.GalleryPagenationDTO;
 
 public enum GalleryService {
 	INSTANCE;
@@ -20,6 +21,7 @@ public enum GalleryService {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	private GalleryDAO galleryDAO = GalleryDAO.getInstance();
 	public void insert(GalleryDTO dto) {
 
 	}
@@ -39,5 +41,15 @@ public enum GalleryService {
 	public void delete(int gno) {
 
 	}
+	
+	
+	
+	
+
+	
+
+		
+		
+	
 
 }
