@@ -17,8 +17,9 @@
 	src="<%=request.getContextPath()%>/resources/js/manage/script.js"></script>
 
 <body>
-  <jsp:include page="./common/header.jsp" />
-  <jsp:include page="./common/sidebar.jsp" />
+	<jsp:include page="common/manage_header.jsp" />
+	<jsp:include page="common/manage_sidebar.jsp" />
+
 
 	<div class="mainWrap">
 		<div class="page">
@@ -290,7 +291,7 @@
 		</div>
 	</div>
 
-	<jsp:include page="./common/footer.jsp" />
+	<jsp:include page="common/manage_footer.jsp" />
 
 </body>
 </html>

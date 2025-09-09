@@ -113,23 +113,23 @@ body {
 
 /* 아이콘 이미지들 넣기 */
 .icon-admin-setting::before {
-  background-image: url('./images/ico-admin-setting.png');
+  background-image: url('../../images/ico-admin-setting.png');
 }
 
 .icon-admin-academic::before {
-  background-image: url('./images/ico-admin-academic.png');
+  background-image: url('../../images/ico-admin-academic.png');
 }
 
 .icon-admin-persons::before {
-  background-image: url('./images/ico-admin-persons.png');
+  background-image: url('../../images/ico-admin-persons.png');
 }
 
 .icon-admin-college::before {
-  background-image: url('./images/ico-admin-college.png');
+  background-image: url('../../images/ico-admin-college.png');
 }
 
 .icon-admin-board::before {
-  background-image: url('./images/ico-admin-board.png');
+  background-image: url('../../images/ico-admin-board.png');
 }
 
 /* ul, li, a 스타일 유지 */
