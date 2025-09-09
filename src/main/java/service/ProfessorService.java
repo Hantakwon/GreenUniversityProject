@@ -17,8 +17,8 @@ public enum ProfessorService {
 		dao.insert(dto);
 	}
 
-	public ProfessorDTO findByPass(int id) {
-		return dao.select(id);
+	public ProfessorDTO findByPass(ProfessorDTO dto) {
+		return dao.select(dto);
 	}
 
 	public List<ProfessorDTO> findAll() {

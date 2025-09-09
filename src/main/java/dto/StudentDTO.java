@@ -38,6 +38,12 @@ public class StudentDTO {
 		this.std_id = std_id;
 	}
 
+	public void setStd_id(String std_id) {
+		if (std_id != null) {
+			this.std_id = Integer.parseInt(std_id);
+		}
+	}
+
 	public int getCol_id() {
 		return col_id;
 	}

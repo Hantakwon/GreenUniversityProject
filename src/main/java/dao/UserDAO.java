@@ -79,7 +79,7 @@ public class UserDAO extends DBHelper {
 	
 	public UserDTO select(UserDTO dto) {
 		
-		UserDTO userDTO = new UserDTO();
+		UserDTO userDTO = null;
 		
 		try {
 			conn = getConnection();
