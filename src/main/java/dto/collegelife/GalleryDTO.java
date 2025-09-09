@@ -8,7 +8,7 @@ public class GalleryDTO {
 	private int gno;
 	private String title;
 	private String image_path;
-	private String rdcnt;
+	private int rdcnt;
 	private String reg_date;
 	private String content;
 	private String writer;
@@ -30,10 +30,10 @@ public class GalleryDTO {
 	public void setImage_path(String image_path) {
 		this.image_path = image_path;
 	}
-	public String getRdcnt() {
+	public int getRdcnt() {
 		return rdcnt;
 	}
-	public void setRdcnt(String rdcnt) {
+	public void setRdcnt(int rdcnt) {
 		this.rdcnt = rdcnt;
 	}
 	public String getReg_date() {
