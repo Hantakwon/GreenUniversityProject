@@ -1,0 +1,243 @@
+/* Merged and corrected signup.css */
+
+/* 모든 요소의 여백 및 패딩을 초기화하고, box-sizing: border-box 적용 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+}
+
+/* Flexbox를 사용하여 전체 페이지 레이아웃 관리 */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* 자식 요소들을 세로로 정렬 */
+    min-height: 100vh; /* 뷰포트 전체 높이를 최소 높이로 설정 */
+}
+
+/* 메인 콘텐츠가 남은 공간을 모두 차지하도록 함 */
+main {
+    flex: 1;
+    padding: 0 0 30px; /* 상단 패딩을 0으로 수정하여 info가 헤더에 붙도록 함 */
+}
+
+/* 헤더 및 푸터와 너비를 맞추는 공통 wrapper */
+.content-wrapper,
+.info > div {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* 좌우 여백을 주어 모바일에서 내용이 붙지 않도록 함 */
+}
+
+/* 메인 콘텐츠 wrapper에 상단 패딩 추가 */
+.content-wrapper {
+  padding-top: 50px;
+}
+
+/* 상단 정보 바 스타일 */
+.info {
+    width: 100%;
+    height: 36px;
+    background-color: #edf2f6;
+    display: flex;
+    align-items: center;
+}
+
+.info > div {
+    display: flex;
+    justify-content: flex-end; /* 우측 정렬 */
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.info img {
+    width: 16px;
+    height: auto;
+    margin-right: 5px;
+}
+
+/* 회원가입 섹션 스타일 */
+.register {
+    width: 100%;
+}
+
+.topInfo {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.topInfo h4 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 10px 0 5px;
+    color: #498be4;
+}
+
+.topInfo p {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #498be4;
+}
+
+/* 폼 스타일 */
+.registerForm {
+    width: 100%;
+}
+
+/* 테이블 스타일 */
+.registerTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 4px solid #0d1f4c;
+    /* notice와의 간격을 위해 하단 마진을 5px로 설정 */
+    margin-bottom: 5px; 
+}
+
+.registerForm i {
+    color: red;
+    font-style: normal;
+    margin-left: 5px;
+}
+
+.registerTable th {
+    width: 200px;
+    background-color: #f4f8fc;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid #dedede;
+    padding: 15px;
+    vertical-align: middle;
+    border-left: none;
+    white-space: nowrap;
+}
+
+.registerTable td {
+    width: auto;
+    border: 1px solid #dedede;
+    padding: 15px;
+    vertical-align: top;
+    background-color: #fff;
+    border-right: none;
+}
+
+/* 인풋 필드 */
+.registerTable input {
+    width: 100%;
+    max-width: 350px;
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid #cccccc;
+}
+
+.registerTable td span {
+    margin-left: 10px;
+}
+
+/* 주소 입력칸 그룹 정렬 */
+.address-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+#postal_code {
+    max-width: 115px;
+}
+
+#basic_addr,
+#detail_addr {
+    max-width: 450px;
+}
+
+/* 버튼 영역과 공지사항을 담을 컨테이너 */
+.form-footer {
+    display: flex;
+    justify-content: space-between; /* 양 끝 정렬 */
+    /* notice와 selectBox의 높이 차이를 위해 수직 정렬을 제거 */
+}
+
+/* 공지사항 텍스트는 테이블 바로 아래 5px 간격으로 위치 */
+.notice {
+    font-weight: 300;
+    font-size: 13px;
+    color: #666666;
+    display: block;
+    margin-top: 0; 
+    text-align: left;
+}
+
+/* selectBox는 테이블에서 50px 간격으로 위치 */
+.selectBox {
+    display: flex;
+    /* 버튼 간격 3px로 수정 */
+    gap: 3px;
+    /* 테이블과의 간격 50px을 맞추기 위해 상단 마진을 45px로 설정 */
+    margin-top: 45px; 
+}
+
+.selectBox button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#signUp {
+    background-color: #5198f9;
+    color: white;
+	font-size: 15px;
+	font-weight: 100;
+}
+
+#cancel {
+    background-color: #8b8b8b;
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .registerTable th,
+    .registerTable td {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .registerTable th {
+        background-color: #f4f8fc;
+        border-bottom: none;
+    }
+
+    .registerTable td {
+        border-top: none;
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+
+    .registerTable tr {
+        margin-bottom: 20px;
+        display: block;
+        border: 1px solid #ddd;
+    }
+
+    .form-footer {
+        flex-direction: column; /* 모바일에서 세로로 정렬 */
+        align-items: flex-start;
+    }
+
+    .selectBox {
+        width: 100%;
+        justify-content: flex-start; /* 버튼도 왼쪽 정렬 */
+        margin-top: 10px;
+    }
+}

@@ -24,46 +24,62 @@ import service.UserService;
 @WebServlet("/member/login.do")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-	/* service, logger 추가 */
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	private UserService userService = UserService.INSTANCE;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		/* 필요 시 DB Logic 추가 */
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// 세션에서 메시지를 가져옵니다.
+	    HttpSession session = request.getSession();
+	    String message = (String) session.getAttribute("message");
+	    
+	    // 메시지가 있으면 request에 담고, 세션에서는 제거합니다.
+	    if (message != null) {
+	        request.setAttribute("message", message);
+	        session.removeAttribute("message");
+	    }
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/member/login.jsp");
 		dispatcher.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-		// 전송 데이터 수신
-		String user_id = req.getParameter("user_id");
-		String user_pass = req.getParameter("user_pass");
+		String user_id = request.getParameter("user_id");
+		String user_pass = request.getParameter("user_pass");
+		String userType = request.getParameter("userType");
+
+		logger.debug("user_id: " + user_id);
+		logger.debug("user_pass: " + user_pass);
+		logger.debug("userType: " + userType);
 
 		UserDTO dto = new UserDTO();
 		dto.setUser_id(user_id);
 		dto.setUser_pass(user_pass);
 
-		logger.debug(dto.toString());
+		UserDTO userDTO = null;
 
-		// 서비스 요청
-		UserDTO userDTO = userService.findByPass(dto);
+		if ("student".equals(userType)) {
+			// 학생 로그인 로직 (아직 미구현)
+		} else if ("staff".equals(userType)) {
+			// 교직원 로그인 로직 (아직 미구현)
+		} else if ("general".equals(userType)) {
+			userDTO = userService.findByPass(dto);
+		}
 
 		if (userDTO != null) {
-			// 회원이 맞으면 세션 저장
-			HttpSession session = req.getSession();
+			HttpSession session = request.getSession();
 			session.setAttribute("sessUser", userDTO);
-
-			// 목록 이동
-			resp.sendRedirect("/community/free.do"); // 임시 경로
-
+			response.sendRedirect(request.getContextPath() + "/college/science.do");
 		} else {
-			// 회원이 아니면 로그인 이동
-			resp.sendRedirect("/member/login.do");
+			// 로그인 실패 시 세션에 메시지를 저장하고 리다이렉트
+			HttpSession session = request.getSession();
+			session.setAttribute("message", "로그인 오류 아이디/비밀번호를 확인하세요");
+			response.sendRedirect(request.getContextPath() + "/member/login.do");
 		}
 	}
-
 }
+
