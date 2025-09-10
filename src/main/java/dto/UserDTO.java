@@ -10,7 +10,7 @@ public class UserDTO {
 	private String postal_code;
 	private String basic_addr;
 	private String detail_addr;
-	private int user_type;
+	private String user_type;
 	public String getUser_id() {
 		return user_id;
 	}
@@ -59,10 +59,11 @@ public class UserDTO {
 	public void setDetail_addr(String detail_addr) {
 		this.detail_addr = detail_addr;
 	}
-	public int getUser_type() {
+
+	public String getUser_type() {
 		return user_type;
 	}
-	public void setUser_type(int user_type) {
+	public void setUser_type(String user_type) {
 		this.user_type = user_type;
 	}
 	@Override

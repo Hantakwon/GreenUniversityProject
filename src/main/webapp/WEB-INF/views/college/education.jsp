@@ -44,18 +44,17 @@
 				</div>
 				<div class="main-content">
 					<div class="top">
-						<h2>사범대학</h2>
+						<h2>${dto.name_kor}</h2>
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="/resources/images/college-introduce-4.jpg" alt="사범대">
+							<img src="${pageContext.request.contextPath}${dto.image}"
+								alt="대학 이미지">
 						</div>
 						<div class="info-div">
-							<h4>Education</h4>
-							<h2>미래를 움직이는 큰 인재, 세계의 주역!</h2>
-							<p>전공영역은 물론 현대 교육에 대한 학문적 탐구의 자질 및 인격 도야에 중점을 두고 있습니 다. 원격강의,
-								스튜디오, 원격교육강의실, 교육매체 제작실, 멀티미디어 강의실, 어학학습실, 수업행동 분석실 등 첨단 시설을 갖춘
-								교육지원센터를 운영하고 있습니다. 부속기관으로는 중등교육연수원, 과학교육연구소, 부설고등학교 등이 있습니다.</p>
+							<h4>${dto.name_eng}</h4>
+							<h2>${dto.title}</h2>
+							<p>${dto.content}</p>
 						</div>
 					</div>
 					<div class="mid">
@@ -73,7 +72,7 @@
 							</tr>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.deptName}<a href="#"><img
+									<td>${dto.deptName} <a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
 											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>

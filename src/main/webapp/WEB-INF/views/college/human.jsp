@@ -55,7 +55,8 @@
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="${pageContext.request.contextPath}${dto.image}" alt="대학 이미지">
+							<img src="${pageContext.request.contextPath}${dto.image}"
+								alt="대학 이미지">
 						</div>
 						<div class="info-div">
 							<h4>${dto.name_eng}</h4>
@@ -80,7 +81,7 @@
 							</tr>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.deptName}<a href="#"><img
+									<td>${dto.deptName} <a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
 											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>
