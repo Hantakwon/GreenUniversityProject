@@ -6,8 +6,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.DepartmentDTO;
-import dto.DepartmentHeadDTO;
+import dto.college.DepartmentDTO;
+import dto.college.DepartmentHeadDTO;
+import dto.college.DepartmentListDTO;
 import util.DBHelper;
 import util.Sql;
 
@@ -66,6 +67,33 @@ public class DepartmentDAO extends DBHelper {
 
 		return dtoList;
 	}
+	
+	public List<DepartmentListDTO> selectAllWithInfo() {
+		List<DepartmentListDTO> dtoList = new ArrayList<DepartmentListDTO>();
+
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.SELECT_DEPARTMENT_WITH_INFO);
+			
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				DepartmentListDTO dto = new DepartmentListDTO();
+				dto.setDept_no(rs.getString(1));
+				dto.setCol_name(rs.getString(2));
+				dto.setDept_name(rs.getString(3));
+				dto.setDept_tel(rs.getString(4));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+		return dtoList;
+	}
+
 
 	public void update(DepartmentDTO dto) {
 

@@ -7,12 +7,6 @@
 <title>교수 등록</title>
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/manage/common/header.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/manage/common/aside.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/manage/common/footer.css">
-<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/manage/admin.css">
 </head>
 <body>

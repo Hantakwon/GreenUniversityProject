@@ -3,7 +3,7 @@ package service;
 import java.util.List;
 
 import dao.CollegeDAO;
-import dto.CollegeDTO;
+import dto.college.CollegeDTO;
 
 public enum CollegeService {
 
@@ -15,7 +15,7 @@ public enum CollegeService {
 		dao.insert(dto);
 	}
 
-	public CollegeDTO findByPass(int id) {
+	public CollegeDTO findById(int id) {
 		return dao.select(id);
 	}
 

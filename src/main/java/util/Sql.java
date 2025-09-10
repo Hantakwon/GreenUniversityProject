@@ -7,6 +7,9 @@ public class Sql {
 	 * 이름 : 한탁원
 	 * 내용 : 대학대학원 SQL 작성
 	 */
+	// Sql.java (동일)
+	public static final String INSERT_COLLEGE =
+	    "INSERT INTO TB_College (name_kor, name_eng, title, content, image) VALUES (?, ?, ?, ?, ?)";
 	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM DEPARTMENT";
 	public static final String WHERE_COLLEGE = " WHERE COLLEGE = ?";
 	public static final String SELECT_DEPARTMENT_ALL_HEAD_WHERE_COLLEGE ="SELECT d.name_kor AS dept_name, " +
@@ -19,6 +22,16 @@ public class Sql {
 																	    "JOIN TB_Professor p " +
 																	    "  ON p.pro_id   = dp.pro_id " +
 																	    "WHERE dp.role = ? AND d.col_id = ?";
+	public static final String SELECT_DEPARTMENT_WITH_INFO =
+														        "SELECT "
+														      + "    d.dept_no, "
+														      + "    c.name_kor AS college_name, "
+														      + "    d.name_kor AS department_name, "
+														      + "    d.tel "
+														      + "FROM TB_Department d "
+														      + "JOIN TB_College    c ON d.col_id = c.col_id "
+														      + "ORDER BY c.col_id, d.dept_no";
+
 	
 	/* 
 	 * 날짜 : 2025/09/04
