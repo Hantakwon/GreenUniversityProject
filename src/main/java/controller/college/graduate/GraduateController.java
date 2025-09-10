@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.CollegeService;
 import service.DepartmentService;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import dto.college.CollegeDTO;
 import dto.college.DepartmentHeadDTO;
 
 /*
@@ -31,15 +33,20 @@ public class GraduateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/* service, logger 추가 */
-	private DepartmentService service = DepartmentService.INSTANCE;
+	private DepartmentService departmentService = DepartmentService.INSTANCE;
+	private CollegeService collegeService = CollegeService.INSTANCE;
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
 		/* DB Logic 추가 */
-		List<DepartmentHeadDTO> dtoList = service.findAllHeadByCollege(5); // 임의의 대학번호
-
+		CollegeDTO dto = collegeService.findById(5);
+		List<DepartmentHeadDTO> dtoList = departmentService.findAllHeadByCollege(5);
+		
+		request.setAttribute("dto", dto);
+		logger.debug(dto.toString());
+		
 		request.setAttribute("dtoList", dtoList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/college/graduate.jsp");

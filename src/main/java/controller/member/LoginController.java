@@ -67,32 +67,39 @@ public class LoginController extends HttpServlet {
 		user.setUser_id(user_id);
 		user.setUser_pass(user_pass);
 		
-		StudentDTO student = new StudentDTO();
-		student.setStd_id(user_id);
-		student.setRrn(clean_pass);
-		
-		
-		ProfessorDTO professor = new ProfessorDTO();
-		professor.setPro_id(user_id);
-		professor.setRrn(clean_pass);
 
 		UserDTO userDTO = null;
 		StudentDTO stdDTO = null;
 		ProfessorDTO profDTO = null;
 
 		if ("student".equals(userType)) {
-			stdDTO = studentService.findByPass(student);
-		} else if ("staff".equals(userType)) {
-			profDTO = professorService.findByPass(professor);
-		} else if ("general".equals(userType)) {
-			userDTO = userService.findByPass(user);
-		}
+            // student 타입일 때만 studentDTO 객체 생성
+            StudentDTO student = new StudentDTO();
+            student.setStd_id(Integer.parseInt(user_id)); // String을 숫자로 변환
+            student.setRrn(clean_pass);
+            stdDTO = studentService.findByPass(student);
+        } else if ("staff".equals(userType)) {
+            // staff 타입일 때만 professorDTO 객체 생성
+            ProfessorDTO professor = new ProfessorDTO();
+            professor.setPro_id(user_id);
+            professor.setRrn(clean_pass);
+            profDTO = professorService.findByPass(professor);
+        } else if ("general".equals(userType)) {
+            userDTO = userService.findByPass(user);
+        }
+
 
 		
 		if (userDTO != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("sessUser", userDTO);
-			response.sendRedirect(request.getContextPath() + "/college/science.do?user");
+			if("admin".equals(userDTO.getUser_id())) { // 관리자 계정일경우 학사관리로 이동 admin / admin123!
+				HttpSession session = request.getSession();
+				session.setAttribute("sessUser", userDTO);
+				response.sendRedirect(request.getContextPath() + "/manage/index.do?admin");
+			}else {
+				HttpSession session = request.getSession();
+				session.setAttribute("sessUser", userDTO);
+				response.sendRedirect(request.getContextPath() + "/college/science.do?user");
+			}
 		} else if(stdDTO != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("sessUser", stdDTO);

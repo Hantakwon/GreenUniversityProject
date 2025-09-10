@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>여기 맞아?</title>
+<title>그린대학교</title>
 <!--
 	날짜 : 2025/09/09
     이름 : 정순권
     내용 : index 시작
 -->
+<link rel="icon" href="/resources/images/favicon.png" type="image/x-icon">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet"
@@ -42,7 +43,7 @@
 												<p class="main-visual-txt02">그린대학교 컴퓨터과학과</p>
 												<p class="main-visual-txt03">급변하는 컴퓨터 기술의 발전에 선도적으로 참여하고
 													컴퓨터의 활용을 통하여 미래를 만들어 나갈 수 있는 인력을 배양</p>
-												<a href="#a" title="학과소개 바로가기"><span>학과소개 바로가기</span></a>
+												<a href="/college/engineering.do?dept_id=25" title="학과소개 바로가기"><span>학과소개 바로가기</span></a>
 											</div>
 										</div>
 									</div>
@@ -61,7 +62,7 @@
 													양성을 교육목표로<br> 자연과학의 근간이 되는 물리, 화학, 응용수학, 미생물학, 과학컴퓨팅 및
 													간호학의 기초 이론을 교수·연구하고 융합 및 응용과학의 토대를 제공
 												</p>
-												<a href="#a" title="학과소개 바로가기"><span>학과소개 바로가기</span></a>
+												<a href="/college/science.do?dept_id=19" title="학과소개 바로가기"><span>학과소개 바로가기</span></a>
 											</div>
 										</div>
 									</div>
@@ -76,7 +77,7 @@
 												<p class="main-visual-txt02">그린대학교 국어국문학과</p>
 												<p class="main-visual-txt03">우리 말과 우리 문학에 대한 과학적이고 체계적인
 													지식을 습득하여 민족 문화 유산을 연구 이해함으로써 한국 문화를 창조적으로 계승</p>
-												<a href="#a" title="학과소개 바로가기"><span>학과소개 바로가기</span></a>
+												<a href="/college/human.do?dept_id=1" title="학과소개 바로가기"><span>학과소개 바로가기</span></a>
 											</div>
 										</div>
 									</div>
@@ -112,29 +113,29 @@
 							<h3 class="main-title">학사안내</h3>
 							<div class="mini-board-content">
 								<ul>
-									<li><a href="#a" title="공지사항 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">교과목 폐지 및 신설 안내</span> <span
 													class="new">new</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공지사항 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">2019-2학기 진로취업 프로그램 설계를 위한 학생
 													대상...</span> <span class="new">new</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공지사항 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">제8회 KNDA 학술논문상 공모</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공지사항 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">대학 진로취업지원 현황 조사 안내</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공지사항 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">[진로취업특강] 유망직무 전문가 초청 특강, 여대생
 													커...</span>
@@ -142,35 +143,35 @@
 									</a> <span class="mini-date">2019.05.29</span></li>
 								</ul>
 							</div>
-							<a href="#a" title="공지사항 바로가기" class="viewmore">더보기</a>
+							<a href="/admission/notice.do" title="학사안내 더보기" class="viewmore">더보기</a>
 						</div>
 						<div class="main-mini-box main-mini-box02">
 							<h3 class="main-title">공지사항</h3>
 							<div class="mini-board-content">
 								<ul>
-									<li><a href="#a" title="공모/대외활동 정모 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">교과목 폐지 및 신설 안내</span> <span
 													class="new">new</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공모/대외활동 정모 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">2019-2학기 진로취업 프로그램 설계를 위한 학생
 													대상...</span> <span class="new">new</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공모/대외활동 정모 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">제8회 KNDA 학술논문상 공모</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공모/대외활동 정모 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">대학 진로취업지원 현황 조사 안내</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="공모/대외활동 정모 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">[진로취업특강] 유망직무 전문가 초청 특강, 여대생
 													커...</span>
@@ -178,7 +179,7 @@
 									</a> <span class="mini-date">2019.05.29</span></li>
 								</ul>
 							</div>
-							<a href="#a" title="공모/대외활동 정모 바로가기" class="viewmore">더보기</a>
+							<a href="/community/notice.do" title="공지사항 더보기" class="viewmore">더보기</a>
 						</div>
 					</div>
 				</div>
@@ -190,7 +191,7 @@
 							<h3 class="main-title">PHOTO GALLERY</h3>
 							<div>
 								<ul>
-									<li><a href="#a" title="PHOTO GALLERY 바로가기">
+									<li><a href="/collegelife/gallery.do" title="PHOTO GALLERY 바로가기">
 											<div class="mini-img-box">
 												<img src="/resources/images/gallary_sample1.jpg"
 													alt="글로벌 명문대학 그린대학교">
@@ -199,7 +200,7 @@
 												<p>글로벌 명문대학 그린대학교</p>
 											</div>
 									</a></li>
-									<li><a href="#a" title="PHOTO GALLERY 바로가기">
+									<li><a href="/collegelife/gallery.do" title="PHOTO GALLERY 바로가기">
 											<div class="mini-img-box">
 												<img src="/resources/images/gallary_sample2.jpg"
 													alt="글로벌 명문대학 그린대학교">
@@ -208,7 +209,7 @@
 												<p>글로벌 명문대학 그린대학교</p>
 											</div>
 									</a></li>
-									<li><a href="#a" title="PHOTO GALLERY 바로가기">
+									<li><a href="/collegelife/gallery.do" title="PHOTO GALLERY 바로가기">
 											<div class="mini-img-box">
 												<img src="/resources/images/gallary_sample3.jpg"
 													alt="글로벌 명문대학 그린대학교">
@@ -217,7 +218,7 @@
 												<p>글로벌 명문대학 그린대학교</p>
 											</div>
 									</a></li>
-									<li><a href="#a" title="PHOTO GALLERY 바로가기">
+									<li><a href="/collegelife/gallery.do" title="PHOTO GALLERY 바로가기">
 											<div class="mini-img-box">
 												<img src="/resources/images/gallary_sample4.png"
 													alt="글로벌 명문대학 그린대학교">
@@ -228,7 +229,7 @@
 									</a></li>
 								</ul>
 							</div>
-							<a href="#a" title="PHOTO GALLERY 더보기" class="viewmore">더보기</a>
+							<a href="/collegelife/gallery.do" title="PHOTO GALLERY 더보기" class="viewmore">더보기</a>
 						</div>
 					</div>
 				</div>
@@ -244,7 +245,7 @@
 									강의, 교재를 제공하고 스터디 그룹의 활동을 도와주고 있습니다.
 								</p>
 							</div>
-							<a href="#a" title="동아리 HELPER 자세히보기">자세히 보기</a>
+							<a href="/collegelife/clud.do" title="동아리 HELPER 자세히보기">자세히 보기</a>
 						</div>
 					</div>
 				</div>
@@ -256,29 +257,29 @@
 							<h3 class="main-title">뉴스 및 칼럼</h3>
 							<div class="mini-board-content">
 								<ul>
-									<li><a href="#a" title="칼럼 및 기고 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">교과목 폐지 및 신설 안내</span> <span
 													class="new">new</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="칼럼 및 기고 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">2019-2학기 진로취업 프로그램 설계를 위한 학생
 													대상...</span> <span class="new">new</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="칼럼 및 기고 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">제8회 KNDA 학술논문상 공모</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="칼럼 및 기고 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">대학 진로취업지원 현황 조사 안내</span>
 											</p>
 									</a> <span class="mini-date">2019.05.29</span></li>
-									<li><a href="#a" title="칼럼 및 기고 바로가기">
+									<li><a href="#a" title="해당 페이지 바로가기">
 											<p>
 												<span class="mini-title">[진로취업특강] 유망직무 전문가 초청 특강, 여대생
 													커...</span>
@@ -286,17 +287,17 @@
 									</a> <span class="mini-date">2019.05.29</span></li>
 								</ul>
 							</div>
-							<a href="#a" title="칼럼 및 기고 바로가기" class="viewmore">더보기</a>
+							<a href="/community/news.do" title="뉴스 및 칼럼 더보기" class="viewmore">더보기</a>
 						</div>
 						<div class="main-mini-box main-mini-box02">
 							<h3 class="main-title">SMART LINK</h3>
 							<div>
 								<ul>
-									<li><a href="#" title="입학안내 바로가기">입학안내</a></li>
-									<li><a href="#" title="학사일정 바로가기">학사일정</a></li>
-									<li><a href="#" title="학생회 바로가기">학생회</a></li>
+									<li><a href="/admission/notice.do" title="입학안내 바로가기">입학안내</a></li>
+									<li><a href="/academic/calander.do" title="학사일정 바로가기">학사일정</a></li>
+									<li><a href="/collegelife/studentunion.do" title="학생회 바로가기">학생회</a></li>
 									<li><a href="#" title="교과과정 바로가기">교과과정</a></li>
-									<li><a href="#" title="취업안내 바로가기">취업안내</a></li>
+									<li><a href="/community/job.do" title="취업안내 바로가기">취업안내</a></li>
 								</ul>
 							</div>
 						</div>
