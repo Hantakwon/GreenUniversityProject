@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ taglib prefix="fmt" uri="jakarta.tags.fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>교수 목록</title>
+<title>Insert title here</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/manage/admin.css">
 </head>
@@ -21,9 +20,9 @@
 			<section id="admin-index" class="main-mini-box">
 				<!-- ⬇️ 검색창을 nav 안으로 이동 -->
 				<nav class="page-toolbar">
-					<h3>교수 목록</h3>
+					<h3>학과 목록</h3>
 					<p>
-						인사관리<strong>교수 목록</strong>
+						대학 및 학과<strong>학과 목록</strong>
 					</p>
 
 					<div class="search">
@@ -56,43 +55,27 @@
 						</colgroup>
 						<thead>
 							<tr>
-								<th>교수번호</th>
-								<th>이름</th>
-								<th>주민번호</th>
-								<th>휴대폰</th>
-								<th>이메일</th>
+								<th>학과번호</th>
+								<th>단과대학</th>
 								<th>학과</th>
-								<th>직위</th>
-								<th>재직여부</th>
-								<th>임용일</th>
+								<th>학과장</th>
+								<th>학과 연락처</th>
+								<th>소속 교수 수</th>
+								<th>소속 학생 수</th>
+								<th>개설 강의 수</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.proNo}</td>
-									<td>${dto.professorName}</td>
-									<td>${dto.rrn}</td>
-									<td>${dto.tel}</td>
-									<td>${dto.email}</td>
-									<td>${dto.departmentName}</td>
-									<td>${dto.position}</td>
-									<td><c:choose>
-											<c:when test="${dto.statement eq '재직중'}">
-												<span class="status status--ok">${dto.statement}</span>
-											</c:when>
-											<c:when test="${dto.statement eq '휴직'}">
-												<span class="status status--hold">${dto.statement}</span>
-											</c:when>
-											<c:when test="${dto.statement eq '퇴직'}">
-												<span class="status status--out">${dto.statement}</span>
-											</c:when>
-											<c:otherwise>
-												<span class="status">${dto.statement}</span>
-											</c:otherwise>
-										</c:choose></td>
-									<td><fmt:formatDate value="${dto.appointmentDate}"
-											pattern="yyyy-MM-dd" /></td>
+									<td>${dto.dept_no}</td>
+									<td>${dto.col_name}</td>
+									<td>${dto.dept_name}</td>
+									<td>${dto.dept_head}</td>
+									<td>${dto.dept_tel}</td>
+									<td>${dto.pro_num}</td>
+									<td>${dto.stu_num}</td>
+									<td>${dto.lec_num}</td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -105,13 +88,13 @@
 						<div class="b-paging-wrap">
 							<ul>
 								<li class="first pager"><a
-									href="${pageContext.request.contextPath}/manage/professor/list.do?page=1">
+									href="${pageContext.request.contextPath}/manage/department/list.do?page=1">
 										<img
 										src="${pageContext.request.contextPath}/resources/images/btn-first-page.png"
 										alt=""> <span class="hide">FIRST</span>
 								</a></li>
 								<li class="prev pager"><a
-									href="${pageContext.request.contextPath}manage/professor/list.do?page=${pagenationDTO.currentPage le 1 ? 1 : pagenationDTO.currentPage - 1}">
+									href="${pageContext.request.contextPath}manage/department/list.do?page=${pagenationDTO.currentPage le 1 ? 1 : pagenationDTO.currentPage - 1}">
 										<img
 										src="${pageContext.request.contextPath}/resources/images/btn-prev-page.png"
 										alt=""> <span class="hide">PREV</span>
@@ -120,19 +103,19 @@
 								<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
 									end="${pagenationDTO.pageGroupEnd}">
 									<li><a
-										href="${pageContext.request.contextPath}manage/professor/list.do?page=${num}"
+										href="${pageContext.request.contextPath}manage/department/list.do?page=${num}"
 										class="${pagenationDTO.currentPage eq num ? 'active' : ''}">${num}</a>
 									</li>
 								</c:forEach>
 
 								<li class="next pager"><a
-									href="${pageContext.request.contextPath}manage/professor/list.do?page=${pagenationDTO.currentPage ge pagenationDTO.lastPageNum ? pagenationDTO.lastPageNum : pagenationDTO.currentPage + 1}">
+									href="${pageContext.request.contextPath}manage/department/list.do?page=${pagenationDTO.currentPage ge pagenationDTO.lastPageNum ? pagenationDTO.lastPageNum : pagenationDTO.currentPage + 1}">
 										<img
 										src="${pageContext.request.contextPath}/resources/images/btn-next-page.png"
 										alt=""> <span class="hide">NEXT</span>
 								</a></li>
 								<li class="last pager"><a
-									href="${pageContext.request.contextPath}manage/professor/list.do?page=${pagenationDTO.lastPageNum}">
+									href="${pageContext.request.contextPath}manage/department/list.do?page=${pagenationDTO.lastPageNum}">
 										<img
 										src="${pageContext.request.contextPath}/resources/images/btn-last-page.png"
 										alt=""> <span class="hide">LAST</span>

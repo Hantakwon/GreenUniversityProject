@@ -6,7 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.CollegeDTO;
+import dto.college.CollegeDTO;
 import util.DBHelper;
 import util.Sql;
 
@@ -16,28 +16,46 @@ import util.Sql;
  * 내용 : DAO 작성 예정
  */
 public class CollegeDAO extends DBHelper {
-	
+
 	private final static CollegeDAO INSTANCE = new CollegeDAO();
+
 	public static CollegeDAO getInstance() {
 		return INSTANCE;
-	}	
-	
-	private CollegeDAO() {}
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	public void insert(CollegeDTO dto) {
-		
 	}
-	
-	public CollegeDTO select(int ano) {
-		
-		CollegeDTO dto = new CollegeDTO();
-		
+
+	private CollegeDAO() {
+	}
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	public void insert(CollegeDTO dto) {
 		try {
 			conn = getConnection();
-			
-			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
+			psmt = conn.prepareStatement(Sql.INSERT_COLLEGE);
+			psmt.setString(1, dto.getName_kor());
+			psmt.setString(2, dto.getName_eng());
+			psmt.setString(3, dto.getTitle());
+			psmt.setString(4, dto.getContent());
+			if (dto.getImage() != null && !dto.getImage().isBlank()) {
+				psmt.setString(5, dto.getImage()); // ← 경로 저장
+			} else {
+				psmt.setNull(5, java.sql.Types.VARCHAR);
+			}
+			psmt.executeUpdate();
+			closeAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public CollegeDTO select(int ano) {
+		CollegeDTO dto = new CollegeDTO();
+
+		try {
+			conn = getConnection();
+			String sql = "SELECT * FROM TB_College WHERE col_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, ano);
 
 			rs = psmt.executeQuery();
 
@@ -51,17 +69,17 @@ public class CollegeDAO extends DBHelper {
 			}
 			closeAll();
 		} catch (Exception e) {
-			logger.error(e.getMessage());
+			e.printStackTrace();
 		}
 		return dto;
 	}
-	
+
 	public List<CollegeDTO> selectAll() {
 		List<CollegeDTO> dtoList = new ArrayList<CollegeDTO>();
 
 		try {
 			conn = getConnection();
-			
+
 			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
 
 			rs = psmt.executeQuery();
@@ -74,7 +92,7 @@ public class CollegeDAO extends DBHelper {
 				dto.setTitle(rs.getString(4));
 				dto.setContent(rs.getString(5));
 				dto.setImage(rs.getString(6));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -83,12 +101,12 @@ public class CollegeDAO extends DBHelper {
 		}
 		return dtoList;
 	}
-	
+
 	public void update(CollegeDTO dto) {
-		
+
 	}
-	
+
 	public void delete(int ano) {
-		
+
 	}
 }

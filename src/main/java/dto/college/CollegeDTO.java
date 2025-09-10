@@ -1,4 +1,4 @@
-package dto;
+package dto.college;
 
 /*
  * 날짜 : 2025-09-08

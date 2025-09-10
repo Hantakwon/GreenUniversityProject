@@ -15,12 +15,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-<<<<<<< HEAD
-import dto.DepartmentHeadDTO;
-=======
 import dto.college.CollegeDTO;
 import dto.college.DepartmentHeadDTO;
->>>>>>> be922b6b94680ca0de983dfb4679546ac6da6383
 
 /*
  * 날짜 : 2025/09/05

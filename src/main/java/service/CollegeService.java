@@ -3,7 +3,7 @@ package service;
 import java.util.List;
 
 import dao.CollegeDAO;
-import dto.CollegeDTO;
+import dto.college.CollegeDTO;
 
 public enum CollegeService {
 

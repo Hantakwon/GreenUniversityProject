@@ -1,4 +1,7 @@
 package controller.community.free;
+/*
+import java.io.IOException;
+import java.util.List;
 
 import dao.community.FreeDAO;
 import dto.community.FreeDTO;
@@ -8,8 +11,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
 
 @WebServlet("/community/free.do")
 public class FreeController extends HttpServlet {
@@ -31,3 +32,4 @@ public class FreeController extends HttpServlet {
 		doGet(request, response);
 	}
 }
+*/

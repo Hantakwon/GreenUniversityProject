@@ -1,4 +1,7 @@
 package controller.community.news;
+/*
+import java.io.IOException;
+import java.util.List;
 
 import dao.community.NewsDAO;
 import dto.community.NewsDTO;
@@ -8,14 +11,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
 
 /*
  * 날짜 : -
  * 이름 : 장진원
  * 내용 : 뉴스 및 칼럼 컨트롤러
- */
+
 @WebServlet("/community/news.do")
 public class NewsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,3 +37,4 @@ public class NewsController extends HttpServlet {
 		doGet(request, response);
 	}
 }
+*/

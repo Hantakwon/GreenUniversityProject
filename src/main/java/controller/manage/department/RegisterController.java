@@ -8,8 +8,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.CollegeDTO;
-import dto.DepartmentDTO;
+import dto.college.CollegeDTO;
+import dto.college.DepartmentDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,9 +20,9 @@ import service.CollegeService;
 import service.DepartmentService;
 
 /*
- * 날짜 : -
- * 이름 : 김수진
- * 내용 : -
+ * 날짜 : 2025/09/10
+ * 이름 : 한탁원
+ * 내용 : 학과 등록
  */
 @WebServlet("/manage/department/register.do")
 public class RegisterController extends HttpServlet {
@@ -33,7 +33,6 @@ public class RegisterController extends HttpServlet {
 	DepartmentService departmentService = DepartmentService.INSTANCE;
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -43,7 +42,7 @@ public class RegisterController extends HttpServlet {
 		
 		request.setAttribute("collegeList", collegeList);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/department/register.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/department/register2.jsp");
 		dispatcher.forward(request, response);
 	}
 

@@ -7,8 +7,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.CollegeDTO;
-import dto.DepartmentDTO;
+import dto.college.CollegeDTO;
+import dto.college.DepartmentDTO;
 import dto.professor.ProfessorAcademicDTO;
 import dto.professor.ProfessorDTO;
 import dto.professor.ProfessorRoleDTO;
@@ -23,9 +23,9 @@ import service.DepartmentService;
 import service.ProfessorService;
 
 /*
- * 날짜 : -
- * 이름 : 김수진
- * 내용 : -
+ * 날짜 : 2025/09/10
+ * 이름 : 한탁원
+ * 내용 : 교수 등록
  */
 @WebServlet("/manage/professor/register.do")
 public class RegisterController extends HttpServlet {

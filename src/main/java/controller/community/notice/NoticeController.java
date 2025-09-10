@@ -1,5 +1,5 @@
 package controller.community.notice;
-
+/*
 import dao.community.NoticeDAO;
 import dto.community.NoticeDTO;
 import jakarta.servlet.RequestDispatcher;
@@ -32,3 +32,4 @@ public class NoticeController extends HttpServlet {
         doGet(request, response);
     }
 }
+*/

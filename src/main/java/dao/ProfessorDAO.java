@@ -9,6 +9,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import dto.college.DepartmentDTO;
 import dto.professor.ProfessorAcademicDTO;
 import dto.professor.ProfessorDTO;
 import dto.professor.ProfessorInfoDTO;
@@ -171,7 +172,40 @@ public class ProfessorDAO extends DBHelper {
 	}
 
 	public List<ProfessorDTO> selectAll() {
-		return null;
+		List<ProfessorDTO> dtoList = new ArrayList<ProfessorDTO>();
+
+		try {
+			conn = getConnection();
+
+			psmt = conn.prepareStatement(Sql.SELECT_PROFESSOR_ALL);
+
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				ProfessorDTO dto = new ProfessorDTO();
+				dto.setPro_id(rs.getInt(1));
+				dto.setPro_no(rs.getString(2));
+				dto.setRrn(rs.getString(3));
+				dto.setName_kor(rs.getString(4));
+				dto.setName_eng(rs.getString(5));
+				dto.setGender(rs.getString(6));
+				dto.setNationality(rs.getString(7));
+				dto.setTel(rs.getString(8));
+				dto.setEmail(rs.getString(9));
+				dto.setZip_code(rs.getString(10));
+				dto.setAddress_basic(rs.getString(11));
+				dto.setAddress_detail(rs.getString(12));
+				dto.setStatement(rs.getString(13));
+				dto.setPosition(rs.getString(14));;
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+		return dtoList;
 	}
 
 	public List<ProfessorInfoDTO> selectInfoAll(int start) {

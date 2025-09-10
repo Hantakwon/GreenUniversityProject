@@ -1,4 +1,4 @@
-package dto;
+package dto.college;
 
 import java.sql.Date;
 

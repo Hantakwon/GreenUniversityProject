@@ -1,5 +1,5 @@
 package controller.community.job;
-
+/*
 import dao.community.JobDAO;
 import dto.community.JobDTO;
 import jakarta.servlet.RequestDispatcher;
@@ -31,3 +31,4 @@ public class JobController extends HttpServlet {
 		doGet(request, response);
 	}
 }
+*/

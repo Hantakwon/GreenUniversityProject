@@ -6,8 +6,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.DepartmentDTO;
-import dto.DepartmentHeadDTO;
+import dto.college.DepartmentDTO;
+import dto.college.DepartmentHeadDTO;
+import dto.college.DepartmentListDTO;
 import util.DBHelper;
 import util.Sql;
 
@@ -30,24 +31,24 @@ public class DepartmentDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	public void insert(DepartmentDTO dto) {
-		 try {
-			 	conn = getConnection();
-	            psmt = conn.prepareStatement(Sql.INSERT_DEPARTMENT);
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.INSERT_DEPARTMENT);
 
-	            psmt.setInt(1, dto.getCol_id());                  
-	            psmt.setString(2, dto.getName_kor());
-	            psmt.setString(3, dto.getName_eng());
-	            psmt.setDate(4, dto.getFounded_date());        
-	            psmt.setString(5, dto.getTel());
-	            psmt.setString(6, dto.getOffice());
-	            psmt.setInt(7, dto.getCol_id());    
-	            
-	            psmt.executeUpdate();
+			psmt.setInt(1, dto.getCol_id());
+			psmt.setString(2, dto.getName_kor());
+			psmt.setString(3, dto.getName_eng());
+			psmt.setDate(4, dto.getFounded_date());
+			psmt.setString(5, dto.getTel());
+			psmt.setString(6, dto.getOffice());
+			psmt.setInt(7, dto.getCol_id());
 
-	            closeAll();
-	        } catch (Exception e) {
-	        	logger.error(e.getMessage());
-	        } 
+			psmt.executeUpdate();
+
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
 	}
 
 	public DepartmentDTO select(int ano) {
@@ -59,7 +60,7 @@ public class DepartmentDAO extends DBHelper {
 
 		try {
 			conn = getConnection();
-			
+
 			psmt = conn.prepareStatement(Sql.SELECT_DEPARTMENT_ALL);
 
 			rs = psmt.executeQuery();
@@ -74,7 +75,7 @@ public class DepartmentDAO extends DBHelper {
 				dto.setFounded_date(rs.getDate(6));
 				dto.setTel(rs.getString(7));
 				dto.setOffice(rs.getString(8));
-				
+
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -93,7 +94,7 @@ public class DepartmentDAO extends DBHelper {
 			psmt = conn.prepareStatement(Sql.SELECT_DEPARTMENT_ALL_HEAD_WHERE_COLLEGE);
 			psmt.setString(1, "학과장");
 			psmt.setInt(2, col_id);
-			
+
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
@@ -110,6 +111,38 @@ public class DepartmentDAO extends DBHelper {
 
 		return dtoList;
 	}
+
+	public List<DepartmentListDTO> selectAllWithInfo() {
+	    List<DepartmentListDTO> dtoList = new ArrayList<>();
+
+	    try {
+	        conn = getConnection();
+	        psmt = conn.prepareStatement(Sql.SELECT_DEPARTMENT_WITH_INFO);
+
+	        rs = psmt.executeQuery();
+
+	        while (rs.next()) {
+	            DepartmentListDTO dto = new DepartmentListDTO();
+	            dto.setDept_no(rs.getString(1));             
+	            dto.setCol_name(rs.getString(2));       
+	            dto.setDept_name(rs.getString(3)); 
+	            dto.setDept_head(rs.getString(4));
+	            dto.setDept_tel(rs.getString(5));           
+	            dto.setPro_num(rs.getInt(6));        
+	            dto.setStu_num(rs.getInt(7));          
+	            dto.setLec_num(rs.getInt(8));          
+
+	            dtoList.add(dto);
+	        }
+	        
+	        closeAll();
+	    } catch (Exception e) {
+	        logger.error(e.getMessage());
+	    } 
+
+	    return dtoList;
+	}
+
 
 	public void update(DepartmentDTO dto) {
 

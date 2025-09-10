@@ -10,9 +10,9 @@ import java.sql.Date;
 public class StudentDTO {
 
 	private int std_id;
-	private int col_id;
 	private int dept_id;
 	private int pro_id;
+	private String std_no;
 	private String rrn;
 	private String name_kor;
 	private String name_eng;
@@ -25,10 +25,10 @@ public class StudentDTO {
 	private String address_detail;
 	private Date entrance_date;
 	private Date graduate_date;
-	private String statement;
+	private String category;
 	private String grade;
 	private String semester;
-	private String category;
+	private String statement;
 
 	public int getStd_id() {
 		return std_id;
@@ -36,20 +36,6 @@ public class StudentDTO {
 
 	public void setStd_id(int std_id) {
 		this.std_id = std_id;
-	}
-
-	public void setStd_id(String std_id) {
-		if (std_id != null) {
-			this.std_id = Integer.parseInt(std_id);
-		}
-	}
-
-	public int getCol_id() {
-		return col_id;
-	}
-
-	public void setCol_id(int col_id) {
-		this.col_id = col_id;
 	}
 
 	public int getDept_id() {
@@ -66,6 +52,14 @@ public class StudentDTO {
 
 	public void setPro_id(int pro_id) {
 		this.pro_id = pro_id;
+	}
+
+	public String getStd_no() {
+		return std_no;
+	}
+
+	public void setStd_no(String std_no) {
+		this.std_no = std_no;
 	}
 
 	public String getRrn() {
@@ -198,7 +192,7 @@ public class StudentDTO {
 
 	@Override
 	public String toString() {
-		return "StudentDTO [std_id=" + std_id + ", col_id=" + col_id + ", dept_id=" + dept_id + ", pro_id=" + pro_id
+		return "StudentDTO [std_id=" + std_id + ", dept_id=" + dept_id + ", pro_id=" + pro_id + ", std_no=" + std_no
 				+ ", rrn=" + rrn + ", name_kor=" + name_kor + ", name_eng=" + name_eng + ", gender=" + gender
 				+ ", nationality=" + nationality + ", tel=" + tel + ", email=" + email + ", zip_code=" + zip_code
 				+ ", address_basic=" + address_basic + ", address_detail=" + address_detail + ", entrance_date="
