@@ -86,7 +86,8 @@ public class Sql {
 	// 대학생활 - 갤러리 페이징 SQL 
 	 public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM tb_collegelife_gallery";
 	 public static final String SELECT_GALLERY_LIST_PAGING = "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM tb_collegelife_gallery ORDER BY reg_date DESC LIMIT ?, ?";
-
+	 // 대학 생활 - 식단 페이징 SQL
+	 public static final String SELECT_MEAL_ALL = "SELECT * FROM tb_collegelife_meal"'
 	/* 
 	 * 날짜 : 2025/09/08
 	 * 이름 : 정순권
