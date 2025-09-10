@@ -55,9 +55,14 @@
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
+<<<<<<< HEAD
 							<img
 								src="<%=request.getContextPath()%>/resources/images/college-introduce-1.jpg"
 								alt="인문대">
+=======
+							<img src="${pageContext.request.contextPath}${dto.image}"
+								alt="대학 이미지">
+>>>>>>> be922b6b94680ca0de983dfb4679546ac6da6383
 						</div>
 						<div class="info-div">
 							<h4>Humanities And Social Sciences</h4>
@@ -85,7 +90,7 @@
 							</tr>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.deptName}<a href="#"><img
+									<td>${dto.deptName} <a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
 											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>

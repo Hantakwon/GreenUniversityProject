@@ -6,9 +6,9 @@
 	연혁 스타일
 ----------------*/
 body.introduce-page {
-    font-family: '맑은 고딕', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     line-height: 1.8;
-    margin: 40px;
+   
     color: #333;
 }
 

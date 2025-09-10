@@ -99,7 +99,7 @@ public class UserDAO extends DBHelper {
 				userDTO.setPostal_code(rs.getString(6));
 				userDTO.setBasic_addr(rs.getString(7));
 				userDTO.setDetail_addr(rs.getString(8));
-				userDTO.setUser_type(rs.getInt(9));
+				userDTO.setUser_type(rs.getString(9));
 			}
 			closeAll();
 		}catch (Exception e) {

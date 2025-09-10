@@ -14,6 +14,7 @@
 </head>
 <body>
 	<main>
+	<jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span id="test"> <img src="<%=request.getContextPath()%>/resources/images/ico-home.png" alt="홈 버튼">
@@ -62,5 +63,6 @@
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

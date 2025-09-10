@@ -85,7 +85,7 @@ public class Sql {
 	public final static String SELECT_GALLERY_ALL = "SELECT * FROM tb_collegelife_gallery";
 	// 대학생활 - 갤러리 페이징 SQL 
 	 public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM tb_collegelife_gallery";
-	 public static final String SELECT_GALLERY_LIST_PAGING = "SELECT id, title, image_path, view_count, reg_date, content, writer FROM gallery_board ORDER BY id DESC LIMIT ?, ?";
+	 public static final String SELECT_GALLERY_LIST_PAGING = "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM tb_collegelife_gallery ORDER BY reg_date DESC LIMIT ?, ?";
 
 	/* 
 	 * 날짜 : 2025/09/08
@@ -99,8 +99,8 @@ public class Sql {
 	public static final String WHERE_HP   = "WHERE USER_HP=?";
 	public static final String WHERE_EMAIL = "WHERE USER_EMAIL=?";
 	
-	public static final String INSERT_USER = "INSERT INTO USERS (USER_ID, USER_PASS, USER_NAME, USER_HP, USER_EMAIL, POSTAL_CODE, BASIC_ADDR, DETAIL_ADDR) "
-			+ "VALUES (?,STANDARD_HASH(?, 'SHA256'),?,?,?,?,?,?)";
+	public static final String INSERT_USER = "INSERT INTO TB_GENERAL_USERS (USER_ID, USER_PASS, USER_NAME, USER_HP, USER_EMAIL, POSTAL_CODE, BASIC_ADDR, DETAIL_ADDR) "
+			+ "VALUES (?,SHA2(?, 256),?,?,?,?,?,?)";
 	
 	
 	/* 
@@ -109,8 +109,8 @@ public class Sql {
 	 * 내용 : 학생 교수 로그인 sql 작성
 	 */
 	// 로그인
-	// user db명 수정 필요
-	public static final String SELECT_USER_BY_PASS = "SELECT * FROM USERS WHERE USER_ID=? AND USER_PASS=STANDARD_HASH(?, 'SHA256')";
+	// user db명 수정 완료
+	public static final String SELECT_USER_BY_PASS = "SELECT * FROM TB_GENERAL_USERS WHERE USER_ID=? AND USER_PASS=SHA2(?, 256)";
 	
 
 	public static final String SELECT_STUDENT_BY_RRN = "SELECT * FROM TB_STUDENT WHERE STD_ID=? AND REPLACE(`RRN`, '-', '')=?";

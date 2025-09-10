@@ -45,21 +45,17 @@
 				</div>
 				<div class="main-content">
 					<div class="top">
-						<h2>대학원</h2>
+						<h2>${dto.name_kor}</h2>
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="/resources/images/college-introduce-5.jpg" alt="자연과학대">
+							<img src="${pageContext.request.contextPath}${dto.image}"
+								alt="대학 이미지">
 						</div>
 						<div class="info-div">
-							<h4>GRADUATE SCHOOL</h4>
-							<h2>학문의 이론과 응용방법을 한층 더 심오하게 연구, 교수 및 지도자적 인격을 도야하고 창의력을 함양</h2>
-							<p>대학원은 학문의 이론과 응용방법을 한층 더 심오하게 연구 · 교수한다. 동시에 인력을 도야 하고 독창력을
-								함양하여 문화발전에 기여하고 있으며, 21세기의 세계화, 국제화, 개방화 시 대를 맞이하여 공학, 인문사회,
-								자연과학, 예체능, 수산 및 해양과학에 관한 학문 전 분야의 균형있는 발전을 꾀하고 있다. 아울러 첨단연구와
-								지도능력을 갖춘 인재양성을 위해 대학원 교육의 획기적인 강화와 제도개선 그리고 연구기능의 활성화에 적극 힘쓰고
-								있으며, 우수학 생을 유치하기 위하여 연구/수업조교장학제도를 실시하며 국제화의 일환으로 외국인학생 을 유치하고
-								대학원 교육의 활성화에 적극 노력하고 있다.</p>
+							<h4>${dto.name_eng}</h4>
+							<h2>${dto.title}</h2>
+							<p>${dto.content}</p>
 						</div>
 					</div>
 					<div class="mid">
@@ -77,7 +73,7 @@
 							</tr>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.deptName}<a href="#"><img
+									<td>${dto.deptName} <a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
 											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>
