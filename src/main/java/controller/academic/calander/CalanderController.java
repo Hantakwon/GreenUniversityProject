@@ -25,8 +25,7 @@ public class CalanderController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/* 필요 시 DB Logic 추가 */
-		
+		/* 필요 시 DB Logic 추가 */		
 		CalanderDAO dao = CalanderDAO.getInstance();
 		List<CalanderDTO> calanderList = dao.selectAll(); 
 		request.setAttribute("calanderList", calanderList);

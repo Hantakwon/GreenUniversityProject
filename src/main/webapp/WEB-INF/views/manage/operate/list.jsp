@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="./_top.jsp" %>
             <section id="admin-index" class="main-mini-box">
-                <nav>
-                    <h3>강의 목록</h3>
+               <nav>
+                  <h3>강의 목록</h3>
                     <p>
                         학사운영<strong>강의 목록</strong>
                     </p>
@@ -31,11 +32,11 @@
                                 <col width="5%">
                                 <col width="10%">
                                 <col width="15%">
-                                <col width="">
-                                <col width="">
+                                <col width="8%">
+                                <col width="5%">
                                 <col width="15%">
-                                <col width="">
-                                <col width="10%">
+                                <col width="12%">
+                                <col width="9%">
                             </colgroup>
                             <thead>
                             <tr>                          
@@ -52,128 +53,20 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
+                            <c:forEach var="lec" items="${dtoList}">
+                                <tr>                          
+                                    <td>${lec.lecNo}</td>
+                                    <td>${lec.department}</td>
+                                    <td>${lec.grade}</td>
+                                    <td>${lec.category}</td>
+                                    <td>${lec.lenName}</td>
+                                    <td>${lec.professor}</td>
+                                    <td>${lec.credit}</td>
+                                    <td>${lec.class_time}</td>
+                                    <td>${lec.classroom}</td>
+                                    <td>${lec.max_enrollment}</td>
                                 </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
-                                
-                                
-                                <tr class="">                          
-                                    <td>3025112</td>
-                                    <td>컴퓨터공학과</td>
-                                    <td>1</td>
-                                    <td>전공선택</td>
-                                    <td style="text-align: left;">프로그래밍 개론</td>
-                                    <td>김컴공</td>
-                                    <td>3</td>
-                                    <td>월,수 10:00 ~ 12:00</td>
-                                    <td>컴퓨터실</td>
-                                    <td>30</td>
-                                </tr>
+                            </c:forEach>    
                             </tbody>
                         </table>
                     </div>
@@ -181,19 +74,33 @@
                         <div class="b-paging01 type01">
                           <div class="b-paging-wrap">
                             <ul>
-                              <li  class="first pager"><a href="#curPage"><span class="hide">FIRST</span></a></li>
-                              <li  class="prev pager"><a href="#curPage"><span class="hide">PREV</span></a></li>
-                              <li><a href="#curPage" class="active">1</a></li>
-                              <li><a href="#curPage">2</a></li>
-                              <li><a href="#curPage">3</a></li>
-                              <li  class="next pager"><a href="#curPage"><span class="hide">NEXT</span></a></li>
-                              <li  class="last pager"><a href="#curPage"><span class="hide">LAST</span></a></li>
+                              <li class="first pager">
+                    			<a href="?pg=1"><span class="hide">FIRST</span></a></li>
+               				 
+                             <li class="prev pager">
+		                    <c:set var="prevPage" value="${pagenationDTO.pageGroupStart - 1}" />
+		                    <c:if test="${prevPage >= 1}">
+		                        <a href="?pg=${prevPage}"><span class="hide">PREV</span></a>
+		                    </c:if></li>
+                			
+                			<c:forEach var="i" begin="${pagenationDTO.pageGroupStart}" end="${pagenationDTO.pageGroupEnd}">
+                    		<li>
+                        		<a href="?pg=${i}" class="<c:if test='${i == pagenationDTO.currentPage}'>active</c:if>">
+                            	${i}
+                        	</a></li>
+               				</c:forEach>
+               				
+                            <li class="next pager">
+		                    <c:set var="nextPage" value="${pagenationDTO.pageGroupEnd + 1}" />
+		                    <c:if test="${nextPage <= pagenationDTO.lastPageNum}">
+		                        <a href="?pg=${nextPage}"><span class="hide">NEXT</span></a>
+		                    </c:if></li>
+		                    
+                              <li class="last pager">
+                    			<a href="?pg=${pagenationDTO.lastPageNum}"><span class="hide">LAST</span></a></li>
                             </ul>
                           </div>
                         </div>
-                      </div>
-                    </div>
                 </article>
             </section>
-        </main>
 <%@ include file="./_bottom.jsp" %>
