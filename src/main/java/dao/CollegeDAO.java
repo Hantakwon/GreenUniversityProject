@@ -31,6 +31,7 @@ public class CollegeDAO extends DBHelper {
 	}
 	
 	public CollegeDTO select(int ano) {
+
 		
 		CollegeDTO dto = new CollegeDTO();
 		
@@ -54,6 +55,7 @@ public class CollegeDAO extends DBHelper {
 			logger.error(e.getMessage());
 		}
 		return dto;
+
 	}
 	
 	public List<CollegeDTO> selectAll() {

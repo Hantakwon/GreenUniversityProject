@@ -16,6 +16,11 @@ import util.Sql;
  * 이름 : 박효빈
  * 내용 : MySQL GalleryDAO 
  */
+/*
+ * 날짜 : 2025-09-10
+ * 이름 : 정순권
+ * 내용 : close All
+ */
 public class GalleryDAO extends DBHelper {
 	private final static GalleryDAO INSTANCE = new GalleryDAO();
 
@@ -55,7 +60,7 @@ public class GalleryDAO extends DBHelper {
 				dto.setWriter(rs.getString("writer"));
 				dtoList.add(dto);
 			}
-
+			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}

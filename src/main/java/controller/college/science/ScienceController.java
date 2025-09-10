@@ -1,5 +1,13 @@
 package controller.college.science;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dto.CollegeDTO;
+import dto.DepartmentHeadDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,19 +16,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.CollegeService;
 import service.DepartmentService;
-
-import java.io.IOException;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-<<<<<<< HEAD
-import dto.DepartmentHeadDTO;
-=======
-import dto.college.CollegeDTO;
-import dto.college.DepartmentHeadDTO;
->>>>>>> be922b6b94680ca0de983dfb4679546ac6da6383
 
 /*
  * 날짜 : 2025/09/09
