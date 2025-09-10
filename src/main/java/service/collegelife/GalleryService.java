@@ -22,6 +22,7 @@ public enum GalleryService {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	private GalleryDAO galleryDAO = GalleryDAO.getInstance();
+	
 	public void insert(GalleryDTO dto) {
 
 	}
@@ -42,7 +43,15 @@ public enum GalleryService {
 
 	}
 	
+	// 전체 게시물 수 
+	public int getTotalCount() {
+		return dao.selectCountTotal();
+	}
 	
+	// 페이징 목록
+	public List<GalleryDTO> getGalleryList(int start, int pageSize) {
+        return dao.selectGalleryListByPaging(start, pageSize);
+    }	
 	
 	
 

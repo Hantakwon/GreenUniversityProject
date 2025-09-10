@@ -3,9 +3,8 @@ package service;
 import java.util.List;
 
 import dao.DepartmentDAO;
-import dto.college.DepartmentDTO;
-import dto.college.DepartmentHeadDTO;
-import dto.college.DepartmentListDTO;
+import dto.DepartmentDTO;
+import dto.DepartmentHeadDTO;
 
 public enum DepartmentService {
 
@@ -29,10 +28,6 @@ public enum DepartmentService {
 		return dao.selectAllHeadByCollege(col_id);
 	}
 
-	public List<DepartmentListDTO> findAllWithInfo() {
-		return dao.selectAllWithInfo();
-	}
-	
 	public void modify(DepartmentDTO dto) {
 		dao.update(dto);
 	}

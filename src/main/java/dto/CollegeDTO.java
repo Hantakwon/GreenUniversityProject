@@ -1,4 +1,4 @@
-package dto.college;
+package dto;
 
 /*
  * 날짜 : 2025-09-08
@@ -6,11 +6,11 @@ package dto.college;
  * 내용 : DTO 작성 예정
  */
 public class CollegeDTO {
-	private int col_id; 
+	private int col_id;
 	private String name_kor;
 	private String name_eng;
 	private String title;
-	private String content; 
+	private String content;
 	private String image;
 
 	public int getCol_id() {

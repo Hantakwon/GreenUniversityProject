@@ -1,4 +1,4 @@
-package dto.college;
+package dto;
 
 public class DepartmentHeadDTO {
 	private String deptName;

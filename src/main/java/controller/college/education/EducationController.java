@@ -1,5 +1,13 @@
 package controller.college.education;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import dto.CollegeDTO;
+import dto.DepartmentHeadDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,15 +16,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.CollegeService;
 import service.DepartmentService;
-
-import java.io.IOException;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import dto.college.CollegeDTO;
-import dto.college.DepartmentHeadDTO;
 
 /*
  * 날짜 : 2025/09/05
@@ -41,7 +40,7 @@ public class EducationController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
 		/* DB Logic 추가 */
-		CollegeDTO dto = collegeService.findById(4);
+		CollegeDTO dto = collegeService.findById(4);	
 		List<DepartmentHeadDTO> dtoList = departmentService.findAllHeadByCollege(4);
 		
 		request.setAttribute("dto", dto);

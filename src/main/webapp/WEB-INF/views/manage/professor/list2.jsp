@@ -7,6 +7,15 @@
 <head>
 <meta charset="UTF-8">
 <title>교수 목록</title>
+
+<!-- 섹션별 CSS -->
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/manage/common/header.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/manage/common/aside.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/manage/common/footer.css">
+<!-- 기존 공통/본문 CSS (테이블/검색/페이징 등) -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/manage/admin.css">
 </head>
@@ -74,7 +83,7 @@
 									<td>${dto.professorName}</td>
 									<td>${dto.rrn}</td>
 									<td>${dto.tel}</td>
-									<td class="ellipsis">${dto.email}</td>
+									<td>${dto.email}</td>
 									<td>${dto.departmentName}</td>
 									<td>${dto.position}</td>
 									<td><c:choose>

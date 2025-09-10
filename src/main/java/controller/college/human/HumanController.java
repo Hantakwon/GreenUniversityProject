@@ -6,8 +6,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.college.CollegeDTO;
-import dto.college.DepartmentHeadDTO;
+import dto.CollegeDTO;
+import dto.DepartmentHeadDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -28,7 +28,7 @@ public class HumanController extends HttpServlet {
 
 	/* service, logger 추가 */
 	private CollegeService collegeService = CollegeService.INSTANCE;
-	private DepartmentService departmentService = DepartmentService.INSTANCE;
+ 	private DepartmentService departmentService = DepartmentService.INSTANCE;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -39,8 +39,6 @@ public class HumanController extends HttpServlet {
 		List<DepartmentHeadDTO> dtoList = departmentService.findAllHeadByCollege(1);
 		
 		request.setAttribute("dto", dto);
-		logger.debug(dto.toString());
-		
 		request.setAttribute("dtoList", dtoList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/college/human.jsp");

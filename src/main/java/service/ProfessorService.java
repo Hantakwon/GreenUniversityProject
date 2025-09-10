@@ -4,8 +4,10 @@ import java.util.List;
 
 import dao.PagenationDTO;
 import dao.ProfessorDAO;
+import dto.professor.ProfessorAcademicDTO;
 import dto.professor.ProfessorDTO;
 import dto.professor.ProfessorInfoDTO;
+import dto.professor.ProfessorRoleDTO;
 
 public enum ProfessorService {
 
@@ -13,8 +15,8 @@ public enum ProfessorService {
 
 	private ProfessorDAO dao = ProfessorDAO.getInstance();
 
-	public void register(ProfessorDTO dto) {
-		dao.insert(dto);
+	public void register(ProfessorDTO professorDto, ProfessorAcademicDTO academicDto, ProfessorRoleDTO roleDto) {
+		dao.insert(professorDto, academicDto, roleDto);
 	}
 
 	public ProfessorDTO findByPass(ProfessorDTO dto) {
