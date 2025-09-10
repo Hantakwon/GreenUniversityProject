@@ -141,6 +141,18 @@ main .info img {
 							<li><a href="#">연혁</a></li>
 							<li><a href="#">조직도</a></li>
 							<li><a href="#">오시는길</a></li>
+							<li><a href="<%= request.getContextPath() %>/community/notice.do">공지사항</a></li>
+							<li><a href="<%= request.getContextPath() %>/community/news.do">뉴스</a></li>
+							<li><a href="<%= request.getContextPath() %>/community/job.do">직업</a></li>
+							<li><a href="<%= request.getContextPath() %>/community/free.do">자유게시판</a></li>
+							<li><a href="<%= request.getContextPath() %>/community/qna.do">qna</a></li>
+							<li><a href="<%= request.getContextPath() %>/community/dataroom.do">data</a></li>
+							
+							<li><a href="<%= request.getContextPath() %>/stusup/course_reg_list.do">수강목록</a></li>
+							<li><a href="<%= request.getContextPath() %>/stusup/course_reg.do">강의등록</a></li>
+							<li><a href="<%= request.getContextPath() %>/stusup/curriculum.do">커리큘럼</a></li>
+							<li><a href="<%= request.getContextPath() %>/stusup/grade.do">성적</a></li>
+							<li><a href="<%= request.getContextPath() %>/stusup/profile.do">프로필</a></li>
 						</ul>
 					</div>
 				</div>

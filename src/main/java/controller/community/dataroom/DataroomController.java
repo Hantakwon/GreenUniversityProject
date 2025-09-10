@@ -1,7 +1,7 @@
-package controller.community.notice;
+package controller.community.dataroom;
 
-import dao.community.NoticeDAO;
-import dto.community.NoticeDTO;
+import dao.community.DataroomDAO;
+import dto.community.DataroomDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,20 +11,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/community/notice.do")
-public class NoticeController extends HttpServlet {
+@WebServlet("/community/dataroom.do")
+public class DataroomController extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    
+    private DataroomDAO dataroomDao = new DataroomDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 1. DAO 객체 생성 및 게시물 목록 조회
-        NoticeDAO dao = NoticeDAO.getInstance();
-        List<NoticeDTO> notices = dao.selectNotices();
-
-        // 2. 조회된 목록을 request에 담기
-        request.setAttribute("notices", notices);
-
-        // 3. JSP 페이지로 포워드
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/community/notice.jsp");
+        
+        List<DataroomDTO> dataroomList = dataroomDao.getDataroomList();
+        
+        request.setAttribute("dataroomList", dataroomList);
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/community/dataroom.jsp");
         dispatcher.forward(request, response);
     }
 

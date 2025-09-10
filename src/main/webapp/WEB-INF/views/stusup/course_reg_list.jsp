@@ -1,20 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자유게시판</title>
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/community/free.css">
-    <style>
-        /* 제목 셀의 텍스트를 왼쪽으로 정렬하고 패딩 추가 */
-        .notice-table td:nth-child(2) {
-            text-align: left; /* 왼쪽 정렬 */
-            padding-left: 25px; /* 왼쪽 패딩 추가 */
-        }
-    </style>
+    <title>수강신청내역</title>
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/stusup/course_reg_list.css"/>
 </head>
 <body>
     <header>
@@ -30,7 +24,7 @@
     </div>
     <div>
         <div class="nav-container">
-            <a href="#"><img src="<%= request.getContextPath() %>/resources/images/header_logo.png" alt="학교 로고">
+            <a href="#"><img src="<%= request.getContextPath() %>/resources/images/header_logo.png" alt="학교 로고"></a>
                 <nav>
                     <ul>
                         <li>대학소개
@@ -91,66 +85,80 @@
         </div>
     </div>
 </header>
-<main>
-    <div>
-        <div class="info">
-            <span id="test">
-                <img src="<%= request.getContextPath() %>/resources/images/ico-home.png" alt="홈 버튼">
-                 > 대학소개 > 총장 인사말 
-            </span>
+    <main>
+        <div>
+            <div class="info">
+                <span id="test">
+                    <img src="<%= request.getContextPath() %>/resources/images/ico-home.png" alt="홈 버튼">
+                     > 학사지원 > 수강신청내역
+                </span>
+            </div>
         </div>
-    </div>
-    <div>
-        <div class="content-wrapper">
-            <div class="sidebar">
+        <div>
+            <div class="content-wrapper">
+                <div class="sidebar">
                 <div class="top">
-                    <h1>커뮤니티</h1>
+                    <h1>학사지원</h1>
                 </div>
                 <div class="bottom">
                     <ul>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">뉴스 및 칼럼</a></li>
-                        <li><a href="#">취업정보</a></li>
-                        <li class="active"><a href="#">자유게시판</a></li>
-                        <li><a href="#">질문과 답변</a></li>
-                        <li><a href="#">자료실</a></li>
+                        <li><a href="#">수강신청</a></li>
+                        <li class="active"><a href="#">수강신청내역</a></li>
+                        <li><a href="#">나의교육과정</a></li>
+                        <li><a href="#">성적조회</a></li>
+                        <li><a href="#">학적</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="main-content">
-                <div class="top">
-                    <h2>자유게시판</h2>
                 </div>
-                <div class="bottom">
-                    <p>
-                        <div class="search-box">
-                            <select name="search-filter" id="search-filter">
-                                <option value="all">전체 </option>
-                                <option value="title">제목</option>
-                                <option value="writer">작성자</option>
+                <div class="main-content">
+                    <div class="top">
+                        <h2>수강신청내역</h2>
+                    </div>
+                    <div class="bottom">
+                        <div class="score-summary">
+                            <select name="year">
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
                             </select>
-                            <input type="text" placeholder="검색어를 입력해 주세요">
-                            <button>검색</button>
+                            <p>년</p>
+                            <select name="semester">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                            <p>학기</p>
+                            <div class="score-search">
+                                <p class="score-sarch-right">
+                                    이수과목수 ${fn:length(registeredCourses)} 과목, 총 취득학점 ${totalCredits} 학점
+                                </p>
+                            </div>
                         </div>
-                        <div class="bottom">
                         <table class="notice-table">
                             <thead>
                                 <tr>
-                                    <th>번호</th>
-                                    <th>제목</th>
-                                    <th>작성자</th>
-                                    <th>작성일</th>
-                                    <th>조회</th>
+                                    <th>교과목코드</th>
+                                    <th>과목명</th>
+                                    <th>대상학년</th>
+                                    <th>담당교수</th>
+                                    <th>학점</th>
+                                    <th>이수구분</th>
+                                    <th>강의시간</th>
+                                    <th>강의장</th>
+                                    <th>관리</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach var="free" items="${freeList}">
+                                <c:forEach var="course" items="${registeredCourses}">
                                     <tr>
-                                        <td>${free.no}</td>
-                                        <td>${free.title}</td>
-                                        <td>${free.writer}</td>
-                                        <td>${free.rdate}</td>
-                                        <td>${free.hit}</td>
+                                        <td>${course.courseCode}</td>
+                                        <td>${course.subject}</td>
+                                        <td>${course.targetYear}</td>
+                                        <td>${course.professor}</td>
+                                        <td>${course.credit}</td>
+                                        <td>${course.classification}</td>
+                                        <td>${course.classTime}</td>
+                                        <td>${course.classroom}</td>
+                                        <td><button class="category2">취소</button></td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
@@ -163,13 +171,11 @@
                             <a href="#">&gt;</a>
                         </div>
                     </div>
-                    </p>
                 </div>
             </div>
         </div>
-    </div>
-</main>
-<footer>
+    </main>
+    <footer>
     <div class="terms-wrap">
         <div class="inner">
             <ul>
