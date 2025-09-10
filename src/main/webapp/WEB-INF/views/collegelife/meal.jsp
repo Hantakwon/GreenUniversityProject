@@ -144,6 +144,7 @@
 </head>
 <body>
 	<main>
+	    <jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span> <img src="<%=request.getContextPath()%>/resources/images/ico-home.png" alt="홈 버튼">
@@ -173,7 +174,8 @@
 					</div>
 					<div class="calendar-container">
 						<div class="calendar-header">
-							<button class="nav-button" id="prev-week" onclick="location.href='meal.jsp?weekStart=<%= startOfWeek.minusWeeks(1) %>';">&lt;</button>
+							<
+							button class="nav-button" id="prev-week" onclick="location.href='meal.jsp?weekStart=<%= startOfWeek.minusWeeks(1) %>';">&lt;</button>
 							<div class="date-title" id="date-range-display">
 							<%= startOfWeek.format(displayFormatter) %> ~ <%= endOfWeek.format(displayFormatter) %>
 							</div>
@@ -189,48 +191,43 @@
 								</tr>
 							</thead>
 							<tbody>
-                                <tr>
-									<td class="meal-category">조식</td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-								</tr>
-								<tr>
-									<td class="meal-category">중식</td>
-                                    <td>
-                                        <span class="meal-price">정식 5,500원</span>
-                                        <div class="meal-menu">백미밥<br>바지락미역국<br>닭안심매콤조림<br>아귀우동<br>두부강정<br>상추겉절이<br>포기김치</div>
-                                    </td>
-                                    <td>
-                                        <span class="meal-price">정식 5,500원</span>
-                                        <div class="meal-menu">백미밥<br>바지락미역국<br>닭안심매콤조림<br>아귀우동<br>두부강정<br>상추겉절이<br>포기김치</div>
-                                    </td>
-                                    <td>
-                                        <span class="meal-price">정식 5,500원</span>
-                                        <div class="meal-menu">백미밥<br>바지락미역국<br>닭안심매콤조림<br>아귀우동<br>두부강정<br>상추겉절이<br>포기김치</div>
-                                    </td>
-                                    <td>
-                                        <span class="meal-price">정식 5,500원</span>
-                                        <div class="meal-menu">백미밥<br>바지락미역국<br>닭안심매콤조림<br>아귀우동<br>두부강정<br>상추겉절이<br>포기김치</div>
-                                    </td>
-                                    <td>
-                                        <span class="meal-price">정식 5,500원</span>
-                                        <div class="meal-menu">백미밥<br>바지락미역국<br>닭안심매콤조림<br>아귀우동<br>두부강정<br>상추겉절이<br>포기김치</div>
-                                    </td>
-                                    <td><span class="no-meal">미운영</span></td>
-								</tr>
-								<tr>
-									<td class="meal-category">석식</td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-                                    <td><span class="no-meal">미운영</span></td>
-								</tr>
+								<c:forEach var="meal" items="${mealList}">
+									<tr>
+										<td>
+											<fmt:formatDate value="${meal.mealdate}" pattern="yyyy.MM.dd(E)" />
+										</td>
+										<td>
+											<c:choose>
+												<c:when test="${not empty meal.breakfast}">
+													<div class="meal-menu">${meal.breakfast}</div>
+												</c:when>
+												<c:otherwise>
+													<span class="no-meal">미운영</span>
+												</c:otherwise>
+											</c:choose>
+										</td>
+										<td>
+											<c:choose>
+												<c:when test="${not empty meal.lunch}">
+													<div class="meal-menu">${meal.lunch}</div>
+												</c:when>
+												<c:otherwise>
+													<span class="no-meal">미운영</span>
+												</c:otherwise>
+											</c:choose>
+										</td>
+										<td>
+											<c:choose>
+												<c:when test="${not empty meal.dinner}">
+													<div class="meal-menu">${meal.dinner}</div>
+												</c:when>
+												<c:otherwise>
+													<span class="no-meal">미운영</span>
+												</c:otherwise>
+											</c:choose>
+										</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -243,5 +240,6 @@
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

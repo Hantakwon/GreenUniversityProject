@@ -17,8 +17,8 @@
 	내용 : 자주묻는질문  JSP 작성
 -->
 <body>
-<jsp:include page="../header.jsp" />
 	<main>
+	<jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span id="test"> <img

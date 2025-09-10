@@ -27,18 +27,22 @@ public class HumanController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/* service, logger 추가 */
+
 	private CollegeService collegeService = CollegeService.INSTANCE;
  	private DepartmentService departmentService = DepartmentService.INSTANCE;
 	
+
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
 		/* DB Logic 추가 */
+
 		CollegeDTO dto = collegeService.findById(1);
 		List<DepartmentHeadDTO> dtoList = departmentService.findAllHeadByCollege(1);
 		
 		request.setAttribute("dto", dto);
+
 		request.setAttribute("dtoList", dtoList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/college/human.jsp");

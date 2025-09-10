@@ -51,6 +51,7 @@ main .top {
     border-bottom: 2px solid #333;
     display: flex;
     align-items: center;
+    
 }
 
 main .bottom {
@@ -123,6 +124,7 @@ main .bold-ment .span-bold {
     display: inline-block;
     vertical-align: middle;
     margin-left: 3px;
+    margin-top : 15px;
     font-weight: 500;
     font-size: 18px;
     color: #145074;
@@ -366,12 +368,14 @@ main .sidebar .top h1 {
 }
 
 main .main-content .top h2 {
-    margin: 0;
+     margin-bottom: 30px; /* 이 줄을 추가하여 아래쪽 여백을 만듭니다 */
+    margin-top: 0; /* 기존에 있던 margin: 0;을 이렇게 나눠서 써주는 게 더 명확합니다. */
     font-size: 24px;
     font-weight: 600;
 }
 
 main .bold-ment {
+	margin-top: 50px;
     margin-bottom: 40px;
 }
 

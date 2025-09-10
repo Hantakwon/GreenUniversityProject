@@ -177,7 +177,7 @@ main>aside {
 	bottom: 0;
 	width: 270px;
 	height: 100%;
-	background: #f4f6f9 url('../images/admin_bg_aside.jpg') repeat-y;
+	background: #f4f6f9 url('/resource/images/admin_bg_aside.jpg') repeat-y;
 	border-left: 1px solid #cfd6e0;
 	box-sizing: border-box;
 }
@@ -267,7 +267,7 @@ main>section>nav>p>strong {
 }
 
 main>section>nav>p>strong::before {
-	content: url('../../_res/images/bg-link-arr-over.png');
+	content: url('/resources/images/bg-link-arr-over.png');
 	padding: 0 6px;
 }
 
@@ -440,6 +440,20 @@ main table tr>td {
 	height: 12px;
 	vertical-align: middle;
 }
+
+/* .b-paging01 type01 */
+.b-paging01.type01 .b-paging-wrap ul{padding:30px 0 0;text-align:center;}
+.b-paging01.type01 .b-paging-wrap ul li{display:inline-block;vertical-align:middle;}
+.b-paging01.type01 .b-paging-wrap ul li a{display:block;position:relative;min-width:32px;border:1px solid #dedede;font-size:15px;color:#888;box-sizing:border-box;}
+.b-paging01.type01 .b-paging-wrap ul li:not(.pager) a{padding:4px 0 5px;}
+.b-paging01.type01 .b-paging-wrap ul li.pager a{min-height:32px;}
+.b-paging01.type01 .b-paging-wrap ul li.first a{background:url(/resources/images/btn-first-page.png) no-repeat center;}
+.b-paging01.type01 .b-paging-wrap ul li.prev{margin:0 12px 0 0;}
+.b-paging01.type01 .b-paging-wrap ul li.prev a{background:url(/resources/images/btn-prev-page.png) no-repeat center;}
+.b-paging01.type01 .b-paging-wrap ul li.next{margin:0 0 0 12px;}
+.b-paging01.type01 .b-paging-wrap ul li.next a{background:url(/resources/images/btn-next-page.png) no-repeat center;}
+.b-paging01.type01 .b-paging-wrap ul li.last a{background:url(/resources/images/btn-last-page.png) no-repeat center;}
+.b-paging01.type01 .b-paging-wrap ul li a.active{border:1px solid #3f97f6;background:#3f97f6;color:#fff;}
 
 /* 등록 버튼 */
 .register-btn {

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/academic/grade.css">
+	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 
 </head>
 <!-- 
@@ -17,6 +17,7 @@
 -->
 <body>
 <main>
+<jsp:include page="../header.jsp" />
   <div>
     <div class="info">
       <span id="test">
@@ -48,7 +49,7 @@
         </div>
 
         <div class="bold-ment">
-          <img src="./images/bullet-h4.png" alt="bullet-h4 이미지" />
+		<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png" alt="bullet-h4 이미지">
           <h4 class="span-bold">수료기준</h4>
           <div class="ment1">
             <div class="scrollbox mg-b10">
@@ -123,7 +124,7 @@
         </div>
 
         <div class="bold-ment">
-          <img src="./images/bullet-h4.png" alt="bullet-h4 이미지" />
+		<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png" alt="bullet-h4 이미지">
           <h4 class="span-bold">조기졸업</h4>
           <div class="ment1">
             <div class="con-box">
@@ -167,7 +168,7 @@
         </div>
 
 		<div class="bold-ment">
-          <img src="./images/bullet-h4.png" alt="bullet-h4 이미지" />
+		<img src="<%=request.getContextPath()%>/resources/images/bullet-h4.png" alt="bullet-h4 이미지">
           <h4 class="span-bold">졸업</h4>
           <div class="ment1">
             <div class="con-box">
@@ -243,12 +244,11 @@
 
 		
 
-	
-
-
       </div>
     </div>
   </div>
 </main>
+<jsp:include page="../footer.jsp" />
+
 </body>
 </html>
