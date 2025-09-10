@@ -156,6 +156,10 @@ public class Sql {
 	    "FROM tb_academic_faq ORDER BY id";
 	public final static String SELECT_CALANDER_ALL = "SELECT * FROM tb_academic_calendar";
 	public final static String SELECT_GALLERY_ALL = "SELECT * FROM tb_collegelife_gallery";
+	 //public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM tb_collegelife_gallery";
+	 //public static final String SELECT_GALLERY_LIST_PAGING = "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM tb_collegelife_gallery ORDER BY reg_date DESC LIMIT ?, ?";
+	 // 대학 생활 - 식단 페이징 SQL
+	 public static final String SELECT_MEAL_ALL = "SELECT * FROM tb_collegelife_meal"'
 	public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM tb_collegelife_gallery";
 	public static final String SELECT_GALLERY_LIST_PAGING =
 	    "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM tb_collegelife_gallery ORDER BY reg_date DESC LIMIT ?, ?";
