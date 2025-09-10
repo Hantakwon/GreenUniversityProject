@@ -29,13 +29,6 @@ public class CollegeDAO extends DBHelper {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	public void insert(CollegeDTO dto) {
-	}
-	
-	public CollegeDTO select(int ano) {
-
-		
-		CollegeDTO dto = new CollegeDTO();
-		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql.INSERT_COLLEGE);

@@ -6,8 +6,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.CollegeDTO;
-import dto.DepartmentHeadDTO;
+import dto.college.CollegeDTO;
+import dto.college.DepartmentHeadDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,16 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.CollegeService;
 import service.DepartmentService;
 
-import java.io.IOException;
-import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import dto.college.CollegeDTO;
-import dto.college.DepartmentHeadDTO;
-
->>>>>>> b0888df01f66b5e536a28e7525b06bb9ac955af4
 /*
  * 날짜 : 2025/09/09
  * 이름 : 정순권

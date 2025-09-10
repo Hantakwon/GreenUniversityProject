@@ -12,6 +12,11 @@
     이름 : 한탁원
     내용 : header 수정
 -->
+<!--
+    날짜 : 2025/09/11
+    이름 : 정순권
+    내용 : header 수정
+-->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/common/header.css">
 <body>
 	<header>
@@ -67,12 +72,12 @@
 								<li><a href="/academic/graduation.do">수료 및 졸업</a></li>
 								<li><a href="/academic/faq.do">자주묻는질문</a></li>
 							</ul></li>
-						<li><a href="/campus/counsil.do">대학생활</a>
+						<li><a href="/collegelife/studentunion.do">대학생활</a>
 							<ul class="sub-mn">
-								<li><a href="/campus/counsil.do">학생회소개</a></li>
-								<li><a href="/campus/#">동아리/스터디</a></li>
-								<li><a href="/campus/menu.do">식단안내</a></li>
-								<li><a href="/campus/gallary.do">갤러리</a></li>
+								<li><a href="/collegelife/studentunion.do">학생회소개</a></li>
+								<li><a href="/collegelife/clud.do">동아리/스터디</a></li>
+								<li><a href="/collegelife/meal.do">식단안내</a></li>
+								<li><a href="/collegelife/gallery.do">갤러리</a></li>
 							</ul></li>
 						<li><a href="/community/notice.do">커뮤니티</a>
 							<ul class="sub-mn">
