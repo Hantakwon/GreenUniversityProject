@@ -147,8 +147,10 @@ public class GalleryDAO extends DBHelper {
 		try {
 			
 		} catch (Exception e) {
-		logger.error(e.getMessage());
+			logger.error(e.getMessage());
 		}
+		
+		return null;
 	}
 
 }
