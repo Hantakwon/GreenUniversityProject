@@ -7,13 +7,15 @@ public class Sql {
 	 * 이름 : 한탁원
 	 * 내용 : 대학대학원 SQL 작성
 	 */
-<<<<<<< Updated upstream
 	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM DEPARTMENT";
-=======
+
 	// 대학
 	public static final String INSERT_COLLEGE =
 	    "INSERT INTO TB_College (name_kor, name_eng, title, content, image) VALUES (?, ?, ?, ?, ?)";
->>>>>>> Stashed changes
+
+	// 대학
+	public static final String INSERT_COLLEGE =
+	    "INSERT INTO TB_College (name_kor, name_eng, title, content, image) VALUES (?, ?, ?, ?, ?)";
 	public static final String WHERE_COLLEGE = " WHERE COLLEGE = ?";
 	public static final String SELECT_COLLEGE_ALL = "SELECT * FROM TB_COLLEGE";
 	
@@ -28,8 +30,6 @@ public class Sql {
 																	    "JOIN TB_Professor p " +
 																	    "  ON p.pro_id   = dp.pro_id " +
 																	    "WHERE dp.role = ? AND d.col_id = ?";
-<<<<<<< Updated upstream
-=======
 	public static final String SELECT_DEPARTMENT_WITH_INFO =
 														        "SELECT "
 														      + "    d.dept_no, "
@@ -118,8 +118,7 @@ public class Sql {
 	
 	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
 	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
->>>>>>> Stashed changes
-	
+
 	/* 
 	 * 날짜 : 2025/09/04
 	 * 이름 : 한탁원

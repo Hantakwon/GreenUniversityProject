@@ -40,7 +40,8 @@ public class RegisterController extends HttpServlet {
 
 		/* 필요 시 DB Logic 추가 */
 		List<CollegeDTO> collegeList = collegeService.findAll();
-		
+
+
 		request.setAttribute("collegeList", collegeList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/department/register.jsp");
