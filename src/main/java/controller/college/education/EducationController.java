@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.CollegeService;
 import service.DepartmentService;
 
+
 /*
  * 날짜 : 2025/09/05
  * 이름 : 한탁원
@@ -40,7 +41,9 @@ public class EducationController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
 		/* DB Logic 추가 */
+
 		CollegeDTO dto = collegeService.findById(4);	
+
 		List<DepartmentHeadDTO> dtoList = departmentService.findAllHeadByCollege(4);
 		
 		request.setAttribute("dto", dto);

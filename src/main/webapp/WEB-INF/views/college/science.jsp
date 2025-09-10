@@ -72,7 +72,7 @@
 							</tr>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.deptName} <a href="#"><img
+									<td>${dto.deptName}<a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
 											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>

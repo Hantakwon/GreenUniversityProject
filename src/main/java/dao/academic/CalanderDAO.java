@@ -16,6 +16,11 @@ import util.Sql;
  * 이름 : 박효빈
  * 내용 : MySQL CalanderDAO 작성
  */
+/*
+ * 날짜 : 2025-09-10
+ * 이름 : 정순권
+ * 내용 : close All
+ */
 public class CalanderDAO extends DBHelper {
 	private final static CalanderDAO INSTANCE = new CalanderDAO();
 
@@ -52,7 +57,7 @@ public class CalanderDAO extends DBHelper {
 				dto.setEnd_date(rs.getString("end_date"));
 				dtoList.add(dto);
 			}
-
+			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
