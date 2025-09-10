@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.CollegeDTO;
-import dto.admission.Admission_noticeDTO;
 import util.DBHelper;
 import util.Sql;
 
@@ -32,11 +31,57 @@ public class CollegeDAO extends DBHelper {
 	}
 	
 	public CollegeDTO select(int ano) {
-		return null;
+		
+		CollegeDTO dto = new CollegeDTO();
+		
+		try {
+			conn = getConnection();
+			
+			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				dto.setCol_id(rs.getInt(1));
+				dto.setName_kor(rs.getString(2));
+				dto.setName_eng(rs.getString(3));
+				dto.setTitle(rs.getString(4));
+				dto.setContent(rs.getString(5));
+				dto.setImage(rs.getString(6));
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dto;
 	}
 	
 	public List<CollegeDTO> selectAll() {
-		return null;
+		List<CollegeDTO> dtoList = new ArrayList<CollegeDTO>();
+
+		try {
+			conn = getConnection();
+			
+			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
+
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				CollegeDTO dto = new CollegeDTO();
+				dto.setCol_id(rs.getInt(1));
+				dto.setName_kor(rs.getString(2));
+				dto.setName_eng(rs.getString(3));
+				dto.setTitle(rs.getString(4));
+				dto.setContent(rs.getString(5));
+				dto.setImage(rs.getString(6));
+				
+				dtoList.add(dto);
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dtoList;
 	}
 	
 	public void update(CollegeDTO dto) {

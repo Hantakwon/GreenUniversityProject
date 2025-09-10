@@ -121,4 +121,39 @@ public class GalleryDAO extends DBHelper {
 		return galleryList;
 	}
 
+
+	// 1. 전체 게시물 수 조회
+	public int countTotalGallery() {
+		int total = 0;
+
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(Sql.SELECT_GALLERY_COUNT_TOTAL_GALLERY);
+
+			if (rs.next()) {
+				total = rs.getInt(1); // 현재6
+			}
+			closeAll();
+
+		} catch (Exception e) {
+
+			logger.error(e.getMessage());
+		}
+		return total;
+	}
+	
+	// 페이징에 따른 게시물 목록 조회
+	public List<GalleryDTO> selectGalleryList(int start){
+		List<GalleryDTO> dtoList = new ArrayList<>();
+		try {
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		
+		return null;
+	}
 }
+
+

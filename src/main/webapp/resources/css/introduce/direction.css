@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/*--------------
+	카카오 지도 
+----------------*/
+
+/* 지도 전용 스타일 */
+#map {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;   /* 영역 확인용 */
+  border-radius: 5px;
+  background-color: #eee;   /* 지도 안 뜰 때 영역 구분 */
+  box-sizing: border-box;
+}
+
+/* 부모 컨테이너 */
+.content-box {
+	
+  padding: 10px;
+  margin:20px;
+  background: #fff;
+  /* border: 2px solid red; 영역 확인용 */ 
+  
+}
+
+/* 오시는 길 제목을 하얗게 */
+.page-title h3 {
+	color: #fff;
+}
+/* 맨 아래 주소 하얗게 */
+.direction_address h4 {
+	color: #fff;
+}

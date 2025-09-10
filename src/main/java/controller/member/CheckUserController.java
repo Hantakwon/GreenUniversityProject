@@ -18,7 +18,7 @@ import service.UserService;
 /*
  * 날짜 : -
  * 이름 : 정순권
- * 내용 : -
+ * 내용 : 회원가입 중복 여부 확인
  */
 @WebServlet("/member/check.do")
 public class CheckUserController extends HttpServlet {

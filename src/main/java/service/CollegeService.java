@@ -15,7 +15,7 @@ public enum CollegeService {
 		dao.insert(dto);
 	}
 
-	public CollegeDTO findByPass(int id) {
+	public CollegeDTO findById(int id) {
 		return dao.select(id);
 	}
 

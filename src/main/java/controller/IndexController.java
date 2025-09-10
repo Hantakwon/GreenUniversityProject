@@ -9,6 +9,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/*
+ * 날짜 : 2025/09/10
+ * 이름 : 김철학
+ * 내용 : 메인 컨트롤러1234
+ */
 @WebServlet("/")
 public class IndexController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

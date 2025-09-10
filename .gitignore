@@ -24,6 +24,6 @@
 ### Eclipse ###
 .classpath
 .project
-**/.settings/
+.settings/
 .recommenders
 .loadpath
