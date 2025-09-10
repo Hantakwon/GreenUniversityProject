@@ -7,11 +7,13 @@ public class Sql {
 	 * 이름 : 한탁원
 	 * 내용 : 대학대학원 SQL 작성
 	 */
+
 	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM DEPARTMENT";
 
 	// 대학
 	public static final String INSERT_COLLEGE =
 	    "INSERT INTO TB_College (name_kor, name_eng, title, content, image) VALUES (?, ?, ?, ?, ?)";
+
 
 	// 대학
 	public static final String INSERT_COLLEGE =
@@ -82,6 +84,43 @@ public class Sql {
 		  + "LEFT JOIN TB_Professor p "
 		  + "  ON p.pro_no LIKE CONCAT(YEAR(?), d.dept_no, '%') "
 		  + "WHERE d.dept_id = ?";
+
+	
+	public static final String INSERT_PROFESSOR_ACADEMIC =
+		        "INSERT INTO TB_Professor_Academic (pro_id, school, major, graduation_at, degree, appointment_date) " +
+		        "VALUES (?, ?, ?, ?, ?, ?)";
+
+	// 역할 INSERT (중복 방지 UNIQUE 추가해두면 좋아요: (pro_id, dept_id, role))
+	public static final String INSERT_PROFESSOR_ROLE =
+		        "INSERT INTO TB_Professor_Role (pro_id, dept_id, role) VALUES (?, ?, ?)";
+
+	
+	
+	// 개수 구하기
+	public static final String SELECT_PROFESSOR_COUNT = "SELECT COUNT(*) FROM TB_Professor";
+	// 검색
+	public static final String SELECT_PROFESSOR_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Professor ";
+	public static final String SELECT_PROFESSOR_INFO_ALL =
+												    "SELECT " +
+												    "    p.pro_no, " +
+												    "    p.name_kor AS professor_name, " +
+												    "    p.rrn, " +
+												    "    p.tel, " +
+												    "    p.email, " +
+												    "    d.name_kor AS department_name, " +
+												    "    p.position, " +
+												    "    p.statement, " +
+												    "    a.appointment_date " +
+												    "FROM TB_Professor p " +
+												    "JOIN TB_Department_Professor dp ON p.pro_id = dp.pro_id " +
+												    "JOIN TB_Department d ON dp.dept_id = d.dept_id AND dp.col_id = d.col_id " +
+												    "LEFT JOIN TB_Professor_Academic a ON p.pro_id = a.pro_id " +   
+												    "ORDER BY p.pro_id DESC " +                                     
+												    "LIMIT 5 OFFSET ?";                                          
+
+	
+	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
+	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
 	
 	public static final String INSERT_PROFESSOR_ACADEMIC =
 		        "INSERT INTO TB_Professor_Academic (pro_id, school, major, graduation_at, degree, appointment_date) " +
