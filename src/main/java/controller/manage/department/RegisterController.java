@@ -23,7 +23,7 @@ public class RegisterController extends HttpServlet {
 		
 		/* 필요 시 DB Logic 추가 */
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/department/register.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/department/register2.jsp");
 		dispatcher.forward(request, response);
 	}
 

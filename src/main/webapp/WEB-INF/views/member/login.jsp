@@ -9,11 +9,13 @@
 	href="<%=request.getContextPath()%>/resources/css/member/login.css">
 
 <script>
-    const message = '<%=request.getAttribute("message")%>
-	';
-	if (message && message.trim() !== 'null') {
-		alert(message);
-	}
+    // request.getAttribute가 null을 반환하면 "null"이라는 문자열이 됩니다.
+    const message = '<%= request.getAttribute("message") %>';
+    
+    // message 값이 존재하고 "null" 문자열이 아닐 때만 alert를 실행합니다.
+    if (message && message.trim() !== 'null') {
+        alert(message);
+    }
 </script>
 
 </head>
@@ -53,9 +55,9 @@
 							</div>
 						</div>
 						<div class="form-inputs">
-							<input type="text" name="user_id" placeholder="아이디" required>
-							<input type="password" name="user_pass" placeholder="비밀번호"
-								required>
+							<input type="text" name="user_id" placeholder="아이디" required="required">
+							<input type="password" name="user_pass" placeholder="비밀번호" required="required"
+								>
 						</div>
 						<button type="submit" class="loginBtn">로그인</button>
 						<div class="login-links">

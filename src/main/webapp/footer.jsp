@@ -5,51 +5,91 @@
 <head>
 <meta charset="UTF-8">
 <title>footer</title>
-	<!--
-        날짜 : 2025/08/27
+<!--
+        날짜 : 2025/09/03
         이름 : 한탁원
-        내용 : footer 작성
+        내용 : footer 수정
     -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/footer.css">
+	href="<%=request.getContextPath()%>/resources/css/common/footer.css">
 </head>
 <body>
 	<footer>
-		<!-- 상단 메뉴 -->
-		<div class="terms-wrap">
-			<div class="inner">
-				<ul>
-					<li><a href="#">개인정보처리방침</a></li>
-					<li><a href="#">통합정보시스템</a></li>
-					<li><a href="#">학사일정</a></li>
-					<li><a href="#">주요민원 연락처</a></li>
-					<li><a href="#">교내공지사항</a></li>
+		<div class="top-footer-wrap">
+			<div class="top-footer-box">
+				<ul class="footer-link">
+					<li class="privacy" style="width: 20%;"><a href="#"
+						target="_blank" title="개인정보처리방침">개인정보처리방침</a></li>
+					<li style="width: 20%;"><a href="#" target="_blank"
+						title="통합정보시스템">통합정보시스템</a></li>
+					<li style="width: 20%;"><a href="#" target="_blank"
+						title="학사일정">학사일정</a></li>
+					<li style="width: 20%;"><a href="#" target="_blank"
+						title="주요민원 연락처">주요민원 연락처</a></li>
+					<li style="width: 20%;"><a href="#" target="_blank"
+						title="교내공지사항">교내공지사항</a></li>
 				</ul>
 			</div>
 		</div>
-
-		<!-- 학교 정보 + 주요사이트 -->
-		<div class="info-wrap">
-			<div class="inner">
-				<div class="info-left">
-					<img src="<%=request.getContextPath()%>/resources/images/footer_logo.png" alt="그린대학교 로고">
-					<div class="text">
-						그린대학교<br> [12345] 부산광역시 부산진구 부전대로 123 그린대학교<br> 대표전화 :
-						051-123-1000 | 입학안내 : 051-123-1302 | 팩스 : 051-123-3333<br> <span>copyright
-							©Green University All rights reserved.</span>
-					</div>
+		<div class="bottom-footer-wrap">
+			<div class="bottom-footer-box">
+				<div class="related-site-wrap">
+					<a class="related-site-title" href="#a" title="주요사이트 바로가기">주요사이트</a>
+					<ul class="related-site">
+						<li><a href="#a" title="바로가기">그린대학교</a></li>
+					</ul>
 				</div>
-				<div class="site">
-					<select>
-						<option>주요사이트 선택</option>
-						<option>도서관</option>
-						<option>학생포털</option>
-						<option>취업정보센터</option>
-						<option>국제교류센터</option>
-					</select>
+				<div class="footer-content-box">
+					<span class="footer-logo-wrap"><img
+						alt="그린대학교 GREEN UNIVERSITY"
+						src="<%=request.getContextPath()%>/resources/images/footer_logo.png"></span>
+					<ul class="footer-info">
+						<li>
+							<ul class="footer-contact">
+								<li>
+									<p>그린대학교</p>
+									<p>
+										<span>[12345] 부산광역시 부산진구 부전대로 123 그린대학교</span> <span>대표전화
+											: <a href="tel:033-248-1000" title="전화걸기">051-123-1000</a>
+										</span> <span>입학안내 : <a href="tel:033-248-1302" title="전화걸기">051-123-1302</a>
+											<span>팩스 : 051-123-3333</span>
+										</span>
+									</p>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<p class="copyright">copyright&nbsp;©Green University All
+								rights reserved.</p>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const btn = document.querySelector('.related-site-title');
+			const box = document.querySelector('.related-site');
+			if (!btn || !box)
+				return;
+
+			btn.addEventListener('click', function(e) {
+				e.preventDefault();
+				const opened = box.style.display === 'block';
+				box.style.display = opened ? 'none' : 'block';
+				btn.classList.toggle('active', !opened);
+			});
+
+			// 바깥 클릭하면 닫힘
+			document.addEventListener('mousedown', function(e) {
+				if (!e.target.closest('.related-site-wrap')) {
+					box.style.display = 'none';
+					btn.classList.remove('active');
+				}
+			});
+		});
+	</script>
 </body>
 </html>
