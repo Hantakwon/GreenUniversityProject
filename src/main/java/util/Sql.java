@@ -183,6 +183,90 @@ public class Sql {
 	 * 이름 : 정순권
 	 * 내용 : 학생 교수 로그인 sql 작성
 	 */
+
+	// 로그인
+	// user db명 수정 완료
+	public static final String SELECT_USER_BY_PASS = "SELECT * FROM TB_GENERAL_USERS WHERE USER_ID=? AND USER_PASS=SHA2(?, 256)";
+	
+
+	public static final String SELECT_STUDENT_BY_RRN = "SELECT * FROM TB_STUDENT WHERE STD_ID=? AND REPLACE(`RRN`, '-', '')=?";
+	public static final String SELECT_PROFESSOR_BY_RRN = "SELECT * FROM TB_PROFESSOR WHERE PRO_ID=? AND REPLACE(`RRN`, '-', '')=?";
+
+	/*
+	 * 날짜 : 2025/09/09
+	 * 이름 : 한탁원
+	 * 내용 : 교수 DB
+	 */
+	// 개수 구하기
+	public static final String SELECT_PROFESSOR_COUNT = "SELECT COUNT(*) FROM TB_Professor";
+	// 검색
+	public static final String SELECT_PROFESSOR_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Professor ";
+	public static final String SELECT_PROFESSOR_INFO_ALL =
+												    "SELECT " +
+												    "    p.pro_no, " +
+												    "    p.name_kor AS professor_name, " +
+												    "    p.rrn, " +
+												    "    p.tel, " +
+												    "    p.email, " +
+												    "    d.name_kor AS department_name, " +
+												    "    p.position, " +
+												    "    p.statement, " +
+												    "    a.appointment_date " +
+												    "FROM TB_Professor p " +
+												    "JOIN TB_Department_Professor dp ON p.pro_id = dp.pro_id " +
+												    "JOIN TB_Department d ON dp.dept_id = d.dept_id AND dp.col_id = d.col_id " +
+												    "LEFT JOIN TB_Professor_Academic a ON p.pro_id = a.pro_id " +   
+												    "ORDER BY p.pro_id DESC " +                                     
+												    "LIMIT 5 OFFSET ?";                                          
+
+	
+	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
+	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
+	
+	/*
+	 * 날짜 : 2025/09/08
+	 * 이름 : 우지희
+	 * 내용 : manage SQL 작성
+	 */
+	
+	// manage - lecture register 
+	public static final String REGISTER_LECTURE =
+		    "INSERT INTO tb_lecture " +
+		    "(lecNo, lenName, category, department, grade, semester, credit, professor, description, " +
+		    "start_date, end_date, start_time, end_time, day_of_week, evaluation, textbook, classroom, max_enrollment) " +
+		    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	
+	//manageDAO - getnextsequence
+	public static final String GET_NEXT_SEQUENCE = "SELECT COUNT(*) + 1 FROM tb_lecture WHERE lecNo LIKE ? ";
+	
+	
+	//managedao - list sql
+	public static final String SELECT_ALL_TB_LECTURE =
+		    "SELECT lecNo, department, grade, category, lenName, professor, credit, " +
+		    "CONCAT(day_of_week, ' ', start_time, ' ~ ', end_time) AS class_time, " +
+		    "classroom, max_enrollment " +
+		    "FROM tb_lecture";
+	
+	//managedao - opelist Sql
+	public static final String SELECT_ALL_LECTURE_WITH_ENROLLMENT = "SELECT lecNo, lenName, category, professor, day_of_week, start_time, end_time, classroom, max_enrollment, enrollment " +
+            "FROM tb_lecture " ;
+	
+	//페이지네이션
+	//기존 count 전용
+	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM tb_lecture ";
+	public final static String SELECT_COUNT_SEARCH ="select count(*) from tb_lecture ";
+	//목록조회용
+	public final static String SELECT_SEARCH_BASE = "SELECT * FROM tb_lecture ";
+	
+	public final static String SEARCH_WHERE_LECNO = "where lecNo like ?";
+	public final static String SEARCH_WHERE_DEPARTMENT = "where department like ?";
+	public final static String SEARCH_WHERE_LENNAME = "where lenName like ?";
+	public final static String SEARCH_WHERE_PROFESSOR = "where professor like ?";
+	
+	public final static String SEARCH_ORDER_LECNO = "ORDER BY lecNo DESC ";   
+	public final static String SEARCH_OFFSET_ROW1 = "OFFSET ? ROWS FETCH NEXT 10 ROWS ONLY";
+
+
 	public static final String SELECT_USER_BY_PASS =
 	    "SELECT * FROM TB_GENERAL_USERS WHERE USER_ID=? AND USER_PASS=SHA2(?, 256)";
 	public static final String SELECT_STUDENT_BY_RRN =
