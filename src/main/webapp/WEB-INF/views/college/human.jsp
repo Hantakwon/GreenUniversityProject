@@ -51,26 +51,17 @@
 				</div>
 				<div class="main-content">
 					<div class="top">
-						<h2>인문사회대학</h2>
+						<h2>${dto.name_kor}</h2>
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-<<<<<<< HEAD
-							<img
-								src="<%=request.getContextPath()%>/resources/images/college-introduce-1.jpg"
-								alt="인문대">
-=======
 							<img src="${pageContext.request.contextPath}${dto.image}"
 								alt="대학 이미지">
->>>>>>> be922b6b94680ca0de983dfb4679546ac6da6383
 						</div>
 						<div class="info-div">
-							<h4>Humanities And Social Sciences</h4>
-							<h2>인문, 사회분야의 다양하고 심화된 이론을 연구</h2>
-							<p>인문사회과학대학은 민족의 문화적 유산과 전통을 창조적으로 계승.발전시킬 열린 민족인, 세계화된 지식,
-								정보사회를 주도할 수 있는 국제적인 식견을 갖춘 전문인, 법, 정치 경제, 언 론등 우리사회의 중심을 이루는
-								영역에서 정의로운 사명감을 가지고 일 할 양심적인 봉사자, 그리고 창의적인 디자인 활동을 할 개성적인 인재를
-								양성하기 위해서 인문, 사회, 디자인 영 역의 다양하고 심화된 이론과 실제를 교수.연구하는데 교육목표를 둔다.</p>
+							<h4>${dto.name_eng}</h4>
+							<h2>${dto.title}</h2>
+							<p>${dto.content}</p>
 						</div>
 					</div>
 					<div class="mid">

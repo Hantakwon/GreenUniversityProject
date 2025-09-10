@@ -31,7 +31,29 @@ public class CollegeDAO extends DBHelper {
 	}
 	
 	public CollegeDTO select(int ano) {
-		return null;
+		
+		CollegeDTO dto = new CollegeDTO();
+		
+		try {
+			conn = getConnection();
+			
+			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				dto.setCol_id(rs.getInt(1));
+				dto.setName_kor(rs.getString(2));
+				dto.setName_eng(rs.getString(3));
+				dto.setTitle(rs.getString(4));
+				dto.setContent(rs.getString(5));
+				dto.setImage(rs.getString(6));
+			}
+			closeAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dto;
 	}
 	
 	public List<CollegeDTO> selectAll() {

@@ -8,6 +8,8 @@ public class Sql {
 	 * 내용 : 대학/대학원 SQL 작성
 	 */
 
+
+	
 	// [FIX] 테이블명 스키마와 일치(TB_Department)하도록 수정
 	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM TB_Department";
 
