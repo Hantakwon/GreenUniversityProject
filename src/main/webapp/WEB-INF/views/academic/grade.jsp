@@ -16,6 +16,7 @@
 -->
 <body>
 	<main>
+	<jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span id="test">
@@ -160,5 +161,6 @@
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

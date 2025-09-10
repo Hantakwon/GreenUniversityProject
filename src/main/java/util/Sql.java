@@ -98,7 +98,7 @@ public class Sql {
 	public final static String SELECT_GALLERY_ALL = "SELECT * FROM tb_collegelife_gallery";
 	// 대학생활 - 갤러리 페이징 SQL 
 	 public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM tb_collegelife_gallery";
-	 public static final String SELECT_GALLERY_LIST_PAGING = "SELECT id, title, image_path, view_count, reg_date, content, writer FROM gallery_board ORDER BY id DESC LIMIT ?, ?";
+	 public static final String SELECT_GALLERY_LIST_PAGING = "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM tb_collegelife_gallery ORDER BY reg_date DESC LIMIT ?, ?";
 
 	/* 
 	 * 날짜 : 2025/09/08

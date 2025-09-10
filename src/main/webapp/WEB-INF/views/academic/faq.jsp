@@ -17,6 +17,7 @@
 	내용 : 자주묻는질문  JSP 작성
 -->
 <body>
+<jsp:include page="../header.jsp" />
 	<main>
 		<div>
 			<div class="info">
@@ -131,7 +132,9 @@
 				</div>
 			</div>
 		</div>
+			
+		
 	</main>
-
+	<jsp:include page="../footer.jsp" />
 </body>
 </html>

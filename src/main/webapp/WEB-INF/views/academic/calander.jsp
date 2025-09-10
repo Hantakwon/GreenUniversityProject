@@ -16,7 +16,10 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 <body>
+
+
 	<main>
+	<jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span id="test"> <img
@@ -69,8 +72,6 @@
 		src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.17/locales/ko.global.min.js'></script>
 
 
-
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var calendarEl = document.getElementById('calendar');
@@ -103,8 +104,6 @@
         calendar.render();
     });
 </script>
-
-
-
+<jsp:include page="../footer.jsp" />
 </body>
 </html>
