@@ -59,7 +59,6 @@ public class ProfessorDAO extends DBHelper {
 			conn = getConnection();
 			conn.setAutoCommit(false);
 
-			// 1) 교수 INSERT (pro_no = YEAR(appointmentDate)+dept_no+seq)
 			psmt = conn.prepareStatement(Sql.INSERT_PROFESSOR, Statement.RETURN_GENERATED_KEYS);
 			int i = 1;
 			psmt.setDate(i++, appointmentDate); // YEAR(?)

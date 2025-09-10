@@ -1,13 +1,14 @@
 package controller.manage.professor;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.college.CollegeDTO;
-import dto.college.DepartmentDTO;
+import dto.CollegeDTO;
+import dto.DepartmentDTO;
 import dto.professor.ProfessorAcademicDTO;
 import dto.professor.ProfessorDTO;
 import dto.professor.ProfessorRoleDTO;
@@ -58,6 +59,7 @@ public class RegisterController extends HttpServlet {
          String nationality = request.getParameter("nationality");
          String tel = request.getParameter("tel");
          String email = request.getParameter("email");
+         logger.debug(email);
          String zipCode = request.getParameter("zip_code");
          String addressBasic = request.getParameter("address_basic");
          String addressDetail = request.getParameter("address_detail");
@@ -101,7 +103,7 @@ public class RegisterController extends HttpServlet {
          roleDto.setDept_id(deptId);
          
          professorService.register(professorDto, academicDto, roleDto);
-         
+         response.sendRedirect("/manage/professor/list.do");
 	}
 	
 	private static java.sql.Date toSqlDateOrNull(String s) {

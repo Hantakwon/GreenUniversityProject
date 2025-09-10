@@ -83,7 +83,7 @@
 									<td>${dto.professorName}</td>
 									<td>${dto.rrn}</td>
 									<td>${dto.tel}</td>
-									<td class="ellipsis">${dto.email}</td>
+									<td>${dto.email}</td>
 									<td>${dto.departmentName}</td>
 									<td>${dto.position}</td>
 									<td><c:choose>

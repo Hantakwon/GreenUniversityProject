@@ -8,12 +8,6 @@
 <title>교수 등록</title>
 
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/manage/common/header.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/manage/common/aside.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/manage/common/footer.css">
-<link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/manage/admin.css">
 </head>
 <body>
@@ -62,7 +56,7 @@
 									<td><span class="desc">연도 + 학과 코드 + 순번 조합 자동생성</span></td>
 									<td class="tit15">주민등록번호</td>
 									<td><input type="text" name="rrn" class="w-240"
-										placeholder="- 포함 14자리 입력" pattern="\\d{6}-\\d{7}" required></td>
+										placeholder="- 포함 14자리 입력" required></td>
 								</tr>
 
 								<tr>
@@ -91,7 +85,7 @@
 								<tr>
 									<td class="tit15">휴대폰</td>
 									<td><input type="text" name="tel" class="w-240"
-										placeholder="휴대폰 번호 입력" pattern="\\d{2,3}-\\d{3,4}-\\d{4}"></td>
+										placeholder="휴대폰 번호 입력"></td>
 									<td class="tit15">이메일</td>
 									<td><input type="email" name="email" class="w-260"
 										placeholder="이메일 입력"></td>

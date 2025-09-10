@@ -6,9 +6,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.admission.Admission_noticeDTO;
-import dto.college.CollegeDTO;
+import dto.CollegeDTO;
 import util.DBHelper;
+import util.Sql;
 
 /*
  * 날짜 : 2025-09-08
@@ -59,62 +59,6 @@ public class CollegeDAO extends DBHelper {
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-
-
-	public List<CollegeDTO> selectAll() {
-		List<CollegeDTO> dtoList = new ArrayList<CollegeDTO>();
-
-
-		try {
-			conn = getConnection();
-			
-			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
-
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				CollegeDTO dto = new CollegeDTO();
-				dto.setCol_id(rs.getInt(1));
-				dto.setName_kor(rs.getString(2));
-				dto.setName_eng(rs.getString(3));
-				dto.setTitle(rs.getString(4));
-				dto.setContent(rs.getString(5));
-				dto.setImage(rs.getString(6));
-				
-				dtoList.add(dto);
-			}
-			closeAll();
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-
-		return dtoList;
-	}
-
-		try {
-			conn = getConnection();
-			
-			psmt = conn.prepareStatement(Sql.SELECT_COLLEGE_ALL);
-
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				CollegeDTO dto = new CollegeDTO();
-				dto.setCol_id(rs.getInt(1));
-				dto.setName_kor(rs.getString(2));
-				dto.setName_eng(rs.getString(3));
-				dto.setTitle(rs.getString(4));
-				dto.setContent(rs.getString(5));
-				dto.setImage(rs.getString(6));
-				
-				dtoList.add(dto);
-			}
-			closeAll();
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-
-
 		return dtoList;
 	}
 	
