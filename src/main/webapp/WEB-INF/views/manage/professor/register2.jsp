@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -164,18 +165,14 @@
 									<td class="tit15">담당학과</td>
 									<td><select name="col_id" class="w-180">
 											<option value="">대학 선택</option>
-											<option value="1">인문사회대학</option>
-											<option value="2">자연과학대학</option>
-											<option value="3">공과대학</option>
-											<option value="4">사범대학</option>
-											<option value="5">대학원</option>
+											<c:forEach var="c" items="${collegeList}">
+												<option value="${c.col_id}">${c.name_kor}</option>
+											</c:forEach>
 									</select> <select name="dept_id" class="w-200">
 											<option value="">학과 선택</option>
-											<option value="1">국어국문학과</option>
-											<option value="2">영어영문학과</option>
-											<option value="3">일어일문학과</option>
-											<option value="4">중어중문학과</option>
-											<option value="5">역사학과</option>
+											<c:forEach var="d" items="${departmentList}">
+												<option value="${d.dept_id}">${d.name_kor}</option>
+											</c:forEach>
 									</select></td>
 									<td class="tit15">임용일</td>
 									<td><input type="date" name="appointment_date"

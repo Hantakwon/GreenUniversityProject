@@ -7,8 +7,17 @@ public class Sql {
 	 * 이름 : 한탁원
 	 * 내용 : 대학대학원 SQL 작성
 	 */
+<<<<<<< Updated upstream
 	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM DEPARTMENT";
+=======
+	// 대학
+	public static final String INSERT_COLLEGE =
+	    "INSERT INTO TB_College (name_kor, name_eng, title, content, image) VALUES (?, ?, ?, ?, ?)";
+>>>>>>> Stashed changes
 	public static final String WHERE_COLLEGE = " WHERE COLLEGE = ?";
+	public static final String SELECT_COLLEGE_ALL = "SELECT * FROM TB_COLLEGE";
+	
+	public static final String SELECT_DEPARTMENT_ALL = "SELECT * FROM DEPARTMENT";
 	public static final String SELECT_DEPARTMENT_ALL_HEAD_WHERE_COLLEGE ="SELECT d.name_kor AS dept_name, " +
 																	    "       p.name_kor AS prof_name, " +
 																	    "       d.tel      AS dept_tel " +
@@ -19,6 +28,97 @@ public class Sql {
 																	    "JOIN TB_Professor p " +
 																	    "  ON p.pro_id   = dp.pro_id " +
 																	    "WHERE dp.role = ? AND d.col_id = ?";
+<<<<<<< Updated upstream
+=======
+	public static final String SELECT_DEPARTMENT_WITH_INFO =
+														        "SELECT "
+														      + "    d.dept_no, "
+														      + "    c.name_kor AS college_name, "
+														      + "    d.name_kor AS department_name, "
+														      + "    d.tel "
+														      + "FROM TB_Department d "
+														      + "JOIN TB_College    c ON d.col_id = c.col_id "
+														      + "ORDER BY c.col_id, d.dept_no";
+
+	public static final String INSERT_DEPARTMENT =
+														    "INSERT INTO TB_Department (col_id, dept_no, name_kor, name_eng, founded_date, tel, office)\r\n" +
+														    "SELECT \r\n" +
+														    "  p.col_id,\r\n" +
+														    "  LPAD(\r\n" +
+														    "    CASE p.col_id\r\n" +
+														    "      WHEN 1 THEN LEAST(19, GREATEST( 1, COALESCE(MAX(CAST(d.dept_no AS UNSIGNED)),  0) + 1))\r\n" +
+														    "      WHEN 2 THEN LEAST(39, GREATEST(21, COALESCE(MAX(CAST(d.dept_no AS UNSIGNED)), 20) + 1))\r\n" +
+														    "      WHEN 3 THEN LEAST(59, GREATEST(41, COALESCE(MAX(CAST(d.dept_no AS UNSIGNED)), 40) + 1))\r\n" +
+														    "      WHEN 4 THEN LEAST(79, GREATEST(61, COALESCE(MAX(CAST(d.dept_no AS UNSIGNED)), 60) + 1))\r\n" +
+														    "      WHEN 5 THEN LEAST(99, GREATEST(81, COALESCE(MAX(CAST(d.dept_no AS UNSIGNED)), 80) + 1))\r\n" +
+														    "      ELSE NULL\r\n" +   
+														    "    END\r\n" +
+														    "  , 2, '0') AS dept_no,\r\n" +
+														    "  ?, ?, ?, ?, ?\r\n" +
+														    "FROM (SELECT ? AS col_id) p\r\n" +
+														    "LEFT JOIN TB_Department d ON d.col_id = p.col_id";
+
+
+
+
+
+	/*
+	 * 날짜 : 2025/09/09
+	 * 이름 : 한탁원
+	 * 내용 : 교수 DB
+	 */
+	public static final String INSERT_PROFESSOR =
+		    "INSERT INTO TB_Professor ("
+		  + "  pro_no, rrn, name_kor, name_eng, gender, nationality, "
+		  + "  tel, email, zip_code, address_basic, address_detail, statement, position"
+		  + ") "
+		  + "SELECT "
+		  + "  CONCAT("
+		  + "    YEAR(?), d.dept_no, "
+		  + "    LPAD(COALESCE(MAX(CAST(SUBSTRING(p.pro_no, 7) AS UNSIGNED)), 0) + 1, 3, '0')"
+		  + "  ) AS pro_no, "
+		  + "  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? "
+		  + "FROM TB_Department d "
+		  + "LEFT JOIN TB_Professor p "
+		  + "  ON p.pro_no LIKE CONCAT(YEAR(?), d.dept_no, '%') "
+		  + "WHERE d.dept_id = ?";
+	
+	public static final String INSERT_PROFESSOR_ACADEMIC =
+		        "INSERT INTO TB_Professor_Academic (pro_id, school, major, graduation_at, degree, appointment_date) " +
+		        "VALUES (?, ?, ?, ?, ?, ?)";
+
+	// 역할 INSERT (중복 방지 UNIQUE 추가해두면 좋아요: (pro_id, dept_id, role))
+	public static final String INSERT_PROFESSOR_ROLE =
+		        "INSERT INTO TB_Professor_Role (pro_id, dept_id, role) VALUES (?, ?, ?)";
+
+	
+	
+	// 개수 구하기
+	public static final String SELECT_PROFESSOR_COUNT = "SELECT COUNT(*) FROM TB_Professor";
+	// 검색
+	public static final String SELECT_PROFESSOR_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Professor ";
+	public static final String SELECT_PROFESSOR_INFO_ALL =
+												    "SELECT " +
+												    "    p.pro_no, " +
+												    "    p.name_kor AS professor_name, " +
+												    "    p.rrn, " +
+												    "    p.tel, " +
+												    "    p.email, " +
+												    "    d.name_kor AS department_name, " +
+												    "    p.position, " +
+												    "    p.statement, " +
+												    "    a.appointment_date " +
+												    "FROM TB_Professor p " +
+												    "JOIN TB_Department_Professor dp ON p.pro_id = dp.pro_id " +
+												    "JOIN TB_Department d ON dp.dept_id = d.dept_id AND dp.col_id = d.col_id " +
+												    "LEFT JOIN TB_Professor_Academic a ON p.pro_id = a.pro_id " +   
+												    "ORDER BY p.pro_id DESC " +                                     
+												    "LIMIT 5 OFFSET ?";                                          
+
+	
+	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
+	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
+>>>>>>> Stashed changes
 	
 	/* 
 	 * 날짜 : 2025/09/04
@@ -116,36 +216,7 @@ public class Sql {
 	public static final String SELECT_STUDENT_BY_RRN = "SELECT * FROM TB_STUDENT WHERE STD_ID=? AND REPLACE(`RRN`, '-', '')=?";
 	public static final String SELECT_PROFESSOR_BY_RRN = "SELECT * FROM TB_PROFESSOR WHERE PRO_ID=? AND REPLACE(`RRN`, '-', '')=?";
 
-	/*
-	 * 날짜 : 2025/09/09
-	 * 이름 : 한탁원
-	 * 내용 : 교수 DB
-	 */
-	// 개수 구하기
-	public static final String SELECT_PROFESSOR_COUNT = "SELECT COUNT(*) FROM TB_Professor";
-	// 검색
-	public static final String SELECT_PROFESSOR_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Professor ";
-	public static final String SELECT_PROFESSOR_INFO_ALL =
-												    "SELECT " +
-												    "    p.pro_no, " +
-												    "    p.name_kor AS professor_name, " +
-												    "    p.rrn, " +
-												    "    p.tel, " +
-												    "    p.email, " +
-												    "    d.name_kor AS department_name, " +
-												    "    p.position, " +
-												    "    p.statement, " +
-												    "    a.appointment_date " +
-												    "FROM TB_Professor p " +
-												    "JOIN TB_Department_Professor dp ON p.pro_id = dp.pro_id " +
-												    "JOIN TB_Department d ON dp.dept_id = d.dept_id AND dp.col_id = d.col_id " +
-												    "LEFT JOIN TB_Professor_Academic a ON p.pro_id = a.pro_id " +   
-												    "ORDER BY p.pro_id DESC " +                                     
-												    "LIMIT 5 OFFSET ?";                                          
-
 	
-	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
-	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
 	
 	
 }
