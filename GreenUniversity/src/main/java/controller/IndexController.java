@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /*
  * 날짜 : 2025/09/10
  * 이름 : 김철학
- * 내용 : 메인 컨트롤러111
+ * 내용 : 메인 컨트롤러1234
  */
 @WebServlet("/")
 public class IndexController extends HttpServlet {
