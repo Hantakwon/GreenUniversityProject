@@ -60,10 +60,27 @@
 			</div>
 			<div class="content" id="jwxe_main_content">
 				<div class="content-box">
-				컨탠츠 내용 꾸미기
-				
-				
-				
+					<!-- 입학상담 컨텐츠 시작  -->
+						<div class="admission-main">
+						    <div class="admission-bg">
+						        <div class="admission-text">
+						            <h1>미래를 움직이는 인재 그린인</h2>
+						            <p>그 인재의 가치를 아는 대학, 그린대학교</p>
+						        </div>
+						        </br>
+						        </br>
+						        </br>
+						        </br>
+						        </br>
+						    </div>
+						    </br>
+						    <h4>입학 상담 문의 전화</h2>
+							<h1>051-912-1000</h1>
+							<h3>채팅 상담도 가능합니다.</h3>
+							</br>
+							<h3>➡➡</h3>➡
+						</div>
+					<!-- 입학상담 컨텐츠 끝  -->
 				</div>
 			</div>
 		</div>
@@ -128,10 +145,21 @@
 
         chatInput.value = "";
 
-        // 간단한 봇 응답 (테스트용)
+     	// 봇 응답 생성
         const botMsg = document.createElement("div");
         botMsg.className = "bot-message";
-        botMsg.innerText = "문의해주셔서 감사합니다! (" + text + ")";
+
+        // 특정 키워드 체크
+        if (text.includes("수시")) {
+            botMsg.innerHTML = "수시모집 페이지로 이동할 수 있습니다.<br><button onclick=\"location.href='<%=request.getContextPath()%>/admission/rolling.do'\">수시모집 바로가기</button>";
+        } else if (text.includes("정시")) {
+            botMsg.innerHTML = "정시모집 페이지로 이동할 수 있습니다.<br><button onclick=\"location.href='<%=request.getContextPath()%>/admission/regular.do'\">정시모집 바로가기</button>";
+        } else if (text.includes("편입")) {
+            botMsg.innerHTML = "편입학 페이지로 이동할 수 있습니다.<br><button onclick=\"location.href='<%=request.getContextPath()%>/admission/transfer.do'\">편입학 바로가기</button>";
+        } else {
+            botMsg.innerText = "문의해주셔서 감사합니다! (" + text + ")";
+        }
+
         chatMessages.appendChild(botMsg);
 
         chatMessages.scrollTop = chatMessages.scrollHeight;

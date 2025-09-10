@@ -11,9 +11,11 @@
 -->
 <!-- 카카오 지도 SDK -->
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e5484cc9c08d15b992911cc635e404a9&libraries=services"></script>
-</head>
+
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/direction.css">
+</head>
+
 
 <!--
 	날짜 : 2025/09/05
@@ -40,13 +42,13 @@
 	  }
 	
 	  .sub-container a {
-	    color: #fff;
+	    color: #000;
 	  }
 	
 	  .sub-container h2, 
 	  .sub-container h3, 
 	  .sub-container h4 {
-	    color: #fff;
+	    color: #000;
 	  }
 	</style>
 	<div class="sub-container">

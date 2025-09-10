@@ -3,11 +3,31 @@
 /* =========================
    			입학 상담
    ========================= */
+   
+.admission-main {
+    width: 100%;
+    text-align: center;  
+}
+
+.admission-bg {
+    background: url('/resources/images/admission-bg3.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 20px;
+    color: #000;
+    position: relative;
+}
+
+.admission-text {
+    background-color: rgba(255, 255, 255, 0.7); /* 흰색 70% 불투명 */
+    padding: 10px; /* 글자와 배경 여백 */
+    display: inline-block; /* 텍스트 크기에 맞게 배경 조절 */
+    border-radius: 5px; /* 둥근 모서리 */
+}
 
 /* 상담 버튼 */
 #chatbot-button {
     position: fixed;
-    bottom: 250px;
+    top: 800px;
     right: 20px;
     background: #2c5cc5;
     color: #fff;
@@ -24,9 +44,9 @@
 
 /* 상담창 */
 #chatbot-window {
-    display: none;
+    display: none; /*상담창 처음에는 안보임*/
     position: fixed;
-    bottom: 90px;
+    bottom: 250px;
     right: 20px;
     width: 300px;
     height: 400px;
@@ -35,7 +55,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     z-index: 9999;
-    display: flex;
     flex-direction: column;
 }
 

@@ -5,13 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>그린대학교</title>
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 </head>
 <!--
 	날짜 : 2025/09/05
     이름 : 한탁원
     내용 : 총장 인사말
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
+
 <body>
 	<jsp:include page="../header.jsp" />
 	<div class="path-wrap">
