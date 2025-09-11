@@ -9,7 +9,7 @@
 </head>
 <!--
 	날짜 : 2025/09/05
-    이름 : 한탁원
+    이름 : 김수진
     내용 : 연혁
 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">

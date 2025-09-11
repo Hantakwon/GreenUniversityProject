@@ -212,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Enrollment` (
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_EMPLOY`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Employ` (
+CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Employ` (
   `emp_id` INT NOT NULL AUTO_INCREMENT,
   `dept_id` INT NOT NULL,
   `emp_name` VARCHAR(45) NULL,
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Employ` (
   INDEX `fk_TB_EMPLOY_TB_Department1_idx` (`dept_id` ASC) VISIBLE,
   CONSTRAINT `fk_TB_EMPLOY_TB_Department1`
     FOREIGN KEY (`dept_id`)
-    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
+    REFERENCES `GREEN`.`TB_Department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -236,6 +236,21 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_TEST` (
     REFERENCES `GREEN`.`TB_Department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `GREEN`.`TB_Admission_Counsel`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Admission_Consult` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `category` VARCHAR(30) NULL,
+  `title` VARCHAR(100) NULL,
+  `writer` VARCHAR(100) NULL,
+  `content` TEXT NULL,
+  `created_at` DATE NULL,
+  `is_answered` TINYINT(1) NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 

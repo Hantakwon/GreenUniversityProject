@@ -29,13 +29,13 @@
 					alt="" class="icon"> 학사운영
 			</a>
 				<ol>
-					<li><a href="${pageContext.request.contextPath}/manage/operate/ope_state.do">교육 운영 현황</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/operate/list2.do">교육 운영 현황</a></li>
 					<li><a href="#">학년별 학생 현황</a></li>
 					<li><a href="#">학과별 학생 현황</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/manage/operate/list.do">강의 목록</a></li>
-					<li><a href="${pageContext.request.contextPath}/manage/operate/register.do">강의 등록</a></li>
-					<li><a href="${pageContext.request.contextPath}/manage/operate/lec_state.do">수강 현황</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/lecture/list.do">강의 목록</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/lecture/register.do">강의 등록</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/enrollment/list.do">수강 현황</a></li>
 				</ol></li>
 			<li><a href="#"> <img
 					src="${pageContext.request.contextPath}/resources/images/ico-admin-persons.png"

@@ -55,7 +55,7 @@
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="${pageContext.request.contextPath}${dto.image}"
+							<img src="/resources/images/college-introduce-1.jpg"
 								alt="대학 이미지">
 						</div>
 						<div class="info-div">

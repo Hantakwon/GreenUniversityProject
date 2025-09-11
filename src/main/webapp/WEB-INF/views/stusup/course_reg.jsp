@@ -129,6 +129,7 @@
     </div>
 </main>
 <jsp:include page="../footer.jsp" />
+
 <script>
     document.querySelectorAll('.reg-btn').forEach(button => {
         button.addEventListener('click', function() {

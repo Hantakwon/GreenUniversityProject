@@ -296,7 +296,7 @@
 									<li><a href="/admission/notice.do" title="입학안내 바로가기">입학안내</a></li>
 									<li><a href="/academic/calander.do" title="학사일정 바로가기">학사일정</a></li>
 									<li><a href="/collegelife/studentunion.do" title="학생회 바로가기">학생회</a></li>
-									<li><a href="#" title="교과과정 바로가기">교과과정</a></li>
+									<li><a href="/stusup/curriculum.do" title="교과과정 바로가기">교과과정</a></li>
 									<li><a href="/community/job.do" title="취업안내 바로가기">취업안내</a></li>
 								</ul>
 							</div>

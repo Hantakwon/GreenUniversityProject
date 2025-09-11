@@ -35,9 +35,12 @@ public class ListController extends HttpServlet {
 		
 		// 요청 페이지 번호 수신
 		String page = request.getParameter("page");
+		
+	    String searchType = request.getParameter("searchType");
+	    String keyword = request.getParameter("keyword");
 
 		// 페이지네이션 처리 요청
-		PagenationDTO pagenationDTO = service.getPagenationDTO(page, null, null);
+		PagenationDTO pagenationDTO = service.getPagenationDTO(page, searchType, keyword);
 
 		// 글 목록 조회
 		int start = pagenationDTO.getStart();
@@ -46,6 +49,8 @@ public class ListController extends HttpServlet {
 		/* 필요 시 DB Logic 추가 */
 		request.setAttribute("dtoList", dtoList);
 		request.setAttribute("pagenationDTO", pagenationDTO);
+		request.setAttribute("keyword", keyword);
+		request.setAttribute("searchType", searchType);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/professor/list2.jsp");
 		dispatcher.forward(request, response);

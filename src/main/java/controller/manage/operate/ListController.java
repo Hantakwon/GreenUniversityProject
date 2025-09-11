@@ -27,24 +27,29 @@ public class ListController extends HttpServlet{
 	private ManageService manageService = ManageService.INSTANCE;
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	// 요청 페이지 번호 수신
-	String pg = req.getParameter("pg");
+	String pg = request.getParameter("pg");
+    String searchType = request.getParameter("searchType");
+    String keyword = request.getParameter("keyword");
 	
 	// 페이지네이션 처리 요청
-	PagenationDTO pagenationDTO = manageService.getPagenationDTO(pg, null, null);
+	PagenationDTO pagenationDTO = manageService.getPagenationDTO(pg, searchType, keyword);
+
 	
 	// 글 목록 조회
 	int start = pagenationDTO.getStart();
 	List<LectureManageDTO> dtoList = manageService.findAll();
 		
 	//목록 데이터 요청
-	req.setAttribute("dtoList", dtoList);
-	req.setAttribute("pagenationDTO", pagenationDTO);	
+	request.setAttribute("dtoList", dtoList);
+	request.setAttribute("pagenationDTO", pagenationDTO);
+	request.setAttribute("keyword", keyword);
+	request.setAttribute("searchType", searchType);
 		
-	RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/manage/operate/list.jsp");
-	dispatcher.forward(req, resp);
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/operate/list.jsp");
+	dispatcher.forward(request, response);
 	}
 
 

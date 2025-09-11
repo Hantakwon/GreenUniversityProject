@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dto.OperateDTO;
 import dto.academic.Academic_noticeDTO;
+import dto.admission.Admission_consultDTO;
 import dto.manage.index.IndexOperateDTO;
 import dto.manage.index.IndexStudentSummaryByDeptDTO;
 import dto.manage.index.IndexStudentSummaryByGradeDTO;
@@ -19,6 +20,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import service.OperateService;
 import service.academic.Academic_noticeService;
+import service.admission.Admission_consultService;
 import service.manage.index.IndexService;
 
 /*
@@ -34,6 +36,7 @@ public class IndexController extends HttpServlet {
 	IndexService indexService = IndexService.INSTANCE;
 	OperateService oprateService = OperateService.INSTANCE;
 	Academic_noticeService academic_Noticservice = Academic_noticeService.INSTANCE;
+	Admission_consultService addmission_consultService = Admission_consultService.INSTANCE;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
@@ -45,14 +48,15 @@ public class IndexController extends HttpServlet {
 		List<IndexStudentSummaryByGradeDTO> gradeSummaryList = indexService.findStudentSummaryByGrade();
 		List<IndexStudentSummaryByDeptDTO> deptSummaryList = indexService.findStudentSummaryByDept();
 		List<Academic_noticeDTO> academic_NoticeList = academic_Noticservice.findAll(0);
-
-		logger.debug(deptSummaryList.toString());
+		List<Admission_consultDTO> admission_consultList = addmission_consultService.findAll(0);
+		
 		
 		request.setAttribute("operateList", operateList);
 		request.setAttribute("indexOperateDto", indexOperateDto);
 		request.setAttribute("gradeSummaryList", gradeSummaryList);
 		request.setAttribute("deptSummaryList", deptSummaryList);
 		request.setAttribute("academic_NoticeList", academic_NoticeList);
+		request.setAttribute("admission_consultList", admission_consultList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/manage/index2.jsp");
 		dispatcher.forward(request, response);

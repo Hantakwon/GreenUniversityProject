@@ -555,76 +555,148 @@ main #calendar .fc {
 	text-align: center;
 }
 
-/* 식단표 테이블 */
+
+
+/* 컨테이너: 가운데 정렬 + 가로 스크롤 안전장치 */
+.calendar-container {
+    text-align: center;
+    padding: 16px;
+    background: #f9f9f9;
+    overflow-x: auto;
+}
+
+/* 테이블 기본: 고정형 그리드 + 빈칸도 보더 표시 */
 .meal-table {
-	width: 100%;
-	min-width: 930px;
-	height: auto;
-	border-collapse: collapse;
-	table-layout: fixed;
+    min-width: 930px;
+    display: inline-table;
+    width: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    empty-cells: show;
+    background: #ffffff;
 }
 
-/* 테이블 헤더 (날짜 및 구분) */
+/* 헤더: 진한 파란색 배경, 흰색 텍스트 */
 .meal-table thead th {
-	background-color: #084A87; /* 이미지의 회색 배경 */
-	color: #ffffff; /* 이미지의 검정색 글씨 */
-	padding: 12px 0;
-	text-align: center;
-	border-right: 1px solid #ccc; /* 헤더 사이의 경계선 */
-	border-bottom: 2px solid #ccc;
-	font-weight: 500;
-	font-size: 14px;
-	white-space: nowrap;
+    background-color: #084A87;
+    color: #ffffff;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    text-align: center;
 }
-
 .meal-table thead th:last-child {
-	border-right: none;
+    border-right: none;
 }
 
-/* "구분" 열 헤더 */
-.meal-table thead th.category-header {
-	background-color: #084A87; /* 이미지의 파란색 배경 */
-	color: white;
-}
-
-/* 테이블 본문 셀 (식단 내용) */
+/* 모든 본문 칸: 연한 회색 보더, 고정 패딩 */
 .meal-table tbody td {
-	border: 1px solid #dedede;
-	vertical-align: top;
-	min-height: 100px;
-	padding: 10px;
+    border: 1px solid #dedede;
+    padding: 12px;
+    vertical-align: top; /* 기본은 위 정렬 */
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: center; /* 기본 중앙 */
+    background: #ffffff;
 }
 
-/* "조식/중식/석식" 열 */
+/* 좌측 구분 열(조식/중식/석식) */
 .meal-category {
-	background-color: #ffffff;
-	color: black;
-	text-align: center;
-	vertical-align: middle;
-	font-weight: bold;
-	width: 10%;
+    width: 110px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
 }
 
-/* 메뉴 내용 스타일 */
-.meal-content {
-	line-height: 1.4;
-	font-size: 14px;
-}
-
-.meal-price {
-	background-color: #E0FFFF;
-	color: #008B8B;
-	padding: 2px 15px;
-	border-radius: 3px;
-	font-weight: bold;
-	font-size: 0.85em;
-	margin-bottom: 5px;
-	display: inline-block;
-}
-
+/* 미운영: 각 요일 칸마다 보더 유지 + 셀 중앙 배치 */
 .no-meal {
-	color: #999;
-	font-style: italic;
-	text-align: center;
-	font-size: 0.9em;
+    color: #999;
+    font-style: italic;
+    font-size: 0.95em;
+    min-height: 90px;
+    display: flex;
+    align-items: center;   /* 세로 중앙 */
+    justify-content: center; /* 가로 중앙 */
+}
+
+/* 중식 행: 셀 자체를 중앙 정렬하는 레이아웃 */
+.meal-row--lunch td {
+    vertical-align: middle;
+    padding: 0; /* 래퍼에서 간격 조절 */
+}
+
+/* 중식 셀 내부 컨테이너: 셀의 정중앙에 배치 */
+.lunch-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 컨테이너 가로 중앙 */
+    justify-content: center; /* 컨테이너 세로 중앙 */
+    gap: 8px;
+    padding: 12px;
+    min-height: 130px; /* 이미지와 유사한 비주얼 높이 */
+}
+
+/* 가격 배지: 연한 청록 배경 + 둥근 모서리 */
+.meal-price {
+    background-color: #E0FFFF;
+    color: #008B8B;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* 메뉴 리스트: 가독성을 위해 좌측 정렬 */
+.meal-list {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* 비어있는 td도 높이 확보(보더 유지) */
+.meal-table td:empty::after {
+    content: "";
+    display: block;
+    min-height: 60px;
+}
+
+
+/* 학생회 조직도 테이블 스타일 */
+.div-table {
+    margin-top: 20px;
+    margin-bottom: 20px; /* 테이블 아래 여백 추가 */
+    overflow-x: auto; /* 테이블이 너무 넓을 경우 스크롤 허용 */
+}
+
+.org-table {
+    width: 100%;
+    border-collapse: collapse; /* 셀 경계선을 단일 선으로 병합 */
+    border: 1px solid #ddd; /* 전체 테이블 테두리 */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.org-table th, .org-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #eee; /* 셀 테두리 */
+}
+
+.org-table thead th {
+    background-color: #f2f2f2; /* 헤더 배경색 */
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* 헤더 텍스트 줄바꿈 방지 */
+}
+
+.org-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* 짝수 행 배경색 */
+}
+.org-table tbody tr:hover {
+    background-color: #e6e6e6; /* 마우스 오버 시 행 배경색 */
 }
