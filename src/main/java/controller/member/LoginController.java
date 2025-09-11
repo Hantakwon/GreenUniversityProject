@@ -109,9 +109,7 @@ public class LoginController extends HttpServlet {
 			session.setAttribute("sessUser", profDTO);
 			response.sendRedirect(request.getContextPath() + "/college/graduate.do?prof");
 		} else {
-			// 로그인 실패 시 세션에 메시지를 저장하고 리다이렉트
-			HttpSession session = request.getSession();
-			session.setAttribute("message", "로그인 오류 아이디/비밀번호를 확인하세요");
+			// 로그인 실패 시 리다이렉트
 			response.sendRedirect(request.getContextPath() + "/member/login.do?fail");
 		}
 	}

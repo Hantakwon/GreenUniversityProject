@@ -9,12 +9,20 @@
 	href="<%=request.getContextPath()%>/resources/css/member/login.css">
 
 <script>
-    // request.getAttribute가 null을 반환하면 "null"이라는 문자열이 됩니다.
+    // 1. 회원가입/로그인 실패 메시지를 처리하는 코드
+    //    서버에서 request.setAttribute로 보낸 메시지를 받습니다.
     const message = '<%= request.getAttribute("message") %>';
-    
-    // message 값이 존재하고 "null" 문자열이 아닐 때만 alert를 실행합니다.
     if (message && message.trim() !== 'null') {
         alert(message);
+    }
+    
+    // 2. 로그인 필터에서 리디렉션된 경우를 처리하는 코드
+    //    URL 파라미터로 전달된 'denied' 정보를 받습니다.
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('denied')) {
+        alert('접속 권한이 없습니다. 로그인 후 이용해주세요.');
+    }else if(urlParams.has('fail')){
+    	alert('아이디 또는 비밀번호가 틀렸습니다.');
     }
 </script>
 
