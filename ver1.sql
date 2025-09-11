@@ -242,7 +242,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_Admission_Counsel`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Admission_Consult` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Admission_Consult` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `category` VARCHAR(30) NULL,
   `title` VARCHAR(100) NULL,
