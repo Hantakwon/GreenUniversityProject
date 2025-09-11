@@ -29,7 +29,11 @@
 <title>식단안내</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
-    
+<!--
+    날짜 : 2025/09/11
+    이름 : 정순권
+    내용 : meal sidebar 수정, header main태그 밖으로 이동
+-->
 <style>
     /* 식단표 컨테이너 */
     .calendar-container {
@@ -143,8 +147,8 @@
 </style>
 </head>
 <body>
+	<jsp:include page="../header.jsp" />
 	<main>
-	    <jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span> <img src="<%=request.getContextPath()%>/resources/images/ico-home.png" alt="홈 버튼">
@@ -160,11 +164,10 @@
 					</div>
 					<div class="bottom">
 						<ul>
-							<li class="#"><a href="#">학생회 소개</a></li>
-							<li><a href="#">동아리/스터디</a></li>
-							<li class="active"><a href="#">식단안내</a></li>
-							<li class="#"><a href="#">갤러리</a></li>
-
+							<li><a href="/collegelife/studentunion.do">학생회 소개</a></li>
+							<li><a href="/collegelife/clud.do">동아리/스터디</a></li>
+							<li class="active"><a href="/collegelife/meal.do">식단안내</a></li>
+							<li><a href="/collegelife/gallery.do">갤러리</a></li>
 						</ul>
 					</div>
 				</div>
