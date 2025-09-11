@@ -55,11 +55,11 @@
                             <tbody>
                             <c:forEach var="lec" items="${dtoList}">
                                 <tr>                          
-                                    <td>${lec.lecNo}</td>
+                                    <td>${lec.lec_no}</td>
                                     <td>${lec.department}</td>
                                     <td>${lec.grade}</td>
                                     <td>${lec.category}</td>
-                                    <td>${lec.lenName}</td>
+                                    <td>${lec.lec_name}</td>
                                     <td>${lec.professor}</td>
                                     <td>${lec.credit}</td>
                                     <td>${lec.class_time}</td>

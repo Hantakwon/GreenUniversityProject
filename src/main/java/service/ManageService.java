@@ -79,8 +79,8 @@ public enum ManageService {
 	    return dao.getNextSequence(deptCode, year, semester);
 	}
 	
-	public LectureManageDTO findLectureById(int lecNo) {
-		return dao.selectLecture(lecNo);
+	public LectureManageDTO findLectureById(int lec_no) {
+		return dao.selectLecture(lec_no);
 	}
 	public List<LectureManageDTO> findAll() {
 		return dao.selectAllLecture();

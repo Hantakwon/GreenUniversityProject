@@ -158,7 +158,11 @@ public class Sql {
 		    "INSERT INTO TB_Professor_Role (pro_id, dept_id, role) VALUES (?, ?, ?)";
 
 	public static final String SELECT_PROFESSOR_COUNT = "SELECT COUNT(*) FROM TB_Professor";
-	public static final String SELECT_PROFESSOR_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Professor ";
+	public static final String SELECT_PROFESSOR_COUNT_SEARCH = 
+			"SELECT COUNT(*) " +
+			"FROM TB_Professor p " +
+			"join TB_Professor_Role dp on p.pro_id = dp.pro_id " +
+			"join TB_Department d on dp.dept_id = d.dept_id ";
 
 	// [FIX] 교수-학과 연결 테이블을 TB_Professor_Role로 통일, dp.col_id 조인 제거
 	public static final String SELECT_PROFESSOR_INFO_ALL =
@@ -279,8 +283,7 @@ public class Sql {
 		    "FROM TB_Lecture L " +
 		    "JOIN TB_Department D ON D.dept_id = L.dept_id " +
 		    "JOIN TB_Professor  P ON P.pro_id  = L.pro_id " +
-		    "ORDER BY L.lec_no " +
-		    "LIMIT 5 OFFSET ?";
+		    "ORDER BY L.lec_no ";
 
 
 	/*
@@ -340,7 +343,7 @@ public class Sql {
 		    "LIMIT 5 OFFSET ?";
 	
 	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
-	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";
+	public static final String WHERE_DEPARTMENT_NAME  = " WHERE dp.dept_id LIKE ? ";
 
 	/* 
 	 * 날짜 : 2025/09/04
@@ -431,36 +434,36 @@ public class Sql {
 	
 	// manage - lecture register 
 	public static final String REGISTER_LECTURE =
-		    "INSERT INTO tb_lecture " +
-		    "(lecNo, lenName, category, department, grade, semester, credit, professor, description, " +
+		    "INSERT INTO TB_Lecture " +
+		    "(lec_no, lec_name, category, department, grade, semester, credit, professor, description, " +
 		    "start_date, end_date, start_time, end_time, day_of_week, evaluation, textbook, classroom, max_enrollment) " +
 		    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	
 	//manageDAO - getnextsequence
-	public static final String GET_NEXT_SEQUENCE = "SELECT COUNT(*) + 1 FROM tb_lecture WHERE lecNo LIKE ? ";
+	public static final String GET_NEXT_SEQUENCE = "SELECT COUNT(*) + 1 FROM TB_Lecture WHERE lec_no LIKE ? ";
 	
 	
 	//managedao - list sql
 	public static final String SELECT_ALL_TB_LECTURE =
-		    "SELECT lecNo, department, grade, category, lenName, professor, credit, " +
+		    "SELECT lec_no, department, grade, category, lec_name, professor, credit, " +
 		    "CONCAT(day_of_week, ' ', start_time, ' ~ ', end_time) AS class_time, " +
 		    "classroom, max_enrollment " +
-		    "FROM tb_lecture";
+		    "FROM TB_Lecture";
 	
 	//managedao - opelist Sql
-	public static final String SELECT_ALL_LECTURE_WITH_ENROLLMENT = "SELECT lecNo, lenName, category, professor, day_of_week, start_time, end_time, classroom, max_enrollment, enrollment " +
-            "FROM tb_lecture " ;
+	public static final String SELECT_ALL_LECTURE_WITH_ENROLLMENT = "SELECT lec_no, lec_name, category, professor, day_of_week, start_time, end_time, classroom, max_enrollment, enrollment " +
+            "FROM TB_Lecture " ;
 	
 	//페이지네이션
 	//기존 count 전용
-	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM tb_lecture ";
-	public final static String SELECT_COUNT_SEARCH ="select count(*) from tb_lecture ";
+	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_Lecture ";
+	public final static String SELECT_COUNT_SEARCH ="select count(*) from TB_Lecture ";
 	//목록조회용
-	public final static String SELECT_SEARCH_BASE = "SELECT * FROM tb_lecture ";
+	public final static String SELECT_SEARCH_BASE = "SELECT * FROM TB_Lecture ";
 	
 	public final static String SEARCH_WHERE_LECNO = "where lecNo like ?";
 	public final static String SEARCH_WHERE_DEPARTMENT = "where department like ?";
-	public final static String SEARCH_WHERE_LENNAME = "where lenName like ?";
+	public final static String SEARCH_WHERE_LECNAME = "where lecName like ?";
 	public final static String SEARCH_WHERE_PROFESSOR = "where professor like ?";
 	
 	public final static String SEARCH_ORDER_LECNO = "ORDER BY lecNo DESC ";   

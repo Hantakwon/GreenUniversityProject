@@ -44,7 +44,7 @@ public class RegisterController extends HttpServlet{
 
         try {
             // 폼 데이터 받기
-            String lenName = req.getParameter("lenName");
+            String lec_name = req.getParameter("lec_name");
             String college = req.getParameter("college");
             String department = req.getParameter("department");
             String grade = req.getParameter("grade");
@@ -70,12 +70,12 @@ public class RegisterController extends HttpServlet{
             }
             
             // 과목코드 자동 생성
-            int lecNo = generateLecNo(department, semester);
+            int lec_no = generateLecNo(department, semester);
             
             // DTO 객체 생성 및 데이터 설정
             LectureManageDTO dto = new LectureManageDTO();
-            dto.setLecNo(lecNo);
-            dto.setLenName(lenName);
+            dto.setLec_no(lec_no);
+            dto.setLec_name(lec_name);
             dto.setCategory(category);
             //추가 professor, department
             dto.setProfessor(professor);
