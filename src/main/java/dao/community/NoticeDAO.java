@@ -23,9 +23,9 @@ public class NoticeDAO {
 
     private NoticeDAO() {}
 
-    private final String HOST = "jdbc:mysql://localhost:3306/green_1";
-    private final String USER = "jinwonj96";
-    private final String PASS = "1234";
+    private final String HOST = "jdbc:mysql://13.125.98.52:3306/greendae4";
+    private final String USER = "hanto0916";
+    private final String PASS = "abc1234!";
 
     /**
      * 검색 조건에 맞는 전체 게시글의 수를 조회합니다.

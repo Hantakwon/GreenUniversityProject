@@ -30,9 +30,9 @@ public class FreeDAO {
         }
     }
     
-    private String url = "jdbc:mysql://localhost:3306/green_1";
-    private String user = "jinwonj96";
-    private String password = "1234";
+    private String url = "jdbc:mysql://13.125.98.52:3306/greendae4";
+    private String user = "hanto0916";
+    private String password = "abc1234!";
 
     /**
      * 검색 조건에 맞는 전체 자유게시판 게시글의 수를 조회합니다.
