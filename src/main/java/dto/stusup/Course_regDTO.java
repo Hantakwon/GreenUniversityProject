@@ -10,6 +10,7 @@ public class Course_regDTO {
     private String professor;
     private String capacity;
     private String note;
+    private boolean isRegistered; // 추가된 필드: 수강신청 여부
 
     public Course_regDTO() {
     }
@@ -85,5 +86,14 @@ public class Course_regDTO {
 
     public void setNote(String note) {
         this.note = note;
+    }
+    
+    // isRegistered 필드에 대한 Getter와 Setter 추가
+    public boolean getIsRegistered() {
+        return isRegistered;
+    }
+
+    public void setIsRegistered(boolean isRegistered) {
+        this.isRegistered = isRegistered;
     }
 }

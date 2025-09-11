@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>뉴스 및 칼럼</title>
-
-
-
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/news.css">
 <style>
     /* 제목 셀의 텍스트를 왼쪽으로 정렬하고 패딩 추가 */
@@ -99,7 +96,7 @@
         <div class="info">
             <span id="test">
                 <img src="<%= request.getContextPath() %>/resources/images/ico-home.png" alt="홈 버튼">
-                 > 대학소개 > 총장 인사말 
+                 > 대학소개 > 총장 인사말
             </span>
         </div>
     </div>
@@ -152,7 +149,19 @@
                                 <c:forEach var="news" items="${newsList}">
                                 <tr>
                                     <td>${news.no}</td>
-                                    <td><span class="category">${news.category}</span></td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${news.category eq '공지' || news.category eq '칼럼' || news.category eq '보도'}">
+                                                <span class="category1">${news.category}</span>
+                                            </c:when>
+                                            <c:when test="${news.category eq '뉴스'}">
+                                                <span class="category2">${news.category}</span>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <span class="category">${news.category}</span>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
                                     <td>${news.title}</td>
                                     <td>${news.writer}</td>
                                     <td>${news.rdate}</td>
@@ -163,20 +172,35 @@
                         </table>
 
                         <div class="pagination">
-                            <a href="#">&lt;</a>
-                            <a href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">&gt;</a>
+                            <c:if test="${currentPage > 1}">
+                                <a href="news.do?page=1">&lt;&lt;</a>
+                                <a href="news.do?page=${currentPage - 1}">&lt;</a>
+                            </c:if>
+
+                            <c:forEach var="i" begin="1" end="${totalPage}">
+                                <c:choose>
+                                    <c:when test="${i == currentPage}">
+                                        <a href="news.do?page=${i}" class="active">${i}</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="news.do?page=${i}">${i}</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                            <c:if test="${currentPage < totalPage}">
+                                <a href="news.do?page=${currentPage + 1}">&gt;</a>
+                                <a href="news.do?page=${totalPage}">&gt;&gt;</a>
+                            </c:if>
                         </div>
                     </div>
                     </p>
-                    
+
                 </div>
             </div>
         </div>
     </div>
-    
+
 </main>
 
 <footer>

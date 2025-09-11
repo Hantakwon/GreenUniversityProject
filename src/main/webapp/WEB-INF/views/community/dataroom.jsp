@@ -1,9 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
+<!-- 
+	날짜: 2025/09/11
+	이름: 장진원
+	내용: 자유게시판 DAO
+-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자료실</title>
@@ -161,11 +168,26 @@
                         </tbody>
                     </table>
                     <div class="pagination">
-                        <a href="#">&lt;</a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">&gt;</a>
+                        <c:if test="${currentPage > 1}">
+                            <a href="dataroom.do?page=1">&lt;&lt;</a>
+                            <a href="dataroom.do?page=${currentPage - 1}">&lt;</a>
+                        </c:if>
+
+                        <c:forEach var="i" begin="1" end="${totalPage}">
+                            <c:choose>
+                                <c:when test="${i == currentPage}">
+                                    <a href="dataroom.do?page=${i}" class="active">${i}</a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="dataroom.do?page=${i}">${i}</a>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
+                        <c:if test="${currentPage < totalPage}">
+                            <a href="dataroom.do?page=${currentPage + 1}">&gt;</a>
+                            <a href="dataroom.do?page=${totalPage}">&gt;&gt;</a>
+                        </c:if>
                     </div>
                 </div>
             </div>

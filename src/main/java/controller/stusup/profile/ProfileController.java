@@ -1,5 +1,9 @@
 package controller.stusup.profile;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 프로필 컨트롤러
+ */
 import java.io.IOException;
 import java.util.List;
 

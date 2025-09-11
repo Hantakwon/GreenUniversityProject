@@ -1,5 +1,9 @@
 package dto.community;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 뉴스및칼럼 DTO
+ */
 public class NewsDTO {
     private int no;
     private String category;

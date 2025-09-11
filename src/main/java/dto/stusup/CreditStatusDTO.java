@@ -1,5 +1,10 @@
 package dto.stusup;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 취득학점현황 DTO
+CreditStatusDTO는 현재까지의 총 학점 현황을 요약해서 보여주는 데 사용
+ */
 public class CreditStatusDTO {
 
     private int majorCredit;

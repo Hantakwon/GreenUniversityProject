@@ -1,5 +1,9 @@
 package controller.stusup.course_reg;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 수강신청 컨트롤러
+ */
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

@@ -1,5 +1,9 @@
 package dto.stusup;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 커리큘럼 DTO
+ */
 public class CurriculumDTO {
     private String subjectNumber; // 과목번호
     private String subjectName; // 과목명

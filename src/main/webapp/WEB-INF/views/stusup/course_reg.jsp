@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!-- 
+	날짜: 2025/09/11
+	이름: 장진원
+	내용: 수강신청 jsp
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>수강신청</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/stusup/course_reg.css"/>
+    <style>
+        .reg-btn.registered {
+            background-color: #9b9a9a; /* 취소 버튼 색상 */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -150,17 +160,41 @@
                                     <td>${course.professor}</td>
                                     <td>${course.capacity}</td>
                                     <td>${course.note}</td>
-                                    <td><button class="category1">신청</button></td>
+                                    <td>
+                                        <c:choose>
+                                            <c:when test="${course.isRegistered}">
+                                                <button class="reg-btn registered" data-code="${course.code}">취소</button>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <button class="category1" data-code="${course.code}">신청</button>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
                     <div class="pagination">
-                        <a href="#">&lt;</a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">&gt;</a>
+                        <c:if test="${currentPage > 1}">
+                            <a href="course_reg.do?page=1">&lt;&lt;</a>
+                            <a href="course_reg.do?page=${currentPage - 1}">&lt;</a>
+                        </c:if>
+
+                        <c:forEach var="i" begin="1" end="${totalPage}">
+                            <c:choose>
+                                <c:when test="${i == currentPage}">
+                                    <a href="course_reg.do?page=${i}" class="active">${i}</a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="course_reg.do?page=${i}">${i}</a>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
+                        <c:if test="${currentPage < totalPage}">
+                            <a href="course_reg.do?page=${currentPage + 1}">&gt;</a>
+                            <a href="course_reg.do?page=${totalPage}">&gt;&gt;</a>
+                        </c:if>
                     </div>
                 </div>
             </div>
@@ -202,5 +236,8 @@
         </div>
     </div>
 </footer>
-</body>
-</html>
+<script>
+    document.querySelectorAll('.reg-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const courseCode = this.dataset.code;
+            const action = this.classList.contains('registered') ?

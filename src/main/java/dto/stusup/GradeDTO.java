@@ -1,5 +1,9 @@
 package dto.stusup;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 성적조회 DTO
+ */
 public class GradeDTO {
 
     private String courseCode;

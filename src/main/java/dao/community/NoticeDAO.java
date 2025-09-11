@@ -7,48 +7,80 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
+import java.sql.SQLException;
 
 public class NoticeDAO {
-    // 싱글톤 인스턴스를 미리 생성
+    /*
+    날짜: 2025/09/11
+    이름: 장진원
+    내용: 공지사항 DAO
+     */
     private static NoticeDAO instance = new NoticeDAO();
     
-    // 외부에서 접근할 수 있는 정적 메서드
     public static NoticeDAO getInstance() {
         return instance;
     }
 
-    // 싱글톤 패턴을 위해 생성자를 private으로 선언
-    private NoticeDAO() {
-        // JNDI 초기화 코드를 제거하고, DB 연결 정보를 필드에 직접 정의
-    }
+    private NoticeDAO() {}
 
-    // 데이터베이스 연결 정보
-    private final String HOST = "jdbc:mysql://localhost:3306/studydb";
+    private final String HOST = "jdbc:mysql://localhost:3306/green_1";
     private final String USER = "jinwonj96";
     private final String PASS = "1234";
 
-    // 게시물 목록 조회
-    public List<NoticeDTO> selectNotices() {
+    /**
+     * 전체 게시글의 수를 조회합니다.
+     * @return 전체 게시글 수
+     */
+    public int selectNoticeCount() {
+        int count = 0;
+        Connection conn = null;
+        PreparedStatement psmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection(HOST, USER, PASS);
+            String sql = "SELECT COUNT(*) FROM `board_notice`";
+            psmt = conn.prepareStatement(sql);
+            rs = psmt.executeQuery();
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (psmt != null) psmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 페이지별 게시글 목록을 조회합니다.
+     * @param start 시작 인덱스 (0부터 시작)
+     * @param limit 페이지당 게시글 수
+     * @return 게시글 목록
+     */
+    public List<NoticeDTO> selectNotices(int start, int limit) {
         List<NoticeDTO> notices = new ArrayList<>();
         Connection conn = null;
         PreparedStatement psmt = null;
         ResultSet rs = null;
 
         try {
-            // 1. JDBC 드라이버 로드
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            // 2. DriverManager를 사용해 데이터베이스에 직접 연결
             conn = DriverManager.getConnection(HOST, USER, PASS);
-
-            // 3. SQL 실행 객체 생성
-            String sql = "SELECT `no`, `title`, `writer`, `rdate`, `hit` FROM `board_notice` ORDER BY `no` DESC";
+            String sql = "SELECT `no`, `title`, `writer`, `rdate`, `hit` FROM `board_notice` ORDER BY `no` ASC LIMIT ? OFFSET ?";
             psmt = conn.prepareStatement(sql);
-
-            // 4. SQL 실행
+            psmt.setInt(1, limit);
+            psmt.setInt(2, start);
             rs = psmt.executeQuery();
 
-            // 5. 결과 처리
             while (rs.next()) {
                 NoticeDTO notice = new NoticeDTO();
                 notice.setNo(rs.getInt("no"));
@@ -61,12 +93,11 @@ public class NoticeDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            // 6. 연결 해제
             try {
                 if (rs != null) rs.close();
                 if (psmt != null) psmt.close();
                 if (conn != null) conn.close();
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }

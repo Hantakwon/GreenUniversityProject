@@ -1,5 +1,9 @@
 package dto.stusup;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 수강신청내역 DTO
+ */
 public class Course_reg_listDTO {
     private String courseCode;
     private String subject;
