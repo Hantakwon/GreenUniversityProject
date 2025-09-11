@@ -6,8 +6,8 @@ package dto;
  */
 
 public class LectureManageDTO {
-    private int lecNo;               
-    private String lenName;          
+    private int lec_no;               
+    private String lec_name;          
     private String category;
     private String department;
     private String grade;           
@@ -67,17 +67,17 @@ public class LectureManageDTO {
 		this.professor = professor;
 	}
 	
-    public int getLecNo() {
-		return lecNo;
+    public int getLec_no() {
+		return lec_no;
 	}
-	public void setLecNo(int lecNo) {
-		this.lecNo = lecNo;
+	public void setLec_no(int lec_no) {
+		this.lec_no = lec_no;
 	}
-	public String getLenName() {
-		return lenName;
+	public String getLec_name() {
+		return lec_name;
 	}
-	public void setLenName(String lenName) {
-		this.lenName = lenName;
+	public void setLec_name(String lec_name) {
+		this.lec_name = lec_name;
 	}
 	public String getCategory() {
 		return category;
@@ -166,12 +166,13 @@ public class LectureManageDTO {
 	
 	@Override
 	public String toString() {
-		return "LectureManageDTO [lecNo=" + lecNo + ", lenName=" + lenName + ", category=" + category + ", grade="
+		return "LectureManageDTO [lec_no=" + lec_no + ", lec_name=" + lec_name + ", category=" + category + ", grade="
 				+ grade + ", semester=" + semester + ", credit=" + credit + ", description=" + description
 				+ ", start_date=" + start_date + ", end_date=" + end_date + ", start_time=" + start_time + ", end_time="
 				+ end_time + ", day_of_week=" + day_of_week + ", evaluation=" + evaluation + ", textbook=" + textbook
 				+ ", classroom=" + classroom + ", max_enrollment=" + max_enrollment + "]";
-	}     
+	}
+  
 	
 	
 	

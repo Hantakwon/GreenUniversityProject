@@ -88,7 +88,7 @@
                             <tr class="">
                                 <td class="tit">강의명</td>
                                 <td colspan="3">
-                                    <input type="text" name="lenName" style="width: 50%" placeholder="강좌명 입력">
+                                    <input type="text" name="lec_name" style="width: 50%" placeholder="강좌명 입력">
                                 </td>
                             </tr>
                             <tr class="">

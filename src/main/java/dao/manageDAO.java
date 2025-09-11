@@ -30,8 +30,8 @@ public class manageDAO extends DBHelper{
 		try {
 			conn = getConnection();
 	        psmt = conn.prepareStatement(Sql.REGISTER_LECTURE);
-	        psmt.setInt(1, dto.getLecNo());
-	        psmt.setString(2, dto.getLenName());
+	        psmt.setInt(1, dto.getLec_no());
+	        psmt.setString(2, dto.getLec_name());
 	        psmt.setString(3, dto.getCategory());
             psmt.setString(4, dto.getDepartment()); 
             psmt.setString(5, dto.getGrade());
@@ -74,7 +74,7 @@ public class manageDAO extends DBHelper{
 	    }
 	    return sequence;
 	}
-	public LectureManageDTO selectLecture(int lecNo) {
+	public LectureManageDTO selectLecture(int lec_no) {
 		return null;
 	}
 	//강의목록
@@ -89,11 +89,11 @@ public class manageDAO extends DBHelper{
 			
 			while(rs.next()) {
 				LectureManageDTO dto = new LectureManageDTO();
-			    dto.setLecNo(rs.getInt("lecNo"));
+			    dto.setLec_no(rs.getInt("lec_no"));
 			    dto.setDepartment(rs.getString("department"));
 			    dto.setGrade(rs.getString("grade"));
 			    dto.setCategory(rs.getString("category"));
-			    dto.setLenName(rs.getString("lenName"));
+			    dto.setLec_name(rs.getString("lec_name"));
 			    dto.setProfessor(rs.getString("professor"));
 			    dto.setCredit(rs.getString("credit"));
 			    dto.setClass_time(rs.getString("class_time"));
@@ -122,8 +122,8 @@ public class manageDAO extends DBHelper{
 			while(rs.next()) {
 				LectureManageDTO dto = new LectureManageDTO();
 				dto.setDepartment(rs.getString("department"));
-				dto.setLecNo(rs.getInt("lecNo"));
-				dto.setLenName(rs.getString("lenName"));
+				dto.setLec_no(rs.getInt("lec_no"));
+				dto.setLec_name(rs.getString("lec_name"));
 				dto.setGrade(rs.getString("grade"));
 				dto.setProfessor(rs.getString("professor"));
 				dto.setCredit(rs.getString("credit"));
@@ -175,12 +175,12 @@ public class manageDAO extends DBHelper{
 		
 		StringBuilder sql = new StringBuilder(Sql.SELECT_COUNT_SEARCH);
 		
-		if(searchType.equals("lecNo")) {
+		if(searchType.equals("lec_no")) {
 			sql.append(Sql.SEARCH_WHERE_LECNO);
 		}else if(searchType.equals("department")) {
 			sql.append(Sql.SEARCH_WHERE_DEPARTMENT);
-		}else if(searchType.equals("lenName")) {
-			sql.append(Sql.SEARCH_WHERE_LENNAME);
+		}else if(searchType.equals("lec_name")) {
+			sql.append(Sql.SEARCH_WHERE_LECNAME);
 		}else if(searchType.equals("professor")) {
 			sql.append(Sql.SEARCH_WHERE_PROFESSOR);
 		}
@@ -208,12 +208,12 @@ public class manageDAO extends DBHelper{
 
 	    StringBuilder sql = new StringBuilder(Sql.SELECT_SEARCH_BASE);
 
-	    if(searchType.equals("lecNo")) {
+	    if(searchType.equals("lec_no")) {
 	        sql.append(Sql.SEARCH_WHERE_LECNO);
 	    } else if(searchType.equals("department")) {
 	        sql.append(Sql.SEARCH_WHERE_DEPARTMENT);
-	    } else if(searchType.equals("lenName")) {
-	        sql.append(Sql.SEARCH_WHERE_LENNAME);
+	    } else if(searchType.equals("lecName")) {
+	        sql.append(Sql.SEARCH_WHERE_LECNAME);
 	    } else if(searchType.equals("professor")) {
 	        sql.append(Sql.SEARCH_WHERE_PROFESSOR);
 	    }
@@ -231,11 +231,11 @@ public class manageDAO extends DBHelper{
 	        rs = psmt.executeQuery();
 	        while(rs.next()) {
 	            LectureManageDTO dto = new LectureManageDTO();
-	            dto.setLecNo(rs.getInt("lecNo"));
+	            dto.setLec_no(rs.getInt("lec_no"));
 	            dto.setDepartment(rs.getString("department"));
 	            dto.setGrade(rs.getString("grade"));
 	            dto.setCategory(rs.getString("category"));
-	            dto.setLenName(rs.getString("lenName"));
+	            dto.setLec_name(rs.getString("lec_name"));
 	            dto.setProfessor(rs.getString("professor"));
 	            dto.setCredit(rs.getString("credit"));
 	            dto.setClass_time(rs.getString("class_time"));

@@ -38,6 +38,10 @@ public enum ProfessorService {
 	public void remove(int id) {
 		dao.delete(id);
 	}
+	
+	public List<ProfessorInfoDTO> findSearch(int start, String searchType, String keyword) {
+	    return dao.selectSearch(start, searchType, keyword);
+	}
 
 	// 게시판 페이지네이션 처리 메서드
 	public PagenationDTO getPagenationDTO(String pg, String searchType, String keyword) {
@@ -93,4 +97,5 @@ public enum ProfessorService {
 
 		return dto;
 	}
+
 }
