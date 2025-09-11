@@ -5,13 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>그린대학교</title>
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/admission/common.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/admission/transfer.css">
 </head>
 <!--
 	날짜 : 2025/09/05
     이름 : 한탁원
     내용 : 편입학
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/admission/common.css">
+
 <body>
 	<jsp:include page="../header.jsp" />
 	<div class="path-wrap">
@@ -56,7 +59,28 @@
 				</div>
 			</div>
 			<div class="content" id="jwxe_main_content">
-				<div class="content-box">컨텐츠 내용 꾸미기</div>
+				<div class="content-box">
+					<!-- 컨탠츠 박스 시작 -->
+					<div class="admission-main">
+					    <div class="admission-bg">
+					        <div class="admission-text">
+					            <h2>미래를 움직이는 인재 그린인</h2>
+					            <p>그 인재의 가치를 아는 대학, 그린대학교</p>
+					        </div>
+					
+					        <div class="admission-box">
+					            <h3>2026학년도 편입학 학생 모집 원서접수 안내</h3>
+					            <ul class="admission-menu">
+					                <li><a href="#">원서접수</a></li>
+					                <li><a href="#">접수확인</a></li>
+					                <li><a href="#">서류도착확인</a></li>
+					                <li><a href="#">경쟁률</a></li>
+					            </ul>
+					        </div>
+					    </div>
+					</div>
+					<!-- 컨탠츠 박스 끝 -->
+				</div>
 			</div>
 		</div>
 	</div>
