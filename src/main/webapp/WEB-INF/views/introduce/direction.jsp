@@ -11,10 +11,16 @@
 -->
 <!-- 카카오 지도 SDK -->
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e5484cc9c08d15b992911cc635e404a9&libraries=services"></script>
-</head>
+
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/direction.css">
+<<<<<<< HEAD
+</head>
+
+
+=======
 	
+>>>>>>> main
 <!--
 	날짜 : 2025/09/05
     이름 : 김수진

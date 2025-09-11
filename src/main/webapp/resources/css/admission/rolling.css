@@ -1,22 +1,25 @@
 @charset "UTF-8";
 
-/* =========================
-   			수시모집
-   ========================= */
+
+/* ----------------
+	   수시모집
+------------------*/
+
 .admission-main {
     width: 100%;
     text-align: center;
 }
 
 .admission-bg {
-    background: url('/resources/images/admission-bg.jpg') no-repeat center center;
+    background: url('../resources/images/admission-bg.jpg') no-repeat center center;
+
     background-size: cover;
     padding: 80px 20px;
     color: #fff;
     position: relative;
 }
 
-.admission-text h1 {
+.admission-text h2 {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -53,7 +56,7 @@
 
 .admission-menu li a {
     display: block;
-    background: rgb(109, 158, 231);
+    background: #2c5cc5;
     color: #fff;
     padding: 12px;
     text-decoration: none;

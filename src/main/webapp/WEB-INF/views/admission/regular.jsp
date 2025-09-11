@@ -60,27 +60,27 @@
 			</div>
 			<div class="content" id="jwxe_main_content">
 				<div class="content-box">
-					<!-- 정시모집 컨텐츠 시작  -->
-						<div class="admission-main">
-						    <div class="admission-bg">
-						        <div class="admission-text">
-						            <h1>미래를 움직이는 인재 그린인</h2>
-						            <p>그 인재의 가치를 아는 대학, 그린대학교</p>
-						        </div>
-						
-						        <div class="admission-box">
-						            <h3>2026학년도 정시 신입생모집 원서접수 안내</h3>
-						            <ul class="admission-menu">
-						                <li><a href="#">원서접수</a></li>
-						                <li><a href="#">접수확인</a></li>
-						                <li><a href="#">서류도착확인</a></li>
-						                <li><a href="#">경쟁률</a></li>
-						            </ul>
-						        </div>
-						    </div>
-						</div>
-					<!-- 정시모집 컨텐츠 끝  -->
-				
+					<!-- 컨탠츠 박스 시작 -->
+					<div class="admission-main">
+					    <div class="admission-bg">
+					        <div class="admission-text">
+					            <h2>미래를 움직이는 인재 그린인</h2>
+					            <p>그 인재의 가치를 아는 대학, 그린대학교</p>
+					        </div>
+					
+					        <div class="admission-box">
+					            <h3>2026학년도 정시 신입생 모집 원서접수 안내</h3>
+					            <ul class="admission-menu">
+					                <li><a href="#">원서접수</a></li>
+					                <li><a href="#">접수확인</a></li>
+					                <li><a href="#">서류도착확인</a></li>
+					                <li><a href="#">경쟁률</a></li>
+					            </ul>
+					        </div>
+					    </div>
+					</div>
+					<!-- 컨탠츠 박스 끝 -->
+
 				</div>
 			</div>
 		</div>

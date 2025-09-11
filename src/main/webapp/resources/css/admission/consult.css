@@ -1,13 +1,36 @@
 @charset "UTF-8";
 
-/* =========================
-   			입학 상담
-   ========================= */
+/* ----------------
+		입학 상담
+------------------*/
+
+
+/* 입학 상담 메인 */
+.admission-main {
+    width: 100%;
+    text-align: center;
+}
+
+.admission-bg {
+    background: url('/resources/images/admission-bg3.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 20px;
+    color: #000;
+    position: relative;
+}
+
+.admission-text {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
 
 /* 상담 버튼 */
 #chatbot-button {
     position: fixed;
-    bottom: 250px;
+    bottom: 40px;
     right: 20px;
     background: #2c5cc5;
     color: #fff;
@@ -26,7 +49,8 @@
 #chatbot-window {
     display: none;
     position: fixed;
-    bottom: 90px;
+    bottom: 110px; /* 버튼 위에 뜨도록 */
+
     right: 20px;
     width: 300px;
     height: 400px;

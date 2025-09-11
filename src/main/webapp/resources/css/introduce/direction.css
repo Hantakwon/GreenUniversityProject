@@ -25,11 +25,11 @@
   
 }
 
-/* 오시는 길 제목을 하얗게 */
-.page-title h3 {
-	color: #fff;
+/* 오시는 길 제목을 색상 */
+.title h3 {
+	color: #000;
 }
-/* 맨 아래 주소 하얗게 */
+/* 맨 아래 주소 색상 */
 .direction_address h4 {
-	color: #fff;
+	color: #000;
 }
