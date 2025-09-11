@@ -201,7 +201,7 @@ public class StudentDAO extends DBHelper {
 		try {
 			conn = getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(Sql.SELECT_PROFESSOR_COUNT);
+			rs = stmt.executeQuery(Sql.SELECT_STUDENT_COUNT);
 
 			if (rs.next()) {
 				total = rs.getInt(1);
@@ -221,7 +221,7 @@ public class StudentDAO extends DBHelper {
 			return selectCountTotal();
 		}
 
-		StringBuilder sql = new StringBuilder(Sql.SELECT_PROFESSOR_COUNT_SEARCH);
+		StringBuilder sql = new StringBuilder(Sql.SELECT_STUDENT_COUNT_SEARCH);
 
 		if (searchType.equals("pro_name")) {
 			sql.append(Sql.WHERE_PROFESSOR_NAME);

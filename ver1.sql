@@ -1,9 +1,9 @@
-use GREEN;
+use greendae4;
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_College`
+-- Table `greendae4`.`TB_College`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_College` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_College` (
   `col_id` INT NOT NULL AUTO_INCREMENT,
   `name_kor` VARCHAR(50) NULL,
   `name_eng` VARCHAR(50) NULL,
@@ -16,9 +16,9 @@ ENGINE = InnoDB;
 SELECT * FROM TB_College;
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_Department`
+-- Table `greendae4`.`TB_Department`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Department` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Department` (
   `dept_id` INT NOT NULL AUTO_INCREMENT,
   `col_id` INT NOT NULL,
   `dept_no` CHAR(2) NOT NULL,
@@ -31,16 +31,16 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Department` (
   UNIQUE KEY `uq_colid_deptno` (`col_id`, `dept_no`),   
   KEY `fk_TB_Department_TB_College1_idx` (`col_id`),
   CONSTRAINT `fk_TB_Department_TB_College1`
-    FOREIGN KEY (`col_id`) REFERENCES `GREEN`.`TB_College` (`col_id`)
+    FOREIGN KEY (`col_id`) REFERENCES `greendae4`.`TB_College` (`col_id`)
     ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB;
 
 SELECT * FROM TB_Department;
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_Professor`
+-- Table `greendae4`.`TB_Professor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Professor` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Professor` (
   `pro_id` INT NOT NULL AUTO_INCREMENT,
   `pro_no` VARCHAR(30) NULL,
   `rrn` VARCHAR(45) NULL,
@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Professor` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_Professor_Academic`
+-- Table `greendae4`.`TB_Professor_Academic`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Professor_Academic` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Professor_Academic` (
   `aca_id` INT NOT NULL AUTO_INCREMENT,
   `pro_id` INT NOT NULL,
   `school` VARCHAR(100) NULL,
@@ -75,16 +75,16 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Professor_Academic` (
   INDEX `fk_TB_Professor_Academic_TB_Professor1_idx` (`pro_id` ASC) VISIBLE,
   CONSTRAINT `fk_TB_Professor_Academic_TB_Professor1`
     FOREIGN KEY (`pro_id`)
-    REFERENCES `GREEN`.`TB_Professor` (`pro_id`)
+    REFERENCES `greendae4`.`TB_Professor` (`pro_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_Professor_Role`
+-- Table `greendae4`.`TB_Professor_Role`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Professor_Role` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Professor_Role` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `dept_id` INT NOT NULL,
   `pro_id` INT NOT NULL,
@@ -94,24 +94,20 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Professor_Role` (
   INDEX `fk_TB_Professor_Role_TB_Professor1_idx` (`pro_id` ASC) VISIBLE,
   CONSTRAINT `fk_TB_Professor_Role_TB_Department1`
     FOREIGN KEY (`dept_id`)
-    REFERENCES `GREEN`.`TB_Department` (`dept_id`)
+    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TB_Professor_Role_TB_Professor1`
     FOREIGN KEY (`pro_id`)
-    REFERENCES `GREEN`.`TB_Professor` (`pro_id`)
+    REFERENCES `greendae4`.`TB_Professor` (`pro_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-SELECT * FROM TB_Professor;
-SELECT * FROM TB_Professor_Academic;
-SELECT * FROM TB_Professor_Role;
-
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_Student`
+-- Table `greendae4`.`TB_Student`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Student` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Student` (
   `std_id` INT NOT NULL AUTO_INCREMENT,
   `dept_id` INT NOT NULL,
   `pro_id` INT NOT NULL,
@@ -138,12 +134,12 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Student` (
   INDEX `fk_TB_Student_TB_Professor1_idx` (`pro_id` ASC) VISIBLE,
   CONSTRAINT `fk_TB_Student_TB_Department1`
     FOREIGN KEY (`dept_id`)
-    REFERENCES `GREEN`.`TB_Department` (`dept_id`)
+    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TB_Student_TB_Professor1`
     FOREIGN KEY (`pro_id`)
-    REFERENCES `GREEN`.`TB_Professor` (`pro_id`)
+    REFERENCES `greendae4`.`TB_Professor` (`pro_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -151,9 +147,9 @@ ENGINE = InnoDB;
 SELECT * FROM TB_Student;
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_Lecture`
+-- Table `greendae4`.`TB_Lecture`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Lecture` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Lecture` (
   `lec_id` INT NOT NULL AUTO_INCREMENT,
   `pro_id` INT NOT NULL,
   `dept_id` INT NOT NULL,
@@ -179,36 +175,69 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Lecture` (
   UNIQUE INDEX `lec_no_UNIQUE` (`lec_no` ASC) VISIBLE,
   CONSTRAINT `fk_TB_Lecture_TB_Professor1`
     FOREIGN KEY (`pro_id`)
-    REFERENCES `GREEN`.`TB_Professor` (`pro_id`)
+    REFERENCES `greendae4`.`TB_Professor` (`pro_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TB_Lecture_TB_Department1`
     FOREIGN KEY (`dept_id`)
-    REFERENCES `GREEN`.`TB_Department` (`dept_id`)
+    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `GREEN`.`TB_ENROLLMENT`
+-- Table `greendae4`.`TB_ENROLLMENT`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `GREEN`.`TB_ENROLLMENT` (
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Enrollment` (
   `enr_id`      INT NOT NULL AUTO_INCREMENT,
   `std_id`      INT NOT NULL,
   `lec_id`      INT NOT NULL,
   `enrolled_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`enr_id`),
-  UNIQUE KEY `uq_std_lec` (`std_id`, `lec_id`),   -- 학생×강의 중복 수강 방지
+  UNIQUE KEY `uq_std_lec` (`std_id`, `lec_id`),
   INDEX `fk_TB_ENROLLMENT_TB_Student1_idx` (`std_id` ASC) VISIBLE,
   INDEX `fk_TB_ENROLLMENT_TB_Lecture1_idx` (`lec_id` ASC) VISIBLE,
   CONSTRAINT `fk_TB_ENROLLMENT_TB_Student1`
     FOREIGN KEY (`std_id`)
-    REFERENCES `GREEN`.`TB_Student` (`std_id`)
+    REFERENCES `greendae4`.`TB_Student` (`std_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_TB_ENROLLMENT_TB_Lecture1`
     FOREIGN KEY (`lec_id`)
-    REFERENCES `GREEN`.`TB_Lecture` (`lec_id`)
+    REFERENCES `greendae4`.`TB_Lecture` (`lec_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE=InnoDB;
+
+-- -----------------------------------------------------
+-- Table `GREEN`.`TB_EMPLOY`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Employ` (
+  `emp_id` INT NOT NULL AUTO_INCREMENT,
+  `dept_id` INT NOT NULL,
+  `emp_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`emp_id`),
+  INDEX `fk_TB_EMPLOY_TB_Department1_idx` (`dept_id` ASC) VISIBLE,
+  CONSTRAINT `fk_TB_EMPLOY_TB_Department1`
+    FOREIGN KEY (`dept_id`)
+    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `greendae4`.`TB_TEST` (
+  `emp_id` INT NOT NULL AUTO_INCREMENT,
+  `dept_id` INT NOT NULL,
+  `emp_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`emp_id`),
+  INDEX `fk_TB_EMPLOY_TB_Department1_idx` (`dept_id` ASC) VISIBLE,
+  CONSTRAINT `fk_TB_EMPLOY_TB_Department1`
+    FOREIGN KEY (`dept_id`)
+    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'greendae4';

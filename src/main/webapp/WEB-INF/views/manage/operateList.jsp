@@ -6,32 +6,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>강의 목록</title>
+<title>교육 운영 현황</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/manage/admin.css">
 </head>
 <body>
 	<div id="admin-wrapper">
 
-		<jsp:include page="../common2/header.jsp" />
+		<jsp:include page="./common2/header.jsp" />
 
 		<main>
 			<!-- 공통 aside 인클루드 -->
-			<jsp:include page="../common2/aside.jsp" />
+			<jsp:include page="./common2/aside.jsp" />
 
 			<!-- 메인 컨텐츠 -->
 			<section id="admin-index" class="main-mini-box">
 				<!-- 페이지 툴바 -->
 				<nav class="page-toolbar">
-					<h3>강의 목록</h3>
+					<h3>교육 운영 현황</h3>
 					<p>
-						학사운영&nbsp;>&nbsp;<strong>강의 목록</strong>
+						학사운영&nbsp;>&nbsp;<strong>교육 운영 현황</strong>
 					</p>
 
 					<!-- 검색 -->
 					<div class="search">
 						<form method="get"
-							action="${pageContext.request.contextPath}/manage/student/list.do">
+							action="${pageContext.request.contextPath}/manage/operate/list.do">
 							<select name="searchType" class="search__select">
 								<option value="std_no"
 									${param.searchType=='std_no'   ? 'selected' : ''}>학번</option>
@@ -64,39 +64,39 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th>과목코드</th>
 									<th>학과</th>
+									<th>과목코드</th>
+									<th>강의명</th>
 									<th>학년</th>
+									<th>담당교수</th>
 									<th>구분</th>
-									<th>과목명</th>
-									<th>교수</th>
 									<th>학점</th>
-									<th>수업시간</th>
-									<th>강의실</th>
-									<th>최대 수강 인원</th>
+									<th>강의명</th>
+									<th>수강인원</th>
+									<th>수강률</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:choose>
 									<c:when test="${empty dtoList}">
 										<tr>
-											<td colspan="9" style="text-align: center;">조회된 강의가
+											<td colspan="9" style="text-align: center;">조회된 자료가
 												없습니다.</td>
-										</tr>
+										</tr>										
 									</c:when>
 									<c:otherwise>
 										<c:forEach var="dto" items="${dtoList}">
 											<tr>
-												<td>${dto.lec_no}</td>
 												<td>${dto.dept_name}</td>
+												<td>${dto.lecture_no}</td>
 												<td>${dto.grade}</td>
-												<td>${dto.category}</td>
-												<td>${dto.lec_name}</td>
 												<td>${dto.professor_name}</td>
+												<td>${dto.category}</td>
+												<td>${dto.category}</td>
 												<td>${dto.credit}</td>
-												<td>${dto.schedule}</td>
 												<td>${dto.classroom}</td>
-												<td>${dto.max_enrollment}</td>
+												<td>${dto.enrollment_text}</td>
+												<td>${dto.enrollment_rate}</td>
 											</tr>
 										</c:forEach>
 									</c:otherwise>
@@ -138,9 +138,6 @@
 								</ul>
 							</div>
 						</div>
-
-						<button type="button" class="register-btn"
-							onclick="location.href='${pageContext.request.contextPath}/manage/lecture/register.do'">등록</button>
 					</div>
 				</article>
 			</section>

@@ -2,34 +2,33 @@ package service;
 
 import java.util.List;
 
-import dao.LectureDAO;
+import dao.EnrollmentDAO;
 import dao.PagenationDTO;
-import dto.lecture.LectureDTO;
-import dto.lecture.LectureListDTO;
+import dto.EnrollmentDTO;
 
-public enum LectureService {
+public enum EnrollmentService {
 
 	INSTANCE;
 
-	private LectureDAO dao = LectureDAO.getInstance();
+	private EnrollmentDAO dao = EnrollmentDAO.getInstance();
 
-	public void register(LectureDTO dto) {
+	public void register(EnrollmentDTO dto) {
 		dao.insert(dto);
 	}
 
-	public LectureDTO findByPass(int id) {
+	public EnrollmentDTO findById(int id) {
 		return dao.select(id);
 	}
 
-	public List<LectureDTO> findAll() {
+	public List<EnrollmentDTO> findAll() {
 		return dao.selectAll();
 	}
 
-	public List<LectureListDTO> findInfoAll(int start) {
+	public List<EnrollmentDTO> findInfoAll(int start) {
 		return dao.selectInfoAll(start);
 	}
 
-	public void modify(LectureDTO dto) {
+	public void modify(EnrollmentDTO dto) {	
 		dao.update(dto);
 	}
 

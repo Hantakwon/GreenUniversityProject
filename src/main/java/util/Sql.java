@@ -180,6 +180,120 @@ public class Sql {
 		    "ORDER BY s.std_id DESC " +
 		    "LIMIT 5 OFFSET ?";
 
+	public static final String SELECT_STUDENT_COUNT = "SELECT COUNT(*) FROM TB_Student";
+	public static final String SELECT_STUDENT_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Student ";
+	
+	/*
+	 * 날짜 : 2025/09/11
+	 * 이름 : 한탁원
+	 * 내용 : 강의 DB 
+	 */
+	public static final String INSERT_LECTURE =
+	        "INSERT INTO TB_Lecture " +
+	        "( pro_id, dept_id, lec_no, grade, semester, credit, category, lec_name, " +
+	        "  description, start_date, end_date, start_time, end_time, day_of_week, " +
+	        "  evaluation, textbook, classroom, max_enrollment ) " +
+	        "SELECT " +
+	        "  ? AS pro_id, " +
+	        "  d.dept_id AS dept_id, " +
+	        "  CONCAT( " +
+	        "    d.dept_no, " +
+	        "    YEAR(?), " +
+	        "    ?, " +
+	        "    COALESCE( " +
+	        "      ( " +
+	        "        SELECT MAX(CAST(SUBSTRING(l.lec_no, CHAR_LENGTH(d.dept_no) + 5) AS UNSIGNED)) " +
+	        "        FROM TB_Lecture l " +
+	        "        WHERE l.lec_no LIKE CONCAT(d.dept_no, YEAR(?), ?, '%') " +
+	        "      ), 0 " +
+	        "    ) + 1 " +
+	        "  ) AS lec_no, " +
+	        "  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? " +
+	        "FROM TB_Department d " +
+	        "WHERE d.dept_id = ?;";
+
+	public static final String SELECT_LECTURE_INFO_ALL =
+		    "SELECT " +
+		    "  L.lec_no, " +
+		    "  D.name_kor AS dept_name, " +
+		    "  L.grade, " +
+		    "  L.category, " +
+		    "  L.lec_name, " +
+		    "  P.name_kor AS professor_name, " +
+		    "  L.credit, " +
+		    "  CONCAT( " +
+		    "    REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE( " +
+		    "      L.day_of_week, " +
+		    "      'MON','월'),'TUE','화'),'WED','수'),'THU','목'),'FRI','금'),'SAT','토'),'SUN','일'), " +
+		    "    ' ', " +
+		    "    DATE_FORMAT(L.start_time, '%H:%i'), " +
+		    "    ' ~ ', " +
+		    "    DATE_FORMAT(L.end_time,   '%H:%i') " +
+		    "  ) AS schedule, " +
+		    "  L.classroom, " +
+		    "  L.max_enrollment " +
+		    "FROM TB_Lecture L " +
+		    "JOIN TB_Department D ON D.dept_id = L.dept_id " +
+		    "JOIN TB_Professor  P ON P.pro_id  = L.pro_id " +
+		    "ORDER BY L.lec_no " +
+		    "LIMIT 5 OFFSET ?";
+
+
+	/*
+	 * 
+	 */
+	
+	public static final String SELECT_ENROLLMENT_INFO_ALL =
+		    "SELECT " +
+		    "  YEAR(L.start_date) AS year, " +
+		    "  L.semester AS semester, " +
+		    "  S.std_no AS student_no, " +
+		    "  S.name_kor AS student_name, " +
+		    "  S.grade AS grade, " +
+		    "  D.name_kor AS dept_name, " +
+		    "  L.lec_no AS lecture_no, " +
+		    "  L.lec_name AS lecture_name, " +
+		    "  L.category AS category, " +
+		    "  P.name_kor AS professor_name, " +
+		    "  L.credit AS credit, " +
+		    "  E.enrolled_at AS enrolled_at " +
+		    "FROM TB_Enrollment E " +
+		    "JOIN TB_Student S ON E.std_id = S.std_id " +
+		    "JOIN TB_Lecture L ON E.lec_id = L.lec_id " +
+		    "JOIN TB_Department D ON S.dept_id = D.dept_id " +
+		    "JOIN TB_Professor P ON L.pro_id = P.pro_id " +
+		    "ORDER BY year DESC, semester, S.std_no, L.lec_no " +
+		    "LIMIT 5 OFFSET ?";
+
+	public static final String SELECT_LECTURE_COUNT = "SELECT COUNT(*) FROM TB_Lecture";
+	public static final String SELECT_LECTURE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Lecture ";
+	
+	/*
+	 * 날짜 : 2025/09/11
+	 * 이름 : 한탁원
+	 * 내용 : 교육운영현황 DB 
+	 */
+	public static final String SELECT_OPERATE_INFO_ALL =
+		    "SELECT " +
+		    "  D.name_kor AS dept_name, " +
+		    "  L.lec_no AS lecture_no, " +
+		    "  L.lec_name AS lecture_name, " +
+		    "  L.grade AS grade, " +
+		    "  P.name_kor AS professor_name, " +
+		    "  L.category AS category, " +
+		    "  L.credit AS credit, " +
+		    "  L.classroom AS classroom, " +
+		    "  CONCAT(COALESCE(COUNT(E.enr_id),0), '/', COALESCE(L.max_enrollment,0)) AS enrollment_text, " +
+		    "  CONCAT( CASE WHEN COALESCE(L.max_enrollment,0) > 0 " +
+		    "         THEN ROUND(100.0 * COUNT(E.enr_id) / L.max_enrollment, 1) ELSE 0 END, '%' ) AS enrollment_rate " +
+		    "FROM TB_Lecture L " +
+		    "JOIN TB_Department D ON D.dept_id = L.dept_id " +
+		    "JOIN TB_Professor  P ON P.pro_id  = L.pro_id " +
+		    "LEFT JOIN TB_Enrollment E ON E.lec_id = L.lec_id " +
+		    "GROUP BY L.lec_id, D.name_kor, L.lec_no, L.lec_name, L.grade, " +
+		    "         P.name_kor, L.category, L.credit, L.classroom, L.max_enrollment " +
+		    "ORDER BY D.name_kor, L.lec_no " +
+		    "LIMIT 5 OFFSET ?";
 	
 	public static final String WHERE_PROFESSOR_NAME   = " WHERE p.name_kor LIKE ? ";
 	public static final String WHERE_DEPARTMENT_NAME  = " WHERE d.name_kor LIKE ? ";

@@ -27,8 +27,8 @@
 					<li><a href="#">교육 운영 현황</a></li>
 					<li><a href="#">학년별 학생 현황</a></li>
 					<li><a href="#">학과별 학생 현황</a></li>
-					<li><a href="#">강의 목록</a></li>
-					<li><a href="#">강의 등록</a></li>
+					<li><a href="/manage/lecture/list.do">강의 목록</a></li>
+					<li><a href="/manage/lecture/register.do">강의 등록</a></li>
 					<li><a href="#">수강 현황</a></li>
 				</ol></li>
 			<li><a href="#"> <img

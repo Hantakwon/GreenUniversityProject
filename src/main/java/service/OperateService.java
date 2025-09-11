@@ -2,34 +2,34 @@ package service;
 
 import java.util.List;
 
-import dao.LectureDAO;
+import dao.OperateDAO;
 import dao.PagenationDTO;
+import dto.OperateDTO;
 import dto.lecture.LectureDTO;
-import dto.lecture.LectureListDTO;
 
-public enum LectureService {
+public enum OperateService {
 
 	INSTANCE;
 
-	private LectureDAO dao = LectureDAO.getInstance();
+	private OperateDAO dao = OperateDAO.getInstance();
 
-	public void register(LectureDTO dto) {
+	public void register(OperateDTO dto) {
 		dao.insert(dto);
 	}
 
-	public LectureDTO findByPass(int id) {
+	public OperateDTO findById(int id) {
 		return dao.select(id);
 	}
 
-	public List<LectureDTO> findAll() {
+	public List<OperateDTO> findAll() {
 		return dao.selectAll();
 	}
 
-	public List<LectureListDTO> findInfoAll(int start) {
+	public List<OperateDTO> findInfoAll(int start) {
 		return dao.selectInfoAll(start);
 	}
 
-	public void modify(LectureDTO dto) {
+	public void modify(OperateDTO dto) {
 		dao.update(dto);
 	}
 
