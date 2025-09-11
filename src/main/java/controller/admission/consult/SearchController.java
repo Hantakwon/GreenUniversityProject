@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import dao.PagenationDTO;
 import dto.admission.Admission_consultDTO;
+import dto.admission.Admission_noticeDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,45 +18,44 @@ import jakarta.servlet.http.HttpServletResponse;
 import service.admission.Admission_consultService;
 
 /*
- * 날짜 : 2025/09/05
+ * 날짜 : 2025/09/11
  * 이름 : 한탁원
- * 내용 : 입학상담 이동
+ * 내용 : 입학상담 검색
  */
-@WebServlet("/admission/consult.do")
-public class ConsultController extends HttpServlet {
+@WebServlet("/admission/consult/search.do")
+public class SearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/* service, logger 추가 */
+    
 	private Admission_consultService service = Admission_consultService.INSTANCE;
-
+	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		/* DB Logic 추가 */
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 요청 페이지 번호 수신
+		/* 필요 시 DB Logic 추가 */
 		String page = request.getParameter("page");
-
-		// 페이지네이션 처리 요청
-		PagenationDTO pagenationDTO = service.getPagenationDTO(page, null, null);
-
-		// 글 목록 조회
+		String searchType = request.getParameter("searchType");
+		String keyword = request.getParameter("keyword");
+		
+		PagenationDTO pagenationDTO = service.getPagenationDTO(page, searchType, keyword);
+		
 		int start = pagenationDTO.getStart();
-		List<Admission_consultDTO> dtoList = service.findAll(start);
-
+		
+		List<Admission_consultDTO> dtoList = service.findAllSearch(start, searchType, keyword);
+		
+		logger.debug(service.findAllSearch(start, searchType, keyword).toString());
+		
 		request.setAttribute("dtoList", dtoList);
+		request.setAttribute("searchType", searchType);
+		request.setAttribute("keyword", keyword);
 		request.setAttribute("pagenationDTO", pagenationDTO);
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/admission/consult/consult.jsp");
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/admission/consult/search.jsp");
 		dispatcher.forward(request, response);
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
 	}
 
 }

@@ -8,7 +8,7 @@
 </head>
 <!--
 	날짜 : 2025/09/05
-    이름 : 한탁원
+    이름 : 김수진
     내용 : 교육이념
 -->
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">

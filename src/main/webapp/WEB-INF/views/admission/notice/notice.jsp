@@ -180,7 +180,7 @@
 													<span class="hide">NEXT</span>
 											</a></li>
 											<li class="last pager"><a
-												href="/admission/search.do?page=${pagenationDTO.lastPageNum}">
+												href="/admission/notice.do?page=${pagenationDTO.lastPageNum}">
 													<img src="../resources/images/btn-last-page.png" alt="" />
 													<span class="hide">LAST</span>
 											</a></li>

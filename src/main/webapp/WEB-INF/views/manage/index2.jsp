@@ -316,36 +316,37 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>5</td>
-											<td class="ellipsis">[정시] 정시모집 관련해 문의드립니다.</td>
-											<td>24.06.24</td>
-											<td><span class="answer-not">답변대기</span></td>
-										</tr>
-										<tr>
-											<td>4</td>
-											<td class="ellipsis">2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
-											<td>24.06.24</td>
-											<td><span class="answer-ok">답변완료</span></td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td class="ellipsis">2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
-											<td>24.06.24</td>
-											<td><span class="answer-ok">답변완료</span></td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td class="ellipsis">2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
-											<td>24.06.24</td>
-											<td><span class="answer-ok">답변완료</span></td>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td class="ellipsis">2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
-											<td>24.06.24</td>
-											<td><span class="answer-ok">답변완료</span></td>
-										</tr>
+										<c:choose>
+											<c:when test="${empty admission_consultList}">
+												<tr>
+													<td colspan="4" style="text-align: center;">조회된 자료가
+														없습니다.</td>
+												</tr>
+											</c:when>
+											<c:otherwise>
+												<c:forEach var="admission" items="${admission_consultList}">
+													<tr>
+														<td>${admission.id}</td>
+														<td class="ellipsis">${admission.title}</td>
+														<td><c:choose>
+																<c:when test="${not empty admission.created_at}">
+																	<fmt:formatDate value="${admission.created_at}"
+																		pattern="yy.MM.dd" />
+																</c:when>
+																<c:otherwise>-</c:otherwise>
+															</c:choose></td>
+														<td><c:choose>
+																<c:when test="${admission.is_answered}">
+																	<span class="answer-ok">답변완료</span>
+																</c:when>
+																<c:otherwise>
+																	<span class="answer-not">답변대기</span>
+																</c:otherwise>
+															</c:choose></td>
+													</tr>
+												</c:forEach>
+											</c:otherwise>
+										</c:choose>
 									</tbody>
 								</table>
 							</div>

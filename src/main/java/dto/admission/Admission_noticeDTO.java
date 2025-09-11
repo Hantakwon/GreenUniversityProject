@@ -3,12 +3,12 @@ package dto.admission;
 import java.sql.Date;
 
 /*
- * 날짜 : 2025-09-05
+ * 날짜 : 2025-09-11
  * 이름 : 한탁원
- * 내용 : 입학안내 - 공지사항 DTO
+ * 내용 : 입학안내 - 입학상담 DTO
  */
 public class Admission_noticeDTO {
-
+	
 	private int id;
 	private String title;
 	private String content;
@@ -69,5 +69,4 @@ public class Admission_noticeDTO {
 		return "Academic_noticeDTO [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ ", created_at=" + created_at + ", views=" + views + "]";
 	}
-
 }

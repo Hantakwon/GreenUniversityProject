@@ -347,14 +347,22 @@ public class Sql {
 	 * 이름 : 한탁원
 	 * 내용 : Admission (입학안내) SQL 작성
 	 */
-	public static final String SELECT_ADMISSION_NOTICE_MAX_ID = "SELECT MAX(ID) FROM TB_ADMISSION_NOTICE";
-	public static final String INSERT_ADMISSION_NOTICE = "INSERT INTO TB_ADMISSION_NOTICE (TITLE, CONTENT, WRITER, CREATED_AT, VIEWS) VALUES (?, ?, ?, CURDATE(), 0)";
+	public static final String SELECT_ADMISSION_NOTICE_MAX_ID = "SELECT MAX(ID) FROM TB_Admission_notice";
+	public static final String INSERT_ADMISSION_NOTICE = "INSERT INTO TB_Admission_notice (TITLE, CONTENT, WRITER, CREATED_AT, VIEWS) VALUES (?, ?, ?, CURDATE(), 0)";
 	public static final String SELECT_ADMISSION_NOTICE_ALL =
-		    "SELECT * FROM TB_ADMISSION_NOTICE ORDER BY ID DESC LIMIT 5 OFFSET ?;";
-	public static final String SELECT_ADMISSION_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_ADMISSION_NOTICE";
-	public static final String SELECT_ADMISSION_NOTICE_SEARCH = "SELECT * FROM TB_ADMISSION_NOTICE ";
-	public static final String SELECT_ADMISSION_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_ADMISSION_NOTICE ";	
+		    "SELECT * FROM TB_Admission_notice ORDER BY ID DESC LIMIT 5 OFFSET ?;";
+	public static final String SELECT_ADMISSION_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_Admission_notice";
+	public static final String SELECT_ADMISSION_NOTICE_SEARCH = "SELECT * FROM TB_Admission_notice ";
+	public static final String SELECT_ADMISSION_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Admission_notice ";	
 
+	public static final String INSERT_ADMISSION_CONSULT = "INSERT INTO TB_Admission_Consult (CATEGORY, TITLE, WRITER, CONTENT, CREATED_AT, IS_ANSWERED) VALUES (?, ?, ?, ?, CURDATE(), 0)";
+	public static final String SELECT_ADMISSION_CONSULT_ALL =
+		    "SELECT * FROM TB_Admission_Consult ORDER BY ID DESC LIMIT 5 OFFSET ?;";
+	public static final String SELECT_ADMISSION_CONSULT_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_Admission_Consult";
+	public static final String SELECT_ADMISSION_CONSULT_SEARCH = "SELECT * FROM TB_Admission_Consult ";
+	public static final String SELECT_ADMISSION_CONSULT_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Admission_Consult ";	
+
+	
 	/* 
 	 * 날짜 : 2025/09/04
 	 * 이름 : 한탁원
