@@ -3,6 +3,8 @@
 <%@ page
 	import="java.time.*, java.time.format.DateTimeFormatter, java.time.temporal.TemporalAdjusters"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%-- fn:substring 함수를 사용하기 위해 JSTL Functions 라이브러리 추가 --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <%
 // URL 파라미터로 받은 날짜(weekStart)가 없으면 오늘 날짜 기준 월요일
@@ -14,10 +16,10 @@ if (weekStartParam != null && !weekStartParam.isEmpty()) {
 	LocalDate today = LocalDate.now();
 	startOfWeek = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
 }
-LocalDate endOfWeek = startOfWeek.plusDays(5);
+LocalDate endOfWeek = startOfWeek.plusDays(6); // 월요일부터 6일 후면 일요일까지 (총 7일)
 
-DateTimeFormatter headerFormatter = DateTimeFormatter.ofPattern("yyyy.M.d(E)");
-DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
+DateTimeFormatter headerFormatter = DateTimeFormatter.ofPattern("M.d(E)"); // 월.일(요일)
+DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd"); // 년.월.일
 %>
 
 <!DOCTYPE html>
@@ -187,7 +189,7 @@ DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
 								<tr>
 									<th class="category-header">구분</th>
 									<%
-									for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
+									for (java.time.LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
 									%>
 									<th class="date-header"><%=date.format(headerFormatter)%></th>
 									<%
@@ -196,65 +198,77 @@ DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
 								</tr>
 							</thead>
 							<tbody>
-								<!-- 조식 -->
 								<tr>
 									<td class="meal-category">조식</td>
 									<%
-									for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
+									for (java.time.LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
 									%>
-									<td><c:set var="found" value="false" /> <c:forEach
+									<td>
+										<%
+										String currentDateStr = date.toString();
+										pageContext.setAttribute("currentDateStr", currentDateStr);
+										%> <c:set var="found" value="false" /> <c:forEach
 											var="meal" items="${mealList}">
 											<c:if
-												test="${meal.meal_date.trim() eq date.toString() and meal.meal_type.trim() eq '조식'}">
+												test="${fn:substring(meal.meal_date, 0, 10) eq currentDateStr and meal.meal_type.trim() eq '조식'}">
 												<span class="meal-price">${meal.meal_price}</span>
 												<div class="meal-content">${meal.meal_name}</div>
 												<c:set var="found" value="true" />
 											</c:if>
 										</c:forEach> <c:if test="${found == false}">
 											<span class="no-meal">미운영</span>
-										</c:if></td>
+										</c:if>
+									</td>
 									<%
 									}
 									%>
 								</tr>
-								<!-- 중식 -->
 								<tr>
 									<td class="meal-category">중식</td>
 									<%
-									for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
+									for (java.time.LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
 									%>
-									<td><c:set var="found" value="false" /> <c:forEach
+									<td>
+										<%
+										String currentDateStr = date.toString();
+										pageContext.setAttribute("currentDateStr", currentDateStr);
+										%> <c:set var="found" value="false" /> <c:forEach
 											var="meal" items="${mealList}">
 											<c:if
-												test="${meal.meal_date.trim() eq date.toString() and meal.meal_type.trim() eq '중식'}">
+												test="${fn:substring(meal.meal_date, 0, 10) eq currentDateStr and meal.meal_type.trim() eq '중식'}">
 												<span class="meal-price">${meal.meal_price}</span>
 												<div class="meal-content">${meal.meal_name}</div>
 												<c:set var="found" value="true" />
 											</c:if>
 										</c:forEach> <c:if test="${found == false}">
 											<span class="no-meal">미운영</span>
-										</c:if></td>
+										</c:if>
+									</td>
 									<%
 									}
 									%>
 								</tr>
-								<!-- 석식 -->
 								<tr>
 									<td class="meal-category">석식</td>
 									<%
-									for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
+									for (java.time.LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
 									%>
-									<td><c:set var="found" value="false" /> <c:forEach
+									<td>
+										<%
+										String currentDateStr = date.toString();
+										pageContext.setAttribute("currentDateStr", currentDateStr);
+										%> <c:set var="found" value="false" /> <c:forEach
 											var="meal" items="${mealList}">
 											<c:if
-												test="${meal.meal_date.trim() eq date.toString() and meal.meal_type.trim() eq '석식'}">
+												test="${fn:substring(meal.meal_date, 0, 10) eq currentDateStr and meal.meal_type.trim() eq '석식'}">
 												<span class="meal-price">${meal.meal_price}</span>
 												<div class="meal-content">${meal.meal_name}</div>
 												<c:set var="found" value="true" />
 											</c:if>
 										</c:forEach> <c:if test="${found == false}">
 											<span class="no-meal">미운영</span>
-										</c:if></td>
+										</c:if>
+									</td>
 									<%
 									}
 									%>
