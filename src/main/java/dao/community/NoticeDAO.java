@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
 import java.sql.SQLException;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 공지사항 DAO
+ */
 public class NoticeDAO {
-    /*
-    날짜: 2025/09/11
-    이름: 장진원
-    내용: 공지사항 DAO
-     */
     private static NoticeDAO instance = new NoticeDAO();
     
     public static NoticeDAO getInstance() {
@@ -29,10 +28,12 @@ public class NoticeDAO {
     private final String PASS = "1234";
 
     /**
-     * 전체 게시글의 수를 조회합니다.
-     * @return 전체 게시글 수
+     * 검색 조건에 맞는 전체 게시글의 수를 조회합니다.
+     * @param searchType 검색 유형 (title, writer)
+     * @param keyword 검색어
+     * @return 검색 조건에 맞는 게시글 수
      */
-    public int selectNoticeCount() {
+    public int selectNoticeCount(String searchType, String keyword) {
         int count = 0;
         Connection conn = null;
         PreparedStatement psmt = null;
@@ -40,8 +41,16 @@ public class NoticeDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(HOST, USER, PASS);
-            String sql = "SELECT COUNT(*) FROM `board_notice`";
+
+            String sql = "SELECT COUNT(*) FROM `board_notice` WHERE 1=1";
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                sql += " AND `" + searchType + "` LIKE ?";
+            }
+
             psmt = conn.prepareStatement(sql);
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                psmt.setString(1, "%" + keyword + "%");
+            }
             rs = psmt.executeQuery();
             if (rs.next()) {
                 count = rs.getInt(1);
@@ -61,12 +70,14 @@ public class NoticeDAO {
     }
 
     /**
-     * 페이지별 게시글 목록을 조회합니다.
-     * @param start 시작 인덱스 (0부터 시작)
+     * 검색 조건에 맞는 페이지별 게시글 목록을 조회합니다.
+     * @param searchType 검색 유형 (title, writer)
+     * @param keyword 검색어
+     * @param start 시작 인덱스
      * @param limit 페이지당 게시글 수
-     * @return 게시글 목록
+     * @return 검색된 게시글 목록
      */
-    public List<NoticeDTO> selectNotices(int start, int limit) {
+    public List<NoticeDTO> selectNotices(String searchType, String keyword, int start, int limit) {
         List<NoticeDTO> notices = new ArrayList<>();
         Connection conn = null;
         PreparedStatement psmt = null;
@@ -75,10 +86,20 @@ public class NoticeDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(HOST, USER, PASS);
-            String sql = "SELECT `no`, `title`, `writer`, `rdate`, `hit` FROM `board_notice` ORDER BY `no` ASC LIMIT ? OFFSET ?";
+
+            String sql = "SELECT `no`, `title`, `writer`, `rdate`, `hit` FROM `board_notice` WHERE 1=1";
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                sql += " AND `" + searchType + "` LIKE ?";
+            }
+            sql += " ORDER BY `no` DESC LIMIT ? OFFSET ?";
+
             psmt = conn.prepareStatement(sql);
-            psmt.setInt(1, limit);
-            psmt.setInt(2, start);
+            int paramIndex = 1;
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                psmt.setString(paramIndex++, "%" + keyword + "%");
+            }
+            psmt.setInt(paramIndex++, limit);
+            psmt.setInt(paramIndex, start);
             rs = psmt.executeQuery();
 
             while (rs.next()) {

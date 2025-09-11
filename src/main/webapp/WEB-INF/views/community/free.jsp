@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-
 <!-- 
 	날짜: 2025/09/11
 	이름: 장진원
@@ -126,18 +125,22 @@
             <div class="main-content">
                 <div class="top">
                     <h2>자유게시판</h2>
+                     </div>
+                     <br>
+                    <form action="free.do" method="get">
+                        <div class="search-box">
+                            <select name="searchType" id="search-filter">
+                                <option value="all" <c:if test="${searchType eq 'all'}">selected</c:if>>전체 </option>
+                                <option value="title" <c:if test="${searchType eq 'title'}">selected</c:if>>제목</option>
+                                <option value="writer" <c:if test="${searchType eq 'writer'}">selected</c:if>>작성자</option>
+                            </select>
+                            <input type="text" name="keyword" value="${keyword}" placeholder="검색어를 입력해 주세요">
+                            <button type="submit">검색</button>
+                       
+                    </form>
                 </div>
                 <div class="bottom">
                     <p>
-                        <div class="search-box">
-                            <select name="search-filter" id="search-filter">
-                                <option value="all">전체 </option>
-                                <option value="title">제목</option>
-                                <option value="writer">작성자</option>
-                            </select>
-                            <input type="text" placeholder="검색어를 입력해 주세요">
-                            <button>검색</button>
-                        </div>
                         <div class="bottom">
                         <table class="notice-table">
                             <thead>
@@ -163,24 +166,24 @@
                         </table>
                         <div class="pagination">
                             <c:if test="${currentPage > 1}">
-                                <a href="free.do?page=1">&lt;&lt;</a>
-                                <a href="free.do?page=${currentPage - 1}">&lt;</a>
+                                <a href="free.do?page=1&searchType=${searchType}&keyword=${keyword}">&lt;&lt;</a>
+                                <a href="free.do?page=${currentPage - 1}&searchType=${searchType}&keyword=${keyword}">&lt;</a>
                             </c:if>
 
                             <c:forEach var="i" begin="1" end="${totalPage}">
                                 <c:choose>
                                     <c:when test="${i == currentPage}">
-                                        <a href="free.do?page=${i}" class="active">${i}</a>
+                                        <a href="free.do?page=${i}&searchType=${searchType}&keyword=${keyword}" class="active">${i}</a>
                                     </c:when>
                                     <c:otherwise>
-                                        <a href="free.do?page=${i}">${i}</a>
+                                        <a href="free.do?page=${i}&searchType=${searchType}&keyword=${keyword}">${i}</a>
                                     </c:otherwise>
                                 </c:choose>
                             </c:forEach>
 
                             <c:if test="${currentPage < totalPage}">
-                                <a href="free.do?page=${currentPage + 1}">&gt;</a>
-                                <a href="free.do?page=${totalPage}">&gt;&gt;</a>
+                                <a href="free.do?page=${currentPage + 1}&searchType=${searchType}&keyword=${keyword}">&gt;</a>
+                                <a href="free.do?page=${totalPage}&searchType=${searchType}&keyword=${keyword}">&gt;&gt;</a>
                             </c:if>
                         </div>
                     </div>

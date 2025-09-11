@@ -4,18 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import dto.community.NewsDTO;
-import java.sql.SQLException;
 
+
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 뉴스 및 칼럼 DAO (페이지네이션 기능 추가)
+ */
 public class NewsDAO {
 
-    /*
-    날짜: 2025/09/11
-    이름: 장진원
-    내용: 뉴스 및 칼럼 DAO (페이지네이션 기능 추가)
-     */
     private static NewsDAO instance = new NewsDAO();
 
     public static NewsDAO getInstance() {
@@ -35,10 +36,12 @@ public class NewsDAO {
     private String password = "1234";
 
     /**
-     * 전체 뉴스 게시글의 수를 조회합니다.
-     * @return 전체 게시글 수
+     * 검색 조건에 맞는 전체 뉴스 게시글의 수를 조회합니다.
+     * @param searchType 검색 유형 (all, title, writer)
+     * @param keyword 검색어
+     * @return 검색 조건에 맞는 게시글 수
      */
-    public int getNewsCount() {
+    public int getNewsCount(String searchType, String keyword) {
         int count = 0;
         Connection conn = null;
         PreparedStatement ps = null;
@@ -46,8 +49,15 @@ public class NewsDAO {
 
         try {
             conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT COUNT(*) FROM `board_news`";
+            String sql = "SELECT COUNT(*) FROM `board_news` WHERE 1=1";
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                sql += " AND `" + searchType + "` LIKE ?";
+            }
+
             ps = conn.prepareStatement(sql);
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                ps.setString(1, "%" + keyword + "%");
+            }
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -68,12 +78,14 @@ public class NewsDAO {
     }
 
     /**
-     * 페이지별 뉴스 목록을 조회합니다.
-     * @param start 시작 인덱스 (0부터 시작)
+     * 검색 조건에 맞는 페이지별 뉴스 목록을 조회합니다.
+     * @param searchType 검색 유형 (all, title, writer)
+     * @param keyword 검색어
+     * @param start 시작 인덱스
      * @param limit 페이지당 게시글 수
-     * @return 뉴스 목록
+     * @return 검색된 게시글 목록
      */
-    public List<NewsDTO> getNewsList(int start, int limit) {
+    public List<NewsDTO> getNewsList(String searchType, String keyword, int start, int limit) {
         List<NewsDTO> newsList = new ArrayList<>();
         Connection conn = null;
         PreparedStatement ps = null;
@@ -81,10 +93,19 @@ public class NewsDAO {
 
         try {
             conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT `no`, `category`, `title`, `writer`, `rdate`, `hit` FROM `board_news` ORDER BY `no` ASC LIMIT ? OFFSET ?";
+            String sql = "SELECT `no`, `category`, `title`, `writer`, `rdate`, `hit` FROM `board_news` WHERE 1=1";
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                sql += " AND `" + searchType + "` LIKE ?";
+            }
+            sql += " ORDER BY `no` DESC LIMIT ? OFFSET ?";
+
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, limit);
-            ps.setInt(2, start);
+            int paramIndex = 1;
+            if (searchType != null && keyword != null && !keyword.isEmpty() && !searchType.equals("all")) {
+                ps.setString(paramIndex++, "%" + keyword + "%");
+            }
+            ps.setInt(paramIndex++, limit);
+            ps.setInt(paramIndex, start);
             rs = ps.executeQuery();
 
             while (rs.next()) {

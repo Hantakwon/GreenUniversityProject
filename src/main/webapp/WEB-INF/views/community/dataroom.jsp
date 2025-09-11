@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
-<head>
-
 <!-- 
 	날짜: 2025/09/11
 	이름: 장진원
-	내용: 자유게시판 DAO
--->
+	내용: 자료실 jsp
+ -->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자료실</title>
@@ -129,17 +127,22 @@
             <div class="main-content">
                 <div class="top">
                     <h2>자료실</h2>
+                    </div>
+                    <br>
+                    <form action="dataroom.do" method="get">
+                        <div class="search-box">
+                            <select name="searchType" id="search-filter">
+                                <option value="all" <c:if test="${searchType eq 'all'}">selected</c:if>>전체 </option>
+                                <option value="title" <c:if test="${searchType eq 'title'}">selected</c:if>>제목</option>
+                                <option value="writer" <c:if test="${searchType eq 'writer'}">selected</c:if>>작성자</option>
+                            </select>
+                            <input type="text" name="keyword" value="${keyword}" placeholder="검색어를 입력해 주세요">
+                            <button type="submit">검색</button>
+
+                    </form>
                 </div>
                 <div class="bottom">
-                    <div class="search-box">
-                        <select name="search-filter" id="search-filter">
-                            <option value="all">전체 </option>
-                            <option value="title">제목</option>
-                            <option value="writer">작성자</option>
-                        </select>
-                        <input type="text" placeholder="검색어를 입력해 주세요">
-                        <button>검색</button>
-                    </div>
+
                     <table class="notice-table">
                         <thead>
                             <tr>

@@ -2,7 +2,7 @@ package controller.community.notice;
 /*
 날짜: 2025/09/11
 이름: 장진원
-내용: 공지사항 컨트롤러 (페이지네이션 기능 추가)
+내용: 공지사항 컨트롤러 (검색 및 페이지네이션 기능 추가)
  */
 
 import dao.community.NoticeDAO;
@@ -24,37 +24,42 @@ public class NoticeController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        // Pagination variables
-        int currentPage = 1; 
-        int pageSize = 10; // 10 posts per page
+        request.setCharacterEncoding("UTF-8");
+
+        // 검색 파라미터 받기
+        String searchType = request.getParameter("searchType");
+        String keyword = request.getParameter("keyword");
         
-        // Get current page number from request parameter
+        // 페이지네이션 변수 설정
+        int currentPage = 1; 
+        int pageSize = 10;
+        
         String pageParam = request.getParameter("page");
         if (pageParam != null && !pageParam.isEmpty()) {
             try {
                 currentPage = Integer.parseInt(pageParam);
             } catch (NumberFormatException e) {
-                // If the parameter isn't a number, default to page 1
                 currentPage = 1;
             }
         }
 
-        // Get total post count from DAO
-        int totalCount = dao.selectNoticeCount();
+        // 검색 조건에 맞는 전체 게시글 수와 총 페이지 수 계산
+        int totalCount = dao.selectNoticeCount(searchType, keyword);
         int totalPage = (int) Math.ceil((double) totalCount / pageSize);
 
-        // Calculate the starting index for the SQL query
+        // 페이지별 게시글 시작 인덱스 계산
         int start = (currentPage - 1) * pageSize;
 
-        // Fetch posts for the current page from DAO
-        List<NoticeDTO> notices = dao.selectNotices(start, pageSize);
+        // 페이지에 맞는 게시글 목록 조회
+        List<NoticeDTO> notices = dao.selectNotices(searchType, keyword, start, pageSize);
 
-        // Set attributes for the JSP view
+        // JSP에 데이터 전달
         request.setAttribute("notices", notices);
         request.setAttribute("totalPage", totalPage);
         request.setAttribute("currentPage", currentPage);
+        request.setAttribute("searchType", searchType);
+        request.setAttribute("keyword", keyword);
 
-        // Forward to the JSP page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/community/notice.jsp");
         dispatcher.forward(request, response);
     }
