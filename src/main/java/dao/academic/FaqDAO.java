@@ -6,7 +6,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.LectureDTO;
 import dto.academic.FaqDTO;
 import util.DBHelper;
 import util.Sql;
@@ -15,6 +14,11 @@ import util.Sql;
  * 날짜 : 2025-09-08
  * 이름 : 박효빈
  * 내용 : MySQL FaqDAO 작성
+ */
+/*
+ * 날짜 : 2025-09-10
+ * 이름 : 정순권
+ * 내용 : close All
  */
 public class FaqDAO extends DBHelper {
 	private final static FaqDAO INSTANCE = new FaqDAO();
@@ -52,7 +56,7 @@ public class FaqDAO extends DBHelper {
 				dto.setCreated_at(rs.getString("created_at"));
 				dtoList.add(dto);
 			}
-
+			closeAll();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}

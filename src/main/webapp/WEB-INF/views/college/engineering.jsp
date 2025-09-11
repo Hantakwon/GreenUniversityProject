@@ -44,18 +44,17 @@
 				</div>
 				<div class="main-content">
 					<div class="top">
-						<h2>공과대학</h2>
+						<h2>${dto.name_kor}</h2>
 					</div>
 					<div class="uni-info-container">
 						<div class="info-img">
-							<img src="/resources/images/college-introduce-3.jpg" alt="공대">
+							<img src="/resources/images/college-introduce-3.jpg"
+								alt="대학 이미지">
 						</div>
 						<div class="info-div">
-							<h4>Engineering</h4>
-							<h2>기본 공학교육 및 산업현장과 연계된 산학협동을 위한 학문을 교수·연구</h2>
-							<p>공과대학은 지역 및 국가산업을 선도할 창의적이고 생산적인 전물기술인을 양성하기 위하 여 기본 공학교육의
-								강화, 전공교육의 심화 및 산업현장과 연계된 산학협동의 활성화를 실현 할 관련학문을 교수, 연구하는데 교육목표를
-								둔다.</p>
+							<h4>${dto.name_eng}</h4>
+							<h2>${dto.title}</h2>
+							<p>${dto.content}</p>
 						</div>
 					</div>
 					<div class="mid">
@@ -73,7 +72,7 @@
 							</tr>
 							<c:forEach var="dto" items="${dtoList}">
 								<tr>
-									<td>${dto.deptName}<a href="#"><img
+									<td>${dto.deptName} <a href="#"><img
 											src="<%=request.getContextPath()%>/resources/images/ico_link.png"
 											alt="바로가기"></a></td>
 									<td>${dto.proName}</td>

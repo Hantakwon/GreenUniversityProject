@@ -14,12 +14,16 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/direction.css">
+<<<<<<< HEAD
 </head>
 
 
+=======
+	
+>>>>>>> main
 <!--
 	날짜 : 2025/09/05
-    이름 : 한탁원
+    이름 : 김수진
     내용 : 오시는 길
 -->
 
@@ -36,21 +40,6 @@
 			</div>
 		</div>
 	</div>
-	<style>
-	  .sub-container {
-	    color: white;
-	  }
-	
-	  .sub-container a {
-	    color: #fff;
-	  }
-	
-	  .sub-container h2, 
-	  .sub-container h3, 
-	  .sub-container h4 {
-	    color: #fff;
-	  }
-	</style>
 	<div class="sub-container">
 		<div class="lnb-wrap">
 			<div class="lnb">
@@ -128,7 +117,7 @@
    		</div>
 	   		</br>
 	   		</br>
-
+	   	</div>
    	</div>
 
 	<jsp:include page="../footer.jsp" />

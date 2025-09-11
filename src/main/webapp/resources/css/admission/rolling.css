@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /* ----------------
 	   수시모집
 ------------------*/
@@ -11,6 +12,7 @@
 
 .admission-bg {
     background: url('../resources/images/admission-bg.jpg') no-repeat center center;
+
     background-size: cover;
     padding: 80px 20px;
     color: #fff;

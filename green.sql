@@ -1,5 +1,6 @@
 use GREEN;
 
+drop table TB_College;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_College`
 -- -----------------------------------------------------
@@ -20,6 +21,7 @@ INSERT INTO TB_College (name_kor, name_eng, title, content) VALUES ('공과대�
 INSERT INTO TB_College (name_kor, name_eng, title, content) VALUES ('사범대학', 'Education', '소개 제목', '소개 내용');
 INSERT INTO TB_College (name_kor, name_eng, title, content) VALUES ('대학원', 'GRADUATE SCHOOL', '소개 제목', '소개 내용');
 
+drop table TB_Department;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_Department`
 -- -----------------------------------------------------
@@ -57,6 +59,7 @@ INSERT INTO TB_Department VALUES (11, 1, '1A', '행정학과', 'Public Administr
 INSERT INTO TB_Department VALUES (12, 1, '1B', '사회복지학과', 'Social Welfare', CURDATE(), '051-123-1012', '추후 예정');
 INSERT INTO TB_Department VALUES (13, 1, '1C', '유아교육학과', 'Early Childhood Education', CURDATE(), '051-123-1013', '추후 예정');
 
+drop table TB_Professor;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_Professor`
 -- -----------------------------------------------------
@@ -82,6 +85,7 @@ ENGINE = InnoDB;
 INSERT INTO TB_Professor VALUES (1, '10', '871010-1234567', '김국어', 'kimkorean', 'M', '한국', '010-1234-1234', 'korean@email.com', '12345', '부산 해운대구', '201호', '재직중', '정교수');
 INSERT INTO TB_Professor VALUES (2, '11', '871010-1234567', '김영어', 'kimkorean', 'M', '한국', '010-1234-1234', 'english@email.com', '12345', '부산 해운대구', '201호', '재직중', '정교수');
 
+drop table TB_Professor_Academic;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_Professor_Academic`
 -- -----------------------------------------------------
@@ -103,6 +107,7 @@ ENGINE = InnoDB;
 
 INSERT INTO TB_Professor_Academic VALUES (1, 1, '그린대학교', '컴퓨터공학', '2010-10-10', '박사', '2020-10-10');
 
+drop table TB_Department_Professor;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_Department_Professor`
 -- -----------------------------------------------------
@@ -132,6 +137,7 @@ INSERT INTO TB_Department_Professor VALUES (2, 2, 1, 2, '학과장');
 
 
 
+drop table TB_Student;
 -- -----------------------------------------------------
 -- Table `GREEN`.`TB_Student`
 -- -----------------------------------------------------
@@ -220,6 +226,22 @@ CREATE TABLE IF NOT EXISTS `GREEN`.`TB_Lecture` (
   `classroom` VARCHAR(45) NULL,
   `max_enrollment` VARCHAR(45) NULL,
   PRIMARY KEY (`lecNo`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `GREEN`.`TB_EMPLOY`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `GREEN`.`TB_EMPLOY` (
+  `emp_id` INT NOT NULL AUTO_INCREMENT,
+  `dept_id` INT NOT NULL,
+  `emp_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`emp_id`),
+  INDEX `fk_TB_EMPLOY_TB_Department1_idx` (`dept_id` ASC) VISIBLE,
+  CONSTRAINT `fk_TB_EMPLOY_TB_Department1`
+    FOREIGN KEY (`dept_id`)
+    REFERENCES `GREEN`.`TB_Department` (`dept_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 

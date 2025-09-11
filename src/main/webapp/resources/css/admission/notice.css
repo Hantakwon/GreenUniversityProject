@@ -335,3 +335,4 @@
 
 /* (선택) etc 박스가 비어있으면 줄바꿈 방지를 위해 감춤 유지 */
 .bn-list-common01.type01 .b-etc-box:empty{ display:none; }
+

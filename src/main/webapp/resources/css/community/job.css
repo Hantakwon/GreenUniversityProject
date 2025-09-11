@@ -1,5 +1,9 @@
 @charset "UTF-8";
-
+/*
+	날짜: 2025/08/08
+	이름: 장진원
+	내용: 취업정보 css
+ */
 /* 구분(카테고리) 뱃지 스타일 */
 .notice-table .category1, .notice-table .category2 {
 	display: inline-block;
