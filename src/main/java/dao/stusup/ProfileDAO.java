@@ -10,6 +10,11 @@ import dto.stusup.SemesterCreditDTO;
 
 public class ProfileDAO {
 
+	/*
+	날짜: 2025/09/11
+	이름: 장진원
+	내용: 프로필 DAO
+	 */
     public ProfileDAO() {
         // 실제로는 DB 연결 설정
     }

@@ -8,12 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dto.stusup.Course_regDTO;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 수강신청 DAO
+ */
 public class Course_regDAO {
 
-    private String url = "jdbc:mysql://localhost:3306/greendae";
-    private String user = "root";
-    private String password = "password";
+    private String url = "jdbc:mysql://localhost:3306/green_1";
+    private String user = "jinwonj96";
+    private String password = "1234";
 
     public Course_regDAO() {
         try {
@@ -31,7 +35,7 @@ public class Course_regDAO {
 
         try {
             conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM course"; // 과목 정보가 저장된 테이블
+            String sql = "SELECT `department`, `classification`, `year`, `code`, `subject`, `credit`, `professor`, `capacity`, `note` FROM `course` ORDER BY `department`, `year`";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
 

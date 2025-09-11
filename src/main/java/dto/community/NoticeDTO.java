@@ -1,5 +1,9 @@
 package dto.community;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 공지사항 DTO
+ */
 import java.sql.Date;
 
 public class NoticeDTO {

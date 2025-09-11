@@ -1,5 +1,10 @@
 package controller.community.notice;
 /*
+날짜: 2025/09/11
+이름: 장진원
+내용: 공지사항 컨트롤러 (페이지네이션 기능 추가)
+ */
+
 import dao.community.NoticeDAO;
 import dto.community.NoticeDTO;
 import jakarta.servlet.RequestDispatcher;
@@ -15,15 +20,41 @@ import java.util.List;
 public class NoticeController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    private NoticeDAO dao = NoticeDAO.getInstance();
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 1. DAO 객체 생성 및 게시물 목록 조회
-        NoticeDAO dao = NoticeDAO.getInstance();
-        List<NoticeDTO> notices = dao.selectNotices();
+        
+        // Pagination variables
+        int currentPage = 1; 
+        int pageSize = 10; // 10 posts per page
+        
+        // Get current page number from request parameter
+        String pageParam = request.getParameter("page");
+        if (pageParam != null && !pageParam.isEmpty()) {
+            try {
+                currentPage = Integer.parseInt(pageParam);
+            } catch (NumberFormatException e) {
+                // If the parameter isn't a number, default to page 1
+                currentPage = 1;
+            }
+        }
 
-        // 2. 조회된 목록을 request에 담기
+        // Get total post count from DAO
+        int totalCount = dao.selectNoticeCount();
+        int totalPage = (int) Math.ceil((double) totalCount / pageSize);
+
+        // Calculate the starting index for the SQL query
+        int start = (currentPage - 1) * pageSize;
+
+        // Fetch posts for the current page from DAO
+        List<NoticeDTO> notices = dao.selectNotices(start, pageSize);
+
+        // Set attributes for the JSP view
         request.setAttribute("notices", notices);
+        request.setAttribute("totalPage", totalPage);
+        request.setAttribute("currentPage", currentPage);
 
-        // 3. JSP 페이지로 포워드
+        // Forward to the JSP page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/community/notice.jsp");
         dispatcher.forward(request, response);
     }
@@ -32,4 +63,3 @@ public class NoticeController extends HttpServlet {
         doGet(request, response);
     }
 }
-*/

@@ -148,7 +148,7 @@ main .info img {
 					<div class="bottom">
 						<ul>
 							<li class="active"><a href="#">총장 인사말</a></li>
-							<li><a href="#">교육이념</a></li>
+							<li><a href="/project_test1/community/notice.do">교육이념</a></li>
 							<li><a href="#">연혁</a></li>
 							<li><a href="#">조직도</a></li>
 							<li><a href="#">오시는길</a></li>

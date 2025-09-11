@@ -1,5 +1,9 @@
 package dto.community;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 질문과답변 DTO
+ */
 public class QnaDTO {
     private int no;
     private int parent; // 답변일 경우 원글 번호, 원글일 경우 0
