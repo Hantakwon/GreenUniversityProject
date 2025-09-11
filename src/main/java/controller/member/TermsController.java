@@ -6,7 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.TermsService;
+
 import java.io.IOException;
+
+import dto.TermsDTO;
 
 /*
  * 날짜 : -
@@ -18,10 +22,13 @@ public class TermsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	/* service, logger 추가 */
+	private TermsService termsService = TermsService.INSTANCE;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		/* 필요 시 DB Logic 추가 */
+		TermsDTO termsDTO = termsService.findById(1);
+		request.setAttribute("termsDTO", termsDTO);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/member/terms.jsp");
 		dispatcher.forward(request, response);

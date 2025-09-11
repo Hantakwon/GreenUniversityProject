@@ -392,17 +392,19 @@ public class Sql {
 	    "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM TB_Collegelife_Gallery ORDER BY reg_date DESC LIMIT ?, ?";
 
 	/* 
-	 * 날짜 : 2025/09/08
+	 * 날짜 : 2025/09/11
 	 * 이름 : 정순권
-	 * 내용 : Signup sql 작성
+	 * 내용 : 약관 sql 작성
 	 */
-	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM Users ";
+	public static final String SELECT_TERMS = "SELECT * FROM TB_Terms where NO=?";
+	
+	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM TB_GENERAL_USER ";
 	public static final String WHERE_USER_ID = "WHERE USER_ID=?";
 	public static final String WHERE_HP   = "WHERE USER_HP=?";
 	public static final String WHERE_EMAIL = "WHERE USER_EMAIL=?";
 	
 	public static final String INSERT_USER =
-	    "INSERT INTO TB_GENERAL_USERS (USER_ID, USER_PASS, USER_NAME, USER_HP, USER_EMAIL, POSTAL_CODE, BASIC_ADDR, DETAIL_ADDR) "
+	    "INSERT INTO TB_GENERAL_USER (USER_ID, USER_PASS, USER_NAME, USER_HP, USER_EMAIL, POSTAL_CODE, BASIC_ADDR, DETAIL_ADDR) "
 	  + "VALUES (?,SHA2(?, 256),?,?,?,?,?,?)";
 	
 	/* 
@@ -413,7 +415,7 @@ public class Sql {
 
 	// 로그인
 	// user db명 수정 완료
-	public static final String SELECT_USER_BY_PASS = "SELECT * FROM TB_GENERAL_USERS WHERE USER_ID=? AND USER_PASS=SHA2(?, 256)";
+	public static final String SELECT_USER_BY_PASS = "SELECT * FROM TB_GENERAL_USER WHERE USER_ID=? AND USER_PASS=SHA2(?, 256)";
 	
 
 	public static final String SELECT_STUDENT_BY_RRN = "SELECT * FROM TB_STUDENT WHERE STD_ID=? AND REPLACE(`RRN`, '-', '')=?";
