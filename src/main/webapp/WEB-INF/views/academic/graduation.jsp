@@ -21,7 +21,8 @@
   <div>
     <div class="info">
       <span id="test">
-        <img src="./images/ico-home.png" alt="홈 버튼" />
+       <img src="/resources/images/ico-home.png"
+					alt="홈 버튼">
         &gt; 학사안내 &gt; 수료 및 졸업
       </span>
     </div>

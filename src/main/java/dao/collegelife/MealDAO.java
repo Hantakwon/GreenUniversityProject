@@ -1,5 +1,7 @@
 package dao.collegelife;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +47,8 @@ public class MealDAO extends DBHelper {
 			while(rs.next()) {
 				MealDTO dto = new MealDTO();
 				dto.setMeal_id(rs.getInt("meal_id"));
-				dto.setMeal_date(rs.getString("meal_date"));
+				LocalDate mealLocalDate = rs.getDate("meal_date").toLocalDate();
+                dto.setMeal_date(mealLocalDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 				dto.setMeal_type(rs.getString("meal_type"));
 				dto.setMeal_name(rs.getString("meal_name"));
 				dto.setMeal_price(rs.getString("meal_price"));

@@ -394,7 +394,8 @@ public class Sql {
 	 //public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM tb_collegelife_gallery";
 	 //public static final String SELECT_GALLERY_LIST_PAGING = "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM tb_collegelife_gallery ORDER BY reg_date DESC LIMIT ?, ?";
 	 // 대학 생활 - 식단 페이징 SQL
-	public static final String SELECT_MEAL_ALL = "SELECT * FROM tb_collegelife_meal";
+	public static final String SELECT_MEAL_ALL = "SELECT * FROM TB_Collegelife_Meal";
+	
 	public static final String SELECT_GALLERY_COUNT_TOTAL_GALLERY = "SELECT COUNT(*) FROM TB_Collegelife_Gallery";
 	public static final String SELECT_GALLERY_LIST_PAGING =
 	    "SELECT gno, title, image_path, rdcnt, reg_date, content, writer FROM TB_Collegelife_Gallery ORDER BY reg_date DESC LIMIT ?, ?";
