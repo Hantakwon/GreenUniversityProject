@@ -15,8 +15,8 @@
 <script src="<%=request.getContextPath()%>/resources/js/manage/script.js"></script>
 <body>
 
-  	<jsp:include page="../common/manage_header.jsp" />
-	<jsp:include page="../common/manage_sidebar.jsp" />
+  	<jsp:include page="../common2/header.jsp" />
+	<jsp:include page="../common2/aside.jsp" />
 
 
   <div class="mainWrap">

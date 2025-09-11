@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<!--
+	날짜 : 2025/09/11
+    이름 : 정순권
+    내용 : 링크 수정
+-->
 <body>
 	<aside>
 		<ul id="gnb">
@@ -19,17 +24,17 @@
 					<li><a
 						href="${pageContext.request.contextPath}/manage/config/terms.do">약관관리</a></li>
 				</ol></li>
-			<li><a href="#"> <img
+			<li><a href="${pageContext.request.contextPath}/manage/operate/ope_state.do"> <img
 					src="${pageContext.request.contextPath}/resources/images/ico-admin-academic.png"
 					alt="" class="icon"> 학사운영
 			</a>
 				<ol>
-					<li><a href="#">교육 운영 현황</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/operate/ope_state.do">교육 운영 현황</a></li>
 					<li><a href="#">학년별 학생 현황</a></li>
 					<li><a href="#">학과별 학생 현황</a></li>
-					<li><a href="#">강의 목록</a></li>
-					<li><a href="#">강의 등록</a></li>
-					<li><a href="#">수강 현황</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/operate/list.do">강의 목록</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/operate/register.do">강의 등록</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/operate/lec_state.do">수강 현황</a></li>
 				</ol></li>
 			<li><a href="#"> <img
 					src="${pageContext.request.contextPath}/resources/images/ico-admin-persons.png"
@@ -44,13 +49,13 @@
 							목록 및 등록</a></li>
 					<li><a href="#">임직원 목록 및 등록</a></li>
 				</ol></li>
-			<li><a href="#"> <img
+			<li><a href="${pageContext.request.contextPath}/manage/department/list.do"> <img
 					src="${pageContext.request.contextPath}/resources/images/ico-admin-college.png"
 					alt="" class="icon"> 대학 및 학과
 			</a>
 				<ol>
-					<li><a href="#">대학 및 학과 목록</a></li>
-					<li><a href="#">대학 및 학과 등록</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/department/list.do">대학 및 학과 목록</a></li>
+					<li><a href="${pageContext.request.contextPath}/manage/department/register.do">대학 및 학과 등록</a></li>
 				</ol></li>
 			<li><a href="#"> <img
 					src="${pageContext.request.contextPath}/resources/images/ico-admin-board.png"
