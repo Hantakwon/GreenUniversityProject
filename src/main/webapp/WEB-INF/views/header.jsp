@@ -26,7 +26,7 @@
 					<li><a href="/" title="HOME 바로가기">HOME</a></li>
 					<li><a href="#" title="사이트맵 보기" class="sitemap-btn">사이트맵</a></li>
 					<li class="login"><a href="/member/login.do">로그인</a></li>
-					<li class="login"><a href="/GreenUniversity/support/#">학생지원</a></li>
+					<li class="login"><a href="/GreenUniversity/stusup/course_reg.do">학생지원</a></li>
 				</ul>
 			</div>
 		</div>

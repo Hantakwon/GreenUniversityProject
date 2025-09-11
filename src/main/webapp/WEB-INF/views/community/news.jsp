@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <jsp:include page="../header.jsp" />
+<jsp:include page="../header.jsp" />
 <main>
     <div>
         <div class="info">
@@ -137,6 +137,7 @@
     </div>
 
 </main>
-	<jsp:include page="../footer.jsp" />
+
+<jsp:include page="../footer.jsp" />
 </body>
 </html>
