@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `greendae4`.`TB_Employ` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `greendae4`.`TB_TEST` (
+CREATE TABLE IF NOT EXISTS `GREEN`.`TB_TEST` (
   `emp_id` INT NOT NULL AUTO_INCREMENT,
   `dept_id` INT NOT NULL,
   `emp_name` VARCHAR(45) NULL,
@@ -233,11 +233,12 @@ CREATE TABLE IF NOT EXISTS `greendae4`.`TB_TEST` (
   INDEX `fk_TB_EMPLOY_TB_Department1_idx` (`dept_id` ASC) VISIBLE,
   CONSTRAINT `fk_TB_EMPLOY_TB_Department1`
     FOREIGN KEY (`dept_id`)
-    REFERENCES `greendae4`.`TB_Department` (`dept_id`)
+    REFERENCES `GREEN`.`TB_Department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
+SELECT * from TB_Lecture;
 
 SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'greendae4';

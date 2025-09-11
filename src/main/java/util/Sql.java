@@ -85,6 +85,50 @@ public class Sql {
 		    "LEFT JOIN TB_Department d ON d.col_id = p.col_id";
 
 	/*
+	 * 날짜 : 2025/09/11
+	 * 이름 : 한탁원
+	 * 내용 : 관리 - index
+	 */
+	
+	public static final String SELECT_MANAGE_INDEX_OPERATE =
+		    "SELECT " +
+		    " (SELECT COUNT(*) FROM TB_Department) AS opened_departments, " +
+		    " (SELECT COUNT(*) FROM TB_Lecture) AS opened_lectures, " +
+		    " (SELECT COUNT(*) FROM TB_Professor) AS total_professors, " +
+		    " (SELECT COUNT(*) FROM TB_Employ) AS total_employees, " +
+		    " (SELECT COUNT(*) FROM TB_Student) AS total_students, " +
+		    " (SELECT COUNT(*) FROM TB_Student WHERE statement IN ('휴학','휴학중')) AS leave_students, " +
+		    " (SELECT COUNT(*) FROM TB_Student WHERE statement IN ('대학원','대학원생')) AS grad_students, " +
+		    " (SELECT COUNT(*) FROM TB_Student WHERE statement IN 	('졸업','졸업생')) AS graduates";
+
+	public static final String SELECT_MANAGE_INDEX_GRADE_STUDENT_SUMMARY =
+		    "SELECT " +
+		    "  CASE WHEN grade_num IS NULL THEN '총합' ELSE CONCAT(grade_num, '학년') END AS grade, " +
+		    "  SUM(CASE WHEN statement IN ('재학','재학중') THEN 1 ELSE 0 END) AS sumEnrolledCnt, " +
+		    "  SUM(CASE WHEN statement IN ('휴학','휴학중') THEN 1 ELSE 0 END) AS sumLeaveCnt, " +
+		    "  SUM(CASE WHEN statement IN ('재학','재학중','휴학','휴학중') THEN 1 ELSE 0 END) AS sumTotalCnt " +
+		    "FROM ( " +
+		    "  SELECT CAST(grade AS UNSIGNED) AS grade_num, statement " +
+		    "  FROM TB_Student " +
+		    "  WHERE CAST(grade AS UNSIGNED) BETWEEN 1 AND 4 " +
+		    ") s " +
+		    "GROUP BY grade_num WITH ROLLUP " +
+		    "ORDER BY (grade_num IS NULL), grade_num";
+
+	public static final String SELECT_MANAGE_INDEX_DEPT_STUDENT_SUMMARY =
+		    "SELECT "
+		  + "  CASE WHEN d.dept_id IS NULL THEN '총합' ELSE MAX(d.name_kor) END AS dept_name, "
+		  + "  SUM(CASE WHEN s.`statement` IN ('재학','재학중') THEN 1 ELSE 0 END) AS sumEnrolledCnt, "
+		  + "  SUM(CASE WHEN s.`statement` IN ('휴학','휴학중') THEN 1 ELSE 0 END) AS sumLeaveCnt, "
+		  + "  SUM(CASE WHEN s.`statement` IN ('재학','재학중','휴학','휴학중') THEN 1 ELSE 0 END) AS sumTotalCnt "
+		  + "FROM TB_Department d "
+		  + "LEFT JOIN TB_Student s ON s.dept_id = d.dept_id "
+		  + "GROUP BY d.dept_id WITH ROLLUP "
+		  + "ORDER BY (d.dept_id IS NULL), dept_name " 
+		  + "LIMIT 5 OFFSET 0";
+
+
+	/*
 	 * 날짜 : 2025/09/09
 	 * 이름 : 한탁원
 	 * 내용 : 교수 DB
