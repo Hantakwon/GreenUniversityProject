@@ -16,13 +16,13 @@
 	내용 : 수료 및 졸업 * 정적페이지 작성
 -->
 <body>
-<main>
 <jsp:include page="../header.jsp" />
+<main>
   <div>
     <div class="info">
       <span id="test">
         <img src="./images/ico-home.png" alt="홈 버튼" />
-        &gt; 학사안내 &gt; 수강신청
+        &gt; 학사안내 &gt; 수료 및 졸업
       </span>
     </div>
   </div>
@@ -34,12 +34,12 @@
         </div>
         <div class="bottom">
           <ul>
-            <li class="#"><a href="#">공지사항</a></li>
-            <li class="#"><a href="#">학사일정</a></li>
-            <li class="#"><a href="#">수강신청</a></li>
-            <li class="active"><a href="#">성적</a></li>
-            <li><a href="#">수료 및 졸업</a></li>
-            <li><a href="#">자주 묻는 질문</a></li>
+            <li><a href="#">공지사항</a></li>
+							<li class="#"><a href="/academic/calander.do">학사일정</a></li>
+							<li><a href="/academic/registration.do">수강신청</a></li>
+							<li class="#"><a href="/academic/grade.do">성적</a></li>
+							<li class="active"><a href="/academic/graduation.do">수료 및 졸업</a></li>
+							<li class="#"><a href="/academic/faq.do">자주 묻는 질문</a></li>
           </ul>
         </div>
       </div>
