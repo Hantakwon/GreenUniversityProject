@@ -44,8 +44,13 @@
                         <li><a href="/community/notice.do">공지사항</a></li>
                         <li><a href="/community/news.do">뉴스 및 칼럼</a></li>
                         <li><a href="/community/job.do">취업정보</a></li>
+<<<<<<< HEAD
                         <li><a href="/community/free.do">자유게시판</a></li>
                         <li class="active"><a href="/community/qna.do">질문과 답변</a></li>
+=======
+                        <li class="active"><a href="/community/free.do">자유게시판</a></li>
+                        <li><a href="/community/qna.do">질문과 답변</a></li>
+>>>>>>> 87da125f90b97b9dee1843ef4a9f5dd12cea7649
                         <li><a href="/community/data.do">자료실</a></li>
                     </ul>
                 </div>

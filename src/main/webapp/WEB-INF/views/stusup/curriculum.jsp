@@ -34,11 +34,11 @@
                 </div>
                 <div class="bottom">
                     <ul>
-                        <li><a href="#">수강신청</a></li>
-                        <li><a href="#">수강신청내역</a></li>
-                        <li class="active"><a href="#">나의교육과정</a></li>
-                        <li><a href="#">성적조회</a></li>
-                        <li><a href="#">학적</a></li>
+                        <li><a href="/stusup/course_reg.do">수강신청</a></li>
+                        <li><a href="/stusup/course_reg_list.do">수강신청내역</a></li>
+                        <li class="active"><a href="/stusup/curriculum.do">나의교육과정</a></li>
+                        <li><a href="/stusup/grade.do">성적조회</a></li>
+                        <li><a href="/stusup/profile.do">학적</a></li>
                     </ul>
                 </div>
             </div>
