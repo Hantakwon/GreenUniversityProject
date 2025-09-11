@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <!-- 
-	날짜 :
+	날짜 : 2025/09/11
 	이름 : 박효빈
 	내용 : 학생회소개
 -->

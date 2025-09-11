@@ -17,9 +17,9 @@
 	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 <body>
 
+	<jsp:include page="../header.jsp" />
 
 	<main>
-	<jsp:include page="../header.jsp" />
 		<div>
 			<div class="info">
 				<span id="test"> <img
@@ -36,12 +36,12 @@
 					</div>
 					<div class="bottom">
 						<ul>
-							<li class="#"><a href="./학사안내-공지사항.html">공지사항</a></li>
-							<li class="active"><a href="./학사안내-학사일정.html">학사일정</a></li>
-							<li><a href="./학사안내-수강신청.html">수강신청</a></li>
-							<li><a href="./학사안내-성적.html">성적</a></li>
-							<li><a href="./학사안내-수료및졸업">수료 및 졸업</a></li>
-							<li><a href="./학사안내-자주묻는질문">자주 묻는 질문</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li class="active"><a href="/academic/calander.do">학사일정</a></li>
+							<li><a href="/academic/registration.do">수강신청</a></li>
+							<li><a href="/academic/grade.do">성적</a></li>
+							<li><a href="/academic/graduation.do">수료 및 졸업</a></li>
+							<li class="#"><a href="/academic/faq.do">자주 묻는 질문</a></li>
 						</ul>
 					</div>
 				</div>
@@ -59,6 +59,8 @@
 			</div>
 		</div>
 	</main>
+	<jsp:include page="../footer.jsp" />
+	
 
 	<!-- FullCalendar JavaScript 라이브러리 추가 (body 태그 닫히기 직전에 넣는 것이 성능상 좋습니다) -->
 	<!-- FullCalendar Core 라이브러리 -->
@@ -104,6 +106,5 @@
         calendar.render();
     });
 </script>
-<jsp:include page="../footer.jsp" />
 </body>
 </html>
