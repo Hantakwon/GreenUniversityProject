@@ -152,7 +152,19 @@
                                 <c:forEach var="job" items="${jobList}">
                                     <tr>
                                         <td>${job.no}</td>
-                                        <td><span class="category1">${job.status}</span></td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${job.status eq '모집중'}">
+                                                    <span class="category1">${job.status}</span>
+                                                </c:when>
+                                                <c:when test="${job.status eq '마감'}">
+                                                    <span class="category2">${job.status}</span>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <span class="category">${job.status}</span>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
                                         <td>${job.company}</td>
                                         <td>${job.title}</td>
                                         <td>${job.rdate}</td>
@@ -162,11 +174,26 @@
                             </tbody>
                         </table>
                         <div class="pagination">
-                            <a href="#">&lt;</a>
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">&gt;</a>
+                             <c:if test="${currentPage > 1}">
+                                <a href="job.do?page=1">&lt;&lt;</a>
+                                <a href="job.do?page=${currentPage - 1}">&lt;</a>
+                            </c:if>
+
+                            <c:forEach var="i" begin="1" end="${totalPage}">
+                                <c:choose>
+                                    <c:when test="${i == currentPage}">
+                                        <a href="job.do?page=${i}" class="active">${i}</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="job.do?page=${i}">${i}</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                            <c:if test="${currentPage < totalPage}">
+                                <a href="job.do?page=${currentPage + 1}">&gt;</a>
+                                <a href="job.do?page=${totalPage}">&gt;&gt;</a>
+                            </c:if>
                         </div>
                     </div>
                     </p>

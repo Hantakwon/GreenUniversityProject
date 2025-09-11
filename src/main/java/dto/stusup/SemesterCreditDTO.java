@@ -1,5 +1,10 @@
 package dto.stusup;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용:  학년/학기별 취득 학점 현황 DTO
+SemesterCreditDTO는 특정 학년/학기별 학점 현황을 상세하게 보여주는 데 사용
+ */
 public class SemesterCreditDTO {
 
     private int year;

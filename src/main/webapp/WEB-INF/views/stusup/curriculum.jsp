@@ -4,6 +4,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- 
+	날짜: 2025/09/11
+	이름: 장진원
+	내용: 커리큘럼 jsp
+ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나의 교육과정</title>

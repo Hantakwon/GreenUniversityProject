@@ -157,8 +157,26 @@
                         </table>
 
                         <div class="pagination">
-                            <a href="#">&lt;</a> <a href="#">1</a> <a href="#">2</a> <a
-                                href="#">3</a> <a href="#">&gt;</a>
+                             <c:if test="${currentPage > 1}">
+                             	<a href="notice.do?page=1">&lt;&lt;</a>
+                                <a href="notice.do?page=${currentPage - 1}">&lt;</a>
+                            </c:if>
+
+                            <c:forEach var="i" begin="1" end="${totalPage}">
+                                <c:choose>
+                                    <c:when test="${i == currentPage}">
+                                        <a href="notice.do?page=${i}" class="active">${i}</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a href="notice.do?page=${i}">${i}</a>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                            <c:if test="${currentPage < totalPage}">
+                                <a href="notice.do?page=${currentPage + 1}">&gt;</a>
+                                <a href="notice.do?page=${totalPage}">&gt;&gt;</a>
+                            </c:if>
                         </div>
                     </div>
                     </p>

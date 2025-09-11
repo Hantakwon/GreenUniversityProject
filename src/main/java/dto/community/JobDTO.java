@@ -1,5 +1,9 @@
 package dto.community;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 취업정보 DTO
+ */
 public class JobDTO {
     private int no;
     private String status;

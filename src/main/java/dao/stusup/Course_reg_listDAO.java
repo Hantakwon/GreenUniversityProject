@@ -11,6 +11,11 @@ import dto.stusup.Course_reg_listDTO;
 
 public class Course_reg_listDAO {
 
+	/*
+	날짜: 2025/09/11
+	이름: 장진원
+	내용: 수강신청내역 DAO
+	 */
     private String url = "jdbc:mysql://localhost:3306/greendae";
     private String user = "root";
     private String password = "password";

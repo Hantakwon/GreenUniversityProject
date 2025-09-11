@@ -1,5 +1,9 @@
 package dto.community;
-
+/*
+날짜: 2025/09/11
+이름: 장진원
+내용: 자료실 DTO
+ */
 public class DataroomDTO {
     private int no;
     private String title;

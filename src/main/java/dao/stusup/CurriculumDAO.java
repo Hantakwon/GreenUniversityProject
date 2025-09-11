@@ -6,7 +6,12 @@ import java.util.List;
 import dto.stusup.CurriculumDTO;
 
 public class CurriculumDAO {
-    
+
+	/*
+	날짜: 2025/09/11
+	이름: 장진원
+	내용: 커리큘럼 DAO
+	 */
     public CurriculumDAO() {
         // 실제로는 DB 연결 설정 등 초기화 코드가 위치
     }
