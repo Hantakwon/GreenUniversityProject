@@ -124,7 +124,7 @@ public class Sql {
 		  + "FROM TB_Department d "
 		  + "LEFT JOIN TB_Student s ON s.dept_id = d.dept_id "
 		  + "GROUP BY d.dept_id WITH ROLLUP "
-		  + "ORDER BY (d.dept_id IS NULL), dept_name " 
+		  + "ORDER BY (d.dept_id IS NULL), sumTotalCnt DESC " 
 		  + "LIMIT 5 OFFSET 0";
 
 
@@ -283,7 +283,8 @@ public class Sql {
 		    "FROM TB_Lecture L " +
 		    "JOIN TB_Department D ON D.dept_id = L.dept_id " +
 		    "JOIN TB_Professor  P ON P.pro_id  = L.pro_id " +
-		    "ORDER BY L.lec_no ";
+		    "ORDER BY L.lec_no " +
+		    "LIMIT 5 OFFSET ?";
 
 
 	/*
@@ -371,13 +372,13 @@ public class Sql {
 	 * 이름 : 한탁원
 	 * 내용 : Academic (학사안내) SQL 작성
 	 */
-	public static final String SELECT_ACADEMIC_NOTICE_MAX_ID = "SELECT MAX(ID) FROM TB_ACADEMIC_NOTICE";
-	public static final String INSERT_ACADEMIC_NOTICE = "INSERT INTO TB_ACADEMIC_NOTICE (TITLE, CONTENT, WRITER, CREATED_AT, VIEWS) VALUES (?, ?, ?, CURDATE(), 0)";
+	public static final String SELECT_ACADEMIC_NOTICE_MAX_ID = "SELECT MAX(ID) FROM TB_Academic_notice";
+	public static final String INSERT_ACADEMIC_NOTICE = "INSERT INTO TB_Academic_notice (TITLE, CONTENT, WRITER, CREATED_AT, VIEWS) VALUES (?, ?, ?, CURDATE(), 0)";
 	public static final String SELECT_ACADEMIC_NOTICE_ALL =
-		    "SELECT * FROM TB_ACADEMIC_NOTICE ORDER BY ID DESC LIMIT 5 OFFSET ?;";
-	public static final String SELECT_ACADEMIC_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_ACADEMIC_NOTICE";
-	public static final String SELECT_ACADEMIC_NOTICE_SEARCH = "SELECT * FROM TB_ACADEMIC_NOTICE ";
-	public static final String SELECT_ACADEMIC_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_ACADEMIC_NOTICE ";
+		    "SELECT * FROM TB_Academic_notice ORDER BY ID DESC LIMIT 5 OFFSET ?;";
+	public static final String SELECT_ACADEMIC_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_Academic_notice";
+	public static final String SELECT_ACADEMIC_NOTICE_SEARCH = "SELECT * FROM TB_Academic_notice ";
+	public static final String SELECT_ACADEMIC_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM TB_Academic_notice ";
 	public static final String SEARCH_WHERE_TITLE  = "WHERE TITLE LIKE ? ";
 	public static final String SEARCH_WHERE_CONTENT = "WHERE CONTENT LIKE ? ";
 	public static final String SEARCH_WHERE_WRITER = "WHERE WRITER LIKE ? ";

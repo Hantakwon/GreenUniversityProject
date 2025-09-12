@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수강신청내역</title>
+    <title>그린대학교</title>
 <!--
 	날짜 : 2025/09/10
     이름 : 정순권

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사범대학</title>
+<title>그린대학교</title>
 <!--
 	날짜 : -
     이름 : 정순권

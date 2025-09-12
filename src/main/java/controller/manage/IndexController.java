@@ -50,6 +50,8 @@ public class IndexController extends HttpServlet {
 		List<Academic_noticeDTO> academic_NoticeList = academic_Noticservice.findAll(0);
 		List<Admission_consultDTO> admission_consultList = addmission_consultService.findAll(0);
 		
+		logger.debug(gradeSummaryList.toString());
+		logger.debug(deptSummaryList.toString());
 		
 		request.setAttribute("operateList", operateList);
 		request.setAttribute("indexOperateDto", indexOperateDto);

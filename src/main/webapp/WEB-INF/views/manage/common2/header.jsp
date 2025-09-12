@@ -11,7 +11,7 @@
 		<nav>
 			<div class="top-header-box" style="max-width: 1400px;">
 				<ul>
-					<li><a href="${pageContext.request.contextPath}/"
+					<li><a href="${pageContext.request.contextPath}/manage/index.do"
 						title="HOME 바로가기">HOME</a></li>
 					<li><a href="#" class="sitemap-btn">사이트맵</a></li>
 					<li class="login"><a

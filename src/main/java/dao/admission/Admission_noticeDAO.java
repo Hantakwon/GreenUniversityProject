@@ -102,10 +102,10 @@ public class Admission_noticeDAO extends DBHelper {
 				dto.setId(rs.getInt(1));
 				dto.setTitle(rs.getString(2));
 				dto.setContent(rs.getString(3));
-				dto.setWriter(rs.getString(4));
-				dto.setCreated_at(rs.getDate(5));
-				dto.setViews(rs.getInt(6));
-
+				dto.setCreated_at(rs.getDate(4));
+				dto.setViews(rs.getInt(5));
+				dto.setIs_new(rs.getInt(6));
+				dto.setWriter(rs.getString(7));
 				dtoList.add(dto);
 			}
 			closeAll();
@@ -183,9 +183,10 @@ public class Admission_noticeDAO extends DBHelper {
 				dto.setId(rs.getInt(1));
 				dto.setTitle(rs.getString(2));
 				dto.setContent(rs.getString(3));
-				dto.setWriter(rs.getString(4));
-				dto.setCreated_at(rs.getDate(5));
-				dto.setViews(rs.getInt(6));
+				dto.setCreated_at(rs.getDate(4));
+				dto.setViews(rs.getInt(5));
+				dto.setIs_new(rs.getInt(6));
+				dto.setWriter(rs.getString(7));
 				dtoList.add(dto);
 			}
 			closeAll();

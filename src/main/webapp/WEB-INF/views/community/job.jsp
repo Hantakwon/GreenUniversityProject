@@ -10,7 +10,7 @@
  -->
 <head>
 <meta charset="UTF-8">
-<title>취업정보</title>
+<title>그린대학교</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/community/job.css">
 <style>
     /* 제목 셀의 텍스트를 왼쪽으로 정렬하고 패딩 추가 */

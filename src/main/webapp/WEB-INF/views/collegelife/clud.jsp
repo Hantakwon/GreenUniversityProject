@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>그린대학교 동아리/스터디</title>
+<title>그린대학교</title>
 </head>
 <!-- 
 	날짜 : 2025/09/11 

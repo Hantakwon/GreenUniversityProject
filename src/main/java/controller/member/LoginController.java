@@ -98,16 +98,16 @@ public class LoginController extends HttpServlet {
 			}else {
 				HttpSession session = request.getSession();
 				session.setAttribute("sessUser", userDTO);
-				response.sendRedirect(request.getContextPath() + "/college/science.do?user");
+				response.sendRedirect(request.getContextPath() + "/");
 			}
 		} else if(stdDTO != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("sessUser", stdDTO);
-			response.sendRedirect(request.getContextPath() + "/college/human.do?std");
+			response.sendRedirect(request.getContextPath() + "/");
 		} else if(profDTO != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("sessUser", profDTO);
-			response.sendRedirect(request.getContextPath() + "/college/graduate.do?prof");
+			response.sendRedirect(request.getContextPath() + "/");
 		} else {
 			// 로그인 실패 시 리다이렉트
 			response.sendRedirect(request.getContextPath() + "/member/login.do?fail");

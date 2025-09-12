@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>그린대학교</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/member/login.css">
 

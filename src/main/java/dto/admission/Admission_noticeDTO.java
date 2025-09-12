@@ -8,13 +8,14 @@ import java.sql.Date;
  * 내용 : 입학안내 - 입학상담 DTO
  */
 public class Admission_noticeDTO {
-	
+
 	private int id;
 	private String title;
 	private String content;
-	private String writer;
 	private Date created_at;
 	private int views;
+	private int is_new;
+	private String writer;
 
 	public int getId() {
 		return id;
@@ -40,14 +41,6 @@ public class Admission_noticeDTO {
 		this.content = content;
 	}
 
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
-
 	public Date getCreated_at() {
 		return created_at;
 	}
@@ -64,9 +57,26 @@ public class Admission_noticeDTO {
 		this.views = views;
 	}
 
+	public int getIs_new() {
+		return is_new;
+	}
+
+	public void setIs_new(int is_new) {
+		this.is_new = is_new;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
 	@Override
 	public String toString() {
-		return "Academic_noticeDTO [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ ", created_at=" + created_at + ", views=" + views + "]";
+		return "Admission_noticeDTO [id=" + id + ", title=" + title + ", content=" + content + ", created_at="
+				+ created_at + ", views=" + views + ", is_new=" + is_new + ", writer=" + writer + "]";
 	}
+
 }

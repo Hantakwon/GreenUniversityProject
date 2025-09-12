@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>그린대학교</title>
 <!-- 
 	날짜 : 2025/09/10 
 	이름 : 박효빈
@@ -31,7 +31,7 @@
 					</div>
 					<div class="bottom">
 						<ul>
-							<li><a href="#">공지사항</a></li>
+							<li><a href="/academic/notice.do">공지사항</a></li>
 							<li><a href="/academic/calander.do">학사일정</a></li>
 							<li class="active"><a href="/academic/registration.do">수강신청</a></li>
 							<li><a href="/academic/grade.do">성적</a></li>
