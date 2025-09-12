@@ -102,8 +102,8 @@ public class Academic_noticeDAO extends DBHelper {
 				dto.setId(rs.getInt(1));
 				dto.setTitle(rs.getString(2));
 				dto.setContent(rs.getString(3));
-				dto.setWriter(rs.getString(4));
-				dto.setCreated_at(rs.getDate(5));
+				dto.setCreated_at(rs.getDate(4));
+				dto.setWriter(rs.getString(5));
 				dto.setViews(rs.getInt(6));
 
 				dtoList.add(dto);
@@ -175,8 +175,8 @@ public class Academic_noticeDAO extends DBHelper {
 				dto.setId(rs.getInt(1));
 				dto.setTitle(rs.getString(2));
 				dto.setContent(rs.getString(3));
-				dto.setWriter(rs.getString(4));
-				dto.setCreated_at(rs.getDate(5));
+				dto.setCreated_at(rs.getDate(4));
+				dto.setWriter(rs.getString(5));
 				dto.setViews(rs.getInt(6));
 				dtoList.add(dto);
 			}

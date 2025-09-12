@@ -60,7 +60,7 @@ public class IndexDAO extends DBHelper {
 
 			rs = psmt.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				IndexStudentSummaryByGradeDTO dto = new IndexStudentSummaryByGradeDTO();
 				dto.setGrade(rs.getString(1));
 				dto.setSumEnrolledCnt(rs.getInt(2));
@@ -85,7 +85,7 @@ public class IndexDAO extends DBHelper {
 
 			rs = psmt.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				IndexStudentSummaryByDeptDTO dto = new IndexStudentSummaryByDeptDTO();
 				dto.setDept_name(rs.getString(1));
 				dto.setSumEnrolledCnt(rs.getInt(2));

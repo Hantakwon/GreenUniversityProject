@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>교수 목록</title>
+<title>운영현황 메인</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/manage/admin.css">
 </head>
@@ -105,9 +105,9 @@
 											<tr>
 												<td>${operate.dept_name}</td>
 												<td>${operate.lecture_no}</td>
+												<td>${operate.lecture_name}</td>
 												<td>${operate.grade}</td>
 												<td>${operate.professor_name}</td>
-												<td>${operate.category}</td>
 												<td>${operate.category}</td>
 												<td>${operate.credit}</td>
 												<td>${operate.classroom}</td>

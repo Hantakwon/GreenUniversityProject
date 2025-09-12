@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>인문사회대학</title>
+<title>그린대학교</title>
 <!--
 	날짜 : 2025/09/08
     이름 : 정순권

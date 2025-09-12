@@ -5,15 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>그린대학교</title>
 </head>
 <!-- 
 	날짜 : 2025/09/04
 	이름 : 한탁원
 	내용 : 게시판, 페이지 수정
 -->
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/academic/notice.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 <body>
 	<jsp:include page="../../header.jsp" />
 

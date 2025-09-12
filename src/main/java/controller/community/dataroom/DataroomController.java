@@ -15,7 +15,7 @@ import java.util.List;
 이름: 장진원
 내용: 자료실 컨트롤러
  */
-@WebServlet("/community/dataroom.do")
+@WebServlet("/community/data.do")
 public class DataroomController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
@@ -59,7 +59,7 @@ public class DataroomController extends HttpServlet {
         request.setAttribute("searchType", searchType);
         request.setAttribute("keyword", keyword);
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/community/dataroom.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/community/data.jsp");
         dispatcher.forward(request, response);
     }
 

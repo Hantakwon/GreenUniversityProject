@@ -5,17 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>그린대학교</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/academic/notice.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 </head>
 <!-- 
 	날짜 : 2025/09/04
 	이름 : 한탁원
 	내용 : 게시판, 페이지 수정
 -->
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/academic/notice.css">
 <body>
-	<jsp:include page="../../header.jsp" />
+	<jsp:include page="../../header.jsp"/>
 
 	<main>
 		<div>
@@ -34,12 +36,12 @@
 					</div>
 					<div class="bottom">
 						<ul>
-							<li class="active"><a href="./학사안내-공지사항.html">공지사항</a></li>
-							<li><a href="./학사안내-학사일정.html">학사일정</a></li>
-							<li><a href="./학사안내-수강신청.html">수강신청</a></li>
-							<li><a href="#">성적</a></li>
-							<li><a href="#">수료 및 졸업</a></li>
-							<li><a href="#">자주 묻는 질문</a></li>
+							<li class="active"><a href="/academic/notice.do">공지사항</a></li>
+							<li><a href="/academic/calander.do">학사일정</a></li>
+							<li><a href="/academic/registration.do">수강신청</a></li>
+							<li><a href="/academic/grade.do">성적</a></li>
+							<li><a href="/academic/graduation.do">수료 및 졸업</a></li>
+							<li><a href="/academic/faq.do">자주 묻는 질문</a></li>
 						</ul>
 					</div>
 				</div>

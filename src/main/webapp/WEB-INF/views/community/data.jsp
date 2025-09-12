@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자료실</title>
+    <title>그린대학교</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/community/dataroom.css"/>
     <style>
         .notice-table td:nth-child(2) {
@@ -42,12 +42,13 @@
                 </div>
                 <div class="bottom">
                     <ul>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">뉴스 및 칼럼</a></li>
-                        <li><a href="#">취업정보</a></li>
-                        <li><a href="#">자유게시판</a></li>
-                        <li><a href="#">질문과 답변</a></li>
-                        <li class="active"><a href="#">자료실</a></li>
+                        <li><a href="/community/notice.do">공지사항</a></li>
+                        <li><a href="/community/news.do">뉴스 및 칼럼</a></li>
+                        <li><a href="/community/job.do">취업정보</a></li>
+                        <li><a href="/community/free.do">자유게시판</a></li>
+                        <li><a href="/community/qna.do">질문과 답변</a></li>
+                        <li class="active"><a href="/community/data.do">자료실</a></li>
+
                     </ul>
                 </div>
             </div>

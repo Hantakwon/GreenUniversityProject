@@ -60,28 +60,16 @@
 			</div>
 			<div class="content" id="jwxe_main_content">
 				<div class="content-box">
-<<<<<<< HEAD
 					<!-- 컨탠츠 박스 시작 -->
 					<div class="admission-main">
 					    <div class="admission-bg">
 					        <div class="admission-text">
 					            <h2>미래를 움직이는 인재 그린인</h2>
-=======
-				<!-- 수시모집 컨텐츠 시작  -->
-					<div class="admission-main">
-					    <div class="admission-bg">
-					        <div class="admission-text">
-					            <h1>미래를 움직이는 인재 그린인</h2>
->>>>>>> main
 					            <p>그 인재의 가치를 아는 대학, 그린대학교</p>
 					        </div>
 					
 					        <div class="admission-box">
-<<<<<<< HEAD
 					            <h3>2026학년도 편입학 학생 모집 원서접수 안내</h3>
-=======
-					            <h3>2026학년도 편입학 학생모집 원서접수 안내</h3>
->>>>>>> main
 					            <ul class="admission-menu">
 					                <li><a href="#">원서접수</a></li>
 					                <li><a href="#">접수확인</a></li>
@@ -91,11 +79,6 @@
 					        </div>
 					    </div>
 					</div>
-<<<<<<< HEAD
-					<!-- 컨탠츠 박스 끝 -->
-=======
-				<!-- 수시모집 컨텐츠 끝  -->
->>>>>>> main
 				</div>
 			</div>
 		</div>

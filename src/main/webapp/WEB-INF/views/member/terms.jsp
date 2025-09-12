@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>그린대학교</title>
 <!--
 	날짜 : 2025/09/11
     이름 : 정순권

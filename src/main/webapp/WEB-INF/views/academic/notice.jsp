@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>그린대학교</title>
+<link rel="stylesheet" href="/resources/css/academic/notice.css">
 </head>
 <!-- 
 	날짜 :
 	이름 : 박효빈
 	내용 : 공지사항
 -->
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/academic/notice.css">
 <body>
 	<main>
 		<div>

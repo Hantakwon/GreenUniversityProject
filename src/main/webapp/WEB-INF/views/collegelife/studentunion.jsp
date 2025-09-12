@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>그린대학교 학생회 소개</title>
+<title>그린대학교</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/academic/hyokongmain.css">
 <style>

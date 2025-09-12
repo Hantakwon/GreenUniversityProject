@@ -11,7 +11,7 @@
  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 교육과정</title>
+    <title>그린대학교</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/resources/css/stusup/curriculum.css"/>
 </head>
 <body>

@@ -14,13 +14,9 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/common.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/introduce/direction.css">
-<<<<<<< HEAD
+
 </head>
 
-
-=======
-	
->>>>>>> main
 <!--
 	날짜 : 2025/09/05
     이름 : 김수진

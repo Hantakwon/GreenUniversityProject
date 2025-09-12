@@ -111,28 +111,28 @@
 							<div class="b-paging-wrap">
 								<ul>
 									<li class="first pager"><a
-										href="${pageContext.request.contextPath}/manage/student/list.do?page=1">
+										href="${pageContext.request.contextPath}/manage/lecture/list.do?page=1">
 											<span class="hide">FIRST</span>
 									</a></li>
 									<li class="prev pager"><a
-										href="${pageContext.request.contextPath}/manage/student/list.do?page=${pagenationDTO.currentPage le 1 ? 1 : pagenationDTO.currentPage - 1}">
+										href="${pageContext.request.contextPath}/manage/lecture/list.do?page=${pagenationDTO.currentPage le 1 ? 1 : pagenationDTO.currentPage - 1}">
 											<span class="hide">PREV</span>
 									</a></li>
 
 									<c:forEach var="num" begin="${pagenationDTO.pageGroupStart}"
 										end="${pagenationDTO.pageGroupEnd}">
 										<li><a
-											href="${pageContext.request.contextPath}/manage/student/list.do?page=${num}"
+											href="${pageContext.request.contextPath}/manage/lecture/list.do?page=${num}"
 											class="${pagenationDTO.currentPage eq num ? 'active' : ''}">${num}</a>
 										</li>
 									</c:forEach>
 
 									<li class="next pager"><a
-										href="${pageContext.request.contextPath}/manage/student/list.do?page=${pagenationDTO.currentPage ge pagenationDTO.lastPageNum ? pagenationDTO.lastPageNum : pagenationDTO.currentPage + 1}">
+										href="${pageContext.request.contextPath}/manage/lecture/list.do?page=${pagenationDTO.currentPage ge pagenationDTO.lastPageNum ? pagenationDTO.lastPageNum : pagenationDTO.currentPage + 1}">
 											<span class="hide">NEXT</span>
 									</a></li>
 									<li class="last pager"><a
-										href="${pageContext.request.contextPath}/manage/student/list.do?page=${pagenationDTO.lastPageNum}">
+										href="${pageContext.request.contextPath}/manage/lecture/list.do?page=${pagenationDTO.lastPageNum}">
 											<span class="hide">LAST</span>
 									</a></li>
 								</ul>

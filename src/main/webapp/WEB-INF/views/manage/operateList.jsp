@@ -53,9 +53,9 @@
 							<colgroup>
 								<col width="8%">
 								<col width="8%">
+								<col width="10%">
 								<col width="6%">
-								<col width="8%">
-								<col width="13%">
+								<col width="10%">
 								<col width="6%">
 								<col width="6%">
 								<col width="13%">
@@ -89,9 +89,9 @@
 											<tr>
 												<td>${dto.dept_name}</td>
 												<td>${dto.lecture_no}</td>
+												<td>${dto.lecture_name}</td>
 												<td>${dto.grade}</td>
 												<td>${dto.professor_name}</td>
-												<td>${dto.category}</td>
 												<td>${dto.category}</td>
 												<td>${dto.credit}</td>
 												<td>${dto.classroom}</td>
