@@ -110,19 +110,21 @@ DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd"); 
 }
 
 .meal-content {
-	line-height: 1.4;
+	white-space: pre-line; /* \n → 줄바꿈 처리 */
+	line-height: 1.6; /* 줄 간격 넉넉하게 */
 	font-size: 14px;
 }
 
 .meal-price {
 	background: #E0FFFF;
 	color: #008B8B;
-	padding: 2px 15px;
+	padding: 2px 10px;
 	border-radius: 3px;
 	font-weight: bold;
-	font-size: 0.85em;
+	font-size: 0.9em;
 	margin-bottom: 5px;
-	display: inline-block;
+	display: inline; /* inline-block → inline */
+	white-space: nowrap; /* 줄바꿈 방지 */
 }
 
 .no-meal {
@@ -207,8 +209,8 @@ DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd"); 
 										<%
 										String currentDateStr = date.toString();
 										pageContext.setAttribute("currentDateStr", currentDateStr);
-										%> <c:set var="found" value="false" /> <c:forEach
-											var="meal" items="${mealList}">
+										%> <c:set var="found" value="false" /> <c:forEach var="meal"
+											items="${mealList}">
 											<c:if
 												test="${fn:substring(meal.meal_date, 0, 10) eq currentDateStr and meal.meal_type.trim() eq '조식'}">
 												<span class="meal-price">${meal.meal_price}</span>
@@ -232,8 +234,8 @@ DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd"); 
 										<%
 										String currentDateStr = date.toString();
 										pageContext.setAttribute("currentDateStr", currentDateStr);
-										%> <c:set var="found" value="false" /> <c:forEach
-											var="meal" items="${mealList}">
+										%> <c:set var="found" value="false" /> <c:forEach var="meal"
+											items="${mealList}">
 											<c:if
 												test="${fn:substring(meal.meal_date, 0, 10) eq currentDateStr and meal.meal_type.trim() eq '중식'}">
 												<span class="meal-price">${meal.meal_price}</span>
@@ -257,8 +259,8 @@ DateTimeFormatter displayFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd"); 
 										<%
 										String currentDateStr = date.toString();
 										pageContext.setAttribute("currentDateStr", currentDateStr);
-										%> <c:set var="found" value="false" /> <c:forEach
-											var="meal" items="${mealList}">
+										%> <c:set var="found" value="false" /> <c:forEach var="meal"
+											items="${mealList}">
 											<c:if
 												test="${fn:substring(meal.meal_date, 0, 10) eq currentDateStr and meal.meal_type.trim() eq '석식'}">
 												<span class="meal-price">${meal.meal_price}</span>
